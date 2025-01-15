@@ -170,13 +170,12 @@ const scrollableBanner = document.getElementById("scrollable-banner");
 let scrollInterval = setInterval(() => {
     const scrollAmount = scrollableBanner.offsetWidth;
     if (scrollableBanner.scrollLeft + scrollAmount >= scrollableBanner.scrollWidth) {
-        // Reset to the beginning when at the end
         scrollableBanner.scrollTo({ left: 0, behavior: "smooth" });
     } else {
-        // Scroll to the next section
         scrollableBanner.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
-}, 3000); // 3 seconds wait time
+}, 3000);
+
 
 // Pause auto-scroll on hover
 scrollableBanner.addEventListener("mouseover", () => clearInterval(scrollInterval));
