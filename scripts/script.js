@@ -162,8 +162,45 @@ document.addEventListener('click', (event) => {
 function scrollHorizontally(event) {
     const container = event.currentTarget;
     event.preventDefault();
-    container.scrollLeft += event.deltaY;
+    container.scrollLeft += event.deltaX;
 }
+
+function enableDragToScroll(container) {
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        container.classList.add('scrolling'); // Optional: Add a class for styling while scrolling
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isDragging = false;
+        container.classList.remove('scrolling');
+    });
+
+    container.addEventListener('mouseup', () => {
+        isDragging = false;
+        container.classList.remove('scrolling');
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 1.5; // Adjust the multiplier for scroll speed
+        container.scrollLeft = scrollLeft - walk;
+    });
+}
+
+// Initialize drag-to-scroll on your container
+document.querySelectorAll('.overflow-x-auto').forEach((container) => {
+    enableDragToScroll(container);
+});
+
 
 const scrollableBanner = document.getElementById("scrollable-banner");
 
@@ -304,5 +341,41 @@ nextBtn.addEventListener("click", () => {
 updateTestimonial(currentTestimonialIndex);
 
 
+// For Reels
+
+const reelsContainer = document.getElementById('reels-container');
+const prevButton = document.getElementById('prev-reel-btn');
+const nextButton = document.getElementById('next-reel-btn');
+
+// Constants
+const reelWidth = 280 + 16; // Reel width + margin (adjust as needed)
+const visibleReels = 5; // Number of visible reels
+let currentIndex = 0;
+
+// Get total number of reels
+const totalReels = reelsContainer.children.length;
+
+// Update reel container's transform position
+function updateReelPosition() {
+    const maxTranslateX = (totalReels - visibleReels) * reelWidth;
+    const translateX = Math.min(currentIndex * reelWidth, maxTranslateX); // Prevent scrolling beyond bounds
+    reelsContainer.style.transform = `translateX(-${translateX}px)`;
+}
+
+// Next button functionality
+nextButton.addEventListener('click', () => {
+    if (currentIndex < totalReels - visibleReels) {
+        currentIndex++;
+        updateReelPosition();
+    }
+});
+
+// Previous button functionality
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateReelPosition();
+    }
+});
 
 
