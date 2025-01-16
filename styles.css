@@ -83,5 +83,5 @@ body {
     user-select: none;
 }
 .overflow-x-auto {
-    cursor: grab;
+    /* cursor: grab; */
 }
