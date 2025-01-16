@@ -76,3 +76,12 @@ body {
     flex-shrink: 0; /* Prevent banners from shrinking */
     width: 100%; /* Make each banner take the full width */
 }
+
+
+.scrolling {
+    cursor: grabbing;
+    user-select: none;
+}
+.overflow-x-auto {
+    cursor: grab;
+}
