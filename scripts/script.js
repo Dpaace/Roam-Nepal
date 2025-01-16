@@ -3,7 +3,8 @@ console.log("External Script Connected!!!")
 
 
 // Initialize Flatpickr for Pick-Up Date/Time
-flatpickr("#pickup-date", {
+// flatpickr("#pickup-date", "#oneway-pickup-date",{
+flatpickr(".date-picker",{
     enableTime: true,
     noCalendar: false,
     time_24hr: false,
@@ -14,16 +15,16 @@ flatpickr("#pickup-date", {
 });
 
 // Initialize Flatpickr for Drop-Off Date/Time
-flatpickr("#dropoff-date", {
-    enableTime: true,
-    noCalendar: false,
-    time_24hr: false,
-    dateFormat: "Y-m-d H:i K",
-    minuteIncrement: 30,
-    minDate: "today",
-    position: "auto center",
+// flatpickr("#dropoff-date", {
+//     enableTime: true,
+//     noCalendar: false,
+//     time_24hr: false,
+//     dateFormat: "Y-m-d H:i K",
+//     minuteIncrement: 30,
+//     minDate: "today",
+//     position: "auto center",
 
-});
+// });
 
 // // Get the button and the container
 // const addStopButton = document.getElementById("add-stop-btn");

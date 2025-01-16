@@ -218,7 +218,7 @@
                                     <ul id="dropoff-options"
                                         class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Current Location')">
+                                            onclick="selectOption('dropoff', 'Current Location')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/current_location.svg"
                                                     alt="marker--v1" />
@@ -226,14 +226,14 @@
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            onclick="selectOption('dropoff', 'Pin in Map')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            onclick="selectOption('dropoff', 'TIA Airport')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
@@ -241,7 +241,7 @@
 
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Thamel')">
+                                            onclick="selectOption('dropoff', 'Thamel')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/location.svg"
                                                     alt="map-marker--v2" />
@@ -268,7 +268,7 @@
                                 <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
                                     <input type="text" id="pickup-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
                                         placeholder="Pick-Up Date / Time" />
                                 </div>
                             </div>
@@ -276,7 +276,7 @@
                                 <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
                                     <input type="text" id="dropoff-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
                                         placeholder="Drop-Off Date / Time" />
                                 </div>
                             </div>
@@ -315,7 +315,7 @@
                     </form>
                 </div>
 
-                <div id="form-container-one-way" class="hidden w-full lg:w-1/2 p-5">
+                <div id="form-container-one-way" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
                         <div class="w-full flex items-center ">
                             <!-- Pick-Up Field -->
@@ -335,7 +335,7 @@
                                     <ul id="oneway-pickup-options"
                                         class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Current Location')">
+                                            onclick="selectOption('oneway-pickup', 'Current Location')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/current_location.svg"
                                                     alt="marker--v1" />
@@ -343,14 +343,14 @@
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            onclick="selectOption('oneway-pickup', 'Pin in Map')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            onclick="selectOption('oneway-pickup', 'TIA Airport')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
@@ -358,7 +358,7 @@
 
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Thamel')">
+                                            onclick="selectOption('oneway-pickup', 'Thamel')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/location.svg"
                                                     alt="map-marker--v2" />
@@ -384,10 +384,6 @@
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
                                             alt="search-icon">
-
-                                        <!-- <input type="text" id="dropoff" placeholder="Drop-Off"
-                                            class="w-full outline-none" oninput="filterOptions('dropoff')"
-                                            onclick="toggleDropdown('dropoff')"> -->
                                         <input type="text" id="oneway-dropoff" placeholder="Drop-Off"
                                             class="w-full outline-none" oninput="filterOptions('oneway-dropoff')"
                                             onclick="toggleDropdown('oneway-dropoff')">
@@ -397,7 +393,7 @@
                                     <ul id="oneway-dropoff-options"
                                         class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Current Location')">
+                                            onclick="selectOption('oneway-dropoff', 'Current Location')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/current_location.svg"
                                                     alt="marker--v1" />
@@ -405,14 +401,14 @@
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            onclick="selectOption('oneway-dropoff', 'Pin in Map')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            onclick="selectOption('oneway-dropoff', 'TIA Airport')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
@@ -420,7 +416,7 @@
 
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Thamel')">
+                                            onclick="selectOption('oneway-dropoff', 'Thamel')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/location.svg"
                                                     alt="map-marker--v2" />
@@ -438,148 +434,27 @@
                                 </button>
                             </div>
                         </div>
+
                         <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
                         </div>
-
-
-                        <div class="grid grid-cols-12 gap-4 items-center">
-                            <!-- Pick-Up Field -->
-                            <div class="col-span-4 relative rounded border border-black p-0">
-                                <div class="relative">
-                                    <div class="flex items-center border rounded px-4 py-2">
-                                        <svg class="w-5 h-5 text-black mr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
-                                            y="0px" width="100" height="100" viewBox="0 0 50 50">
-                                            <path
-                                                d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z">
-                                            </path>
-                                        </svg>
-                                        <input type="text" id="oneway-pickup" placeholder="Pick-Up"
-                                            class="w-full outline-none" oninput="filterOptions('oneway-pickup')"
-                                            onclick="toggleDropdown('oneway-pickup')">
-                                    </div>
-                                    <!-- Dropdown -->
-                                    <ul id="oneway-pickup-options"
-                                        class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer "
-                                            onclick="selectOption('pickup', 'Current Location')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/current_location.svg"
-                                                    alt="marker--v1" />
-                                                Current Location
-                                            </span>
-                                        </li>
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Pin in Map')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
-                                                Pin in Map
-                                            </span>
-                                        </li>
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'TIA Airport')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
-                                                TIA Airport
-                                            </span>
-
-                                        </li>
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Thamel')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/location.svg"
-                                                    alt="map-marker--v2" />
-                                                Thamel
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Switch Button -->
-                            <div class="col-span-2 flex justify-center">
-                                <button
-                                    class="bg-teal-600 text-white w-10 h-10 rounded-full flex items-center justify-center">⇄</button>
-                            </div>
-
-                            <!-- Drop-Off Field -->
-                            <div class="col-span-4 relative">
-                                <div class="relative">
-                                    <div class="flex items-center border rounded px-4 py-2">
-                                        <svg class="w-5 h-5 text-black mr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
-                                            y="0px" width="100" height="100" viewBox="0 0 50 50">
-                                            <path
-                                                d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z">
-                                            </path>
-                                        </svg>
-                                        <input type="text" id="oneway-dropoff" placeholder="Drop-Off"
-                                            class="w-full outline-none" oninput="filterOptions('oneway-dropoff')"
-                                            onclick="toggleDropdown('oneway-dropoff')">
-                                    </div>
-                                    <!-- Dropdown -->
-                                    <ul id="oneway-dropoff-options"
-                                        class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Current Location')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/current_location.svg"
-                                                    alt="marker--v1" />
-                                                Current Location
-                                            </span>
-                                        </li>
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Pin in Map')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
-                                                Pin in Map
-                                            </span>
-                                        </li>
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'TIA Airport')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
-                                                TIA Airport
-                                            </span>
-
-                                        </li>
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Thamel')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/location.svg"
-                                                    alt="map-marker--v2" />
-                                                Thamel
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Add Stop Button -->
-                            <div class="col-span-2 border p-0">
-                                <button class="w-full text-teal-600 hover:text-teal-800 gap-0 p-0">
-                                    <p class="text-sm">+ <br>Add Stop</p>
-                                </button>
-                            </div>
-                        </div>
-
                         <!-- Pick-Up Date -->
                         <div class="grid grid-cols-1 gap-4">
                             <div class="relative">
-                                <label for="oneway-pickup-date" class="block text-sm font-medium">Pick-Up Date /
-                                    Time</label>
-                                <input type="datetime-local" id="oneway-pickup-date"
-                                    class="w-full border rounded px-4 py-2 cursor-pointer"
-                                    placeholder="Pick-Up Date / Time"
-                                    onclick="document.getElementById('oneway-pickup-date').showPicker()">
+                                <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                                    <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
+
+                                    <input type="text" id="oneway-pickup-date"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
+                                        placeholder="Pick-Up Date / Time" />
+                                </div>
                             </div>
                         </div>
 
                         <!-- Vehicle Type -->
                         <div class="relative">
-                            <div class="flex items-center border rounded px-4 py-2">
-                                <img class="w-5 h-5 mr-2"
-                                    src="https://img.icons8.com/ios-filled/50/people-in-car-side-view.png"
-                                    alt="people-in-car-side-view" />
-                                <select id="oneway-vehicle-type" class="w-full bg-transparent outline-none">
+                            <div class="flex items-center px-2 py-2 border border-[#79747E] rounded">
+                                <img class="w-5 h-5 mr-2" src="images/svg/vehicle.svg" alt="vehicle" />
+                                <select id="oneway-vehicle-typ" class="w-full bg-transparent outline-none">
                                     <option value="">Vehicle Type</option>
                                     <option value="sedan">Sedan</option>
                                     <option value="suv">SUV</option>
@@ -587,34 +462,34 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded hover:bg-teal-700">
+
+                        <button type="submit" class="w-full bg-[#0B3C49] text-white py-2 rounded hover:bg-[#0a1e24]">
                             Search Vehicles
                         </button>
                     </form>
                 </div>
 
-                <div id="form-container-hourly" class="hidden w-full lg:w-1/2  p-5">
+                <div id="form-container-hourly" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
-                        <div class="grid grid-cols-12 gap-4 items-center">
+                        <div class="w-full flex items-center ">
                             <!-- Pick-Up Field -->
-                            <div class="col-span-4 relative">
-                                <div class="relative">
-                                    <div class="flex items-center border rounded px-4 py-2">
-                                        <svg class="w-5 h-5 text-black mr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
-                                            y="0px" width="100" height="100" viewBox="0 0 50 50">
-                                            <path
-                                                d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z">
-                                            </path>
-                                        </svg>
+                            <div class="w-[35%] ">
+                                <div class="relative rounded border border-[#79747E] p-0">
+                                    <!-- Input Field -->
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+
                                         <input type="text" id="hourly-pickup" placeholder="Pick-Up"
                                             class="w-full outline-none" oninput="filterOptions('hourly-pickup')"
                                             onclick="toggleDropdown('hourly-pickup')">
                                     </div>
+
                                     <!-- Dropdown -->
                                     <ul id="hourly-pickup-options"
-                                        class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Current Location')">
+                                            onclick="selectOption('hourly-pickup', 'Current Location')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/current_location.svg"
                                                     alt="marker--v1" />
@@ -622,14 +497,14 @@
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            onclick="selectOption('hourly-pickup', 'Pin in Map')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            onclick="selectOption('hourly-pickup', 'TIA Airport')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
@@ -637,7 +512,7 @@
 
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Thamel')">
+                                            onclick="selectOption('hourly-pickup', 'Thamel')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/location.svg"
                                                     alt="map-marker--v2" />
@@ -649,30 +524,30 @@
                             </div>
 
                             <!-- Switch Button -->
-                            <div class="col-span-2 flex justify-center">
+                            <div class="w-[10%] flex justify-center ">
                                 <button
-                                    class="bg-teal-600 text-white w-10 h-10 rounded-full flex items-center justify-center">⇄</button>
+                                    class="bg-[#03677E] text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                    ⇄
+                                </button>
                             </div>
 
                             <!-- Drop-Off Field -->
-                            <div class="col-span-4 relative">
+                            <div class="w-[35%] relative rounded border border-[#79747E] p-0">
                                 <div class="relative">
-                                    <div class="flex items-center border rounded px-4 py-2">
-                                        <svg class="w-5 h-5 text-black mr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
-                                            y="0px" width="100" height="100" viewBox="0 0 50 50">
-                                            <path
-                                                d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z">
-                                            </path>
-                                        </svg>
+                                    <!-- Input Field -->
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
                                         <input type="text" id="hourly-dropoff" placeholder="Drop-Off"
                                             class="w-full outline-none" oninput="filterOptions('hourly-dropoff')"
                                             onclick="toggleDropdown('hourly-dropoff')">
                                     </div>
+
                                     <!-- Dropdown -->
                                     <ul id="hourly-dropoff-options"
-                                        class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Current Location')">
+                                            onclick="selectOption('hourly-dropoff', 'Current Location')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/current_location.svg"
                                                     alt="marker--v1" />
@@ -680,14 +555,14 @@
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            onclick="selectOption('hourly-dropoff', 'Pin in Map')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            onclick="selectOption('hourly-dropoff', 'TIA Airport')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
@@ -695,7 +570,7 @@
 
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Thamel')">
+                                            onclick="selectOption('hourly-dropoff', 'Thamel')">
                                             <span class="flex items-center gap-2">
                                                 <img class="w-5 h-5" src="images/svg/location.svg"
                                                     alt="map-marker--v2" />
@@ -707,40 +582,44 @@
                             </div>
 
                             <!-- Add Stop Button -->
-                            <div class="col-span-2 border p-0">
-                                <button class="w-full text-teal-600 hover:text-teal-800 gap-0 p-0">
+                            <div class="w-[20%] ml-1 rounded border border-[#79747E] p-0">
+                                <button id="add-stop-btn" class="w-full h-full text-[#0B3C49] gap-0 p-0">
                                     <p class="text-sm">+ <br>Add Stop</p>
                                 </button>
                             </div>
                         </div>
+
+                        <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
+                        </div>
+
+
                         <!-- Number of Hours -->
                         <div class="relative">
-                            <div class="flex items-center border rounded px-4 py-2">
-                                <img class="w-5 h-5 mr-2" src="https://img.icons8.com/ios/50/time_2.png" alt="time_2" />
-                                <input type="number" id="hourly-num-hours" class="w-full bg-transparent outline-none"
-                                    placeholder="Enter number of hours">
+                            <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                                <img class="w-5 h-5 text-black mr-2" src="images/svg/num-hours.svg" alt="time" />
+                                <input type="number" id="hourly-num-hours" min="0"
+                                    class="w-full bg-transparent outline-none" placeholder="Enter number of hours">
                             </div>
                         </div>
 
                         <!-- Pick-Up Date -->
                         <div class="grid grid-cols-1 gap-4">
                             <div class="relative">
-                                <label for="hourly-pickup-date" class="block text-sm font-medium">Pick-Up Date /
-                                    Time</label>
-                                <input type="datetime-local" id="hourly-pickup-date"
-                                    class="w-full border rounded px-4 py-2 cursor-pointer"
-                                    placeholder="Pick-Up Date / Time"
-                                    onclick="document.getElementById('hourly-pickup-date').showPicker()">
+                                <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                                    <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
+
+                                    <input type="text" id="hourly-pickup-date"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
+                                        placeholder="Pick-Up Date / Time" />
+                                </div>
                             </div>
                         </div>
 
                         <!-- Vehicle Type -->
                         <div class="relative">
-                            <div class="flex items-center border rounded px-4 py-2">
-                                <img class="w-5 h-5 mr-2"
-                                    src="https://img.icons8.com/ios-filled/50/people-in-car-side-view.png"
-                                    alt="people-in-car-side-view" />
-                                <select id="hourly-vehicle-type" class="w-full bg-transparent outline-none">
+                            <div class="flex items-center px-2 py-2 border border-[#79747E] rounded">
+                                <img class="w-5 h-5 mr-2" src="images/svg/vehicle.svg" alt="vehicle" />
+                                <select id="hourly-vehicle-typ" class="w-full bg-transparent outline-none">
                                     <option value="">Vehicle Type</option>
                                     <option value="sedan">Sedan</option>
                                     <option value="suv">SUV</option>
@@ -750,115 +629,123 @@
                         </div>
 
                         <div class="flex items-center">
-                            <input type="checkbox" id="include-driver" class="mr-2">
+                            <input type="checkbox" id="hourly-include-driver" class="mr-2 accent-[#0B3C49] ">
                             <label for="hourly-include-driver" class="text-sm">Include a driver</label>
                         </div>
-                        <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded hover:bg-teal-700">
+
+                        <button type="submit" class="w-full bg-[#0B3C49] text-white py-2 rounded hover:bg-[#0a1e24]">
                             Search Vehicles
                         </button>
                     </form>
                 </div>
 
-                <div id="form-container-airport" class="hidden w-full lg:w-1/2  p-5">
+                <div id="form-container-airport" class="hidden w-full lg:w-1/2  p-4">
                     <form class="space-y-4">
 
-                        <div class="relative flex items-center space-x-6 mt-4">
+                        <div class="relative flex items-center space-x-6">
                             <!-- Radio Button 1 -->
                             <label class="flex items-center space-x-2 cursor-pointer">
                                 <input type="radio" name="airport-type" value="pickup" checked
-                                    class="form-radio h-5 w-5 text-teal-600">
+                                    class="form-radio h-5 w-5 accent-[#0B3C49]">
                                 <span class="text-gray-700 text-sm font-medium">Pick Up</span>
                             </label>
 
                             <!-- Radio Button 2 -->
                             <label class="flex items-center space-x-2 cursor-pointer">
                                 <input type="radio" name="airport-type" value="dropoff"
-                                    class="form-radio h-5 w-5 text-teal-600">
+                                    class="form-radio h-5 w-5 accent-[#0B3C49]">
                                 <span class="text-gray-700 text-sm font-medium">Drop Off</span>
                             </label>
                         </div>
 
 
-                        <div class="grid grid-cols-12 gap-4 items-center">
+                        <div class="grid grid-cols-12 gap-2 items-center">
                             <!-- Pick-Up Location Field -->
-                            <div class="col-span-10 relative">
+                            <div class="lg:col-span-10 col-span-9 relative">
                                 <div class="relative">
-                                    <div class="flex items-center border rounded px-4 py-2">
-                                        <svg class="w-5 h-5 text-black mr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
-                                            y="0px" width="100" height="100" viewBox="0 0 50 50">
-                                            <path
-                                                d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z">
-                                            </path>
-                                        </svg>
-                                        <input type="text" id="airport-pickup" placeholder="Location"
-                                            class="w-full outline-none" oninput="filterOptions('airport-pickup')"
-                                            onclick="toggleDropdown('airport-pickup')">
-                                    </div>
-                                    <!-- Dropdown -->
-                                    <ul id="airport-pickup-options"
-                                        class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Current Location')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/current_location.svg"
-                                                    alt="marker--v1" />
-                                                Current Location
-                                            </span>
-                                        </li>
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Pin in Map')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
-                                                Pin in Map
-                                            </span>
-                                        </li>
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'TIA Airport')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
-                                                TIA Airport
-                                            </span>
+                                    <div class="relative rounded border border-[#79747E] p-0">
+                                        <!-- Input Field -->
+                                        <div class="flex items-center border rounded px-2 py-2">
+                                            <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                                alt="search-icon">
 
-                                        </li>
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('pickup', 'Thamel')">
-                                            <span class="flex items-center gap-2">
-                                                <img class="w-5 h-5" src="images/svg/location.svg"
-                                                    alt="map-marker--v2" />
-                                                Thamel
-                                            </span>
-                                        </li>
-                                    </ul>
+                                            <input type="text" id="airport-pickup" placeholder="Pick-Up"
+                                                class="w-full outline-none" oninput="filterOptions('airport-pickup')"
+                                                onclick="toggleDropdown('airport-pickup')">
+                                        </div>
+
+                                        <!-- Dropdown -->
+                                        <ul id="airport-pickup-options"
+                                            class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                                onclick="selectOption('airport-pickup', 'Current Location')">
+                                                <span class="flex items-center gap-2">
+                                                    <img class="w-5 h-5" src="images/svg/current_location.svg"
+                                                        alt="marker--v1" />
+                                                    Current Location
+                                                </span>
+                                            </li>
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                                onclick="selectOption('airport-pickup', 'Pin in Map')">
+                                                <span class="flex items-center gap-2">
+                                                    <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
+                                                    Pin in Map
+                                                </span>
+                                            </li>
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                                onclick="selectOption('airport-pickup', 'TIA Airport')">
+                                                <span class="flex items-center gap-2">
+                                                    <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
+                                                    TIA Airport
+                                                </span>
+
+                                            </li>
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                                onclick="selectOption('airport-pickup', 'Thamel')">
+                                                <span class="flex items-center gap-2">
+                                                    <img class="w-5 h-5" src="images/svg/location.svg"
+                                                        alt="map-marker--v2" />
+                                                    Thamel
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Add Stop Button -->
-                            <div class="col-span-2 border p-0">
+                            <!-- <div class="col-span-2 border p-0">
                                 <button class="w-full text-teal-600 hover:text-teal-800 gap-0 p-0">
+                                    <p class="text-sm">+ <br>Add Stop</p>
+                                </button>
+                            </div> -->
+
+                            <div class="lg:col-span-2 col-span-3 rounded border border-[#79747E] p-0">
+                                <button id="add-stop-btn" class="w-full h-full text-[#0B3C49] gap-0 p-0">
                                     <p class="text-sm">+ <br>Add Stop</p>
                                 </button>
                             </div>
                         </div>
 
                         <!-- Pick-Up Date -->
+
                         <div class="grid grid-cols-1 gap-4">
                             <div class="relative">
-                                <label for="airport-pickup-date" class="block text-sm font-medium">Pick-Up Date /
-                                    Time</label>
-                                <input type="datetime-local" id="airport-pickup-date"
-                                    class="w-full border rounded px-4 py-2 cursor-pointer"
-                                    placeholder="Pick-Up Date / Time"
-                                    onclick="document.getElementById('airport-pickup-date').showPicker()">
+                                <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                                    <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
+
+                                    <input type="text" id="airport-pickup-date"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
+                                        placeholder="Pick-Up Date / Time" />
+                                </div>
                             </div>
                         </div>
 
                         <!-- Vehicle Type -->
                         <div class="relative">
-                            <div class="flex items-center border rounded px-4 py-2">
-                                <img class="w-5 h-5 mr-2"
-                                    src="https://img.icons8.com/ios-filled/50/people-in-car-side-view.png"
-                                    alt="people-in-car-side-view" />
-                                <select id="airport-vehicle-type" class="w-full bg-transparent outline-none">
+                            <div class="flex items-center px-2 py-2 border border-[#79747E] rounded">
+                                <img class="w-5 h-5 mr-2" src="images/svg/vehicle.svg" alt="vehicle" />
+                                <select id="airport-vehicle-typ" class="w-full bg-transparent outline-none">
                                     <option value="">Vehicle Type</option>
                                     <option value="sedan">Sedan</option>
                                     <option value="suv">SUV</option>
@@ -866,7 +753,8 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded hover:bg-teal-700">
+
+                        <button type="submit" class="w-full bg-[#0B3C49] text-white py-2 rounded hover:bg-[#0a1e24]">
                             Search Vehicles
                         </button>
                     </form>
