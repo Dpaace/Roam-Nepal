@@ -20,7 +20,17 @@
             theme: {
                 extend: {
                     colors: {
-                        clifford: '#da373d',
+                        primary: '#03677E',
+                        txtPrimary: '#03677E',
+                        txtPlaceholder: '#49454F',
+                        formText: '#0B3C49',
+                        brcolor: '#03677E',
+                        btnbg: '#03677E',
+                        btnOutline: '#03677E',
+                        bannerTxt: '#001A42',
+                        bannerBorder: '#40A9FF',
+                        txtStatistics: '#036773',
+                        bgButton: '#0B3C49'
                     },
                     fontFamily: {
                         sans: ['Open Sans', 'sans-serif'],
@@ -29,8 +39,6 @@
             }
         }
     </script>
-
-
 
 
     <!-- Flatpickr CSS -->
@@ -44,14 +52,33 @@
 
 <body class="bg-white font-sans">
     <!-- Navigation Bar -->
-    <nav class="bg-[#03677E] text-white fixed top-0 left-0 w-full z-50 shadow-lg">
-        <div class="mx-auto flex justify-between items-center py-4 lg:px-16 px-5">
-            <!-- Logo -->
-            <div class="text-2xl font-bold">Roam Nepal</div>
+    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
 
-            <div class="flex flex-col items-end">
-                <!-- Top Navigation Items -->
-                <div class="hidden md:flex items-center justify-center gap-9 text-sm">
+
+            <div class="flex justify-between w-full lg:w-1/3">
+                <div class="text-2xl font-bold">Roam Nepal</div>
+
+                <button id="menu-toggle" class="block md:block lg:hidden focus:outline-none">
+                    <!-- Hamburger Icon -->
+                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+
+                    <!-- Cross Icon (Initially Hidden) -->
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="menu"
+                class="hidden  flex flex-row justify-end items-end lg:flex lg:flex-col lg:items-end lg:w-2/3">
+                <div class="hidden  md:hidden items-center justify-center gap-9 text-sm">
                     <span class="flex items-center space-x-1">
                         <img class="w-3 h-3" src="images/svg/dot.svg" alt="dot">
                         <span class="text-[12px] leading-4 font-normal">NPR</span>
@@ -78,8 +105,8 @@
                     </div>
                 </div>
 
-                <!-- Bottom Navigation Items -->
-                <div class="hidden md:flex items-center gap-8 text-base leading-4 mt-5 font-semibold	">
+                <div id="bottom-nav"
+                    class="hidden flex flex-col justify-center items-center mt-6 p-5 lg:p-0 gap-5 w-full lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 text-base leading-4 lg:mt-5 font-semibold">
                     <a href="#" class="hover:text-teal-300 flex items-center space-x-2">
                         <span><img class="w-5 h-5" src="images/svg/bus.svg" alt="bus"></span>
                         <span>Bus Ticket</span>
@@ -111,6 +138,7 @@
     </nav>
 
 
+
     <div class="flex items-center lg:items-end bg-cover bg-center h-screen lg:h-lvh"
         style="background-image: url('images/home1.jpg');">
         <div class="lg:min-h-[75%] min-h-[70%] container flex flex-col lg:max-w-full  lg:items-start lg:px-28 px-5">
@@ -118,21 +146,21 @@
                 Reliable Vehicle Rental
             </h1>
             <div class="bg-white container px-1 lg:px-0 mt-5 lg:w-fit z-40 border-b">
-                <div class="bg-white flex justify-between text-[12px] lg:text-xl font-[400] leading-6">
+                <div class="bg-white flex justify-between text-[12px]  lg:text-xl font-normal leading-6">
                     <button id="round-trip-tab"
-                        class="py-2 px-2 lg:px-5 text-left hover:bg-gray-100 text-[#0B3C49] border-b-4 border-[#03677E] whitespace-nowrap">
+                        class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100 text-formText font-semibold border-b-4 border-brcolor whitespace-nowrap">
                         Round Trip
                     </button>
                     <button id="one-way-tab"
-                        class="py-2 px-2 lg:px-5 text-left hover:bg-gray-100 text-[#0B3C49] whitespace-nowrap">
+                        class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100 text-black whitespace-nowrap">
                         One Way
                     </button>
                     <button id="hourly-tab"
-                        class="py-2 px-2 lg:px-5 text-left hover:bg-gray-100 text-[#0B3C49] whitespace-nowrap">
+                        class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100 text-black whitespace-nowrap">
                         Hourly
                     </button>
                     <button id="airport-tab"
-                        class="py-2 px-2 lg:px-5 text-left hover:bg-gray-100 text-[#0B3C49] whitespace-nowrap">
+                        class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100 text-black whitespace-nowrap">
                         Airport Pick/Drop
                     </button>
 
@@ -151,7 +179,8 @@
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
                                             alt="search-icon">
 
-                                        <input type="text" id="pickup" placeholder="Pick-Up" class="w-full outline-none"
+                                        <input type="text" id="pickup" placeholder="Pick-Up"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('pickup')" onclick="toggleDropdown('pickup')">
                                     </div>
 
@@ -196,7 +225,7 @@
                             <!-- Switch Button -->
                             <div class="w-[10%] flex justify-center ">
                                 <button
-                                    class="bg-[#03677E] text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                    class="bg-primary] text-white w-10 h-10 rounded-full flex items-center justify-center">
                                     ⇄
                                 </button>
                             </div>
@@ -210,8 +239,8 @@
                                             alt="search-icon">
 
                                         <input type="text" id="dropoff" placeholder="Drop-Off"
-                                            class="w-full outline-none" oninput="filterOptions('dropoff')"
-                                            onclick="toggleDropdown('dropoff')">
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
+                                            oninput="filterOptions('dropoff')" onclick="toggleDropdown('dropoff')">
                                     </div>
 
                                     <!-- Dropdown -->
@@ -254,7 +283,7 @@
 
                             <!-- Add Stop Button -->
                             <div class="w-[20%] ml-1 rounded border border-[#79747E] p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-[#0B3C49] gap-0 p-0">
+                                <button id="add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
                                     <p class="text-sm">+ <br>Add Stop</p>
                                 </button>
                             </div>
@@ -268,7 +297,7 @@
                                 <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
                                     <input type="text" id="pickup-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
                                         placeholder="Pick-Up Date / Time" />
                                 </div>
                             </div>
@@ -276,7 +305,7 @@
                                 <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
                                     <input type="text" id="dropoff-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
                                         placeholder="Drop-Off Date / Time" />
                                 </div>
                             </div>
@@ -285,7 +314,8 @@
                         <div class="relative">
                             <div class="flex items-center  px-2 py-2 border border-[#79747E] rounded">
                                 <img class="w-5 h-5 mr-2" src="images/svg/vehicle.svg" alt="vehicle" />
-                                <select id="vehicle-type" class="w-full bg-transparent outline-none">
+                                <select id="vehicle-type"
+                                    class="w-full bg-transparent outline-none text-sm text-txtPlaceholder ">
                                     <option value="">Vehicle Type</option>
                                     <option value="sedan">Sedan</option>
                                     <option value="suv">SUV</option>
@@ -298,7 +328,8 @@
                         <div class="relative">
                             <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
                                 <img class="w-5 h-5 mr-2" src="images/svg/person.svg" alt="passengers" />
-                                <input type="number" min="0" id="pax" class="w-full bg-transparent outline-none"
+                                <input type="number" min="0" id="pax"
+                                    class="w-full bg-transparent outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                     placeholder="Enter number of passengers">
                             </div>
                         </div>
@@ -327,7 +358,8 @@
                                             alt="search-icon">
 
                                         <input type="text" id="oneway-pickup" placeholder="Pick-Up"
-                                            class="w-full outline-none" oninput="filterOptions('oneway-pickup')"
+                                            class="w-full outline-none placeholder:text-sm"
+                                            oninput="filterOptions('oneway-pickup')"
                                             onclick="toggleDropdown('oneway-pickup')">
                                     </div>
 
@@ -372,7 +404,7 @@
                             <!-- Switch Button -->
                             <div class="w-[10%] flex justify-center ">
                                 <button
-                                    class="bg-[#03677E] text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                    class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center">
                                     ⇄
                                 </button>
                             </div>
@@ -385,7 +417,8 @@
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
                                             alt="search-icon">
                                         <input type="text" id="oneway-dropoff" placeholder="Drop-Off"
-                                            class="w-full outline-none" oninput="filterOptions('oneway-dropoff')"
+                                            class="w-full outline-none placeholder:text-sm"
+                                            oninput="filterOptions('oneway-dropoff')"
                                             onclick="toggleDropdown('oneway-dropoff')">
                                     </div>
 
@@ -429,7 +462,7 @@
 
                             <!-- Add Stop Button -->
                             <div class="w-[20%] ml-1 rounded border border-[#79747E] p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-[#0B3C49] gap-0 p-0">
+                                <button id="add-stop-btn" class="w-full h-full text-formText gap-0 p-0">
                                     <p class="text-sm">+ <br>Add Stop</p>
                                 </button>
                             </div>
@@ -444,7 +477,7 @@
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
 
                                     <input type="text" id="oneway-pickup-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm"
                                         placeholder="Pick-Up Date / Time" />
                                 </div>
                             </div>
@@ -481,7 +514,8 @@
                                             alt="search-icon">
 
                                         <input type="text" id="hourly-pickup" placeholder="Pick-Up"
-                                            class="w-full outline-none" oninput="filterOptions('hourly-pickup')"
+                                            class="w-full outline-none placeholder:text-sm"
+                                            oninput="filterOptions('hourly-pickup')"
                                             onclick="toggleDropdown('hourly-pickup')">
                                     </div>
 
@@ -526,7 +560,7 @@
                             <!-- Switch Button -->
                             <div class="w-[10%] flex justify-center ">
                                 <button
-                                    class="bg-[#03677E] text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                    class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center">
                                     ⇄
                                 </button>
                             </div>
@@ -539,7 +573,8 @@
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
                                             alt="search-icon">
                                         <input type="text" id="hourly-dropoff" placeholder="Drop-Off"
-                                            class="w-full outline-none" oninput="filterOptions('hourly-dropoff')"
+                                            class="w-full outline-none placeholder:text-sm"
+                                            oninput="filterOptions('hourly-dropoff')"
                                             onclick="toggleDropdown('hourly-dropoff')">
                                     </div>
 
@@ -583,7 +618,7 @@
 
                             <!-- Add Stop Button -->
                             <div class="w-[20%] ml-1 rounded border border-[#79747E] p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-[#0B3C49] gap-0 p-0">
+                                <button id="add-stop-btn" class="w-full h-full text-formText gap-0 p-0">
                                     <p class="text-sm">+ <br>Add Stop</p>
                                 </button>
                             </div>
@@ -598,7 +633,8 @@
                             <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
                                 <img class="w-5 h-5 text-black mr-2" src="images/svg/num-hours.svg" alt="time" />
                                 <input type="number" id="hourly-num-hours" min="0"
-                                    class="w-full bg-transparent outline-none" placeholder="Enter number of hours">
+                                    class="w-full bg-transparent outline-none placeholder:text-sm"
+                                    placeholder="Enter number of hours">
                             </div>
                         </div>
 
@@ -609,7 +645,7 @@
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
 
                                     <input type="text" id="hourly-pickup-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm"
                                         placeholder="Pick-Up Date / Time" />
                                 </div>
                             </div>
@@ -670,7 +706,8 @@
                                                 alt="search-icon">
 
                                             <input type="text" id="airport-pickup" placeholder="Pick-Up"
-                                                class="w-full outline-none" oninput="filterOptions('airport-pickup')"
+                                                class="w-full outline-none placeholder:text-sm"
+                                                oninput="filterOptions('airport-pickup')"
                                                 onclick="toggleDropdown('airport-pickup')">
                                         </div>
 
@@ -713,15 +750,8 @@
                                 </div>
                             </div>
 
-                            <!-- Add Stop Button -->
-                            <!-- <div class="col-span-2 border p-0">
-                                <button class="w-full text-teal-600 hover:text-teal-800 gap-0 p-0">
-                                    <p class="text-sm">+ <br>Add Stop</p>
-                                </button>
-                            </div> -->
-
                             <div class="lg:col-span-2 col-span-3 rounded border border-[#79747E] p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-[#0B3C49] gap-0 p-0">
+                                <button id="add-stop-btn" class="w-full h-full text-formText gap-0 p-0">
                                     <p class="text-sm">+ <br>Add Stop</p>
                                 </button>
                             </div>
@@ -735,7 +765,7 @@
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
 
                                     <input type="text" id="airport-pickup-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer date-picker"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm"
                                         placeholder="Pick-Up Date / Time" />
                                 </div>
                             </div>
@@ -844,12 +874,14 @@
                 style="background-image: url('images/home2.jpg');">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-start text-center pl-5 pb-5">
-                    <h2 class="lg:text-[40px] lg:leading-10 md:text-4xl font-[700] text-white">
+                    <h2 class="text-sm lg:text-[40px] lg:leading-10 md:text-4xl font-[700] text-white">
                         The ultimate travel experience with Roam Nepal
                     </h2>
-                    <p class="lg:text-2xl leading-6 font-[400] text-white mb-6">Travel across Nepal made simple and
+                    <p class="text-sm lg:text-2xl leading-6 font-[400] text-white mb-6">Travel across Nepal made simple
+                        and
                         hassle-free.</p>
-                    <button class="bg-white text-[#001A42] px-6 py-2 rounded border-[#40A9FF] hover:bg-gray-300">
+                    <button
+                        class="bg-white text-[12px] lg:text-[16px]  text-bannerTxt px-6 py-2 rounded border border-bannerBorder hover:bg-gray-300">
                         Read More
                     </button>
                 </div>
@@ -859,12 +891,14 @@
                 style="background-image: url('images/home1.jpg');">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-start text-center pl-5 pb-5">
-                    <h2 class="lg:text-[40px] lg:leading-10 md:text-4xl font-[700] text-white">
+                    <h2 class="text-sm lg:text-[40px] lg:leading-10 md:text-4xl font-[700] text-white">
                         The ultimate travel experience with Roam Nepal
                     </h2>
-                    <p class="lg:text-2xl leading-6 font-[400] text-white mb-6">Travel across Nepal made simple and
+                    <p class="text-sm lg:text-2xl leading-6 font-[400] text-white mb-6">Travel across Nepal made simple
+                        and
                         hassle-free.</p>
-                    <button class="bg-white text-[#001A42] px-6 py-2 rounded border-[#40A9FF] hover:bg-gray-300">
+                    <button
+                        class="bg-white text-[12px] lg:text-[16px] text-bannerTxt px-6 py-2 rounded border-bannerBorder hover:bg-gray-300">
                         Read More
                     </button>
                 </div>
@@ -874,12 +908,14 @@
                 style="background-image: url('images/home2.jpg');">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-start text-center pl-5 pb-5">
-                    <h2 class="lg:text-[40px] lg:leading-10 md:text-4xl font-[700] text-white">
+                    <h2 class="text-sm lg:text-[40px] lg:leading-10 md:text-4xl font-[700] text-white">
                         The ultimate travel experience with Roam Nepal
                     </h2>
-                    <p class="lg:text-2xl leading-6 font-[400] text-white mb-6">Travel across Nepal made simple and
+                    <p class="text-sm lg:text-2xl leading-6 font-[400] text-white mb-6">Travel across Nepal made simple
+                        and
                         hassle-free.</p>
-                    <button class="bg-white text-[#001A42] px-6 py-2 rounded border-[#40A9FF] hover:bg-gray-300">
+                    <button
+                        class="bg-white text-[12px] lg:text-[16px] text-bannerTxt px-6 py-2 rounded border-bannerBorder hover:bg-gray-300">
                         Read More
                     </button>
                 </div>
@@ -889,16 +925,17 @@
 
 
     <!-- Offers and Deals Section -->
-    <div class="bg-white py-10 container px-5 lg:max-w-full lg:px-28">
-        <div class="container w-full lg:min-w-full mx-auto">
+    <div class="bg-white py-5 lg:py-10 container px-5 lg:max-w-full lg:px-28">
+        <div class="container w-full lg:min-w-full mx-auto ">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="font-[400] text-[32px] text-black leading-10">Offers and deals</h2>
-                <a href="#" class="text-[#03677E] text-[16px] font-[400] leading-10">Explore more &gt;&gt;</a>
+                <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">Offers and deals</h2>
+                <a href="#" class="text-primary text-[14px] lg:text-[16px] font-[400] leading-10">Explore more
+                    &gt;&gt;</a>
             </div>
-            <div class="flex items-center  h-[275px] space-x-4 overflow-x-auto scrollbar-hide"
+            <div class="flex items-center   h-[275px] space-x-4 overflow-x-auto scrollbar-hide"
                 onwheel="scrollHorizontally(event)">
                 <!-- Card 1 -->
-                <div class="rounded-t-lg  min-w-[325px] h-[240px] flex-shrink-0">
+                <div class="flex flex-col justify-center rounded-t-lg  min-w-[325px] h-[240px] flex-shrink-0">
                     <div class="relative">
                         <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
                             class="rounded-t-lg w-full h-32 object-cover" />
@@ -908,12 +945,12 @@
                         </span>
                     </div>
                     <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[28px]">Black Friday Deals!</p>
-                        <p class="text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="rounded-t-lg  min-w-[325px] h-[240px] flex-shrink-0">
+                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
                     <div class="relative">
                         <img src="images/svg/black-friday-2.svg" alt="Black Friday Deals"
                             class="rounded-t-lg w-full h-32 object-cover" />
@@ -923,12 +960,12 @@
                         </span>
                     </div>
                     <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[28px]">Black Friday Deals!</p>
-                        <p class="text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="rounded-t-lg  min-w-[325px] h-[240px] flex-shrink-0">
+                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
                     <div class="relative">
                         <img src="images/svg/christmas-deals.svg" alt="Black Friday Deals"
                             class="rounded-t-lg w-full h-32 object-cover" />
@@ -938,12 +975,12 @@
                         </span>
                     </div>
                     <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[28px]">Black Friday Deals!</p>
-                        <p class="text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
                     </div>
                 </div>
                 <!-- Card 4 -->
-                <div class="rounded-t-lg  min-w-[325px] h-[240px] flex-shrink-0">
+                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
                     <div class="relative">
                         <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
                             class="rounded-t-lg w-full h-32 object-cover" />
@@ -953,12 +990,12 @@
                         </span>
                     </div>
                     <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[28px]">Black Friday Deals!</p>
-                        <p class="text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
                     </div>
                 </div>
                 <!-- Card 5 -->
-                <div class="rounded-t-lg  min-w-[325px] h-[240px] flex-shrink-0">
+                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
                     <div class="relative">
                         <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
                             class="rounded-t-lg w-full h-32 object-cover" />
@@ -968,11 +1005,11 @@
                         </span>
                     </div>
                     <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[28px]">Black Friday Deals!</p>
-                        <p class="text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
                     </div>
                 </div>
-                <div class="rounded-t-lg  min-w-[325px] h-[240px] flex-shrink-0">
+                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
                     <div class="relative">
                         <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
                             class="rounded-t-lg w-full h-32 object-cover" />
@@ -981,9 +1018,9 @@
                             Tours
                         </span>
                     </div>
-                    <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[28px]">Black Friday Deals!</p>
-                        <p class="text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                    <div class="bg-gray-200 rounded-b-lg p-4">
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
                     </div>
                 </div>
             </div>
@@ -991,91 +1028,96 @@
     </div>
 
     <!-- Reach Section -->
-    <div class="bg-white hidden py-10 lg:max-w-full lg:px-28" id="our-reach">
-        <div class="container w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="bg-white lg:flex  px-5 py-5 lg:py-10 lg:max-w-full lg:min-h-[500px] lg:px-28" id="our-reach">
+        <div class="w-full max-h-full  grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
             <!-- Image Section -->
-            <div>
-                <img src="images/reach.jpeg" alt="Bus Image" class="shadow-md" />
+            <div class=" lg:min-w-1/2 flex">
+                <img src="images/reach.jpeg" alt="Bus Image"
+                    class="object-cover h-[136px] w-full md:h-full md:w-full lg:h-[90%] lg:w-[90%] shadow-md" />
             </div>
 
             <!-- Text and Statistics Section -->
-            <div class="space-y-6">
-                <div>
-                    <h4 class="text-black font-[400] text-2xl leading-8">OUR REACH</h4>
-                    <h2 class="text-black font-[700] text-3xl leading-8">
+            <div class="flex flex-col justify-center h-4/5 gap-6 lg:gap-12">
+                <div class="w-full ">
+                    <h4 class="text-black font-[400] mt-0 lg:mt-2 text-[16px] lg:text-2xl leading-8">OUR REACH</h4>
+                    <h2 class="text-black font-[700] mt-0 lg:mt-2 lg:text-[32px] leading-8">
                         The ultimate travel experience - Roam Nepal
                     </h2>
-                    <p class="text-black font-[400] text-lg leading-6 mt-2">
+                    <p class="text-black font-[400] lg:pr-10 lg:mt-2 text-sm lg:text-[16px] leading-6 mt-0">
                         Bussewa makes traveling across Nepal simple and hassle-free.
-                        With easy bookings and reliable service, we’re here to
+                        With easy bookings and reliable service, we're here to
                         ensure every journey is safe, comfortable, and
                         unforgettable.
                     </p>
                 </div>
 
                 <!-- Statistics Section -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="flex justify-center gap-10 lg:grid lg:grid-cols-4 lg:gap-4 w-full">
                     <!-- Statistic 1 -->
                     <div class="text-center">
                         <div class="flex justify-center mb-2">
-                            <img src="images/svg/reach-bus.svg" alt="Buses" class="w-[60px] h-[60px]" />
+                            <img src="images/svg/reach-bus.svg" alt="Buses" class="w-9 h-9 lg:w-[60px] lg:h-[60px]" />
                         </div>
                         <div class="flex justify-center mt-4 mb-3">
-                            <p class="text-[#036773] font-[700] text-[40px] leading-10 " data-target="1300" id="buses">
+                            <p class="text-txtStatistics font-[700] text-xl leading-5 lg:text-[40px] lg:leading-10 "
+                                data-target="1300" id="buses">
                                 0
                             </p>
-                            <span class="text-[#036773] font-[700] text-[40px] leading-10">
+                            <span class="text-txtStatistics font-[700] text-xl leading-5 lg:text-[40px] lg:leading-10">
                                 +
                             </span>
                         </div>
-                        <p class="text-black font-[400] text-2xl leading-8">Buses</p>
+                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">Buses</p>
                     </div>
 
                     <!-- Statistic 2 -->
                     <div class="text-center">
                         <div class="flex justify-center mb-2">
-                            <img src="images/svg/reach-route.svg" alt="Routes" class="w-[60px] h-[60px]" />
+                            <img src="images/svg/reach-route.svg" alt="Routes"
+                                class="w-9 h-9 lg:w-[60px] lg:h-[60px]" />
                         </div>
                         <div class="flex justify-center mt-4 mb-3">
-                            <p class="text-[#036773] font-[700] text-[40px] leading-10" data-target="450" id="routes">
+                            <p class="text-txtStatistics font-[700]  text-xl leading-5 lg:text-[40px] lg:leading-10"
+                                data-target="450" id="routes">
                                 0
                             </p>
-                            <span class="text-[#036773] font-[700] text-[40px] leading-10">
+                            <span class="text-txtStatistics font-[700] text-xl leading-5 lg:text-[40px] lg:leading-10">
                                 +
                             </span>
                         </div>
-                        <p class="text-black font-[400] text-2xl leading-8">Routes</p>
+                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">Routes</p>
                     </div>
 
                     <!-- Statistic 3 -->
                     <div class="text-center">
                         <div class="flex justify-center mb-2">
                             <img width="50" height="50" src="images/svg/reach-operator.svg" alt="technical-support"
-                                class="w-[60px] h-[60px]" />
+                                class="w-9 h-9 lg:w-[60px] lg:h-[60px]" />
                         </div>
                         <div class="flex justify-center mt-4 mb-3">
-                            <p class="text-[#036773] font-[700] text-[40px] leading-10" data-target="500"
-                                id="operators">
+                            <p class="text-txtStatistics font-[700] text-xl leading-5 lg:text-[40px] lg:leading-10"
+                                data-target="500" id="operators">
                                 0
                             </p>
-                            <span class="text-[#036773] font-[700] text-[40px] leading-10">
+                            <span class="text-txtStatistics font-[700] text-xl leading-5 lg:text-[40px] lg:leading-10">
                                 +
                             </span>
                         </div>
-                        <p class="text-black font-[400] text-2xl leading-8">Operators</p>
+                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">Operators</p>
                     </div>
 
                     <!-- Statistic 4 -->
                     <div class="text-center">
                         <div class="flex justify-center mb-2">
-                            <img src="images/svg/reach-district.svg" alt="Districts" class="w-[60px] h-[60px]" />
+                            <img src="images/svg/reach-district.svg" alt="Districts"
+                                class="w-9 h-9 lg:w-[60px] lg:h-[60px]" />
                         </div>
-                        <p class="mt-4 mb-3 text-[#036773] font-[700] text-[40px] leading-10" data-target="74"
-                            id="districts">
+                        <p class="mt-4 mb-3 text-txtStatistics font-[700] text-xl leading-5 lg:text-[40px] lg:leading-10"
+                            data-target="74" id="districts">
                             0
                         </p>
 
-                        <p class="text-black font-[400] text-2xl leading-8">Districts</p>
+                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">Districts</p>
                     </div>
                 </div>
             </div>
@@ -1083,21 +1125,18 @@
     </div>
 
     <!-- Testimonials Section -->
-    <div class=" py-5 lg:py-10 lg:max-w-full lg:px-28 my-5 lg:my-10">
-        <div class="container w-full lg:min-w-full mx-auto px-6 text-center relative">
+    <div class=" py-5 min-h-[200px]  flex lg:py-10 lg:max-w-full lg:max-h-[280px] lg:px-28 my-5 lg:my-5">
+        <div class="container flex items-center min-h-full w-full lg:min-w-full mx-auto px-6 text-center relative">
             <!-- Testimonial Container -->
-            <div id="testimonial-container" class=" lg:max-w-full mx-auto">
+            <div id="testimonial-container" class="flex flex-col justify-center min-h-full lg:max-w-full mx-auto">
                 <div class="flex justify-center items-center space-x-4">
-                    <div>
-                        <span class="text-pink-500 text-4xl font-bold">❝</span>
-                    </div>
-                    <p class="text-lg font-semibold text-gray-800" id="testimonial-text">
+                    <span class="text-pink-500 text-4xl font-bold">❝</span>
+                    <p class="text-[12px] lg:text-lg font-semibold text-gray-800" id="testimonial-text">
                         Absolutely love this app! Booking bus tickets across Nepal has never been easier. Smooth
                         transactions and timely updates make my travel planning a breeze. Highly recommended!
                     </p>
-                    <div>
-                        <span class="text-pink-500 text-4xl font-bold">❞</span>
-                    </div>
+                    <span class="text-pink-500 text-4xl font-bold">❞</span>
+
                 </div>
                 <p class="text-sm text-gray-500 mt-4" id="testimonial-author">
                     -- Harris Magar, CEO of XYZ
@@ -1124,12 +1163,13 @@
     <div class="container  lg:max-w-full lg:px-28 px-6">
         <!-- Title Section -->
         <div class="flex justify-between items-center mb-6 relative">
-            <h2 class="font-[400] text-[32px] text-black leading-10">Your Stories</h2>
-            <a href="#" class="text-[#03677E] text-[16px] font-[400] leading-10">Explore more &gt;&gt;</a>
+            <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">Your Stories</h2>
+            <a href="#" class="text-txtPrimary text-[14px] lg:text-[16px] font-[400] leading-10">Explore more
+                &gt;&gt;</a>
         </div>
 
         <!-- Reels Section -->
-        <div class="relative overflow-x-auto overflow-hidden" onwheel="scrollHorizontally(event)">
+        <div class="relative overflow-x-auto overflow-hidden scrollbar-hide" onwheel="scrollHorizontally(event)">
             <!-- Reels Container -->
             <div id="reels-container" class="flex transition-transform duration-500" style="transform: translateX(0);">
                 <!-- Reel Card -->
@@ -1221,87 +1261,90 @@
     <div class="container lg:max-w-full lg:px-28 px-6 py-10 mt-10">
         <!-- Title and Explore More -->
         <div class="flex justify-between items-center mb-6">
-            <h2 class="font-[400] text-[32px] text-black leading-10">Travel tips, stories and information</h2>
-            <a href="#" class="text-[#03677E] text-[16px] font-[400] leading-10">Explore more &gt;&gt;</a>
+            <h2 class="hidden md:flex lg:flex font-[400] lg:text-[32px] text-black leading-10">Travel tips, stories and
+                information</h2>
+            <h2 class="md:hidden lg:hidden font-[400] text-[16px] text-black leading-10">Blogs</h2>
+            <a href="#" class="text-txtPrimary text-[12px] lg:text-[16px] font-[400] leading-10">Explore more
+                &gt;&gt;</a>
         </div>
 
         <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-4 mb-8">
-            <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 ">
+        <div class="flex flex-wrap gap-2 lg:gap-4 mb-8">
+            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 All
             </button>
-            <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 ">
+            <button class=" p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Bus tickets
             </button>
-            <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 ">
+            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Hotels
             </button>
-            <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 ">
+            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Tours
             </button>
-            <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 ">
+            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Reservations
             </button>
-            <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200">
+            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 Flights
             </button>
         </div>
         <!-- Blog Cards Grid -->
         <div class="grid gap-3">
             <!-- First Row -->
-            <div class="grid grid-cols-3 gap-3">
+            <div class="grid grid-cols-3 gap-3 lg:h-[330px]">
                 <!-- Card 1 (70% width) -->
-                <div class="col-span-2 relative rounded-sm overflow-hidden ">
-                    <img src="images/blog-1.jpeg" alt="Blog Thumbnail" class="w-full h-48 object-cover">
+                <div class="col-span-2 max-h-[330px] relative rounded-sm overflow-hidden ">
+                    <img src="images/blog-1.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm text-white mb-2">Travel Blog</p>
-                        <h3 class="text-lg font-bold text-white">Top 10 Things to Do in Pokhara: A Complete Guide for
+                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Top 10 Things to Do in Pokhara: A Complete Guide for
                             Travelers</h3>
-                        <a href="#" class="text-white text-sm font-semibold flex items-center mt-2">→</a>
+                        <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
 
                 <!-- Card 2 (30% width) -->
                 <div class="col-span-1 relative rounded-sm overflow-hidden ">
-                    <img src="images/blog-2.jpeg" alt="Blog Thumbnail" class="w-full h-48 object-cover">
+                    <img src="images/blog-2.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm text-white mb-2">Travel Blog</p>
-                        <h3 class="text-lg font-bold text-white">Kathmandu to Pokhara trip travel guide</h3>
-                        <a href="#" class="text-white text-sm font-semibold flex items-center mt-2">→</a>
+                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Kathmandu to Pokhara trip travel guide</h3>
+                        <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
             </div>
 
             <!-- Second Row -->
-            <div class="grid grid-cols-3 gap-3">
+            <div class="grid  lg:h-[330px] grid-cols-2 lg:grid-cols-3 gap-3">
                 <!-- Card 3 -->
                 <div class="relative rounded-sm overflow-hidden ">
-                    <img src="images/blog-3.jpeg" alt="Blog Thumbnail" class="w-full h-48 object-cover">
+                    <img src="images/blog-3.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm text-white mb-2">Offers</p>
-                        <h3 class="text-lg font-bold text-white">Top 10 Things to Do in Pokhara: A Complete Guide for
+                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Top 10 Things to Do in Pokhara: A Complete Guide for
                             Travelers</h3>
-                        <a href="#" class="text-white text-sm font-semibold flex items-center mt-2">→</a>
+                        <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
                 <div class="relative rounded-sm overflow-hidden ">
-                    <img src="images/blog-4.jpeg" alt="Blog Thumbnail" class="w-full h-48 object-cover">
+                    <img src="images/blog-4.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm text-white mb-2">Offers</p>
-                        <h3 class="text-lg font-bold text-white">तिहार आयो, बससेवाले DISCOUNT ल्यायो !</h3>
-                        <a href="#" class="text-white text-sm font-semibold flex items-center mt-2">→</a>
+                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">तिहार आयो, बससेवाले DISCOUNT ल्यायो !</h3>
+                        <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="relative rounded-sm overflow-hidden ">
-                    <img src="images/blog-5.jpeg" alt="Blog Thumbnail" class="w-full h-48 object-cover">
+                <div class="relative max-h-[130px] lg:max-h-full rounded-sm overflow-hidden ">
+                    <img src="images/blog-5.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm text-white mb-2">Offers</p>
-                        <h3 class="text-lg font-bold text-white">बससेवालले ल्यायो दशैँको विशेष छुट</h3>
-                        <a href="#" class="text-white text-sm font-semibold flex items-center mt-2">→</a>
+                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">बससेवालले ल्यायो दशैँको विशेष छुट</h3>
+                        <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
             </div>
@@ -1320,8 +1363,8 @@
             class="bg-[#3B5BDB] w-full lg:max-w-full mx-auto px-6 pt-5 lg:pt-10 flex flex-col lg:flex-col lg:items-center gap-8">
             <!-- Text Section -->
             <div class="flex flex-col items-center lg:items-center text-center md:text-left text-white gap-4 flex-1">
-                <h2 class="text-3xl md:text-4xl font-bold">Mobile apps are out now!</h2>
-                <p class="text-lg md:text-xl">Stay ahead from your phone</p>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Mobile apps are out now!</h2>
+                <p class="text-[16px] md:text-lg lg:text-xl">Stay ahead from your phone</p>
                 <div class="flex justify-center md:justify-start gap-6">
                     <a href="#">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
@@ -1335,7 +1378,7 @@
             </div>
 
             <!-- Phone Images -->
-            <div class="flex justify-center md:justify-end items-center gap-6 flex-1 relative">
+            <div class="flex justify-center md:justify-center items-center gap-6 flex-1 relative">
                 <!-- Phone Image 1 -->
                 <img src="images/android.png" alt="Phone 1"
                     class="h-52 md:h-64 lg:h-72 shadow-lg rounded-lg object-cover" />
@@ -1344,14 +1387,14 @@
                     class="h-52 md:h-64 lg:h-72 shadow-lg rounded-lg object-cover" />
                 <!-- QR Code -->
                 <img src="images/qrcode.png" alt="QR Code"
-                    class="absolute top-4 md:top-10 lg:top-6 left-1/2 md:left-auto w-24 h-24 md:w-32 md:h-32" />
+                    class="lg:block absolute hidden top-4 md:top-10 lg:top-0 lg:left-[520px] left-1/2 md:left-auto w-24 h-24 md:w-32 md:h-32" />
             </div>
         </div>
     </div>
 
 
     <footer class="bg-gray-800 text-gray-400 py-10">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="container mx-auto px-6 grid grid-cols-2 items-center md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
             <!-- Services -->
             <div>
                 <h4 class="text-white font-semibold text-lg mb-4">Services</h4>
@@ -1393,7 +1436,7 @@
                     <li class="flex items-center space-x-2">
                         <span>
                             <img class="h-5 w-5"
-                                src="https://img.icons8.com/?size=100&id=I24lanX6Nq71&format=png&color=000000"
+                                src="images/svg/footer-phone.svg"
                                 alt="phone" />
 
                         </span>
@@ -1401,32 +1444,32 @@
                     </li>
                     <li class="flex items-center space-x-2">
                         <span><img class="h-5 w-5"
-                                src="https://img.icons8.com/?size=100&id=I24lanX6Nq71&format=png&color=000000"
+                                src="images/svg/footer-phone.svg"
                                 alt="phone" /></span>
                         <a href="tel:+9779887567890" class="hover:text-white">+977 9887567890</a>
                     </li>
                     <li class="flex items-center space-x-2">
                         <span><img class="h-5 w-5"
-                                src="https://img.icons8.com/?size=100&id=X0mEIh0RyDdL&format=png&color=000000"
-                                alt="phone" /></span>
+                                src="images/svg/footer-email.svg"
+                                alt="email" /></span>
                         <a href="mailto:info@bussewa.com" class="hover:text-white">info@bussewa.com</a>
                     </li>
                 </ul>
                 <div class="flex items-center space-x-4 mt-4">
                     <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="https://img.icons8.com/?size=100&id=13912&format=png&color=000000"
+                            src="images/svg/footer-Facebook.svg"
                             alt="facebook" /></a>
                     <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"
+                            src="images/svg/footer-Instagram.svg"
                             alt="instagram" /></a>
                     <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="https://img.icons8.com/?size=100&id=5MQ0gPAYYx7a&format=png&color=000000"
+                            src="images/svg/footer-Twitter.svg"
                             alt="twitter" /></a>
                     <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000"
+                            src="images/svg/footer-LinkedIn.svg"
                             alt="linkedin" /></a>
                     <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="https://img.icons8.com/?size=100&id=oKHadYScUe2I&format=png&color=000000"
+                            src="images/svg/footer-TikTok.svg"
                             alt="tiktok" /></a>
                 </div>
             </div>

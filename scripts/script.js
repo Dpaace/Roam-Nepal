@@ -4,7 +4,7 @@ console.log("External Script Connected!!!")
 
 // Initialize Flatpickr for Pick-Up Date/Time
 // flatpickr("#pickup-date", "#oneway-pickup-date",{
-flatpickr(".date-picker",{
+flatpickr(".date-picker", {
     enableTime: true,
     noCalendar: false,
     time_24hr: false,
@@ -14,35 +14,38 @@ flatpickr(".date-picker",{
     position: "auto center",
 });
 
-// Initialize Flatpickr for Drop-Off Date/Time
-// flatpickr("#dropoff-date", {
-//     enableTime: true,
-//     noCalendar: false,
-//     time_24hr: false,
-//     dateFormat: "Y-m-d H:i K",
-//     minuteIncrement: 30,
-//     minDate: "today",
-//     position: "auto center",
+
+
+
+// const menuToggle = document.getElementById("menu-toggle");
+// const menu = document.getElementById("menu");
+// const btmNav = document.getElementById("bottom-nav");
+
+// menuToggle.addEventListener("click", () => {
+//     menu.classList.toggle("hidden");
+//     btmNav.classList.toggle("hidden");
 
 // });
 
-// // Get the button and the container
-// const addStopButton = document.getElementById("add-stop-btn");
-// const stopContainer = document.getElementById("stop-container");
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+const btmNav = document.getElementById("bottom-nav");
+const hamburgerIcon = document.getElementById("hamburger-icon");
+const closeIcon = document.getElementById("close-icon");
 
-// // Add click event listener to the button
-// addStopButton.addEventListener("click", () => {
+menuToggle.addEventListener("click", () => {
+    // Toggle the visibility of the menu
+    menu.classList.toggle("hidden");
+    btmNav.classList.toggle("hidden");
 
-//     event.preventDefault();
-//     // Create a new input field
-//     const newInput = document.createElement("input");
-//     newInput.type = "text";
-//     newInput.placeholder = "Enter stop";
-//     newInput.className = "w-full border border-gray-300 rounded px-4 py-2 mt-2";
+    // Toggle the icons
+    hamburgerIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+});
 
-//     // Append the new input field to the container
-//     stopContainer.appendChild(newInput);
-// });
+
+
+
 
 
 // Get the button and the container
@@ -74,26 +77,6 @@ addStopButton.addEventListener("click", (event) => {
 
 
 
-
-// // Initialize Flatpickr for Pick-Up Date/Time
-// flatpickr("#pickup-date", {
-//     enableTime: true,
-//     dateFormat: "Y-m-d H:i", // Format for the date and time
-//     time_24hr: true,         // Use 24-hour format
-//     minDate: "today",        // Prevent selecting past dates
-// });
-
-// // Initialize Flatpickr for Drop-Off Date/Time
-// flatpickr("#dropoff-date", {
-//     enableTime: true,
-//     dateFormat: "Y-m-d H:i", // Format for the date and time
-//     time_24hr: true,
-//     minDate: "today",
-// });
-
-
-
-
 // Tab switching logic
 const tabs = document.querySelectorAll('#round-trip-tab, #one-way-tab, #hourly-tab, #airport-tab');
 const containers = {
@@ -106,8 +89,8 @@ const containers = {
 tabs.forEach(tab => {
     tab.addEventListener('click', (event) => {
         // Update tab styles
-        tabs.forEach(t => t.classList.remove('text-teal-600', 'font-semibold', 'border-b-4', 'border-[#03677E]'));
-        event.target.classList.add('text-teal-600', 'font-semibold', 'border-b-4', 'border-[#03677E]');
+        tabs.forEach(t => t.classList.remove('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#03677E]'));
+        event.target.classList.add('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#03677E]');
 
         // Show the corresponding container and hide others
         Object.keys(containers).forEach(key => {
