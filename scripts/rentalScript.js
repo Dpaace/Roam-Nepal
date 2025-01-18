@@ -6,6 +6,12 @@ function scrollHorizontally(event) {
 }
 
 
+function scrollVertically(event) {
+    event.preventDefault();
+    const container = event.currentTarget;
+    container.scrollLeft += event.deltaY ;
+}
+
 
 // function toggleInfo() {
 //     const infoDiv = document.getElementById("additional-info");
