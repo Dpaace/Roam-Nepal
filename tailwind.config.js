@@ -17,7 +17,10 @@ module.exports = {
         bannerTxt: '#001A42',
         bannerBorder: '#40A9FF',
         txtStatistics: '#036773',
-        bgButton: '#0B3C49'
+        bgButton: '#0B3C49',
+        txtAsideGrey: '#70787C',
+        bgTrending: '#FFEECB',
+        txtTrending: '#C87D0C'
       },
       fontFamily: {
         sans: ['Open Sans', 'sans-serif'],
