@@ -30,7 +30,10 @@
                         bannerTxt: '#001A42',
                         bannerBorder: '#40A9FF',
                         txtStatistics: '#036773',
-                        bgButton: '#0B3C49'
+                        bgButton: '#0B3C49',
+                        txtAsideGrey: '#70787C',
+                        bgTrending: '#FFEECB',
+                        txtTrending: '#C87D0C'
                     },
                     fontFamily: {
                         sans: ['Open Sans', 'sans-serif'],
@@ -78,7 +81,7 @@
 
             <div id="menu"
                 class="hidden  flex flex-row justify-end items-end lg:flex lg:flex-col lg:items-end lg:w-2/3">
-                <div class="hidden  md:hidden items-center justify-center gap-9 text-sm">
+                <div class="hidden  md:hidden lg:flex items-center justify-center gap-9 text-sm">
                     <span class="flex items-center space-x-1">
                         <img class="w-3 h-3" src="images/svg/dot.svg" alt="dot">
                         <span class="text-[12px] leading-4 font-normal">NPR</span>
@@ -1270,22 +1273,28 @@
 
         <!-- Filter Buttons -->
         <div class="flex flex-wrap gap-2 lg:gap-4 mb-8">
-            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
+            <button
+                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 All
             </button>
-            <button class=" p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+            <button
+                class=" p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Bus tickets
             </button>
-            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+            <button
+                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Hotels
             </button>
-            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+            <button
+                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Tours
             </button>
-            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+            <button
+                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Reservations
             </button>
-            <button class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
+            <button
+                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 Flights
             </button>
         </div>
@@ -1298,7 +1307,8 @@
                     <img src="images/blog-1.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
                         <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Top 10 Things to Do in Pokhara: A Complete Guide for
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Top 10 Things to Do in
+                            Pokhara: A Complete Guide for
                             Travelers</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
@@ -1309,7 +1319,8 @@
                     <img src="images/blog-2.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
                         <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Kathmandu to Pokhara trip travel guide</h3>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Kathmandu to Pokhara trip
+                            travel guide</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
@@ -1322,7 +1333,8 @@
                     <img src="images/blog-3.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
                         <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Top 10 Things to Do in Pokhara: A Complete Guide for
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Top 10 Things to Do in
+                            Pokhara: A Complete Guide for
                             Travelers</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
@@ -1333,7 +1345,8 @@
                     <img src="images/blog-4.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
                         <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">तिहार आयो, बससेवाले DISCOUNT ल्यायो !</h3>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">तिहार आयो, बससेवाले
+                            DISCOUNT ल्यायो !</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
@@ -1343,7 +1356,8 @@
                     <img src="images/blog-5.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
                         <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">बससेवालले ल्यायो दशैँको विशेष छुट</h3>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">बससेवालले ल्यायो दशैँको
+                            विशेष छुट</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
@@ -1394,7 +1408,8 @@
 
 
     <footer class="bg-gray-800 text-gray-400 py-10">
-        <div class="container mx-auto px-6 grid grid-cols-2 items-center md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
+        <div
+            class="container mx-auto px-6 grid grid-cols-2 items-center md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
             <!-- Services -->
             <div>
                 <h4 class="text-white font-semibold text-lg mb-4">Services</h4>
@@ -1435,41 +1450,30 @@
                 <ul class="space-y-2">
                     <li class="flex items-center space-x-2">
                         <span>
-                            <img class="h-5 w-5"
-                                src="images/svg/footer-phone.svg"
-                                alt="phone" />
+                            <img class="h-5 w-5" src="images/svg/footer-phone.svg" alt="phone" />
 
                         </span>
                         <a href="tel:+9779876567989" class="hover:text-white">+977 9876567989</a>
                     </li>
                     <li class="flex items-center space-x-2">
-                        <span><img class="h-5 w-5"
-                                src="images/svg/footer-phone.svg"
-                                alt="phone" /></span>
+                        <span><img class="h-5 w-5" src="images/svg/footer-phone.svg" alt="phone" /></span>
                         <a href="tel:+9779887567890" class="hover:text-white">+977 9887567890</a>
                     </li>
                     <li class="flex items-center space-x-2">
-                        <span><img class="h-5 w-5"
-                                src="images/svg/footer-email.svg"
-                                alt="email" /></span>
+                        <span><img class="h-5 w-5" src="images/svg/footer-email.svg" alt="email" /></span>
                         <a href="mailto:info@bussewa.com" class="hover:text-white">info@bussewa.com</a>
                     </li>
                 </ul>
                 <div class="flex items-center space-x-4 mt-4">
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="images/svg/footer-Facebook.svg"
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-Facebook.svg"
                             alt="facebook" /></a>
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="images/svg/footer-Instagram.svg"
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-Instagram.svg"
                             alt="instagram" /></a>
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="images/svg/footer-Twitter.svg"
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-Twitter.svg"
                             alt="twitter" /></a>
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="images/svg/footer-LinkedIn.svg"
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-LinkedIn.svg"
                             alt="linkedin" /></a>
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5"
-                            src="images/svg/footer-TikTok.svg"
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-TikTok.svg"
                             alt="tiktok" /></a>
                 </div>
             </div>
