@@ -11,6 +11,7 @@ module.exports = {
         txtPrimary : '#03677E',
         txtPlaceholder : '#49454F',
         formText: '#0B3C49',
+        formBorder: '#79747E',
         brcolor: '#03677E',
         btnbg: '#03677E',
         btnOutline: '#03677E',

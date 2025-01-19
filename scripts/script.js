@@ -89,8 +89,8 @@ const containers = {
 tabs.forEach(tab => {
     tab.addEventListener('click', (event) => {
         // Update tab styles
-        tabs.forEach(t => t.classList.remove('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#03677E]'));
-        event.target.classList.add('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#03677E]');
+        tabs.forEach(t => t.classList.remove('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#0B3C49]'));
+        event.target.classList.add('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#0B3C49]');
 
         // Show the corresponding container and hide others
         Object.keys(containers).forEach(key => {
