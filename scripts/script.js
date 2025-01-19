@@ -140,6 +140,19 @@ document.addEventListener('click', (event) => {
     }
 });
 
+function swapValues(input1Id, input2Id) {
+    // Get the input fields by their IDs
+    const input1 = document.getElementById(input1Id);
+    const input2 = document.getElementById(input2Id);
+
+    // Swap the values
+    const tempValue = input1.value;
+    input1.value = input2.value;
+    input2.value = tempValue;
+}
+
+
+
 
 
 // to make the continue where you left card horizontally scrollable 
