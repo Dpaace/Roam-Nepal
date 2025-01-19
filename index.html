@@ -144,9 +144,9 @@
 
 
 
-    <div class="flex items-center lg:items-end bg-cover bg-center h-screen lg:h-lvh"
+    <div class="flex items-center  lg:items-end bg-cover bg-center h-screen lg:h-lvh overflow-visible"
         style="background-image: url('images/home1.jpg');">
-        <div class="lg:min-h-[75%] min-h-[70%] container flex flex-col lg:max-w-full  lg:items-start lg:px-28 px-5">
+        <div class="lg:min-h-[85%] min-h-[70%] container flex flex-col lg:max-w-full  lg:items-start lg:px-28 px-5">
             <h1 class="hidden lg:flex px-5 lg:px-0 text-white text-sm lg:font-bold lg:text-[40px] lg:leading-[70px]">
                 Explore Nepal Like Never Before.
             </h1>
@@ -178,9 +178,11 @@
             <div class="bg-white container flex  px-0 lg:px-0 lg:min-h-fit lg:min-w-full">
                 <div id="form-container-round-trip" class="w-full lg:w-1/2 p-4">
                     <form class="space-y-4 ">
-                        <div class="w-full flex items-center ">
+                        <!-- <div class="grid grid-rows-2 grid-cols-12 gap-2 lg:w-full lg:flex lg:items-center "> -->
+                        <div class="grid grid-rows-2 grid-cols-12 gap-4 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
-                            <div class="w-[35%] ">
+                            <!-- <div class="col-span-10 lg:w-[35%] "> -->
+                            <div class="col-span-10 lg:col-span-11 ">
                                 <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -231,15 +233,41 @@
                             </div>
 
                             <!-- Switch Button -->
-                            <div class="w-[10%] flex justify-center ">
+                            <!-- <div class="grid col-span-2  justify-center items-center lg:w-[15%] lg:flex lg:justify-center "> -->
+                            <div class="grid col-span-2  justify-center items-center lg:col-span-1 lg:justify-center ">
                                 <button type="button" onclick="swapValues('pickup', 'dropoff')"
                                     class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
                                     <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap">
                                 </button>
                             </div>
 
+                            <!-- Add Stop -->
+                            <!-- <div class="col-span-3 lg:w-[20%] lg:ml-1 rounded border border-formBorder lg:p-0"> -->
+                            <div class="col-span-3 rounded border border-formBorder lg:p-0">
+                                <button type="button" id="add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
+                                    <p class="text-sm">+ <br>Add Stop</p>
+                                </button>
+                            </div>
+
+                            <!-- Stop Field -->
+                            <!-- <div id="stop-container" class="hidden col-span-9 lg:w-[35%] lg:relative rounded border border-formBorder lg:p-0"> -->
+                            <div id="stop-container"
+                                class="hidden col-span-9  lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+
+                                        <input type="text" id="stop" placeholder="Add Stop"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Drop-Off Field -->
-                            <div class="w-[35%] relative rounded border border-formBorder p-0">
+                            <!-- <div id="round-dropff" class="col-span-9 lg:w-[35%] lg:relative rounded border border-formBorder lg:p-0"> -->
+                            <div id="round-dropff"
+                                class="col-span-9  lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -288,17 +316,8 @@
                                     </ul>
                                 </div>
                             </div>
-
-                            <!-- Add Stop Button -->
-                            <div class="w-[20%] ml-1 rounded border border-formBorder p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-sm">+ <br>Add Stop</p>
-                                </button>
-                            </div>
                         </div>
-                        <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
 
-                        </div>
 
                         <div class="grid grid-cols-1 gap-4 ">
                             <div class="relative">
@@ -356,9 +375,11 @@
 
                 <div id="form-container-one-way" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
-                        <div class="w-full flex items-center ">
+                        <!-- <div class="w-full flex items-center "> -->
+                        <div class="grid grid-rows-2 grid-cols-12 gap-4 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
-                            <div class="w-[35%] ">
+                            <!-- <div class="w-[35%] "> -->
+                            <div class="col-span-10 lg:col-span-11 ">
                                 <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -410,15 +431,39 @@
                             </div>
 
                             <!-- Switch Button -->
-                            <div class="w-[10%] flex justify-center ">
+                            <!-- <div class="w-[10%] flex justify-center "> -->
+                            <div class="grid col-span-2  justify-center items-center lg:col-span-1 lg:justify-center ">
                                 <button type="button" onclick="swapValues('oneway-pickup', 'oneway-dropoff')"
                                     class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
                                     <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap">
                                 </button>
                             </div>
 
+                            <!-- Add Stop Button -->
+                            <!-- <div class="w-[20%] ml-1 rounded border border-formBorder p-0"> -->
+                            <div class="col-span-3 rounded border border-formBorder lg:p-0">
+                                <button type="button" id="oneway-add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
+                                    <p class="text-sm">+ <br>Add Stop</p>
+                                </button>
+                            </div>
+
+                            <div id="oneway-stop-container"
+                                class="hidden col-span-9  lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+
+                                        <input type="text" id="oneway-stop" placeholder="Add Stop"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Drop-Off Field -->
-                            <div class="w-[35%] relative rounded border border-formBorder p-0">
+                            <!-- <div class="w-[35%] relative rounded border border-formBorder p-0"> -->
+                            <div id="oneway-dropff"
+                                class="col-span-9  lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -468,17 +513,11 @@
                                 </div>
                             </div>
 
-                            <!-- Add Stop Button -->
-                            <div class="w-[20%] ml-1 rounded border border-formBorder p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-sm">+ <br>Add Stop</p>
-                                </button>
 
-                            </div>
                         </div>
 
-                        <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
-                        </div>
+                        <!-- <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
+                        </div> -->
                         <!-- Pick-Up Date -->
                         <div class="grid grid-cols-1 gap-4">
                             <div class="relative">
@@ -513,9 +552,11 @@
 
                 <div id="form-container-hourly" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
-                        <div class="w-full flex items-center ">
+                        <!-- <div class="w-full flex items-center "> -->
+                        <div class="grid grid-rows-2 grid-cols-12 gap-4 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
-                            <div class="w-[35%] ">
+                            <!-- <div class="w-[35%] "> -->
+                            <div class="col-span-10 lg:col-span-11">
                                 <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -567,15 +608,39 @@
                             </div>
 
                             <!-- Switch Button -->
-                            <div class="w-[10%] flex justify-center ">
+                            <!-- <div class="w-[10%] flex justify-center "> -->
+                            <div class="grid col-span-2  justify-center items-center lg:col-span-1 lg:justify-center">
                                 <button type="button" onclick="swapValues('hourly-pickup', 'hourly-dropoff')"
                                     class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
                                     <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap">
                                 </button>
                             </div>
 
+                            <!-- Add Stop Button -->
+                            <!-- <div class="w-[20%] ml-1 rounded border border-formBorder p-0"> -->
+                            <div class="col-span-3 rounded border border-formBorder lg:p-0">
+                                <button type="button" id="hourly-add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
+                                    <p class="text-sm">+ <br>Add Stop</p>
+                                </button>
+                            </div>
+
+                            <div id="hourly-stop-container"
+                                class="hidden col-span-9  lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+
+                                        <input type="text" id="hourly-stop" placeholder="Add Stop"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Drop-Off Field -->
-                            <div class="w-[35%] relative rounded border border-formBorder p-0">
+                            <!-- <div class="w-[35%] relative rounded border border-formBorder p-0"> -->
+                            <div id="hourly-dropff"
+                                class="col-span-9  lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -625,15 +690,10 @@
                                 </div>
                             </div>
 
-                            <!-- Add Stop Button -->
-                            <div class="w-[20%] ml-1 rounded border border-formBorder p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-sm">+ <br>Add Stop</p>
-                                </button>
-                            </div>
+
                         </div>
 
-                        <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
+                        <div id="hourly-stop-container" class="grid grid-cols-1 gap-4 hidden">
                         </div>
 
 
@@ -704,7 +764,7 @@
                         </div>
 
 
-                        <div class="grid grid-cols-12 gap-2 items-center">
+                        <div class="grid grid-cols-12 gap-4 items-center">
                             <!-- Pick-Up Location Field -->
                             <div class="lg:col-span-10 col-span-9 relative">
                                 <div class="relative">
@@ -760,9 +820,22 @@
                             </div>
 
                             <div class="lg:col-span-2 col-span-3 rounded border border-formBorder p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
+                                <button type="button" id="airport-add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
                                     <p class="text-sm">+ <br>Add Stop</p>
                                 </button>
+                            </div>
+
+                            <div id="airport-stop-container"
+                                class="hidden col-span-12  lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+
+                                        <input type="text" id="airport-stop" placeholder="Add Stop"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
