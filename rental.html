@@ -131,7 +131,7 @@
     </nav>
 
     <div
-        class="hidden md:hidden lg:flex lg:justify-center lg:fixed lg:top-28 lg:left-0 lg:w-full lg:h-[100px] lg:z-30 lg:px-6  lg:border-b-2 lg:shadow-sm">
+        class="hidden md:hidden bg-white lg:flex lg:justify-center lg:fixed lg:top-28 lg:left-0 lg:w-full lg:h-[100px] lg:z-30 lg:px-6  lg:border-b-2 lg:shadow-sm">
         <div class="grid grid-cols-12 w-full justify-between items-center">
             <div class="col-span-3">
                 <h2 class=" font-bold text-2xl font[700] text-[#1A1B20]">Kathmandu - Pokhara</h2>
@@ -174,7 +174,7 @@
 
     <div class="flex">
         <aside
-            class="hidden md:hidden lg:flex lg:flex-col lg:fixed lg:top-[212px] lg:left-0 lg:h-[calc(100vh-212px)] lg:w-[350px]  text-black  lg:z-30 p-4 overflow-auto scrollbar-hide">
+            class="hidden md:hidden lg:flex lg:flex-col lg:absolute lg:top-[212px] lg:left-0 lg:h-[calc(100vh-212px)] lg:w-[350px]  text-black  lg:z-30 p-4 overflow-y-auto scrollbar-hide">
 
             <div class="flex items-center h-[100px] bg-white justify-between rounded border border-[#C4C6D0]">
                 <div id="map-container"
@@ -256,7 +256,8 @@
 
 
 
-            <div class="p-4 h-full mt-4  overflow-auto scrollbar-hide border  border-[#C4C6D0]">
+            <!-- <div class="p-4 h-full mt-4  overflow-auto scrollbar-hide border  border-[#C4C6D0]"> -->
+            <div class="p-4 h-screen mt-4 scrollbar-hide border  border-[#C4C6D0]">
                 <h3 class="text-xl leading-4 text-black font-semibold mb-4">Filters</h3>
 
                 <div class="mb-4">
@@ -459,10 +460,11 @@
 
 
         <!-- Main content -->
+        <!-- <main class="flex flex-col mt-20 lg:mt-0 min-h-screen lg:fixed lg:top-[212px] lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] px-4 lg:py-4 lg:px-8 overflow-y-auto scrollbar-hide"> -->
         <main
-            class="flex flex-col mt-20 lg:mt-0 min-h-screen lg:fixed lg:top-[212px] lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] lg:py-4 lg:px-8 overflow-y-auto scrollbar-hide">
+            class="flex flex-col mt-20 lg:mt-0 min-h-screen lg:absolute lg:top-[212px] lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] px-4 lg:py-4 lg:px-8 overflow-y-auto scrollbar-hide">
             <div class=" flex w-full lg:w-full overflow-auto scrollbar-hide  lg:min-h-32 lg:max-w-full lg:grid lg:grid-cols-12 lg:gap-4"
-            onwheel="scrollHorizontally(event)">
+                onwheel="scrollHorizontally(event)">
                 <!-- Card 1 -->
                 <div
                     class="bg-[#FFF2D6] min-w-full lg:col-span-4 lg:h-28 p-4 rounded-sm flex items-center justify-between">
@@ -510,14 +512,14 @@
                 </div>
             </div>
 
-            <div class="flex flex-col w-full  lg:flex lg:flex-col lg:w-full lg:h-full mb-60 overflow-auto scrollbar-hide"
-               >
+            <!-- <div class="flex flex-col w-full  lg:flex lg:flex-col lg:w-full lg:h-full mb-60 overflow-auto scrollbar-hide"> -->
+            <div
+                class="flex flex-col w-full  lg:flex lg:flex-col lg:w-full lg:h-full mb-60 ">
                 <!-- Card 1 -->
                 <div class=" rounded-md border border-[#BFC8CC]  h-[400px] lg:h-fit  mb-6 border-b" id="card1">
                     <div
                         class="flex flex-col lg:flex lg:flex-row border-b-[1px] w-full max-h-[200px] lg:max-h-[270px] border-[#BFC8CC] ">
-                        <div
-                            class="relative flex flex-col w-full  lg:flex lg:flex-row lg:w-[50%] lg:justify-center ">
+                        <div class="relative flex flex-col w-full  lg:flex lg:flex-row lg:w-[50%] lg:justify-center ">
                             <!-- Main Image -->
                             <div class="relative min-w-full lg:max-w-full">
                                 <img id="main-image-card1" src="images/rental_vehicle_1.jpeg" alt="Main Photo"
@@ -766,8 +768,7 @@
                 <div class=" rounded-md border border-[#BFC8CC] h-[400px] lg:h-fit  mb-6 border-b" id="card2">
                     <div
                         class="flex flex-col lg:flex lg:flex-row border-b-[1px] max-h-[200px] lg:max-h-[270px] border-[#BFC8CC] ">
-                        <div
-                            class="relative flex flex-col w-full  lg:flex lg:flex-row lg:w-[50%] lg:justify-center  ">
+                        <div class="relative flex flex-col w-full  lg:flex lg:flex-row lg:w-[50%] lg:justify-center  ">
                             <!-- Main Image -->
                             <div class="relative w-full lg:max-w-full">
                                 <img id="main-image-card2" src="images/rental_vehicle_1.jpeg" alt="Main Photo"
