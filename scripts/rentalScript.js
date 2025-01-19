@@ -9,7 +9,7 @@ function scrollHorizontally(event) {
 function scrollVertically(event) {
     event.preventDefault();
     const container = event.currentTarget;
-    container.scrollLeft += event.deltaY ;
+    container.scrollLeft += event.deltaY;
 }
 
 
@@ -166,5 +166,6 @@ function initializeTabs(cardId) {
 // Initialize tabs for each card dynamically
 initializeTabs('card1');
 initializeTabs('card2'); // Add more cards as needed
+
 
 
