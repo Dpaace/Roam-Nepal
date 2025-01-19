@@ -51,29 +51,99 @@ menuToggle.addEventListener("click", () => {
 // Get the button and the container
 const addStopButton = document.getElementById("add-stop-btn");
 const stopContainer = document.getElementById("stop-container");
+const roundDropoff = document.getElementById("round-dropff");
+
+const onewayAddStopButton = document.getElementById("oneway-add-stop-btn");
+const onewayStopContainer = document.getElementById("oneway-stop-container");
+const onewayDropoff = document.getElementById("oneway-dropff");
+
+
+const hourlyAddStopButton = document.getElementById("hourly-add-stop-btn");
+const hourlyStopContainer = document.getElementById("hourly-stop-container");
+const hourlyDropoff = document.getElementById("hourly-dropff");
+
+const airportAddStopButton = document.getElementById("airport-add-stop-btn");
+const airportStopContainer = document.getElementById("airport-stop-container");
+
+airportAddStopButton.addEventListener("click", () => {
+    // Toggle the visibility of the menu
+    airportStopContainer.classList.toggle("hidden");
+});
+
+
+
+
+// addStopButton.addEventListener("click", () => {
+//     // Toggle the visibility of the menu
+//     stopContainer.classList.toggle("hidden");
+
+//     if (roundDropoff.classList.contains("col-span-9")) {
+//         roundDropoff.classList.remove("col-span-9");
+//         roundDropoff.classList.add("col-span-12");
+//     } else {
+//         roundDropoff.classList.remove("col-span-12");
+//         roundDropoff.classList.add("col-span-9");
+//     }
+
+// });
+
+// Function to toggle classes dynamically
+function toggleDropoffClass(dropoffElement) {
+    if (dropoffElement.classList.contains("col-span-9")) {
+        dropoffElement.classList.remove("col-span-9");
+        dropoffElement.classList.add("col-span-12");
+    } else {
+        dropoffElement.classList.remove("col-span-12");
+        dropoffElement.classList.add("col-span-9");
+    }
+}
+
+addStopButton.addEventListener("click", () => {
+    // Toggle the visibility of the menu
+    stopContainer.classList.toggle("hidden");
+    // Toggle the classes for roundDropoff
+    toggleDropoffClass(roundDropoff);
+});
+
+onewayAddStopButton.addEventListener("click", () => {
+    // Toggle the visibility of the menu
+    onewayStopContainer.classList.toggle("hidden");
+    // Toggle the classes for onewayDropoff
+    toggleDropoffClass(onewayDropoff);
+});
+
+
+hourlyAddStopButton.addEventListener("click", () => {
+    // Toggle the visibility of the menu
+    hourlyStopContainer.classList.toggle("hidden");
+    // Toggle the classes for onewayDropoff
+    toggleDropoffClass(hourlyDropoff);
+});
+
+
 
 // Set the maximum number of inputs allowed
 let maxInputs = 1;
 
-addStopButton.addEventListener("click", (event) => {
-    // Prevent default button behavior
-    event.preventDefault();
+// addStopButton.addEventListener("click", (event) => {
+//     // Prevent default button behavior
+//     event.preventDefault();
 
-    stopContainer.classList.remove('hidden')
-    // Check the current number of inputs in the container
-    const existingInputs = stopContainer.querySelectorAll("input").length;
+//     stopContainer.classList.remove('hidden')
+//     // Check the current number of inputs in the container
+//     const existingInputs = stopContainer.querySelectorAll("input").length;
 
-    // Add an input field only if the current number is less than the allowed maximum
-    if (existingInputs < maxInputs) {
-        const newInput = document.createElement("input");
-        newInput.type = "text";
-        newInput.placeholder = "Enter stop";
-        newInput.className = "w-full border border-black rounded px-4 py-2";
+//     // Add an input field only if the current number is less than the allowed maximum
+//     if (existingInputs < maxInputs) {
+//         const newInput = document.createElement("input");
+//         newInput.type = "text";
+//         newInput.placeholder = "Enter stop";
+//         newInput.className = "col-span-12 border border-black rounded px-4 py-2";
 
-        // Append the new input field to the container
-        stopContainer.appendChild(newInput);
-    }
-});
+//         // Append the new input field to the container
+//         stopContainer.appendChild(newInput);
+//     }
+// });
 
 
 
@@ -89,8 +159,8 @@ const containers = {
 tabs.forEach(tab => {
     tab.addEventListener('click', (event) => {
         // Update tab styles
-        tabs.forEach(t => t.classList.remove('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#03677E]'));
-        event.target.classList.add('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#03677E]');
+        tabs.forEach(t => t.classList.remove('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#0B3C49]'));
+        event.target.classList.add('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#0B3C49]');
 
         // Show the corresponding container and hide others
         Object.keys(containers).forEach(key => {

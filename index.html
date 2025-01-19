@@ -24,6 +24,7 @@
                         txtPrimary: '#03677E',
                         txtPlaceholder: '#49454F',
                         formText: '#0B3C49',
+                        formBorder: '#79747E',
                         brcolor: '#03677E',
                         btnbg: '#03677E',
                         btnOutline: '#03677E',
@@ -81,9 +82,10 @@
 
             <div id="menu"
                 class="hidden  flex flex-row justify-end items-end lg:flex lg:flex-col lg:items-end lg:w-2/3">
+
                 <div class="hidden  md:hidden lg:flex items-center justify-center gap-9 text-sm">
                     <span class="flex items-center space-x-1">
-                        <img class="w-3 h-3" src="images/svg/dot.svg" alt="dot">
+                        <img class="w-[14px] h-3" src="images/svg/dot.svg" alt="dot">
                         <span class="text-[12px] leading-4 font-normal">NPR</span>
                     </span>
                     <span class="flex items-center space-x-1">
@@ -91,15 +93,15 @@
                         <span class="text-[12px] leading-4 font-normal">B.S</span>
                     </span>
                     <span class="flex items-center space-x-1">
-                        <img class="w-3 h-3" src="images/svg/us.svg" alt="us">
+                        <img class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="us">
                         <span class="text-[12px] leading-4 font-normal">English</span>
                     </span>
                     <span class="flex items-center space-x-1">
-                        <img class="w-3 h-3" src="images/svg/help.svg" alt="bus">
+                        <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="bus">
                         <span class="text-[12px] leading-4 font-normal">Help</span>
                     </span>
                     <button class="hover:text-teal-300 flex items-center space-x-1 ">
-                        <img class="w-3 h-3" src="images/svg/ticket.svg" alt="tickets">
+                        <img class="w-5 h-5" src="images/svg/ticket.svg" alt="tickets">
                         <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
                     </button>
                     <div class="flex items-center space-x-1">
@@ -109,12 +111,12 @@
                 </div>
 
                 <div id="bottom-nav"
-                    class="hidden flex flex-col justify-center items-center mt-6 p-5 lg:p-0 gap-5 w-full lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 text-base leading-4 lg:mt-5 font-semibold">
+                    class="hidden flex  flex-col justify-center items-start mt-6 p-5 lg:p-0 gap-5 w-2/3 lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 text-base leading-4 lg:mt-5 font-semibold">
                     <a href="#" class="hover:text-teal-300 flex items-center space-x-2">
                         <span><img class="w-5 h-5" src="images/svg/bus.svg" alt="bus"></span>
                         <span>Bus Ticket</span>
                     </a>
-                    <a href="#" class="hover:text-teal-300 flex items-center space-x-2 cus-active">
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-2 cus-active w-fit">
                         <span><img class="w-5 h-5" src="images/svg/rental.svg" alt="rental"></span>
                         <span>Rental</span>
                     </a>
@@ -142,16 +144,19 @@
 
 
 
-    <div class="flex items-center lg:items-end bg-cover bg-center h-screen lg:h-lvh"
+    <div class="flex items-center  lg:items-end bg-cover bg-center h-screen lg:h-lvh overflow-visible"
         style="background-image: url('images/home1.jpg');">
-        <div class="lg:min-h-[75%] min-h-[70%] container flex flex-col lg:max-w-full  lg:items-start lg:px-28 px-5">
-            <h1 class="hidden px-5 lg:px-0 text-white text-xl lg:text-6xl">Affordable and
-                Reliable Vehicle Rental
+        <div class="lg:min-h-[85%] min-h-[70%] container flex flex-col lg:max-w-full  lg:items-start lg:px-28 px-5">
+            <h1 class="hidden lg:flex px-5 lg:px-0 text-white text-sm lg:font-bold lg:text-[40px] lg:leading-[70px]">
+                Explore Nepal Like Never Before.
+            </h1>
+            <h1 class="hidden lg:flex px-5 lg:px-0 text-white text-sm lg:font-normal lg:text-2xl lg:leading-8">
+                Reliable bus journeys at unbelievable prices.
             </h1>
             <div class="bg-white container px-1 lg:px-0 mt-5 lg:w-fit z-40 border-b">
-                <div class="bg-white flex justify-between text-[12px]  lg:text-xl font-normal leading-6">
+                <div class="bg-white flex justify-between text-[12px]  lg:text-[16px] font-normal leading-6">
                     <button id="round-trip-tab"
-                        class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100 text-formText font-semibold border-b-4 border-brcolor whitespace-nowrap">
+                        class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100  font-semibold border-b-4 border-[#0B3C49] whitespace-nowrap">
                         Round Trip
                     </button>
                     <button id="one-way-tab"
@@ -173,10 +178,12 @@
             <div class="bg-white container flex  px-0 lg:px-0 lg:min-h-fit lg:min-w-full">
                 <div id="form-container-round-trip" class="w-full lg:w-1/2 p-4">
                     <form class="space-y-4 ">
-                        <div class="w-full flex items-center ">
+                        <!-- <div class="grid grid-rows-2 grid-cols-12 gap-2 lg:w-full lg:flex lg:items-center "> -->
+                        <div class="grid grid-rows-2 grid-cols-12 gap-4 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
-                            <div class="w-[35%] ">
-                                <div class="relative rounded border border-[#79747E] p-0">
+                            <!-- <div class="col-span-10 lg:w-[35%] "> -->
+                            <div class="col-span-10 lg:col-span-11 ">
+                                <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
@@ -189,7 +196,7 @@
 
                                     <!-- Dropdown -->
                                     <ul id="pickup-options"
-                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('pickup', 'Current Location')">
                                             <span class="flex items-center gap-2">
@@ -226,15 +233,41 @@
                             </div>
 
                             <!-- Switch Button -->
-                            <div class="w-[10%] flex justify-center ">
+                            <!-- <div class="grid col-span-2  justify-center items-center lg:w-[15%] lg:flex lg:justify-center "> -->
+                            <div class="grid col-span-2  justify-center items-center lg:col-span-1 lg:justify-center ">
                                 <button type="button" onclick="swapValues('pickup', 'dropoff')"
-                                    class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center">
-                                    ⇄
+                                    class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
+                                    <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap">
                                 </button>
                             </div>
 
+                            <!-- Add Stop -->
+                            <!-- <div class="col-span-3 lg:w-[20%] lg:ml-1 rounded border border-formBorder lg:p-0"> -->
+                            <div class="col-span-3 rounded border border-formBorder lg:p-0">
+                                <button type="button" id="add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
+                                    <p class="text-sm">+ <br>Add Stop</p>
+                                </button>
+                            </div>
+
+                            <!-- Stop Field -->
+                            <!-- <div id="stop-container" class="hidden col-span-9 lg:w-[35%] lg:relative rounded border border-formBorder lg:p-0"> -->
+                            <div id="stop-container"
+                                class="hidden col-span-9  lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+
+                                        <input type="text" id="stop" placeholder="Add Stop"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Drop-Off Field -->
-                            <div class="w-[35%] relative rounded border border-[#79747E] p-0">
+                            <!-- <div id="round-dropff" class="col-span-9 lg:w-[35%] lg:relative rounded border border-formBorder lg:p-0"> -->
+                            <div id="round-dropff"
+                                class="col-span-9  lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -248,7 +281,7 @@
 
                                     <!-- Dropdown -->
                                     <ul id="dropoff-options"
-                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('dropoff', 'Current Location')">
                                             <span class="flex items-center gap-2">
@@ -283,21 +316,12 @@
                                     </ul>
                                 </div>
                             </div>
-
-                            <!-- Add Stop Button -->
-                            <div class="w-[20%] ml-1 rounded border border-[#79747E] p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-sm">+ <br>Add Stop</p>
-                                </button>
-                            </div>
                         </div>
-                        <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
 
-                        </div>
 
                         <div class="grid grid-cols-1 gap-4 ">
                             <div class="relative">
-                                <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                                <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
                                     <input type="text" id="pickup-date"
                                         class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
@@ -305,7 +329,7 @@
                                 </div>
                             </div>
                             <div class="relative">
-                                <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                                <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
                                     <input type="text" id="dropoff-date"
                                         class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
@@ -315,7 +339,7 @@
                         </div>
 
                         <div class="relative">
-                            <div class="flex items-center  px-2 py-2 border border-[#79747E] rounded">
+                            <div class="flex items-center  px-2 py-2 border border-formBorder rounded">
                                 <img class="w-5 h-5 mr-2" src="images/svg/vehicle.svg" alt="vehicle" />
                                 <select id="vehicle-type"
                                     class="w-full bg-transparent outline-none text-sm text-txtPlaceholder ">
@@ -329,7 +353,7 @@
 
 
                         <div class="relative">
-                            <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                            <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                 <img class="w-5 h-5 mr-2" src="images/svg/person.svg" alt="passengers" />
                                 <input type="number" min="0" id="pax"
                                     class="w-full bg-transparent outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
@@ -343,7 +367,7 @@
                             <label for="include-driver" class="text-sm">Include a driver</label>
                         </div>
 
-                        <button type="submit" class="w-full bg-[#0B3C49] text-white py-2 rounded hover:bg-[#0a1e24]">
+                        <button type="submit" class="w-full bg-bgButton text-white py-2 rounded hover:bg-[#0a1e24]">
                             Search Vehicles
                         </button>
                     </form>
@@ -351,10 +375,12 @@
 
                 <div id="form-container-one-way" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
-                        <div class="w-full flex items-center ">
+                        <!-- <div class="w-full flex items-center "> -->
+                        <div class="grid grid-rows-2 grid-cols-12 gap-4 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
-                            <div class="w-[35%] ">
-                                <div class="relative rounded border border-[#79747E] p-0">
+                            <!-- <div class="w-[35%] "> -->
+                            <div class="col-span-10 lg:col-span-11 ">
+                                <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
@@ -368,7 +394,7 @@
 
                                     <!-- Dropdown -->
                                     <ul id="oneway-pickup-options"
-                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('oneway-pickup', 'Current Location')">
                                             <span class="flex items-center gap-2">
@@ -405,15 +431,39 @@
                             </div>
 
                             <!-- Switch Button -->
-                            <div class="w-[10%] flex justify-center ">
+                            <!-- <div class="w-[10%] flex justify-center "> -->
+                            <div class="grid col-span-2  justify-center items-center lg:col-span-1 lg:justify-center ">
                                 <button type="button" onclick="swapValues('oneway-pickup', 'oneway-dropoff')"
-                                    class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center">
-                                    ⇄
+                                    class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
+                                    <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap">
                                 </button>
                             </div>
 
+                            <!-- Add Stop Button -->
+                            <!-- <div class="w-[20%] ml-1 rounded border border-formBorder p-0"> -->
+                            <div class="col-span-3 rounded border border-formBorder lg:p-0">
+                                <button type="button" id="oneway-add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
+                                    <p class="text-sm">+ <br>Add Stop</p>
+                                </button>
+                            </div>
+
+                            <div id="oneway-stop-container"
+                                class="hidden col-span-9  lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+
+                                        <input type="text" id="oneway-stop" placeholder="Add Stop"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Drop-Off Field -->
-                            <div class="w-[35%] relative rounded border border-[#79747E] p-0">
+                            <!-- <div class="w-[35%] relative rounded border border-formBorder p-0"> -->
+                            <div id="oneway-dropff"
+                                class="col-span-9  lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -427,7 +477,7 @@
 
                                     <!-- Dropdown -->
                                     <ul id="oneway-dropoff-options"
-                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('oneway-dropoff', 'Current Location')">
                                             <span class="flex items-center gap-2">
@@ -463,20 +513,15 @@
                                 </div>
                             </div>
 
-                            <!-- Add Stop Button -->
-                            <div class="w-[20%] ml-1 rounded border border-[#79747E] p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-formText gap-0 p-0">
-                                    <p class="text-sm">+ <br>Add Stop</p>
-                                </button>
-                            </div>
+
                         </div>
 
-                        <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
-                        </div>
+                        <!-- <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
+                        </div> -->
                         <!-- Pick-Up Date -->
                         <div class="grid grid-cols-1 gap-4">
                             <div class="relative">
-                                <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                                <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
 
                                     <input type="text" id="oneway-pickup-date"
@@ -488,7 +533,7 @@
 
                         <!-- Vehicle Type -->
                         <div class="relative">
-                            <div class="flex items-center px-2 py-2 border border-[#79747E] rounded">
+                            <div class="flex items-center px-2 py-2 border border-formBorder rounded">
                                 <img class="w-5 h-5 mr-2" src="images/svg/vehicle.svg" alt="vehicle" />
                                 <select id="oneway-vehicle-typ" class="w-full bg-transparent outline-none">
                                     <option value="">Vehicle Type</option>
@@ -499,7 +544,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-[#0B3C49] text-white py-2 rounded hover:bg-[#0a1e24]">
+                        <button type="submit" class="w-full bg-bgButton text-white py-2 rounded hover:bg-[#0a1e24]">
                             Search Vehicles
                         </button>
                     </form>
@@ -507,10 +552,12 @@
 
                 <div id="form-container-hourly" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
-                        <div class="w-full flex items-center ">
+                        <!-- <div class="w-full flex items-center "> -->
+                        <div class="grid grid-rows-2 grid-cols-12 gap-4 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
-                            <div class="w-[35%] ">
-                                <div class="relative rounded border border-[#79747E] p-0">
+                            <!-- <div class="w-[35%] "> -->
+                            <div class="col-span-10 lg:col-span-11">
+                                <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
@@ -524,7 +571,7 @@
 
                                     <!-- Dropdown -->
                                     <ul id="hourly-pickup-options"
-                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('hourly-pickup', 'Current Location')">
                                             <span class="flex items-center gap-2">
@@ -561,15 +608,39 @@
                             </div>
 
                             <!-- Switch Button -->
-                            <div class="w-[10%] flex justify-center ">
+                            <!-- <div class="w-[10%] flex justify-center "> -->
+                            <div class="grid col-span-2  justify-center items-center lg:col-span-1 lg:justify-center">
                                 <button type="button" onclick="swapValues('hourly-pickup', 'hourly-dropoff')"
-                                    class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center">
-                                    ⇄
+                                    class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
+                                    <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap">
                                 </button>
                             </div>
 
+                            <!-- Add Stop Button -->
+                            <!-- <div class="w-[20%] ml-1 rounded border border-formBorder p-0"> -->
+                            <div class="col-span-3 rounded border border-formBorder lg:p-0">
+                                <button type="button" id="hourly-add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
+                                    <p class="text-sm">+ <br>Add Stop</p>
+                                </button>
+                            </div>
+
+                            <div id="hourly-stop-container"
+                                class="hidden col-span-9  lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+
+                                        <input type="text" id="hourly-stop" placeholder="Add Stop"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Drop-Off Field -->
-                            <div class="w-[35%] relative rounded border border-[#79747E] p-0">
+                            <!-- <div class="w-[35%] relative rounded border border-formBorder p-0"> -->
+                            <div id="hourly-dropff"
+                                class="col-span-9  lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -583,7 +654,7 @@
 
                                     <!-- Dropdown -->
                                     <ul id="hourly-dropoff-options"
-                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('hourly-dropoff', 'Current Location')">
                                             <span class="flex items-center gap-2">
@@ -619,21 +690,16 @@
                                 </div>
                             </div>
 
-                            <!-- Add Stop Button -->
-                            <div class="w-[20%] ml-1 rounded border border-[#79747E] p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-formText gap-0 p-0">
-                                    <p class="text-sm">+ <br>Add Stop</p>
-                                </button>
-                            </div>
+
                         </div>
 
-                        <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
+                        <div id="hourly-stop-container" class="grid grid-cols-1 gap-4 hidden">
                         </div>
 
 
                         <!-- Number of Hours -->
                         <div class="relative">
-                            <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                            <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                 <img class="w-5 h-5 text-black mr-2" src="images/svg/num-hours.svg" alt="time" />
                                 <input type="number" id="hourly-num-hours" min="0"
                                     class="w-full bg-transparent outline-none placeholder:text-sm"
@@ -644,7 +710,7 @@
                         <!-- Pick-Up Date -->
                         <div class="grid grid-cols-1 gap-4">
                             <div class="relative">
-                                <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                                <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
 
                                     <input type="text" id="hourly-pickup-date"
@@ -656,7 +722,7 @@
 
                         <!-- Vehicle Type -->
                         <div class="relative">
-                            <div class="flex items-center px-2 py-2 border border-[#79747E] rounded">
+                            <div class="flex items-center px-2 py-2 border border-formBorder rounded">
                                 <img class="w-5 h-5 mr-2" src="images/svg/vehicle.svg" alt="vehicle" />
                                 <select id="hourly-vehicle-typ" class="w-full bg-transparent outline-none">
                                     <option value="">Vehicle Type</option>
@@ -672,7 +738,7 @@
                             <label for="hourly-include-driver" class="text-sm">Include a driver</label>
                         </div>
 
-                        <button type="submit" class="w-full bg-[#0B3C49] text-white py-2 rounded hover:bg-[#0a1e24]">
+                        <button type="submit" class="w-full bg-bgButton text-white py-2 rounded hover:bg-[#0a1e24]">
                             Search Vehicles
                         </button>
                     </form>
@@ -698,11 +764,11 @@
                         </div>
 
 
-                        <div class="grid grid-cols-12 gap-2 items-center">
+                        <div class="grid grid-cols-12 gap-4 items-center">
                             <!-- Pick-Up Location Field -->
                             <div class="lg:col-span-10 col-span-9 relative">
                                 <div class="relative">
-                                    <div class="relative rounded border border-[#79747E] p-0">
+                                    <div class="relative rounded border border-formBorder p-0">
                                         <!-- Input Field -->
                                         <div class="flex items-center border rounded px-2 py-2">
                                             <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
@@ -716,7 +782,7 @@
 
                                         <!-- Dropdown -->
                                         <ul id="airport-pickup-options"
-                                            class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-[#79747E] p-0">
+                                            class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
                                             <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                                 onclick="selectOption('airport-pickup', 'Current Location')">
                                                 <span class="flex items-center gap-2">
@@ -753,10 +819,23 @@
                                 </div>
                             </div>
 
-                            <div class="lg:col-span-2 col-span-3 rounded border border-[#79747E] p-0">
-                                <button id="add-stop-btn" class="w-full h-full text-formText gap-0 p-0">
+                            <div class="lg:col-span-2 col-span-3 rounded border border-formBorder p-0">
+                                <button type="button" id="airport-add-stop-btn" class="w-full h-full text-txtPlaceholder gap-0 p-0">
                                     <p class="text-sm">+ <br>Add Stop</p>
                                 </button>
+                            </div>
+
+                            <div id="airport-stop-container"
+                                class="hidden col-span-12  lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+
+                                        <input type="text" id="airport-stop" placeholder="Add Stop"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -764,7 +843,7 @@
 
                         <div class="grid grid-cols-1 gap-4">
                             <div class="relative">
-                                <div class="flex items-center border border-[#79747E] rounded px-2 py-2">
+                                <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
 
                                     <input type="text" id="airport-pickup-date"
@@ -776,7 +855,7 @@
 
                         <!-- Vehicle Type -->
                         <div class="relative">
-                            <div class="flex items-center px-2 py-2 border border-[#79747E] rounded">
+                            <div class="flex items-center px-2 py-2 border border-formBorder rounded">
                                 <img class="w-5 h-5 mr-2" src="images/svg/vehicle.svg" alt="vehicle" />
                                 <select id="airport-vehicle-typ" class="w-full bg-transparent outline-none">
                                     <option value="">Vehicle Type</option>
@@ -787,7 +866,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-[#0B3C49] text-white py-2 rounded hover:bg-[#0a1e24]">
+                        <button type="submit" class="w-full bg-bgButton text-white py-2 rounded hover:bg-[#0a1e24]">
                             Search Vehicles
                         </button>
                     </form>
@@ -810,7 +889,7 @@
 
 
     <!-- Continue Where You Left Off Section -->
-    <div class="py-10 mt-10 lg:mt-20 container lg:max-w-full lg:items-center lg:px-28 px-5 ">
+    <div class="py-10 mt-10 my-10 lg:my-[88px] container lg:max-w-full lg:items-center lg:px-28 px-5 ">
         <div class="container lg:min-w-full  ">
 
             <h2 class="text-xl lg:text-[32px] text-black font-[400] leading-10 mb-6">Continue where you left off</h2>
@@ -928,7 +1007,7 @@
 
 
     <!-- Offers and Deals Section -->
-    <div class="bg-white py-5 lg:py-10 container px-5 lg:max-w-full lg:px-28">
+    <div class="bg-white py-5 my-10 lg:my-[88px] lg:py-10 container px-5 lg:max-w-full lg:px-28">
         <div class="container w-full lg:min-w-full mx-auto ">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">Offers and deals</h2>
@@ -1128,10 +1207,11 @@
     </div>
 
     <!-- Testimonials Section -->
-    <div class=" py-5 min-h-[200px]  flex lg:py-10 lg:max-w-full lg:max-h-[280px] lg:px-28 my-5 lg:my-5">
+    <div class=" py-5 min-h-[200px]  flex lg:py-10 lg:max-w-full lg:max-h-[280px] lg:px-28 my-10 lg:my-[88px]">
         <div class="container flex items-center min-h-full w-full lg:min-w-full mx-auto px-6 text-center relative">
             <!-- Testimonial Container -->
-            <div id="testimonial-container" class="flex flex-col justify-center min-h-full lg:max-w-full mx-auto">
+            <div id="testimonial-container"
+                class="flex flex-col justify-center min-h-full max-w-[80%] lg:max-w-[70%] mx-auto">
                 <div class="flex justify-center items-center space-x-4">
                     <span class="text-pink-500 text-4xl font-bold">❝</span>
                     <p class="text-[12px] lg:text-lg font-semibold text-gray-800" id="testimonial-text">
@@ -1163,7 +1243,7 @@
 
 
     <!-- Stories Section -->
-    <div class="container  lg:max-w-full lg:px-28 px-6">
+    <div class="container my-10 lg:my-[88px]  lg:max-w-full lg:px-28 px-6">
         <!-- Title Section -->
         <div class="flex justify-between items-center mb-6 relative">
             <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">Your Stories</h2>
@@ -1261,7 +1341,7 @@
     </div>
 
     <!-- Blog Section -->
-    <div class="container lg:max-w-full lg:px-28 px-6 py-10 mt-10">
+    <div class="container my-10 lg:my-[88px] lg:max-w-full lg:px-28 px-6 py-10 ">
         <!-- Title and Explore More -->
         <div class="flex justify-between items-center mb-6">
             <h2 class="hidden md:flex lg:flex font-[400] lg:text-[32px] text-black leading-10">Travel tips, stories and
@@ -1274,27 +1354,27 @@
         <!-- Filter Buttons -->
         <div class="flex flex-wrap gap-2 lg:gap-4 mb-8">
             <button
-                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
+                class="p-1 px-3 lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm  lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 All
             </button>
             <button
-                class=" p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class=" p-1 px-3 lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Bus tickets
             </button>
             <button
-                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-1 px-3 lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Hotels
             </button>
             <button
-                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-1 px-3 lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Tours
             </button>
             <button
-                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-1 px-3 lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Reservations
             </button>
             <button
-                class="p-4 flex items-center font-normal text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
+                class="p-1 px-3 lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 Flights
             </button>
         </div>
@@ -1306,7 +1386,7 @@
                 <div class="col-span-2 max-h-[330px] relative rounded-sm overflow-hidden ">
                     <img src="images/blog-1.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
                         <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Top 10 Things to Do in
                             Pokhara: A Complete Guide for
                             Travelers</h3>
@@ -1318,7 +1398,7 @@
                 <div class="col-span-1 relative rounded-sm overflow-hidden ">
                     <img src="images/blog-2.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
                         <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Kathmandu to Pokhara trip
                             travel guide</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
@@ -1332,7 +1412,7 @@
                 <div class="relative rounded-sm overflow-hidden ">
                     <img src="images/blog-3.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
                         <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Top 10 Things to Do in
                             Pokhara: A Complete Guide for
                             Travelers</h3>
@@ -1344,7 +1424,7 @@
                 <div class="relative rounded-sm overflow-hidden ">
                     <img src="images/blog-4.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
                         <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">तिहार आयो, बससेवाले
                             DISCOUNT ल्यायो !</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
@@ -1352,10 +1432,10 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="relative max-h-[130px] lg:max-h-full rounded-sm overflow-hidden ">
+                <div class="hidden lg:flex relative max-h-[130px] lg:max-h-full rounded-sm overflow-hidden ">
                     <img src="images/blog-5.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                        <p class="text-sm lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
                         <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">बससेवालले ल्यायो दशैँको
                             विशेष छुट</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
@@ -1366,13 +1446,9 @@
     </div>
 
 
-
-
-
-
     <!-- Mobile apps -->
 
-    <div class="bg-white py-10 lg:max-w-full lg:px-28">
+    <div class="bg-white my-10 lg:my-[88px] py-10 lg:max-w-full lg:px-28">
         <div
             class="bg-[#3B5BDB] w-full lg:max-w-full mx-auto px-6 pt-5 lg:pt-10 flex flex-col lg:flex-col lg:items-center gap-8">
             <!-- Text Section -->
