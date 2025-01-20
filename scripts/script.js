@@ -50,8 +50,16 @@ menuToggle.addEventListener("click", () => {
 
 // Get the button and the container
 const addStopButton = document.getElementById("add-stop-btn");
-const stopContainer = document.getElementById("stop-container");
-const roundDropoff = document.getElementById("round-dropff");
+const stopContainer1 = document.getElementById("stop-container-1");
+const stopContainer2 = document.getElementById("stop-container-2");
+const roundPickup = document.getElementById("round-pickup");
+const roundSwitch = document.getElementById("round-switch");
+const roundStop1 = document.getElementById("round-stop-1");
+const roundStop2 = document.getElementById("round-stop-2");
+const cross1 = document.getElementById("cross-container-1");
+const cross2 = document.getElementById("cross-container-2");
+
+
 
 const onewayAddStopButton = document.getElementById("oneway-add-stop-btn");
 const onewayStopContainer = document.getElementById("oneway-stop-container");
@@ -71,45 +79,90 @@ airportAddStopButton.addEventListener("click", () => {
 });
 
 
-
+// Function to toggle classes dynamically
+// function togglePickupClass(pickupElement) {
+//     if (pickupElement.classList.contains("col-span-10")) {
+//         pickupElement.classList.remove("col-span-10");
+//         pickupElement.classList.add("col-span-12");
+//     } else {
+//         pickupElement.classList.remove("col-span-12");
+//         pickupElement.classList.add("col-span-10");
+//     }
+// }
 
 // addStopButton.addEventListener("click", () => {
 //     // Toggle the visibility of the menu
 //     stopContainer.classList.toggle("hidden");
-
-//     if (roundDropoff.classList.contains("col-span-9")) {
-//         roundDropoff.classList.remove("col-span-9");
-//         roundDropoff.classList.add("col-span-12");
-//     } else {
-//         roundDropoff.classList.remove("col-span-12");
-//         roundDropoff.classList.add("col-span-9");
-//     }
-
+//     // Toggle the classes for roundDropoff
+//     togglePickupClass(roundPickup);
+//     roundSwitch.classList.remove('top-[25%]', 'left-3/4');
+//     roundSwitch.classList.add('top-[1%]', 'left-[85%]');
 // });
 
-// Function to toggle classes dynamically
-function toggleDropoffClass(dropoffElement) {
-    if (dropoffElement.classList.contains("col-span-9")) {
-        dropoffElement.classList.remove("col-span-9");
-        dropoffElement.classList.add("col-span-12");
+function togglePickupClass(pickupElement) {
+    if (pickupElement.classList.contains("col-span-10")) {
+        pickupElement.classList.remove("col-span-10");
+        pickupElement.classList.add("col-span-12");
+
+        // Update roundSwitch classes when col-span-12 is added
+        roundSwitch.classList.remove('top-[25%]', 'left-[70%]');
+        roundSwitch.classList.add('top-[1%]', 'left-[85%]');
     } else {
-        dropoffElement.classList.remove("col-span-12");
-        dropoffElement.classList.add("col-span-9");
+        pickupElement.classList.remove("col-span-12");
+        pickupElement.classList.add("col-span-10");
+
+        // Reset roundSwitch classes when col-span-12 is removed
+        roundSwitch.classList.remove('top-[1%]', 'left-[85%]');
+        roundSwitch.classList.add('top-[25%]', 'left-[70%]');
     }
 }
 
 addStopButton.addEventListener("click", () => {
     // Toggle the visibility of the menu
-    stopContainer.classList.toggle("hidden");
+    stopContainer1.classList.toggle("hidden");
     // Toggle the classes for roundDropoff
-    toggleDropoffClass(roundDropoff);
+    togglePickupClass(roundPickup);
+    roundStop1.style.display = 'none';
+    roundStop2.classList.toggle("hidden");
 });
+
+roundStop2.addEventListener("click", () => {
+
+    stopContainer1.classList.remove("col-span-10");
+    stopContainer1.classList.add("col-span-12");
+    stopContainer2.classList.toggle("hidden");
+    roundStop2.style.display = 'none';
+    cross1.classList.toggle("hidden");
+    cross2.classList.toggle("hidden");
+});
+
+cross1.addEventListener("click", () => {
+    stopContainer1.classList.remove("col-span-12");
+    stopContainer1.classList.add("col-span-10");
+    stopContainer2.classList.toggle("hidden");
+    roundStop2.style.display = 'block';
+    cross1.classList.toggle("hidden");
+    cross2.classList.toggle("hidden");
+});
+
+cross2.addEventListener("click", () => {
+    stopContainer1.classList.remove("col-span-12");
+    stopContainer1.classList.add("col-span-10");
+    stopContainer2.classList.toggle("hidden");
+    roundStop2.style.display = 'block';
+    cross1.classList.toggle("hidden");
+    cross2.classList.toggle("hidden");
+});
+
+
+
+
 
 onewayAddStopButton.addEventListener("click", () => {
     // Toggle the visibility of the menu
     onewayStopContainer.classList.toggle("hidden");
     // Toggle the classes for onewayDropoff
-    toggleDropoffClass(onewayDropoff);
+    togglePickupClass(onewayDropoff);
 });
 
 
@@ -117,13 +170,13 @@ hourlyAddStopButton.addEventListener("click", () => {
     // Toggle the visibility of the menu
     hourlyStopContainer.classList.toggle("hidden");
     // Toggle the classes for onewayDropoff
-    toggleDropoffClass(hourlyDropoff);
+    togglePickupClass(hourlyDropoff);
 });
 
 
 
 // Set the maximum number of inputs allowed
-let maxInputs = 1;
+let maxInputs = 2;
 
 // addStopButton.addEventListener("click", (event) => {
 //     // Prevent default button behavior
@@ -137,7 +190,7 @@ let maxInputs = 1;
 //     if (existingInputs < maxInputs) {
 //         const newInput = document.createElement("input");
 //         newInput.type = "text";
-//         newInput.placeholder = "Enter stop";
+//         newInput.placeholder = "Enter stop 2";
 //         newInput.className = "col-span-12 border border-black rounded px-4 py-2";
 
 //         // Append the new input field to the container
