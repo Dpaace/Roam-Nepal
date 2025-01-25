@@ -184,7 +184,6 @@
                         <div
                             class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center">
                             <!-- Pick-Up Field -->
-                            <!-- <div class="col-span-10 lg:w-[35%] "> -->
                             <div id="round-pickup" class="col-span-10 ">
                                 <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
@@ -236,8 +235,6 @@
                             </div>
 
                             <!-- Switch Button -->
-                            <!-- <div class="grid col-span-2  justify-center items-center lg:w-[15%] lg:flex lg:justify-center "> -->
-                            <!-- <div class="grid col-span-2  justify-center items-center lg:col-span-1 lg:justify-center "> -->
                             <div id="round-switch" class="absolute top-[25%] left-[70%] z-30 rotate-90">
                                 <button type="button" onclick="swapValues('pickup', 'dropoff')"
                                     class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
@@ -246,7 +243,6 @@
                             </div>
 
                             <!-- Stop Field -->
-                            <!-- <div id="stop-container" class="hidden col-span-9 lg:w-[35%] lg:relative rounded border border-formBorder lg:p-0"> -->
                             <div id="stop-container-1"
                                 class="hidden col-span-10  lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
@@ -295,7 +291,7 @@
 
                             <!-- Drop-Off Field -->
                             <!-- <div id="round-dropff" class="col-span-9 lg:w-[35%] lg:relative rounded border border-formBorder lg:p-0"> -->
-                            <div id="round-dropff" class="col-span-12   rounded border border-formBorder lg:p-0">
+                            <div id="round-dropff" class="col-span-12  rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -348,14 +344,6 @@
 
 
                         <div class="grid grid-cols-1 gap-4 ">
-                            <!-- <div class="relative">
-                                <div class="flex items-center border border-formBorder rounded px-2 py-2">
-                                    <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
-                                    <input type="text" id="pickup-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
-                                        placeholder="Pick-Up Date / Time" />
-                                </div>
-                            </div> -->
                             <div class="relative">
                                 <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
@@ -387,9 +375,6 @@
                                 </select>
                             </div>
                         </div>
-
-
-
 
                         <div class="relative">
                             <div class="flex items-center border border-formBorder rounded px-2 py-2">
@@ -858,7 +843,7 @@
                             </label>
                         </div>
                         <div
-                            class="relative grid grid-cols-12 gap-y-4 gap-x-2 items-center lg:grid-cols-12 lg:items-center">
+                            class="relative grid grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center">
                             <!-- Pick-Up Location Field -->
                             <div id="airport-main-pickup" class="col-span-10">
                                 <div class="relative">
@@ -912,28 +897,6 @@
                                 </div>
                             </div>
 
-
-
-                            <!-- <div class="lg:col-span-2 col-span-3 rounded border border-formBorder p-0">
-                                <button type="button" id="airport-add-stop-btn"
-                                    class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-sm">+ <br>Add Stop</p>
-                                </button>
-                            </div>
-
-                            <div id="airport-stop-container"
-                                class="hidden col-span-12  lg:relative rounded border border-formBorder lg:p-0">
-                                <div class="relative">
-                                    <div class="flex items-center border rounded px-2 py-2">
-                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
-
-                                        <input type="text" id="airport-stop" placeholder="Add Stop"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
-                                    </div>
-                                </div>
-                            </div> -->
-
                             <!-- Stop Container 1 -->
                             <div id="airport-stop-container-1"
                                 class="hidden col-span-10  lg:relative rounded border border-formBorder lg:p-0">
@@ -952,19 +915,19 @@
                             </div>
 
                             <!-- Add Stop Button -->
-                            <!-- <div id="airport-stop-1" class="col-span-2 rounded border border-formBorder bg-red-500 p-0 lg:p-0">
-                                <button type="button" id="airport-add-stop-btn"
-                                    class="w-full h-full text-txtPlaceholder gap-0 p-0 ">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
-                                </button>
-                            </div> -->
-
                             <div id="airport-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="airport-add-stop-btn"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
                                     <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
                                 </button>
                             </div>
+
+                            <!-- <div id="airport-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
+                                <button type="button" id="airport-add-stop-btn"
+                                    class="w-full h-full text-txtPlaceholder gap-0 p-0">
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                </button>
+                            </div> -->
 
                             <div id="airport-stop-container-2"
                                 class="hidden col-span-12  lg:relative rounded border border-formBorder lg:p-0">
