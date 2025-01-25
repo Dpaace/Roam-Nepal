@@ -119,26 +119,8 @@ initializeRangeSlider("pax-range", "tooltip");
 initializeRangeSlider("price-range", "price-tooltip", "Rs.");
 
 
-// Tab Switching Logic for booking cards
-// const tabs = document.querySelectorAll('#tabs li');
-// const tabContents = document.querySelectorAll('.tab-content');
 
-// tabs.forEach(tab => {
-//     tab.addEventListener('click', () => {
-//         // Remove active-tab class from all tabs
-//         tabs.forEach(tab => tab.classList.remove('font-bold', 'active-tab'));
 
-//         // Add active-tab class to the clicked tab
-//         tab.classList.add('font-bold', 'active-tab');
-
-//         // Hide all tab contents
-//         tabContents.forEach(content => content.classList.add('hidden'));
-
-//         // Show the content of the selected tab
-//         const selectedTab = tab.getAttribute('data-tab');
-//         document.getElementById(`${selectedTab}-content`).classList.remove('hidden');
-//     });
-// });
 
 function initializeTabs(cardId) {
     const tabsContainer = document.querySelector(`#${cardId}-tabs`);
@@ -166,6 +148,60 @@ function initializeTabs(cardId) {
 // Initialize tabs for each card dynamically
 initializeTabs('card1');
 initializeTabs('card2'); // Add more cards as needed
+
+
+
+
+
+const navbar = document.getElementById("navbar");
+const stickySection = document.getElementById("sticky-section");
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    // Navbar behavior
+    if (currentScroll > lastScrollTop) {
+        // Scrolling down
+        navbar.style.transform = "translateY(-100%)"; // Hide navbar
+    } else {
+        // Scrolling up
+        navbar.style.transform = "translateY(0)"; // Show navbar
+    }
+
+    lastScrollTop = currentScroll;
+
+    // Sticky section behavior
+    if (currentScroll > navbar.offsetHeight) {
+        stickySection.classList.add("sticky");
+        document.body.classList.add("sticky-active"); // Add padding to body
+    } else {
+        stickySection.classList.remove("sticky");
+        document.body.classList.remove("sticky-active"); // Remove padding from body
+    }
+});
+
+
+const filterBtn = document.getElementById("filter-btn");
+const mobileFilterSection = document.getElementById("mobile-filter-section");
+
+// Toggle the filter section
+filterBtn.addEventListener("click", () => {
+    mobileFilterSection.classList.toggle("active");
+});
+
+// Optional: Close the filter section when clicking outside
+document.addEventListener("click", (event) => {
+    if (
+        !mobileFilterSection.contains(event.target) &&
+        event.target !== filterBtn &&
+        !filterBtn.contains(event.target)
+    ) {
+        mobileFilterSection.classList.remove("active");
+    }
+});
+
+
 
 
 

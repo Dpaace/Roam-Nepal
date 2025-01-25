@@ -46,10 +46,8 @@
 
 <body class="bg-white font-roboto">
 
-    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+    <nav id="navbar" class="bg-primary text-white top-0 left-0 w-full z-50 shadow-lg transition-transform duration-300">
         <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
-
-
             <div class="flex justify-between w-full lg:w-1/3">
                 <div class="text-2xl font-bold">Roam Nepal</div>
 
@@ -132,51 +130,54 @@
         </div>
     </nav>
 
-    <div
-        class="hidden md:hidden bg-white lg:flex lg:justify-center lg:fixed lg:top-[100px] lg:left-0 lg:w-full lg:h-[100px] lg:z-30 lg:px-6  lg:border-b-2 lg:shadow-sm">
-        <div class="grid grid-cols-12 w-full justify-between items-center">
-            <div class="col-span-3">
+    <div id="sticky-section"
+        class=" bg-white lg:flex lg:justify-center lg:left-0 lg:w-full lg:h-[100px] lg:z-30 lg:px-6 lg:border-b-2 lg:shadow-sm">
+        <div class="flex flex-col lg:grid lg:grid-cols-12 w-full justify-between items-center">
+            <div class="col-span-3 flex flex-col items-center lg:items-start gap-1 lg:gap-0">
                 <h2 class=" font-bold text-2xl font[700] text-[#1A1B20]">Kathmandu - Pokhara</h2>
-                <p class="text-sm text-[#1A1B20]">5:00 am Mon, Jan 6 - 7:00 pm Tue, Jan 7</p>
+                <p class="hidden lg:flex text-sm text-[#1A1B20]">5:00 am Mon, Jan 6 - 7:00 pm Tue, Jan 7</p>
                 <a href="#" class="text-[#2A4678] text-sm hover:underline">Change Details</a>
             </div>
-            <div class=" col-span-7 flex space-x-5 w-full justify-center px-8 overflow-x-auto scrollbar-hide"
-                onwheel="scrollHorizontally(event)">
+            <div class=" col-span-7 flex space-x-2 w-full justify-start px-2 py-2 overflow-x-scroll ">
                 <button
-                    class="w-[150px] flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200">
+                    class="min-w-[150px] flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200">
                     <span class="text-sm font-semibold text-gray-800">Today, Jan 6</span>
                     <span class="text-xs text-gray-500">Form Rs 3000</span>
                 </button>
                 <button
-                    class="flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
+                    class="min-w-[150px] flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
                     <span class="text-sm font-semibold text-gray-800">Tomorrow, Jan 7</span>
                     <span class="text-xs text-gray-500">Form Rs 3000</span>
                 </button>
                 <button
-                    class="flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
+                    class="min-w-[150px] flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
                     <span class="text-sm font-semibold text-gray-800">Tue, Jan 6</span>
                     <span class="text-xs text-gray-500">Form Rs 3000</span>
                 </button>
                 <button
-                    class="flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
+                    class="min-w-[150px] flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
                     <span class="text-sm font-semibold text-gray-800">Wed, Jan 6</span>
                     <span class="text-xs text-gray-500">Form Rs 3000</span>
                 </button>
                 <button
-                    class="flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200 ">
+                    class="min-w-[150px] flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200 ">
+                    <span class="text-sm font-semibold text-gray-800">Thurs, Jan 6</span>
+                    <span class="text-xs text-gray-500">Form Rs 3000</span>
+                </button>
+                <button
+                    class="min-w-[150px] flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200 ">
                     <span class="text-sm font-semibold text-gray-800">Thurs, Jan 6</span>
                     <span class="text-xs text-gray-500">Form Rs 3000</span>
                 </button>
             </div>
-            <div class=" col-span-2 text-sm text-gray-500">
+            <div class="hidden lg:flex lg:col-span-2 text-sm text-gray-500">
                 <span class="font-semibold text-black">Choose</span> > Fill Details > Done
             </div>
         </div>
     </div>
 
-    <div class="flex static">
-        <aside
-            class="hidden lg:z-30 md:hidden lg:flex lg:flex-col lg:fixed lg:top-[212px] lg:left-0 lg:h-[calc(100vh-212px)] lg:w-[350px]  text-black   p-4 overflow-y-scroll scrollbar-hide">
+    <div class="flex static ">
+        <aside class="hidden lg:z-30 md:hidden lg:flex lg:flex-col lg:left-0 lg:h-fit lg:w-[350px]  text-black   p-4 ">
 
             <div class="flex items-center h-[100px] bg-white justify-between rounded border border-[#C4C6D0]">
                 <div id="map-container"
@@ -258,8 +259,8 @@
 
 
 
-            <!-- <div class="p-4 h-full mt-4  overflow-auto scrollbar-hide border  border-[#C4C6D0]"> -->
-            <div class="p-4 h-fit mt-4  scrollbar-hide border  border-[#C4C6D0]">
+            <!-- Filters Section -->
+            <div id="filter-section" class="p-4 h-fit mt-4  scrollbar-hide border  border-[#C4C6D0]">
                 <h3 class="text-xl leading-4 text-black font-semibold mb-4">Filters</h3>
 
                 <div class="mb-4">
@@ -298,8 +299,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
 
                 <div class="mb-4">
@@ -549,9 +548,8 @@
 
 
         <!-- Main content -->
-        <!-- <main class="flex flex-col mt-20 lg:mt-0 min-h-screen lg:fixed lg:top-[212px] lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] px-4 lg:py-4 lg:px-8 overflow-y-auto scrollbar-hide"> -->
         <main
-            class="flex flex-col mt-20 lg:mt-0 min-h-screen lg:absolute lg:top-[212px] lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] px-4 lg:py-4 lg:px-8 overflow-x-scroll scrollbar-hide">
+            class="flex flex-col mt-5 lg:mt-0 min-h-screen lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] px-4 lg:py-4 lg:px-8 overflow-x-scroll scrollbar-hide">
             <div class="snap-mandatory snap-x flex w-full lg:w-full overflow-auto scrollbar-hide  lg:min-h-32 lg:max-w-full lg:grid lg:grid-cols-12 lg:gap-4"
                 onwheel="scrollHorizontally(event)">
                 <!-- Card 1 -->
@@ -589,6 +587,291 @@
             </div>
 
             <div class="w-full flex justify-between items-center my-4">
+                <!-- <div id="mobile-filter-section" class="hidden p-4 h-fit mt-4 scrollbar-hide border  border-[#C4C6D0]">
+                    <h3 class="text-xl leading-4 text-black font-semibold mb-4">Filters</h3> -->
+                <div id="mobile-filter-section"
+                    class="fixed top-0 left-0 h-full w-[80%] max-w-xs bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50 p-4 overflow-y-scroll">
+                    <h3 class="text-xl leading-4 text-black font-semibold mb-4">Filters</h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-semibold text-gray-800 mb-2">Driver</h4>
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">With Driver</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Without Driver</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 relative">
+                        <h4 class="text-md font-semibold text-gray-800 mb-2">Price</h4>
+                        <div class="relative">
+                            <input id="price-range" type="range" min="1000" max="10000" step="500" value="1000"
+                                class="w-full bg-transparent accent-[#0B3C49]" />
+                            <div class="flex justify-between text-sm text-black mt-2">
+                                <span>1000</span>
+                                <span>3000</span>
+                                <span>7000</span>
+                                <span>10000</span>
+                            </div>
+                            <div id="price-tooltip"
+                                class="absolute hidden bg-gray-800 text-white text-xs rounded py-1 px-2 transform -translate-x-1/2"
+                                style="top: -30px;">
+                                1000
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="mb-4">
+                        <h4 class="text-md font-semibold text-gray-800 mb-2">Vehicle Type</h4>
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">SUV / Jeep</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Car</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 1200</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Bus</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 30000</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Luxury Car</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 6000</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="text-md font-semibold text-gray-800 mb-2">Fuel Type</h4>
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Diesel</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Electric</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 1200</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Petrol</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 30000</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="text-md font-semibold text-gray-800 mb-2">Features</h4>
+                        <!-- Search bar -->
+                        <div class="relative mb-4">
+                            <input type="text" placeholder="Search features"
+                                class="w-full pl-4 pr-10 py-2 text-sm text-gray-800 bg-gray-100 border border-gray-200 rounded-full outline-none placeholder-g[#44474F] " />
+                            <img src="images/svg/search-icon.svg" alt="Search Icon"
+                                class="absolute top-1/2 right-4 w-4 h-4 transform -translate-y-1/2 text-[#44474F]" />
+                        </div>
+                        <!-- Feature list -->
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black feature-name">Offroad</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black feature-name">Automatic Driving</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black feature-name">Manual Driving</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-4">
+                        <h4 class="text-md font-semibold text-gray-800 mb-2">Model</h4>
+
+                        <!-- Search bar -->
+                        <div class="relative mb-4">
+                            <input type="text" placeholder="Search model"
+                                class="w-full pl-4 pr-10 py-2 text-sm text-gray-800 bg-gray-100 border border-gray-200 rounded-full outline-none placeholder-g[#44474F] " />
+                            <img src="images/svg/search-icon.svg" alt="Search Icon"
+                                class="absolute top-1/2 right-4 w-4 h-4 transform -translate-y-1/2 text-[#44474F]" />
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Atto</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Scorpio</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="text-md font-semibold text-gray-800 mb-2">Operator Name</h4>
+
+                        <!-- Search bar -->
+                        <div class="relative mb-4">
+                            <input type="text" placeholder="Search operator name"
+                                class="w-full pl-4 pr-10 py-2 text-sm text-gray-800 bg-gray-100 border border-gray-200 rounded-full outline-none placeholder-g[#44474F] " />
+                            <img src="images/svg/search-icon.svg" alt="Search Icon"
+                                class="absolute top-1/2 right-4 w-4 h-4 transform -translate-y-1/2 text-[#44474F]" />
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">Yessir</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">BusSewa</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="text-md font-semibold text-gray-800 mb-2">Ratings</h4>
+
+                        <!-- 5 Star Rating -->
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center gap-1">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <span class="text-black">(3)</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+
+                        <!-- 4 Star Rating -->
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center gap-1">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <span class="text-black">(3)</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+
+                        <!-- 3 Star Rating -->
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center gap-1">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <span class="text-black">(3)</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+
+                        <!-- 2 Star Rating -->
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center gap-1">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <span class="text-black">(3)</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+
+                        <!-- 1 Star Rating -->
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center gap-1">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <img src="images/svg/Star.svg" alt="5 stars" class="w-5 h-5" />
+                                <span class="text-black">(3)</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+
+                        <!-- No Rating -->
+                        <div class="flex items-center justify-between mt-2">
+                            <label class="flex items-center gap-1">
+                                <input type="checkbox" class="mr-2 accent-[#0B3C49]" />
+                                <span class="text-black">No ratings</span>
+                                <span class="text-black ml-2">(3)</span>
+                            </label>
+                            <span class="text-txtAsideGrey text-sm">from Rs 2000</span>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-4 relative">
+                        <h4 class="text-md font-semibold text-gray-800 mb-2">No of Seats</h4>
+                        <div class="relative">
+                            <input id="pax-range" type="range" min="0" max="24" step="1" value="8"
+                                class="w-full bg-transparent accent-[#0B3C49]" />
+                            <div class="flex justify-between text-sm text-black mt-2">
+                                <span>0</span>
+                                <span>8</span>
+                                <span>16</span>
+                                <span>24</span>
+                            </div>
+                            <div id="tooltip"
+                                class="absolute hidden bg-gray-800 text-white text-xs rounded py-1 px-2 transform -translate-x-1/2"
+                                style="top: -30px;">
+                                8
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <span class="text-[#49454F] font-normal text-sm">231 Vehicles</span>
                 <div class="flex text-[#49454F] whitespace-nowrap">
                     <p class="text-[#49454F] text-sm">Sort By:</p>
@@ -598,6 +881,10 @@
                         <option value="">222</option>
                         <option value="">333</option>
                     </select>
+                    <button type="button" id="filter-btn">
+                        <img class="w-5 h-5 ml-2 md:hidden lg:hidden" src="images/svg/trailing-icon.svg"
+                            alt="filter-icon">
+                    </button>
                 </div>
             </div>
 
@@ -1105,7 +1392,6 @@
                 </div>
 
                 <!-- Pagination Buttons -->
-
                 <div class="flex items-center justify-center space-x-2 mt-6">
                     <!-- Previous Button -->
                     <button

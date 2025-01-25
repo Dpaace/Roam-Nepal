@@ -101,6 +101,38 @@ body {
     user-select: none;
 }
 
+
+
+
+/* #sticky-section.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 40;
+    background-color: white;
+    margin-bottom: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} */
+
+
+/* Sticky Section Styling */
+#sticky-section.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 40;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for visibility */
+}
+
+/* Add padding to content when sticky-section is active */
+body.sticky-active {
+    padding-top: 100px; /* Adjust this value to match the height of your sticky section */
+}
+
+
 /* Card Ribbon */
 .card__ribbon {
     width: 6.5em;
@@ -119,13 +151,15 @@ body {
     position: absolute;
     width: 140%;
     height: 2.35em;
-    background-color: #fbc02d; /* Yellow Color */
+    background-color: #fbc02d;
+    /* Yellow Color */
     transform: rotate(-45deg) translateY(-1.1em);
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    color: #000; /* Black Text */
+    color: #000;
+    /* Black Text */
     font-weight: 600;
     letter-spacing: 0.1em;
     box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.2);
@@ -138,7 +172,28 @@ body {
     bottom: 0;
     width: 1em;
     height: 1em;
-    background-color: #fbc02d; /* Matches Ribbon Background */
+    background-color: #fbc02d;
+    /* Matches Ribbon Background */
     box-shadow: 11em -11em #fbc02d;
+}
+
+
+#mobile-filter-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 320px; /* Limit the width */
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for popup */
+    transform: translateX(-100%); /* Hidden off-screen initially */
+    transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
+    z-index: 50;
+}
+
+/* When active, slide into view */
+#mobile-filter-section.active {
+    transform: translateX(0); /* Bring the section into view */
 }
 
