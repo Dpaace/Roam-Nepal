@@ -4,6 +4,16 @@ console.log("External Script Connected!!!")
 
 // Initialize Flatpickr for Pick-Up Date/Time
 // flatpickr("#pickup-date", "#oneway-pickup-date",{
+// flatpickr(".date-picker", {
+//     enableTime: true,
+//     noCalendar: false,
+//     time_24hr: false,
+//     dateFormat: "Y-m-d H:i K",
+//     minuteIncrement: 30,
+//     minDate: "today",
+//     position: "auto center",
+// });
+
 flatpickr(".date-picker", {
     enableTime: true,
     noCalendar: false,
@@ -12,6 +22,7 @@ flatpickr(".date-picker", {
     minuteIncrement: 30,
     minDate: "today",
     position: "auto center",
+    disableMobile: true, // Ensures Flatpickr UI is used instead of native pickers
 });
 
 
@@ -359,6 +370,33 @@ tabs.forEach(tab => {
         });
     });
 });
+
+
+function switchToRoundTrip() {
+    const tabs = document.querySelectorAll('#round-trip-tab, #one-way-tab, #hourly-tab, #airport-tab');
+    const containers = {
+        'round-trip-tab': document.getElementById('form-container-round-trip'),
+        'one-way-tab': document.getElementById('form-container-one-way'),
+        'hourly-tab': document.getElementById('form-container-hourly'),
+        'airport-tab': document.getElementById('form-container-airport'),
+    };
+
+    // Update tab styles
+    tabs.forEach(tab => tab.classList.remove('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#0B3C49]'));
+    const roundTripTab = document.getElementById('round-trip-tab');
+    roundTripTab.classList.add('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#0B3C49]');
+
+    // Update containers
+    Object.keys(containers).forEach(key => {
+        if (key === 'round-trip-tab') {
+            containers[key].classList.remove('hidden'); // Show "round-trip-tab" container
+        } else {
+            containers[key].classList.add('hidden'); // Hide other containers
+        }
+    });
+}
+
+
 
 
 // Function to toggle the dropdown
