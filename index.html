@@ -144,8 +144,9 @@
 
 
 
-    <div class="flex items-center  lg:items-end bg-cover bg-center h-screen lg:h-lvh static"
+    <div class="flex items-center lg:items-end bg-cover bg-center h-screen lg:h-lvh static"
         style="background-image: url('images/home1.jpg');">
+        <div class="absolute lg:inset-0 lg:bg-black lg:opacity-30"></div>
         <div
             class="lg:min-h-[75%] min-h-[70%] lg:absolute lg:top-40 container flex flex-col lg:max-w-full  lg:items-start lg:px-28 px-5 ">
             <h1 class="hidden lg:flex px-5 lg:px-0 text-white text-sm lg:font-bold lg:text-[40px] lg:leading-[70px] ">
@@ -155,7 +156,7 @@
                 Reliable bus journeys at unbelievable prices.
             </h1>
             <div class="bg-white container px-1 lg:px-0 mt-5 lg:w-fit z-40 border-b">
-                <div class="bg-white flex justify-between text-[12px]  lg:text-[16px] font-normal leading-6">
+                <div class="bg-white flex justify-between text-[12px] lg:text-[16px] font-normal leading-6">
                     <button id="round-trip-tab"
                         class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100  font-semibold border-b-4 border-[#0B3C49] whitespace-nowrap">
                         Round Trip
@@ -377,7 +378,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+
 
 
 
@@ -405,7 +406,8 @@
                 <div id="form-container-one-way" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
                         <!-- <div class="w-full flex items-center "> -->
-                        <div class="relative grid grid-rows-2 grid-cols-12 gap-4 lg:grid-cols-12 lg:items-center ">
+                        <div
+                            class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
                             <div id="oneway-main-pickup" class="col-span-10">
                                 <div class="relative rounded border border-formBorder p-0">
@@ -516,11 +518,8 @@
                             </div>
 
 
-
-
-
                             <!-- Drop-Off Field -->
-                            <div id="oneway-dropff" class="col-span-12   rounded border border-formBorder lg:p-0">
+                            <div id="oneway-dropff" class="col-span-12 rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
@@ -608,7 +607,8 @@
                 <div id="form-container-hourly" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
                         <!-- <div class="w-full flex items-center "> -->
-                        <div class="relative grid grid-rows-2 grid-cols-12 gap-4 lg:grid-cols-12 lg:items-center ">
+                        <div
+                            class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
                             <!-- <div class="w-[35%] "> -->
                             <div id="hourly-main-pickup" class="col-span-10">
@@ -773,9 +773,6 @@
 
                         </div>
 
-                        <div id="hourly-stop-container" class="grid grid-cols-1 gap-4 hidden">
-                        </div>
-
 
                         <!-- Number of Hours -->
                         <div class="relative">
@@ -842,7 +839,8 @@
                                 <span class="text-gray-700 text-sm font-medium">Drop Off</span>
                             </label>
                         </div>
-                        <div class="grid grid-cols-12 gap-4 items-center">
+                        <div
+                            class="relative grid grid-cols-12 gap-y-4 gap-x-2 items-center lg:grid-cols-12 lg:items-center">
                             <!-- Pick-Up Location Field -->
                             <div id="airport-main-pickup" class="col-span-10">
                                 <div class="relative">
@@ -858,7 +856,6 @@
                                                 onclick="toggleDropdown('airport-pickup')">
                                         </div>
 
-                                        <!-- Dropdown -->
                                         <ul id="airport-pickup-options"
                                             class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
                                             <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
@@ -896,6 +893,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
 
                             <!-- <div class="lg:col-span-2 col-span-3 rounded border border-formBorder p-0">
                                 <button type="button" id="airport-add-stop-btn"
@@ -935,6 +934,13 @@
                             </div>
 
                             <!-- Add Stop Button -->
+                            <!-- <div id="airport-stop-1" class="col-span-2 rounded border border-formBorder bg-red-500 p-0 lg:p-0">
+                                <button type="button" id="airport-add-stop-btn"
+                                    class="w-full h-full text-txtPlaceholder gap-0 p-0 ">
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                </button>
+                            </div> -->
+
                             <div id="airport-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="airport-add-stop-btn"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
@@ -1016,7 +1022,7 @@
 
 
     <!-- Continue Where You Left Off Section -->
-    <div class="py-10 mt-10 my-8 lg:my-[88px] container lg:max-w-full lg:items-center lg:px-28 px-5 ">
+    <div class="lg:py-10 py-4 mt-10 my-4 lg:my-[88px] container lg:max-w-full lg:items-center lg:px-28 px-5 ">
         <div class="container lg:min-w-full  ">
 
             <h2 class="text-[14px] lg:text-[32px] text-black font-[400] leading-10 mb-2 lg:mb-4">Continue where you left
@@ -1135,7 +1141,7 @@
 
 
     <!-- Offers and Deals Section -->
-    <div class="bg-white py-5 my-8 lg:my-[88px]  container px-5 lg:max-w-full lg:px-28">
+    <div class="bg-white py-5 my-4 lg:my-[88px]  container px-5 lg:max-w-full lg:px-28">
         <div class="container w-full lg:min-w-full mx-auto">
             <div class="flex justify-between items-center mb-0 ">
                 <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">Offers and deals</h2>
@@ -1145,84 +1151,11 @@
             <div class="flex items-center p-0 lg:p-2 h-[245px] lg:h-[270px] space-x-[10px] overflow-x-auto scrollbar-hide"
                 onwheel="scrollHorizontally(event)">
                 <!-- Card 1 -->
-                <div class="flex flex-col justify-center rounded-t-lg  min-w-[325px] h-[240px] flex-shrink-0">
-                    <div class="relative">
-                        <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
-                            class="rounded-t-lg w-full h-32 object-cover" />
-                        <span
-                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
-                            Tours
-                        </span>
-                    </div>
-                    <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
-                    <div class="relative">
+                <div
+                    class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                    <div class="relative rounded-t-lg overflow-hidden">
                         <img src="images/svg/black-friday-2.svg" alt="Black Friday Deals"
-                            class="rounded-t-lg w-full h-32 object-cover" />
-                        <span
-                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
-                            Tours
-                        </span>
-                    </div>
-                    <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
-                    <div class="relative">
-                        <img src="images/svg/christmas-deals.svg" alt="Black Friday Deals"
-                            class="rounded-t-lg w-full h-32 object-cover" />
-                        <span
-                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
-                            Tours
-                        </span>
-                    </div>
-                    <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
-                    <div class="relative">
-                        <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
-                            class="rounded-t-lg w-full h-32 object-cover" />
-                        <span
-                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
-                            Tours
-                        </span>
-                    </div>
-                    <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
-                    <div class="relative">
-                        <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
-                            class="rounded-t-lg w-full h-32 object-cover" />
-                        <span
-                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
-                            Tours
-                        </span>
-                    </div>
-                    <div class=" bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
-                    </div>
-                </div>
-                <div class="rounded-t-lg flex flex-col justify-center min-w-[325px] h-[240px] flex-shrink-0">
-                    <div class="relative">
-                        <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
-                            class="rounded-t-lg w-full h-32 object-cover" />
+                            class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
                         <span
                             class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
                             Tours
@@ -1233,17 +1166,96 @@
                         <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
                     </div>
                 </div>
+                <div
+                    class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                    <div class="relative rounded-t-lg overflow-hidden">
+                        <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                            class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                        <span
+                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                            Tours
+                        </span>
+                    </div>
+                    <div class="bg-gray-200 rounded-b-lg p-4">
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                    <div class="relative rounded-t-lg overflow-hidden">
+                        <img src="images/svg/black-friday-2.svg" alt="Black Friday Deals"
+                            class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                        <span
+                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                            Tours
+                        </span>
+                    </div>
+                    <div class="bg-gray-200 rounded-b-lg p-4">
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                    <div class="relative rounded-t-lg overflow-hidden">
+                        <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                            class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                        <span
+                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                            Tours
+                        </span>
+                    </div>
+                    <div class="bg-gray-200 rounded-b-lg p-4">
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                    <div class="relative rounded-t-lg overflow-hidden">
+                        <img src="images/svg/black-friday-2.svg" alt="Black Friday Deals"
+                            class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                        <span
+                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                            Tours
+                        </span>
+                    </div>
+                    <div class="bg-gray-200 rounded-b-lg p-4">
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                    <div class="relative rounded-t-lg overflow-hidden">
+                        <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                            class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                        <span
+                            class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                            Tours
+                        </span>
+                    </div>
+                    <div class="bg-gray-200 rounded-b-lg p-4">
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
     </div>
 
     <!-- Reach Section -->
-    <div class="bg-white lg:flex  px-5 py-5 lg:py-10 lg:max-w-full lg:min-h-[500px] lg:px-28" id="our-reach">
+    <div class="bg-white lg:flex px-5 py-5 lg:py-10 lg:max-w-full lg:min-h-[500px] lg:px-28" id="our-reach">
         <div class="w-full max-h-full  grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 items-center ">
             <!-- Image Section -->
             <div class=" lg:min-w-1/2 flex">
                 <img src="images/reach.jpeg" alt="Bus Image"
-                    class="object-cover h-[136px] w-full md:h-full md:w-full lg:h-[90%] lg:w-[90%] shadow-md" />
+                    class="object-cover h-[180px] w-full md:h-full md:w-full lg:h-[90%] lg:w-[90%] shadow-md" />
             </div>
 
             <!-- Text and Statistics Section -->
@@ -1371,7 +1383,7 @@
 
 
     <!-- Stories Section -->
-    <div class="container my-8 lg:my-[88px]  lg:max-w-full lg:px-28 px-4">
+    <div class="container my-2 lg:my-[88px]  lg:max-w-full lg:px-28 px-4">
         <!-- Title Section -->
         <div class="flex justify-between items-center mb-2 lg:mb-4 relative">
             <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">Your Stories</h2>
@@ -1384,66 +1396,78 @@
             <!-- Reels Container -->
             <div id="reels-container" class="flex transition-transform duration-500" style="transform: translateX(0);">
                 <!-- Reel Card -->
-                <div class="relative min-w-[280px] h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                <div
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-white">
-                        <p class="text-xs">Anisha_gurung</p>
-                        <p class="text-sm font-semibold truncate">My first solo travel...</p>
+                    <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
+                            first solo travel...</p>
                     </div>
                 </div>
                 <!-- Repeat the above Reel Card for other reels -->
                 <!-- Add more cards for testing -->
-                <div class="relative min-w-[280px] h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                <div
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-white">
-                        <p class="text-xs">Anisha_gurung</p>
-                        <p class="text-sm font-semibold truncate">My first solo travel...</p>
+                    <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
+                            first solo travel...</p>
                     </div>
                 </div>
-                <div class="relative min-w-[280px] h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                <div
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-white">
-                        <p class="text-xs">Anisha_gurung</p>
-                        <p class="text-sm font-semibold truncate">My first solo travel...</p>
+                    <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
+                            first solo travel...</p>
                     </div>
                 </div>
-                <div class="relative min-w-[280px] h-[360px] rounded-lg overflow-hidden shadow-md mx-2">
+                <div
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-white">
-                        <p class="text-xs">Anisha_gurung</p>
-                        <p class="text-sm font-semibold truncate">My first solo travel...</p>
+                    <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
+                            first solo travel...</p>
                     </div>
                 </div>
-                <div class="relative min-w-[280px] h-[360px] rounded-lg overflow-hidden shadow-md mx-2">
+                <div
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-white">
-                        <p class="text-xs">Anisha_gurung</p>
-                        <p class="text-sm font-semibold truncate">My first solo travel...</p>
+                    <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
+                            first solo travel...</p>
                     </div>
                 </div>
-                <div class="relative min-w-[280px] h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                <div
+                    class="relative h-[190px] min-w-[150px]] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-white">
-                        <p class="text-xs">Anisha_gurung</p>
-                        <p class="text-sm font-semibold truncate">My first solo travel...</p>
+                    <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
+                            first solo travel...</p>
                     </div>
                 </div>
             </div>
@@ -1451,7 +1475,7 @@
     </div>
 
     <!-- Blog Section -->
-    <div class="container my-8 lg:my-[88px] lg:max-w-full lg:px-28 px-6 py-10 ">
+    <div class="container my-2 lg:my-[88px] lg:max-w-full lg:px-28 px-6 py-10 ">
         <!-- Title and Explore More -->
         <div class="flex justify-between items-center mb-2 lg:mb-4">
             <h2 class="hidden md:flex lg:flex font-[400] lg:text-[32px] text-black leading-10">Travel tips, stories and
@@ -1493,7 +1517,7 @@
             <!-- First Row -->
             <div class="grid grid-cols-3 gap-3 lg:h-[330px]">
                 <!-- Card 1 (70% width) -->
-                <div class="col-span-2 max-h-[330px] relative rounded-sm overflow-hidden ">
+                <!-- <div class="col-span-2 max-h-[330px] relative rounded-sm overflow-hidden ">
                     <img src="images/blog-1.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
                         <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
@@ -1502,12 +1526,29 @@
                             Travelers</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
+                </div> -->
+                <div class="col-span-2 max-h-[330px] relative rounded-sm overflow-hidden group">
+                    <img src="images/blog-1.jpeg" alt="Blog Thumbnail"
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white ">Top 10 Things to Do in
+                            Pokhara: A Complete
+                            Guide for Travelers</h3>
+                        <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
+                    </div>
                 </div>
 
+
+
+
                 <!-- Card 2 (30% width) -->
-                <div class="col-span-1 relative rounded-sm overflow-hidden ">
-                    <img src="images/blog-2.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
+                <div class="col-span-1 relative rounded-sm overflow-hidden group">
+                    <img src="images/blog-2.jpeg" alt="Blog Thumbnail"
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
                         <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
                         <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Kathmandu to Pokhara trip
                             travel guide</h3>
@@ -1519,11 +1560,13 @@
             <!-- Second Row -->
             <div class="grid  lg:h-[330px] grid-cols-2 lg:grid-cols-3 gap-3">
                 <!-- Card 3 -->
-                <div class="relative rounded-sm overflow-hidden ">
-                    <img src="images/blog-3.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
+                <div class="relative rounded-sm overflow-hidden group">
+                    <img src="images/blog-3.jpeg" alt="Blog Thumbnail"
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
                         <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Top 10 Things to Do in
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white ">Top 10 Things to Do in
                             Pokhara: A Complete Guide for
                             Travelers</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
@@ -1531,22 +1574,26 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="relative rounded-sm overflow-hidden ">
-                    <img src="images/blog-4.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
+                <div class="relative rounded-sm overflow-hidden group">
+                    <img src="images/blog-4.jpeg" alt="Blog Thumbnail"
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
                         <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">तिहार आयो, बससेवाले
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white ">तिहार आयो, बससेवाले
                             DISCOUNT ल्यायो !</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="hidden lg:flex relative max-h-[130px] lg:max-h-full rounded-sm overflow-hidden ">
-                    <img src="images/blog-5.jpeg" alt="Blog Thumbnail" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
+                <div class="hidden lg:flex relative max-h-[130px] lg:max-h-full rounded-sm overflow-hidden group">
+                    <img src="images/blog-5.jpeg" alt="Blog Thumbnail"
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
                         <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">बससेवालले ल्यायो दशैँको
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white ">बससेवालले ल्यायो दशैँको
                             विशेष छुट</h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
@@ -1594,11 +1641,11 @@
 
     <footer class="bg-gray-800 text-gray-400 py-10">
         <div
-            class="container mx-auto px-6 grid grid-cols-2 items-center md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
+            class="container mx-auto px-6 grid grid-cols-2 justify-start items-start md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
             <!-- Services -->
             <div>
-                <h4 class="text-white font-semibold text-lg mb-4">Services</h4>
-                <ul class="space-y-2">
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Services</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
                     <li><a href="#" class="hover:text-white">Bus Reservation</a></li>
                     <li><a href="#" class="hover:text-white">Tours</a></li>
                     <li><a href="#" class="hover:text-white">Reservation</a></li>
@@ -1610,8 +1657,8 @@
 
             <!-- Products -->
             <div>
-                <h4 class="text-white font-semibold text-lg mb-4">Products</h4>
-                <ul class="space-y-2">
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Products</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
                     <li><a href="#" class="hover:text-white">Tourist BusSewa</a></li>
                     <li><a href="#" class="hover:text-white">BusSewa</a></li>
                     <li><a href="#" class="hover:text-white">Mobile App</a></li>
@@ -1621,8 +1668,8 @@
 
             <!-- Help -->
             <div>
-                <h4 class="text-white font-semibold text-lg mb-4">Help</h4>
-                <ul class="space-y-2">
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Help</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
                     <li><a href="#" class="hover:text-white">Contact Us</a></li>
                     <li><a href="#" class="hover:text-white">BusSewa Agent</a></li>
                     <li><a href="#" class="hover:text-white">Help Centre</a></li>
@@ -1632,34 +1679,34 @@
 
             <!-- Contact & Social Media  class="h-5 w-5" -->
             <div>
-                <ul class="space-y-2">
-                    <li class="flex items-center space-x-2">
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li class="flex items-center space-x-2 ">
                         <span>
-                            <img class="h-5 w-5" src="images/svg/footer-phone.svg" alt="phone" />
+                            <img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" />
 
                         </span>
                         <a href="tel:+9779876567989" class="hover:text-white">+977 9876567989</a>
                     </li>
                     <li class="flex items-center space-x-2">
-                        <span><img class="h-5 w-5" src="images/svg/footer-phone.svg" alt="phone" /></span>
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" /></span>
                         <a href="tel:+9779887567890" class="hover:text-white">+977 9887567890</a>
                     </li>
                     <li class="flex items-center space-x-2">
-                        <span><img class="h-5 w-5" src="images/svg/footer-email.svg" alt="email" /></span>
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-email.svg" alt="email" /></span>
                         <a href="mailto:info@bussewa.com" class="hover:text-white">info@bussewa.com</a>
                     </li>
                 </ul>
                 <div class="flex items-center space-x-4 mt-4">
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-Facebook.svg"
-                            alt="facebook" /></a>
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-Instagram.svg"
-                            alt="instagram" /></a>
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-Twitter.svg"
-                            alt="twitter" /></a>
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-LinkedIn.svg"
-                            alt="linkedin" /></a>
-                    <a href="#" class="hover:text-white"><img class="h-5 w-5" src="images/svg/footer-TikTok.svg"
-                            alt="tiktok" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Facebook.svg" alt="facebook" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Instagram.svg" alt="instagram" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Twitter.svg" alt="twitter" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-LinkedIn.svg" alt="linkedin" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-TikTok.svg" alt="tiktok" /></a>
                 </div>
             </div>
         </div>
