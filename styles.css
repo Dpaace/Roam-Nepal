@@ -101,62 +101,99 @@ body {
     user-select: none;
 }
 
-.overflow-x-auto {
-    /* cursor: grab; */
-}
 
 
-/* Remove default styles for modern appearance */
-select {
-    -webkit-appearance: none;
-    /* Chrome, Safari, macOS */
-    -moz-appearance: none;
-    /* Firefox */
-    appearance: none;
-    /* Default for other browsers */
-    background: transparent;
-    /* Transparent background for custom styles */
-    border: none;
-    /* Remove borders (handled by the container) */
-    outline: none;
-    /* Remove focus outline */
+
+/* #sticky-section.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    /* Ensure it spans the container */
-    padding-right: 1.5rem;
-    /* Add padding for custom arrow */
-    cursor: pointer;
-    /* Pointer cursor for better UX */
+    z-index: 40;
+    background-color: white;
+    margin-bottom: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} */
+
+
+/* Sticky Section Styling */
+#sticky-section.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 40;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for visibility */
 }
 
-/* Add a custom dropdown arrow */
-select:after {
+/* Add padding to content when sticky-section is active */
+body.sticky-active {
+    padding-top: 100px; /* Adjust this value to match the height of your sticky section */
+}
+
+
+/* Card Ribbon */
+.card__ribbon {
+    width: 6.5em;
+    height: 6.5em;
+    position: absolute;
+    top: -1em;
+    left: -1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card__ribbon::after {
+    content: 'New';
+    position: absolute;
+    width: 140%;
+    height: 2.35em;
+    background-color: #fbc02d;
+    /* Yellow Color */
+    transform: rotate(-45deg) translateY(-1.1em);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #000;
+    /* Black Text */
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.2);
+}
+
+.card__ribbon::before {
     content: '';
     position: absolute;
-    right: 1rem;
-    /* Position arrow on the right */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #49454F;
-    /* Arrow color */
-    pointer-events: none;
+    left: 0;
+    bottom: 0;
+    width: 1em;
+    height: 1em;
+    background-color: #fbc02d;
+    /* Matches Ribbon Background */
+    box-shadow: 11em -11em #fbc02d;
 }
 
-/* Dropdown option styling */
-select option {
+
+#mobile-filter-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 320px; /* Limit the width */
     background-color: white;
-    /* Dropdown background color */
-    color: black;
-    /* Text color */
-    padding: 10px;
-    /* Spacing for options */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for popup */
+    transform: translateX(-100%); /* Hidden off-screen initially */
+    transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
+    z-index: 50;
 }
 
-/* Option hover effect */
-select option:hover {
-    background-color: #f0f0f0;
-    /* Light background on hover */
+/* When active, slide into view */
+#mobile-filter-section.active {
+    transform: translateX(0); /* Bring the section into view */
 }
+
