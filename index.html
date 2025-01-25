@@ -348,14 +348,23 @@
 
 
                         <div class="grid grid-cols-1 gap-4 ">
-                            <div class="relative">
+                            <!-- <div class="relative">
                                 <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
                                     <input type="text" id="pickup-date"
                                         class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
                                         placeholder="Pick-Up Date / Time" />
                                 </div>
+                            </div> -->
+                            <div class="relative">
+                                <div class="flex items-center border border-formBorder rounded px-2 py-2">
+                                    <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
+                                    <input type="text" id="pickup-date"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
+                                        placeholder="Pick-Up Date / Time" data-input />
+                                </div>
                             </div>
+
                             <div class="relative">
                                 <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
@@ -785,7 +794,8 @@
                             <!-- <h1 class="font-normal text-sm text-[#49454F]">Maximum is 10. Goto <a href="">Round Trip </a>for more options.</h1> -->
                             <h1 class="font-normal text-xs lg:text-sm text-[#49454F] mt-1">
                                 Maximum is 10. Goto
-                                <a href="#" class="underline text-[#03677E]" onclick="switchToRoundTrip()">Round Trip</a>
+                                <a href="#" class="underline text-[#03677E]" onclick="switchToRoundTrip()">Round
+                                    Trip</a>
                                 for more options.
                             </h1>
 

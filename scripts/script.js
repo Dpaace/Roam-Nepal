@@ -4,6 +4,16 @@ console.log("External Script Connected!!!")
 
 // Initialize Flatpickr for Pick-Up Date/Time
 // flatpickr("#pickup-date", "#oneway-pickup-date",{
+// flatpickr(".date-picker", {
+//     enableTime: true,
+//     noCalendar: false,
+//     time_24hr: false,
+//     dateFormat: "Y-m-d H:i K",
+//     minuteIncrement: 30,
+//     minDate: "today",
+//     position: "auto center",
+// });
+
 flatpickr(".date-picker", {
     enableTime: true,
     noCalendar: false,
@@ -12,6 +22,7 @@ flatpickr(".date-picker", {
     minuteIncrement: 30,
     minDate: "today",
     position: "auto center",
+    disableMobile: true, // Ensures Flatpickr UI is used instead of native pickers
 });
 
 
