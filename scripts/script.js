@@ -361,6 +361,33 @@ tabs.forEach(tab => {
 });
 
 
+function switchToRoundTrip() {
+    const tabs = document.querySelectorAll('#round-trip-tab, #one-way-tab, #hourly-tab, #airport-tab');
+    const containers = {
+        'round-trip-tab': document.getElementById('form-container-round-trip'),
+        'one-way-tab': document.getElementById('form-container-one-way'),
+        'hourly-tab': document.getElementById('form-container-hourly'),
+        'airport-tab': document.getElementById('form-container-airport'),
+    };
+
+    // Update tab styles
+    tabs.forEach(tab => tab.classList.remove('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#0B3C49]'));
+    const roundTripTab = document.getElementById('round-trip-tab');
+    roundTripTab.classList.add('text-[#0B3C49]', 'font-semibold', 'border-b-4', 'border-[#0B3C49]');
+
+    // Update containers
+    Object.keys(containers).forEach(key => {
+        if (key === 'round-trip-tab') {
+            containers[key].classList.remove('hidden'); // Show "round-trip-tab" container
+        } else {
+            containers[key].classList.add('hidden'); // Hide other containers
+        }
+    });
+}
+
+
+
+
 // Function to toggle the dropdown
 function toggleDropdown(id) {
     const dropdown = document.getElementById(`${id}-options`);

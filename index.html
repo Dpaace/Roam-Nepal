@@ -778,11 +778,19 @@
                         <div class="relative">
                             <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                 <img class="w-5 h-5 text-black mr-2" src="images/svg/num-hours.svg" alt="time" />
-                                <input type="number" id="hourly-num-hours" min="0"
+                                <input type="number" id="hourly-num-hours" min="0" max="10"
                                     class="w-full bg-transparent outline-none placeholder:text-sm"
                                     placeholder="Enter number of hours">
                             </div>
+                            <!-- <h1 class="font-normal text-sm text-[#49454F]">Maximum is 10. Goto <a href="">Round Trip </a>for more options.</h1> -->
+                            <h1 class="font-normal text-xs lg:text-sm text-[#49454F] mt-1">
+                                Maximum is 10. Goto
+                                <a href="#" class="underline text-[#03677E]" onclick="switchToRoundTrip()">Round Trip</a>
+                                for more options.
+                            </h1>
+
                         </div>
+
 
                         <!-- Pick-Up Date -->
                         <div class="grid grid-cols-1 gap-4">
