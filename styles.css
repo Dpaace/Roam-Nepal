@@ -124,12 +124,14 @@ body {
     width: 100%;
     z-index: 40;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Add shadow for visibility */
 }
 
 /* Add padding to content when sticky-section is active */
 body.sticky-active {
-    padding-top: 100px; /* Adjust this value to match the height of your sticky section */
+    padding-top: 100px;
+    /* Adjust this value to match the height of your sticky section */
 }
 
 
@@ -183,17 +185,39 @@ body.sticky-active {
     top: 0;
     left: 0;
     height: 100%;
-    width: 80%; /* Adjust the width as needed */
-    max-width: 320px; /* Limit the width */
+    width: 80%;
+    /* Adjust the width as needed */
+    max-width: 320px;
+    /* Limit the width */
     background-color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for popup */
-    transform: translateX(-100%); /* Hidden off-screen initially */
-    transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    /* Shadow for popup */
+    transform: translateX(-100%);
+    /* Hidden off-screen initially */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth sliding effect */
     z-index: 50;
 }
 
 /* When active, slide into view */
 #mobile-filter-section.active {
-    transform: translateX(0); /* Bring the section into view */
+    transform: translateX(0);
+    /* Bring the section into view */
 }
 
+
+#additional-info-popup {
+    display: none;
+    /* Initially hidden */
+    align-items: center;
+    /* Vertically center */
+    justify-content: center;
+    /* Horizontally center */
+}
+
+#close-popup-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+}
