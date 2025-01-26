@@ -221,3 +221,36 @@ body.sticky-active {
     right: 16px;
     cursor: pointer;
 }
+
+
+.hidden {
+    display: none;
+}
+
+/* Popup Sliding Effect */
+#mobile-popup {
+    transform: translateX(100%); /* Initially off-screen */
+    transition: transform 0.3s ease-in-out; /* Smooth slide-in/out effect */
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Close Button Styling */
+#close-popup {
+    cursor: pointer;
+}
+
+/* Active Tab Styling */
+.active-tab {
+    font-weight: bold;
+}
+
+
+
+
