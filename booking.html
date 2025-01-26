@@ -48,7 +48,7 @@
 
 <body class="bg-white font-roboto">
 
-    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-30 shadow-lg">
         <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
 
 
@@ -146,97 +146,94 @@
         </aside>
     </div> -->
 
-    <div class="flex">
+    <div class="flex flex-col lg:flex-row">
         <main
-            class="fixed  top-[112px] left-0 h-[calc(100vh-112px)] w-[calc(100%-350px)] py-4 px-8 overflow-auto scrollbar-hide">
+            class="flex mt-14 lg:mt-0 flex-col lg:absolute  lg:top-[112px] lg:left-0 lg:h-[calc(100vh-112px)] lg:w-[calc(100%-350px)] py-2 px-4 lg:py-4 lg:px-8 overflow-auto scrollbar-hide">
 
             <div class=" p-4">
                 <div class="mb-4">
-                    <a href="#" class="text-[#435E91] font-normal text-[16px] leading-6">Back to Search results</a>
-                    <h1 class="text-black font-bold text-[20px] leading-4 mt-2">Booking your choice</h1>
+                    <a href="#" class="text-[#435E91] font-normal text-xs lg:text-[16px] leading-6">Back to Search
+                        results</a>
+                    <h1 class="text-black font-bold text-[16px] lg:text-[20px] leading-4 mt-2">Booking your choice</h1>
                 </div>
                 <div class="flex items-center">
                     <div class="flex items-center space-x-2">
-                        <div class="w-6 h-6 flex items-center justify-center  text-sm font-bold text-gray-600">
+                        <div
+                            class="w-[14px] h-[14px] lg:w-6 lg:h-6 flex items-center justify-center  text-sm font-bold text-gray-600">
                             <img src="images/svg/book-step-1.svg" alt="step1">
                         </div>
-                        <p class="text-black text-sm font-normal leading-6">Fill Details</p>
+                        <p class="text-black text-xs lg:text-sm font-normal leading-6">Fill Details</p>
                     </div>
                     <div class="flex-1 border-t border-gray-300 mx-4"></div>
                     <div class="flex items-center space-x-2">
-                        <div class="w-6 h-6 flex items-center justify-center text-sm font-bold">
+                        <div class="w-[14px] h-[14px] lg:w-6 lg:h-6 flex items-center justify-center text-sm font-bold">
                             <img src="images/svg/book-step-2.svg" alt="step2">
                         </div>
-                        <p class="text-black text-sm font-normal leading-6 opacity-[85%]">Payment</p>
+                        <p class="text-black text-xs lg:text-sm font-normal leading-6 opacity-[85%]">Payment</p>
                     </div>
                     <div class="flex-1 border-t border-gray-300 mx-4"></div>
                     <div class="flex items-center space-x-2">
-                        <div class="w-6 h-6 flex items-center justify-center ">
+                        <div class="w-[14px] h-[14px] lg:w-6 lg:h-6 flex items-center justify-center ">
                             <img src="images/svg/book-step-3.svg" alt="step3">
                         </div>
-                        <p class="text-black opacity-[25%] text-sm font-normal leading-6">Done</p>
+                        <p class="text-black opacity-[25%] text-xs lg:text-sm font-normal leading-6">Done</p>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-md border border-[#C4C6D0]  mb-6 border-b">
-                <div class="flex border-b-[1px] border-gray-300">
-                    <div class="relative w-[45%] h-[155px] flex justify-center">
+            <!-- Vehicle Details -->
+            <div class="bg-white rounded-md border border-[#C4C6D0]  mb-6">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="relative w-full lg:w-[45%] h-[155px] flex justify-center">
                         <!-- Main Image -->
                         <div class="relative w-full">
                             <img id="main-image" src="images/rental_vehicle_1.jpeg" alt="Main Photo"
-                                class="w-full h-full object-cover rounded-tl-md rounded-bl-md">
+                                class="w-full h-full object-cover lg:rounded-tl-md lg:rounded-bl-md">
                         </div>
 
                         <!-- Thumbnail Images -->
                         <div class="absolute bottom-2 flex w-11/12 h-[60px] gap-1  justify-center items-center">
-                            <img onclick="updateMainImage(this)" src="images/bus-image.jpg" alt="Thumbnail 1"
+                            <img onclick="updateBookingMainImage(this)" src="images/bus-image.jpg" alt="Thumbnail 1"
                                 class="thumbnail w-14 h-14 object-cover rounded-sm cursor-pointer border-2 border-white">
-                            <img onclick="updateMainImage(this)" src="images/home1.jpg" alt="Thumbnail 2"
+                            <img onclick="updateBookingMainImage(this)" src="images/home1.jpg" alt="Thumbnail 2"
                                 class="thumbnail w-14 h-14 object-cover rounded-sm cursor-pointer border-2 border-white">
-                            <img onclick="updateMainImage(this)" src="images/home2.jpg" alt="Thumbnail 3"
+                            <img onclick="updateBookingMainImage(this)" src="images/home2.jpg" alt="Thumbnail 3"
                                 class="thumbnail w-14 h-14 object-cover rounded-sm cursor-pointer border-2 border-white">
-                            <img onclick="updateMainImage(this)" src="images/rental_vehicle_1.jpeg" alt="Thumbnail 4"
+                            <img onclick="updateBookingMainImage(this)" src="images/rental_vehicle_1.jpeg"
+                                alt="Thumbnail 4"
                                 class="thumbnail w-14 h-14 object-cover rounded-sm cursor-pointer border-2 border-white">
-                            <img onclick="updateMainImage(this)" src="images/rental_vehicle_1.jpeg" alt="Thumbnail 5"
+                            <img onclick="updateBookingMainImage(this)" src="images/rental_vehicle_1.jpeg"
+                                alt="Thumbnail 5"
                                 class="thumbnail w-14 h-14 object-cover rounded-sm cursor-pointer border-2 border-white">
                         </div>
                     </div>
 
                     <!-- Content Section -->
-                    <div class="w-2/3 py-4 pl-4 ">
-                        <!-- Title and Tagline -->
-                        <!-- <div class="flex justify-between items-start border-b border-[#C4C6D0]">
-                            <div>
-                                <h2 class="text-xl leading-4 font-bold ">Midsize Elite SUV</h2>
-                                <p class="text-sm leading-5 font-normal text-[#135200] mt-2">Tata Nexon</p>
-                            </div>
-                            <div
-                                class="my-2 mr-4 text-sm font-normal leading-4 text-[#03677E] flex items-center justify-end ">
-                                <button id="additional-info-popup-btn" class="flex items-center justify-center gap-2">
-                                    <img src="images/svg/info.svg" class="w-5 h-5" alt="info"> Additional Info
-                                </button>
-                            </div>
-                        </div> -->
-
+                    <div class="w-full lg:w-2/3 py-4 pl-4 ">
                         <div class="flex justify-between items-start border-b border-[#C4C6D0]">
                             <div>
-                                <h2 class="text-xl leading-4 font-bold">Midsize Elite SUV</h2>
+                                <h2 class="text-[16px] lg:text-xl leading-4 font-bold">Midsize Elite SUV</h2>
                                 <p class="text-sm leading-5 font-normal text-[#135200] mt-2">Tata Nexon</p>
                             </div>
                             <div
-                                class="my-2 mr-4 text-sm font-normal leading-4 text-[#03677E] flex items-center justify-end">
-                                <button id="additional-info-popup-btn" class="flex items-center justify-center gap-2">
-                                    <img src="images/svg/info.svg" class="w-5 h-5" alt="info"> Additional Info
+                                class="my-2 mr-4 text-[10px] lg:text-sm font-normal leading-4 text-[#03677E] flex items-center justify-end">
+                                <button id="additional-info-popup-btn"
+                                    class="hidden lg:flex items-center  justify-center gap-2">
+                                    <img src="images/svg/info.svg" class="w-5 h-5" alt="info"> Additional Info1
+                                </button>
+                                <button id="additional-info-popup-mobile-btn"
+                                    class="flex lg:hidden items-center justify-center gap-2">
+                                    <img src="images/svg/info.svg" class="w-5 h-5" alt="info"> Additional Info2
                                 </button>
                             </div>
                         </div>
 
+
                         <!-- Popup -->
                         <div id="additional-info-popup"
-                            class="fixed inset-0 hidden bg-black bg-opacity-50 z-50 items-center justify-center">
+                            class="fixed hidden inset-0  bg-black bg-opacity-50 z-50 items-center justify-center">
                             <div
-                                class="bg-white w-[90%] h-[500px] lg:w-[50%] max-w-[700px] rounded-lg shadow-lg overflow-hidden relative overflow-y-scroll">
+                                class="bg-white w-[90%] h-[700px] lg:w-[80%]  max-w-[1000px] rounded-lg shadow-lg  relative overflow-y-scroll">
                                 <!-- Popup Content -->
                                 <div class="p-6 ">
                                     <div class="flex justify-end p-1">
@@ -252,13 +249,14 @@
                                                 <div class="relative min-w-full lg:max-w-full">
                                                     <img id="main-image-card1" src="images/rental_vehicle_1.jpeg"
                                                         alt="Main Photo"
-                                                        class="min-w-full h-[150px] lg:w-full lg:h-full object-cover rounded-tl-md">
+                                                        class="min-w-full max-h-[200px] lg:w-full lg:h-full object-cover rounded-tl-md">
                                                 </div>
 
                                             </div>
 
                                             <!-- Content Section -->
-                                            <div class="w-full lg:w-2/3 lg:py-4 lg:pl-4">
+                                            <div
+                                                class="w-full lg:w-2/3 lg:py-4 lg:pl-4 flex flex-col gap-3 justify-center">
                                                 <!-- Title and Tagline -->
                                                 <div class="flex justify-between items-start p-2 lg:p-0">
                                                     <div class="">
@@ -271,9 +269,8 @@
                                                 </div>
 
                                                 <!-- Features -->
-                                                <!-- <div class="flex items-center mt-4 space-x-6 text-gray-600"> -->
                                                 <div
-                                                    class="w-full grid grid-rows-2 grid-flow-col gap-4 text-[#606060] py-2 px-4 border-b border-[#BFC8CC]">
+                                                    class="w-full grid grid-rows-2 grid-flow-col gap-4 text-[#606060] py-2 px-4 ">
                                                     <div class="flex items-center"><img
                                                             src="images/svg/vehicle-seat.svg" class="h-4 w-4 mr-2"
                                                             alt="seat">
@@ -324,16 +321,17 @@
                                             </div>
                                         </div>
                                         <!-- Tabs -->
-                                        <ul id="popup-tabs" class="flex space-x-4 mb-4  border-b border-[#BFC8CC] p-4">
-                                            <li data-tab="description" class="font-bold cursor-pointer active-tab">
+                                        <ul id="wpopup-tabs"
+                                            class="flex space-x-4 mb-4 border-b border-[#BFC8CC] p-4">
+                                            <li data-tab="wdescription" class="font-bold cursor-pointer active-tab">
                                                 Description</li>
-                                            <li data-tab="security" class="cursor-pointer">Security Deposit</li>
-                                            <li data-tab="images" class="cursor-pointer">Images</li>
-                                            <li data-tab="ratings" class="cursor-pointer">Ratings</li>
+                                            <li data-tab="wsecurity" class="cursor-pointer">Security Deposit</li>
+                                            <li data-tab="wimages" class="cursor-pointer">Images</li>
+                                            <li data-tab="wratings" class="cursor-pointer">Ratings</li>
                                         </ul>
 
                                         <!-- Tab Content -->
-                                        <div id="description-content-popup" class="tab-content p-4">
+                                        <div id="wdescription-content-popup" class="tab-content p-4">
                                             <p class="text-gray-600 text-sm">
                                                 If the car's bodywork gets damaged, the most you'll pay towards repairs
                                                 covered by the
@@ -356,7 +354,7 @@
                                             </ul>
                                         </div>
 
-                                        <div id="security-content-popup" class="tab-content hidden p-4">
+                                        <div id="wsecurity-content-popup" class="tab-content hidden p-4">
                                             <p class="text-gray-600 text-sm">
                                                 A security deposit of Rs. 10,000 is required for the rental. This
                                                 deposit will be
@@ -368,7 +366,7 @@
                                             </p>
                                         </div>
 
-                                        <div id="images-content-popup" class="tab-content hidden p-4">
+                                        <div id="wimages-content-popup" class="tab-content hidden p-4">
                                             <div class="flex h-[200px] gap-2 overflow-x-scroll">
                                                 <!-- Example Images -->
                                                 <img src="images/rental_vehicle_1.jpeg" alt="Vehicle 1"
@@ -384,7 +382,7 @@
                                             </div>
                                         </div>
 
-                                        <div id="ratings-content-popup" class="tab-content hidden p-4">
+                                        <div id="wratings-content-popup" class="tab-content hidden p-4">
                                             <!-- Overall Rating -->
                                             <div class="flex items-center mb-2">
                                                 <div class="text-5xl font-bold text-gray-800">4.8</div>
@@ -467,12 +465,7 @@
                             </div>
                         </div>
 
-
-
-
-
                         <!-- Features -->
-
                         <div class="w-full grid  grid-rows-2 grid-flow-col gap-4 text-[#606060] py-2 px-4 ">
                             <div class="flex items-center"><img src="images/svg/vehicle-seat.svg" class="h-4 w-4 mr-2"
                                     alt="seat">
@@ -513,32 +506,138 @@
                                 </span>
                             </div>
                         </div>
-
-
                     </div>
+
+                    <div id="mobile-mpopup"
+                        class="fixed inset-0 bg-white z-50 pt-2 transform translate-x-full transition-transform duration-300">
+                        <div class="relative w-full h-full flex flex-col">
+                            <!-- Close Button -->
+                            <button id="close-mpopup" class="absolute top-2 right-4 text-black text-2xl font-bold">
+                                &times;
+                            </button>
+
+                            <!-- Tabs -->
+                            <ul id="popup-mtabs"
+                                class="flex text-sm space-x-4 mb-4 border-b border-[#BFC8CC] p-4 mt-10">
+                                <li data-tab="description" class=" cursor-pointer active-tab">Description</li>
+                                <li data-tab="security" class="cursor-pointer">Security Deposit</li>
+                                <li data-tab="images" class="cursor-pointer">Images</li>
+                                <li data-tab="ratings" class="cursor-pointer">Ratings</li>
+                            </ul>
+
+                            <!-- Tab Content -->
+                            <div id="description-mcontent-popup" class="mtab-content p-4">
+                                <p class="text-gray-600 text-sm">
+                                    If the car's bodywork gets damaged, the most you'll pay towards repairs covered by
+                                    the Collision Damage
+                                    Waiver is the damage excess (£1,750.00). This cover is only valid if you stick to
+                                    the terms of the
+                                    rental agreement. It doesn't cover other parts of the car (e.g., windows, wheels,
+                                    interior, or
+                                    undercarriage), or charges (e.g., for towing or off-road time), or anything in the
+                                    car (e.g., child
+                                    seats, GPS devices, or personal belongings).
+                                </p>
+                                <p class="mt-2 text-sm text-gray-800">Amenities included:</p>
+                                <ul class="list-disc ml-6 text-gray-600">
+                                    <li>Water bottle</li>
+                                    <li>Charging port</li>
+                                    <li>Free wifi</li>
+                                </ul>
+                            </div>
+
+                            <div id="security-mcontent-popup" class="mtab-content hidden p-4">
+                                <p class="text-gray-600 text-sm">
+                                    A security deposit of Rs. 10,000 is required for the rental. This deposit will be
+                                    refunded in full if
+                                    there are no damages to the car upon return. Please note that the refund process
+                                    might take up to 7
+                                    business days.
+                                </p>
+                            </div>
+
+                            <div id="images-mcontent-popup" class="mtab-content hidden p-4">
+                                <div class="grid grid-cols-2 gap-2">
+                                    <img src="images/rental_vehicle_1.jpeg" alt="Vehicle 1"
+                                        class="w-64 h-full object-cover rounded-lg">
+                                    <img src="images/home1.jpg" alt="Vehicle 2"
+                                        class="w-64 h-full object-cover rounded-lg">
+                                    <img src="images/home2.jpg" alt="Vehicle 3"
+                                        class="w-64 h-full object-cover rounded-lg">
+                                    <img src="images/deal1.jpg" alt="Vehicle 4"
+                                        class="w-64 h-full object-cover rounded-lg">
+                                    <img src="images/deal2.jpg" alt="Vehicle 5"
+                                        class="w-64 h-full object-cover rounded-lg">
+                                </div>
+                            </div>
+
+                            <div id="ratings-mcontent-popup" class="mtab-content hidden p-4">
+                                <div class="flex items-center mb-2">
+                                    <div class="text-5xl font-bold text-gray-800">4.8</div>
+                                    <div class="text-lg font-bold text-gray-500 ml-2">/5</div>
+                                </div>
+                                <div class="flex items-center mb-6">
+                                    <div class="flex text-yellow-400 text-xl">
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span class="text-gray-400">★</span>
+                                    </div>
+                                    <div class="ml-4 text-sm text-gray-600">(145 Reviews)</div>
+                                </div>
+                                <div class="space-y-6">
+                                    <div class="flex items-start space-x-4">
+                                        <img src="images/sample_1.jpg" alt="Reviewer" class="w-12 h-12 rounded-full">
+                                        <div>
+                                            <div class="flex items-center space-x-2">
+                                                <span class="font-semibold text-gray-800">Han Solo</span>
+                                                <span class="text-sm text-gray-500">1 day ago</span>
+                                                <div class="flex text-yellow-400 text-sm">
+                                                    <span>★</span>
+                                                    <span>★</span>
+                                                    <span>★</span>
+                                                    <span>★</span>
+                                                    <span class="text-gray-400">★</span>
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-600 text-sm mt-2">
+                                                We supply a series of design principles, practical patterns, and
+                                                high-quality design
+                                                resources.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
+            <!-- Driver Details -->
             <div class="border border-[#C4C6D0] rounded-lg p-4 flex flex-col ">
-                <h1 class="font-bold text-[20px] leading-4 my-4">Driver Details</h1>
-                <div class="flex items-center gap-4 justify-between  mb-5">
-                    <div class="flex items-center gap-3">
+                <h1 class="font-bold text-[16px] lg:text-[20px] leading-4 my-4">Driver Details</h1>
+                <div class="flex flex-col lg:flex-row items-center gap-4 justify-between  mb-5">
+                    <div class="flex w-full items-center gap-3">
                         <img src="images/sample_1.jpg" alt="Driver" class="w-[76px] h-[76px] rounded-full border">
                         <div class="flex flex-col gap-1">
-                            <h3 class="text-[16px] font-bold leading-5">Kushmat Bhushal</h3>
-                            <p class="text-sm font-normal leading-5">13 Years of experience</p>
+                            <h3 class="text-[12px] lg:text-[16px] font-bold leading-5">Kushmat Bhushal</h3>
+                            <p class="text-xs lg:text-sm font-normal leading-5">13 Years of experience</p>
                             <div class="flex items-center mt-1">
                                 <div class="text-sm flex items-center gap-1">
                                     <img src="images/svg/Star.svg" alt="5 stars"
-                                        class="w-[14px] h-14px lg:w-[18px] lg:h-[18px]" />
+                                        class="w-[12px] h-[12px] lg:w-[18px] lg:h-[18px]" />
                                     <img src="images/svg/Star.svg" alt="5 stars"
-                                        class="w-[14px] h-14px lg:w-[18px] lg:h-[18px]" />
+                                        class="w-[12px] h-[12px] lg:w-[18px] lg:h-[18px]" />
                                     <img src="images/svg/Star.svg" alt="5 stars"
-                                        class="w-[14px] h-14px lg:w-[18px] lg:h-[18px]" />
+                                        class="w-[12px] h-[12px] lg:w-[18px] lg:h-[18px]" />
                                     <img src="images/svg/Star.svg" alt="5 stars"
-                                        class="w-[14px] h-14px lg:w-[18px] lg:h-[18px]" />
+                                        class="w-[12px] h-[12px] lg:w-[18px] lg:h-[18px]" />
                                     <img src="images/svg/Star.svg" alt="5 stars"
-                                        class="w-[14px] h-14px lg:w-[18px] lg:h-[18px]" />
+                                        class="w-[12px] h-[12px] lg:w-[18px] lg:h-[18px]" />
                                     <span class="font-normal text-[8px] lg:text-[10px] leading-4 text-[#4A4A4A]">
                                         (145 Bookings)
                                     </span>
@@ -546,7 +645,8 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" id="driver-info-btn" class="text-[#03677E] text-sm font-normal leading-4">View
+                    <button type="button" id="driver-info-btn"
+                        class="text-[#03677E] text-xs lg:text-sm font-normal leading-4 whitespace-nowrap">View
                         all ratings</button>
                 </div>
                 <div id="driver-info" class="hidden">
@@ -565,7 +665,7 @@
                             <span>★</span>
                             <span class="text-gray-400">★</span>
                         </div>
-                        <div class="ml-4 text-sm text-gray-600">(145 Reviews)</div>
+                        <div class="ml-4 text-xs lg:text-sm text-gray-600">(145 Reviews)</div>
                     </div>
 
                     <!-- Reviews Section -->
@@ -576,8 +676,8 @@
                             <div>
                                 <div class="flex items-center space-x-2">
                                     <span class="font-semibold text-gray-800">Han Solo</span>
-                                    <span class="text-sm text-gray-500">1 day ago</span>
-                                    <div class="flex text-yellow-400 text-sm">
+                                    <span class="text-xs lg:text-sm text-gray-500">1 day ago</span>
+                                    <div class="flex text-yellow-400 text-xs lg:text-sm">
                                         <span>★</span>
                                         <span>★</span>
                                         <span>★</span>
@@ -585,7 +685,7 @@
                                         <span class="text-gray-400">★</span>
                                     </div>
                                 </div>
-                                <p class="text-gray-600 text-sm mt-2">
+                                <p class="text-gray-600 text-xs lg:text-sm mt-2">
                                     We supply a series of design principles, practical patterns and high quality
                                     design resources
                                     (Sketch and Axure), to help people create their product prototypes
@@ -600,8 +700,8 @@
                             <div>
                                 <div class="flex items-center space-x-2">
                                     <span class="font-semibold text-gray-800">Han Solo</span>
-                                    <span class="text-sm text-gray-500">1 day ago</span>
-                                    <div class="flex text-yellow-400 text-sm">
+                                    <span class="text-xs lg:text-sm text-gray-500">1 day ago</span>
+                                    <div class="flex text-yellow-400 text-xs lg:text-sm">
                                         <span>★</span>
                                         <span>★</span>
                                         <span>★</span>
@@ -609,7 +709,7 @@
                                         <span class="text-gray-400">★</span>
                                     </div>
                                 </div>
-                                <p class="text-gray-600 text-sm mt-2">
+                                <p class="text-gray-600 text-xs lg:text-sm mt-2">
                                     We supply a series of design principles, practical patterns and high quality
                                     design resources
                                     (Sketch and Axure), to help people create their product prototypes
@@ -621,51 +721,56 @@
                 </div>
             </div>
 
-
+            <!-- Booking Details -->
             <div class="bg-white border border-[#C4C6D0] rounded-lg p-6 mt-6 shadow-sm flex flex-col items-center">
                 <div class="flex justify-start items-start w-full mb-2">
-                    <h2 class="text-[16px] font-bold leading-4 mb-4 ">Booking Details</h2>
+                    <h2 class="text-[16px] lg:text-[20px] font-bold leading-4 mb-4 ">Booking Details</h2>
                 </div>
 
-                <form class="flex flex-col w-4/5 items-center justify-center ">
+                <form class="flex flex-col w-full lg:w-4/5 items-center justify-center ">
                     <!-- Full Name -->
-                    <div class="flex w-4/5 mb-4 items-center gap-2">
-                        <label for="full-name" class="w-1/3 text-end block text-sm font-normal leading-5 mb-1">Full
+                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
+                        <label for="full-name"
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-5 mb-1">Full
                             name:</label>
                         <input type="text" id="full-name" name="full-name" placeholder="example"
-                            class="w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
+                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
                     </div>
 
                     <!-- Email -->
-                    <div class="flex w-4/5 mb-4 items-center gap-2">
+                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
                         <label for="email"
-                            class="w-1/3 text-end block text-sm font-normal leading-5 mb-1">Email:</label>
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-5 mb-1">Email:</label>
                         <input type="email" id="email" name="email" placeholder="example"
-                            class="w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
+                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
                     </div>
 
                     <!-- Phone Number -->
-                    <div class="flex w-4/5 mb-4 items-start gap-2">
-                        <label for="phone" class="w-1/3 text-end block text-sm font-normal leading-5 mb-1">Phone
+                    <div class="flex w-full lg:w-4/5 mb-4 items-start gap-2">
+                        <label for="phone"
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-5 mb-1">Phone
                             number:</label>
 
-                        <div class="flex flex-col w-2/3">
+                        <div class="flex flex-col w-full lg:w-2/3">
                             <input type="text" id="phone" name="phone" placeholder="example"
                                 class="w-full border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
-                            <p class="font-normal text-sm leading-4 opacity-[45%]">The driver will use this number to
+                            <p class="font-normal text-xs lg:text-sm leading-4 opacity-[45%]">The driver will use this
+                                number to
                                 contact you during pickup</p>
                         </div>
                     </div>
 
                     <!-- Pickup Location -->
-                    <div class="flex w-4/5 mb-4 items-start gap-2">
-                        <label for="phone" class="w-1/3 text-end block text-sm font-normal leading-5 mb-1">Pickup
+                    <div class="flex w-full lg:w-4/5 mb-4 items-start gap-2">
+                        <label for="phone"
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-5 mb-1">Pickup
                             Location</label>
 
-                        <div class="flex flex-col w-2/3">
+                        <div class="flex flex-col w-full lg:w-2/3">
                             <input type="text" id="phone" name="phone" placeholder="example"
                                 class="w-full border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
-                            <p class="flex items-center mt-2 gap-2 font-normal text-sm leading-4 text-[#44474F]">
+                            <p
+                                class="flex items-center mt-2 gap-2 font-normal text-xs lg:text-sm leading-4 text-[#44474F]">
                                 <input type="checkbox" class="w-5 h-5  border-gray-300 rounded-sm accent-[#0B3C49]" />
                                 Pick me up at my location
                             </p>
@@ -675,58 +780,60 @@
                 </form>
             </div>
 
+            <!-- Driver Details -->
             <div class="bg-white border border-[#C4C6D0] rounded-lg p-6 mt-6 shadow-sm flex flex-col items-center">
                 <div class="flex justify-start items-start w-full mb-2">
-                    <h2 class="text-[16px] font-bold leading-4 mb-4 ">Driver Details</h2>
+                    <h2 class="text-[16px] lg:text-[20px] font-bold leading-4 mb-4 ">Driver Details</h2>
                 </div>
 
-                <form class="flex flex-col w-4/5 items-center justify-center ">
+                <form class="flex flex-col w-full lg:w-4/5 items-center justify-center ">
                     <!-- First Name -->
-                    <div class="flex w-4/5 mb-4 items-center gap-2">
+                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
                         <label for="driver-first-name"
-                            class="w-1/3 text-end block text-sm font-normal leading-5 mb-1">First
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-5 mb-1 ">First
                             name:</label>
                         <input type="text" id="driver-first-name" name="driver-first-name" placeholder="example"
-                            class="w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
+                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
                     </div>
 
                     <!-- Middle Name -->
-                    <div class="flex w-4/5 mb-4 items-center gap-2">
+                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
                         <label for="driver-middle-name"
-                            class="w-1/3 text-end block text-sm font-normal leading-5 mb-1">Middle
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-5 mb-1">Middle
                             name:</label>
                         <input type="text" id="driver-middle-name" name="driver-middle-name" placeholder="example"
-                            class="w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
+                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
                     </div>
 
                     <!-- Last Name -->
-                    <div class="flex w-4/5 mb-4 items-center gap-2">
+                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
                         <label for="driver-last-name"
-                            class="w-1/3 text-end block text-sm font-normal leading-5 mb-1">Last
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-5 mb-1">Last
                             name:</label>
                         <input type="text" id="driver-last-name" name="driver-last-name" placeholder="example"
-                            class="w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
+                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
                     </div>
 
                     <!-- Nationality -->
-                    <div class="flex w-4/5 mb-4 items-center gap-2">
+                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
                         <label for="driver-nationality"
-                            class="w-1/3 text-end block text-sm font-normal leading-5 mb-1">Nationality:</label>
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-5 mb-1">Nationality:</label>
                         <input type="text" id="driver-nationality" name="driver-nationality" placeholder="example"
-                            class="w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
+                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
                     </div>
 
 
                     <!-- Liscence Number -->
-                    <div class="flex w-4/5 mb-4 items-start gap-2">
+                    <div class="flex w-full lg:w-4/5 mb-4 items-start gap-2">
                         <label for="driver-liscence"
-                            class="w-1/3 text-end block text-sm font-normal leading-5 mb-1">Liscence
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-5 mb-1">Liscence
                             number:</label>
 
-                        <div class="flex flex-col w-2/3">
+                        <div class="flex flex-col w-full lg:w-2/3">
                             <input type="text" id="driver-liscence" name="driver-liscence" placeholder="example"
                                 class="w-full border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
-                            <p class="font-normal text-sm leading-4 opacity-[45%]">You need to provide this document at
+                            <p class="font-normal text-xs lg:text-sm leading-4 opacity-[45%]">You need to provide this
+                                document at
                                 the time of pickup</p>
                         </div>
                     </div>
@@ -734,20 +841,22 @@
                 </form>
             </div>
 
+            <!-- Addons -->
             <div class="bg-white border border-[[#C4C6D0]] rounded-lg p-6 mt-6 shadow-sm">
                 <!-- Add-ons Heading -->
-                <h2 class="text-[20px] leading-4 font-bold  mb-4">Add-ons</h2>
+                <h2 class="text-[16px] lg:text-[20px] leading-4 font-bold  mb-4">Add-ons</h2>
 
                 <!-- Add-ons List -->
                 <div class="space-y-4">
                     <!-- Add-on Item -->
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-2">
-                            <input type="checkbox" class="w-5 h-5  border-[[#C4C6D0]] rounded-sm accent-[#0B3C49]" />
-                            <label class="text-[#44474F] font-normal text-sm leading-4">Child Seat</label>
+                            <input type="checkbox"
+                                class="w-4 h-4 lg:w-5 lg:h-5  border-[[#C4C6D0]] rounded-sm accent-[#0B3C49]" />
+                            <label class="text-[#44474F] font-normal text-xs lg:text-sm leading-4">Child Seat</label>
                         </div>
                         <p class=" flex flex-col gap-0">
-                            <span class="text-[#44474F] font-normal text-sm leading-4">Rs. 1,200
+                            <span class="text-[#44474F] font-normal text-xs lg:text-sm leading-4">Rs. 1,200
                             </span>
                             <span class="text-[#565E71] font-normal text-[10px] leading-5">
                                 per day
@@ -758,11 +867,12 @@
                     <!-- Add-on Item -->
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-2">
-                            <input type="checkbox" class="w-5 h-5  border-gray-300 rounded-sm accent-[#0B3C49]" />
-                            <label class="text-[#44474F] font-normal text-sm leading-4">Extra Wheel</label>
+                            <input type="checkbox"
+                                class="w-4 h-4 lg:w-5 lg:h-5  border-gray-300 rounded-sm accent-[#0B3C49]" />
+                            <label class="text-[#44474F] font-normal text-xs lg:text-sm leading-4">Extra Wheel</label>
                         </div>
                         <p class=" flex flex-col gap-0">
-                            <span class="text-[#44474F] font-normal text-sm leading-4">Rs. 1,200
+                            <span class="text-[#44474F] font-normal text-xs lg:text-sm leading-4">Rs. 1,200
                             </span>
                             <span class="text-[#565E71] font-normal text-[10px] leading-5">
                                 per day
@@ -773,11 +883,12 @@
                     <!-- Add-on Item -->
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-2">
-                            <input type="checkbox" class="w-5 h-5  border-gray-300 rounded-sm accent-[#0B3C49]" />
-                            <label class="text-[#44474F] font-normal text-sm leading-4">First Aid Box</label>
+                            <input type="checkbox"
+                                class="w-4 h-4 lg:w-5 lg:h-5  border-gray-300 rounded-sm accent-[#0B3C49]" />
+                            <label class="text-[#44474F] font-normal text-xs lg:text-sm leading-4">First Aid Box</label>
                         </div>
                         <p class=" flex flex-col gap-0">
-                            <span class="text-[#44474F] font-normal text-sm leading-4">Rs. 1,200
+                            <span class="text-[#44474F] font-normal text-xs lg:text-sm leading-4">Rs. 1,200
                             </span>
                             <span class="text-[#565E71] font-normal text-[10px] leading-5">
                                 per day
@@ -788,11 +899,13 @@
                     <!-- Add-on Item -->
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-2">
-                            <input type="checkbox" class="w-5 h-5  border-gray-300 rounded-sm accent-[#0B3C49]" />
-                            <label class="text-[#44474F] font-normal text-sm leading-4">Navigation GPS System</label>
+                            <input type="checkbox"
+                                class="w-4 h-4 lg:w-5 lg:h-5  border-gray-300 rounded-sm accent-[#0B3C49]" />
+                            <label class="text-[#44474F] font-normal text-xs lg:text-sm leading-4">Navigation GPS
+                                System</label>
                         </div>
                         <p class=" flex flex-col gap-0">
-                            <span class="text-[#44474F] font-normal text-sm leading-4">Rs. 1,200
+                            <span class="text-[#44474F] font-normal text-xs lg:text-sm leading-4">Rs. 1,200
                             </span>
                             <span class="text-[#565E71] font-normal text-[10px] leading-5">
                                 per day
@@ -803,27 +916,97 @@
             </div>
 
             <!-- Additional Request Field -->
-            <div class="mt-6">
-                <label for="additional-request" class="block text-sm font-medium text-[#49454F] mb-1">Additional
+            <div class="mt-6 mb-28 lg:mb-2">
+                <label for="additional-request"
+                    class="block text-xs lg:text-sm font-medium text-[#49454F] mb-1">Additional
                     Request</label>
                 <textarea id="additional-request" placeholder="Write other requests (if any)..."
                     class="w-full border border-gray-300 rounded-md py-2 px-3 text-[#49454F] focus:outline-none"
                     rows="3"></textarea>
             </div>
 
-            <!-- Book Tickets Button -->
-            <div class="mt-6">
+            <!-- Book Tickets Button Web View -->
+            <div class="mt-6 hidden lg:block">
                 <button type="button"
-                    class="w-full bg-[#0B3C49] text-white py-3 rounded-md text-center text-[16px] leading-6 font-normal focus:outline-none">
+                    class="w-full bg-[#0B3C49] text-white py-3 rounded-md text-center text-sm lg:text-[16px] leading-6 font-normal focus:outline-none">
                     Book Tickets
                 </button>
             </div>
 
+            <!-- Book Tickets Button Mobile View -->
+            <div
+                class="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t shadow-lg p-4 flex justify-between items-center">
+                <!-- Price Section -->
+                <div class="flex flex-col items-end w-2/4">
+                    <p class="text-sm text-gray-500">Price</p>
+                    <p class="text-xl font-bold text-black">Rs. 4,400</p>
+                    <button id="view-price-details-btn" class="text-sm text-[#03677E] hover:underline">view price
+                        details ></button>
+                </div>
+
+                <!-- Book Tickets Button -->
+                <button type="button"
+                    class="bg-[#0B3C49] w-[40%] text-white px-6 py-3 rounded-md text-center text-sm font-normal focus:outline-none">
+                    Book Tickets
+                </button>
+            </div>
+
+            <!-- Full-Screen Popup -->
+            <div id="price-details-popup" class="hidden fixed inset-0 bg-white z-50">
+                <div class="relative w-full h-full flex flex-col">
+                    <!-- Close Button -->
+                    <button id="close-popup-btn" class="absolute top-4 right-4 text-black text-xl font-bold">
+                        &times;
+                    </button>
+
+                    <!-- Content -->
+                    <div class="p-6">
+                        <div class="border border-[#C4C6D0] rounded-sm p-6 mt-[105px]">
+                            <!-- Booking Details Header -->
+                            <h2 class="text-lg font-bold text-[20px] leading-4 mb-4">Booking details</h2>
+
+                            <!-- Travel Details -->
+                            <p class="text-sm font-normal leading-5 mb-2">Jan 4, 2025 - Jan 5, 2025</p>
+                            <p class="text-sm font-normal leading-5 mb-4">(Kathmandu - Pokhara)</p>
+
+                            <!-- Price Breakdown -->
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-[#565E71] text-sm font-normal leading-5">
+                                    <span>Ticket Price</span>
+                                    <span>Rs. 4,200.0</span>
+                                </div>
+                                <div class="flex justify-between text-[#565E71] text-sm font-normal leading-5">
+                                    <span>Tax and fee</span>
+                                    <span>Rs. 200.0</span>
+                                </div>
+                                <div class="flex justify-between text-[#565E71] text-sm font-normal leading-5">
+                                    <span>Insurance</span>
+                                    <span>FREE</span>
+                                </div>
+                                <hr class="border-[[#C4C6D0]] my-2">
+                                <div class="flex justify-between text-[#565E71] text-sm font-normal leading-5">
+                                    <span>Total</span>
+                                    <span>Rs. 4,400.0</span>
+                                </div>
+                            </div>
+                            <!-- Promo Info -->
+                            <p class="text-sm font-normal leading-5 text-[#834C74] mt-4">Enter promo code in the next
+                                step</p>
+                        </div>
+
+                        <!-- Cancellation Notice -->
+                        <div
+                            class="bg-[#FCFFE6] text-[#5B8C00] text-[12px] font-normal leading-5 p-3 rounded-sm border border-[#5B8C00] mt-4">
+                            Free cancellation before 17th Jan 2025.
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </main>
         <aside
-            class="fixed top-[112px] right-0 h-[calc(100vh-112px)] w-[350px] text-black z-30 p-4 overflow-auto scrollbar-hide">
+            class="hidden lg:flex lg:flex-col lg:absolute lg:top-[112px] lg:right-0 lg:h-[calc(100vh-112px)] lg:w-[350px] text-black z-40 lg:p-4 ">
 
             <div class="border border-[#C4C6D0] rounded-sm p-6 mt-[105px]">
                 <!-- Booking Details Header -->
@@ -853,11 +1036,8 @@
                         <span>Rs. 4,400.0</span>
                     </div>
                 </div>
-
                 <!-- Promo Info -->
                 <p class="text-sm font-normal leading-5 text-[#834C74] mt-4">Enter promo code in the next step</p>
-
-
             </div>
 
             <!-- Cancellation Notice -->
