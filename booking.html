@@ -185,7 +185,7 @@
                         <!-- Main Image -->
                         <div class="relative w-full">
                             <img id="main-image" src="images/rental_vehicle_1.jpeg" alt="Main Photo"
-                                class="w-full h-full object-cover rounded-md">
+                                class="w-full h-full object-cover rounded-tl-md rounded-bl-md">
                         </div>
 
                         <!-- Thumbnail Images -->
@@ -206,7 +206,7 @@
                     <!-- Content Section -->
                     <div class="w-2/3 py-4 pl-4 ">
                         <!-- Title and Tagline -->
-                        <div class="flex justify-between items-start border-b border-[#C4C6D0]">
+                        <!-- <div class="flex justify-between items-start border-b border-[#C4C6D0]">
                             <div>
                                 <h2 class="text-xl leading-4 font-bold ">Midsize Elite SUV</h2>
                                 <p class="text-sm leading-5 font-normal text-[#135200] mt-2">Tata Nexon</p>
@@ -217,7 +217,259 @@
                                     <img src="images/svg/info.svg" class="w-5 h-5" alt="info"> Additional Info
                                 </button>
                             </div>
+                        </div> -->
+
+                        <div class="flex justify-between items-start border-b border-[#C4C6D0]">
+                            <div>
+                                <h2 class="text-xl leading-4 font-bold">Midsize Elite SUV</h2>
+                                <p class="text-sm leading-5 font-normal text-[#135200] mt-2">Tata Nexon</p>
+                            </div>
+                            <div
+                                class="my-2 mr-4 text-sm font-normal leading-4 text-[#03677E] flex items-center justify-end">
+                                <button id="additional-info-popup-btn" class="flex items-center justify-center gap-2">
+                                    <img src="images/svg/info.svg" class="w-5 h-5" alt="info"> Additional Info
+                                </button>
+                            </div>
                         </div>
+
+                        <!-- Popup -->
+                        <div id="additional-info-popup"
+                            class="fixed inset-0 hidden bg-black bg-opacity-50 z-50 items-center justify-center">
+                            <div
+                                class="bg-white w-[90%] h-[500px] lg:w-[50%] max-w-[700px] rounded-lg shadow-lg overflow-hidden relative overflow-y-scroll">
+                                <!-- Popup Content -->
+                                <div class="p-6 ">
+                                    <div class="flex justify-end p-1">
+                                        <button id="additional-close-popup-btn"
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">x</button>
+                                    </div>
+                                    <div id="popup-info" class="border rounded-md border-[#BFC8CC] ">
+                                        <div
+                                            class="flex flex-col lg:flex lg:flex-row border-b-[1px] w-full max-h-[200px] lg:max-h-[270px] border-[#BFC8CC] ">
+                                            <div
+                                                class="relative flex flex-col w-full  lg:flex lg:flex-row lg:w-[50%] lg:justify-center ">
+                                                <!-- Main Image -->
+                                                <div class="relative min-w-full lg:max-w-full">
+                                                    <img id="main-image-card1" src="images/rental_vehicle_1.jpeg"
+                                                        alt="Main Photo"
+                                                        class="min-w-full h-[150px] lg:w-full lg:h-full object-cover rounded-tl-md">
+                                                </div>
+
+                                            </div>
+
+                                            <!-- Content Section -->
+                                            <div class="w-full lg:w-2/3 lg:py-4 lg:pl-4">
+                                                <!-- Title and Tagline -->
+                                                <div class="flex justify-between items-start p-2 lg:p-0">
+                                                    <div class="">
+                                                        <h2
+                                                            class="text-[16px] lg:text-xl leading-4 font-bold text-black">
+                                                            Midsize Elite SUV
+                                                        </h2>
+                                                        <p class="text-sm leading-5 text-[#00904D]">Tata Nexon</p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Features -->
+                                                <!-- <div class="flex items-center mt-4 space-x-6 text-gray-600"> -->
+                                                <div
+                                                    class="w-full grid grid-rows-2 grid-flow-col gap-4 text-[#606060] py-2 px-4 border-b border-[#BFC8CC]">
+                                                    <div class="flex items-center"><img
+                                                            src="images/svg/vehicle-seat.svg" class="h-4 w-4 mr-2"
+                                                            alt="seat">
+                                                        <span class="font-normal text-sm leading-4">
+                                                            5
+                                                            Seats
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex items-center"><img
+                                                            src="images/svg/vehicle-luggage.svg" class="h-4 w-4 mr-2"
+                                                            alt="luggage">
+                                                        <span class="font-normal text-sm leading-4">
+                                                            2 large bags
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex items-center"><img
+                                                            src="images/svg/vehicle-gearshift.svg" class="h-4 w-4 mr-2"
+                                                            alt="gearshift">
+                                                        <span class="font-normal text-sm leading-4">
+                                                            Manual
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex items-center"><img
+                                                            src="images/svg/vehicle-speed.svg" class="h-4 w-4 mr-2"
+                                                            alt="speed">
+                                                        <span class="font-normal text-sm leading-4">
+                                                            23
+                                                            Kmpl
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex items-center"><img
+                                                            src="images/svg/vehicle-kilometer.svg" class="h-4 w-4 mr-2"
+                                                            alt="kilometer">
+                                                        <span class="font-normal text-sm leading-4">
+                                                            300 Kms per day
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex items-center"><img
+                                                            src="images/svg/vehicle-road-alt.svg" class="h-4 w-4 mr-2"
+                                                            alt="road-alt">
+                                                        <span class="font-normal text-sm leading-4">
+                                                            Offroad
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <!-- Tabs -->
+                                        <ul id="popup-tabs" class="flex space-x-4 mb-4  border-b border-[#BFC8CC] p-4">
+                                            <li data-tab="description" class="font-bold cursor-pointer active-tab">
+                                                Description</li>
+                                            <li data-tab="security" class="cursor-pointer">Security Deposit</li>
+                                            <li data-tab="images" class="cursor-pointer">Images</li>
+                                            <li data-tab="ratings" class="cursor-pointer">Ratings</li>
+                                        </ul>
+
+                                        <!-- Tab Content -->
+                                        <div id="description-content-popup" class="tab-content p-4">
+                                            <p class="text-gray-600 text-sm">
+                                                If the car's bodywork gets damaged, the most you'll pay towards repairs
+                                                covered by the
+                                                Collision Damage Waiver is the damage excess (£1,750.00). This cover is
+                                                only valid if
+                                                you
+                                                stick to the terms of the rental agreement. It doesn't cover other parts
+                                                of the car
+                                                (e.g.,
+                                                windows, wheels, interior, or undercarriage), or charges (e.g., for
+                                                towing or off-road
+                                                time), or anything in the car (e.g., child seats, GPS devices, or
+                                                personal belongings).
+                                            </p>
+                                            <p class="mt-2 text-sm text-gray-800">Amenities included:</p>
+                                            <ul class="list-disc ml-6 text-gray-600">
+                                                <li>Water bottle</li>
+                                                <li>Charging port</li>
+                                                <li>Free wifi</li>
+                                            </ul>
+                                        </div>
+
+                                        <div id="security-content-popup" class="tab-content hidden p-4">
+                                            <p class="text-gray-600 text-sm">
+                                                A security deposit of Rs. 10,000 is required for the rental. This
+                                                deposit will be
+                                                refunded
+                                                in full if there are no damages to the car upon return. Please note that
+                                                the refund
+                                                process
+                                                might take up to 7 business days.
+                                            </p>
+                                        </div>
+
+                                        <div id="images-content-popup" class="tab-content hidden p-4">
+                                            <div class="flex h-[200px] gap-2 overflow-x-scroll">
+                                                <!-- Example Images -->
+                                                <img src="images/rental_vehicle_1.jpeg" alt="Vehicle 1"
+                                                    class="w-64 h-full object-cover rounded-lg">
+                                                <img src="images/home1.jpg" alt="Vehicle 2"
+                                                    class="w-64 h-full object-cover rounded-lg">
+                                                <img src="images/home2.jpg" alt="Vehicle 3"
+                                                    class="w-64 h-full object-cover rounded-lg">
+                                                <img src="images/deal1.jpg" alt="Vehicle 4"
+                                                    class="w-64 h-full object-cover rounded-lg">
+                                                <img src="images/deal2.jpg" alt="Vehicle 5"
+                                                    class="w-64 h-full object-cover rounded-lg">
+                                            </div>
+                                        </div>
+
+                                        <div id="ratings-content-popup" class="tab-content hidden p-4">
+                                            <!-- Overall Rating -->
+                                            <div class="flex items-center mb-2">
+                                                <div class="text-5xl font-bold text-gray-800">4.8</div>
+                                                <div class="text-lg font-bold text-gray-500 ml-2">/5</div>
+
+                                            </div>
+
+                                            <!-- Star Rating -->
+                                            <div class="flex items-center mb-6">
+                                                <div class="flex text-yellow-400 text-xl">
+                                                    <span>★</span>
+                                                    <span>★</span>
+                                                    <span>★</span>
+                                                    <span>★</span>
+                                                    <span class="text-gray-400">★</span>
+                                                </div>
+                                                <div class="ml-4 text-sm text-gray-600">(145 Reviews)</div>
+                                            </div>
+
+                                            <!-- Reviews Section -->
+                                            <div class="space-y-6">
+                                                <!-- Review 1 -->
+                                                <div class="flex items-start space-x-4">
+                                                    <img src="images/sample_1.jpg" alt="Reviewer"
+                                                        class="w-12 h-12 rounded-full">
+                                                    <div>
+                                                        <div class="flex items-center space-x-2">
+                                                            <span class="font-semibold text-gray-800">Han Solo</span>
+                                                            <span class="text-sm text-gray-500">1 day ago</span>
+                                                            <div class="flex text-yellow-400 text-sm">
+                                                                <span>★</span>
+                                                                <span>★</span>
+                                                                <span>★</span>
+                                                                <span>★</span>
+                                                                <span class="text-gray-400">★</span>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-gray-600 text-sm mt-2">
+                                                            We supply a series of design principles, practical patterns
+                                                            and high quality
+                                                            design resources
+                                                            (Sketch and Axure), to help people create their product
+                                                            prototypes
+                                                            beautifully and efficiently.
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Review 2 -->
+                                                <div class="flex items-start space-x-4">
+                                                    <img src="images/sample_1.jpg" alt="Reviewer"
+                                                        class="w-12 h-12 rounded-full">
+                                                    <div>
+                                                        <div class="flex items-center space-x-2">
+                                                            <span class="font-semibold text-gray-800">Han Solo</span>
+                                                            <span class="text-sm text-gray-500">1 day ago</span>
+                                                            <div class="flex text-yellow-400 text-sm">
+                                                                <span>★</span>
+                                                                <span>★</span>
+                                                                <span>★</span>
+                                                                <span>★</span>
+                                                                <span class="text-gray-400">★</span>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-gray-600 text-sm mt-2">
+                                                            We supply a series of design principles, practical patterns
+                                                            and high quality
+                                                            design resources
+                                                            (Sketch and Axure), to help people create their product
+                                                            prototypes
+                                                            beautifully and efficiently.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
 
                         <!-- Features -->
 
@@ -474,7 +726,8 @@
                         <div class="flex flex-col w-2/3">
                             <input type="text" id="driver-liscence" name="driver-liscence" placeholder="example"
                                 class="w-full border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none " />
-                            <p class="font-normal text-sm leading-4 opacity-[45%]">You need to provide this document at the time of pickup</p>
+                            <p class="font-normal text-sm leading-4 opacity-[45%]">You need to provide this document at
+                                the time of pickup</p>
                         </div>
                     </div>
 
@@ -645,8 +898,9 @@
         });
     </script>
 
-    <script type="text/javascript" src="scripts/rentalScript.js"></script>
-    <script type="text/javascript" src="scripts/Script.js"></script>
+    <!-- <script type="text/javascript" src="scripts/rentalScript.js"></script>
+    <script type="text/javascript" src="scripts/Script.js"></script> -->
+    <script type="text/javascript" src="scripts/booking.js"></script>
 </body>
 
 </html>
