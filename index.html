@@ -250,14 +250,51 @@
                                         <img class="w-5 h-5  mr-2" src="images/svg/search-icon.svg" alt="search-icon">
 
                                         <input type="text" id="stop" placeholder="Add Stop 1"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
+                                            oninput="filterOptions('stop')" onclick="toggleDropdown('stop')">
 
                                         <button type="button" id="cross-container-1" class="hidden">
                                             <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
                                         </button>
                                     </div>
+
+                                    <ul id="stop-options"
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                            onclick="selectOption('stop', 'Current Location')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="images/svg/current_location.svg"
+                                                    alt="marker--v1" />
+                                                Current Location
+                                            </span>
+                                        </li>
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                            onclick="selectOption('stop', 'Pin in Map')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
+                                                Pin in Map
+                                            </span>
+                                        </li>
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                            onclick="selectOption('stop', 'TIA Airport')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
+                                                TIA Airport
+                                            </span>
+
+                                        </li>
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                            onclick="selectOption('stop', 'Thamel')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="images/svg/location.svg"
+                                                    alt="map-marker--v2" />
+                                                Thamel
+                                            </span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+                            
 
                             <div id="round-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="add-stop-btn"
@@ -273,12 +310,47 @@
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
                                             alt="search-icon">
 
-                                        <input type="text" id="stop" placeholder="Add Stop 2"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                        <input type="text" id="stop-2" placeholder="Add Stop 2"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
+                                            oninput="filterOptions('stop-2')" onclick="toggleDropdown('stop-2')">
                                         <button type="button" id="cross-container-2" class="hidden">
                                             <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
                                         </button>
                                     </div>
+                                    <ul id="stop-2-options"
+                                        class="absolute top-full left-0 w-[250px] bg-white shadow-lg mt-2 hidden z-50 rounded border border-formBorder p-0">
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                            onclick="selectOption('stop-2', 'Current Location')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="images/svg/current_location.svg"
+                                                    alt="marker--v1" />
+                                                Current Location
+                                            </span>
+                                        </li>
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                            onclick="selectOption('stop-2', 'Pin in Map')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="images/svg/Map Pin.svg" alt="map-pin" />
+                                                Pin in Map
+                                            </span>
+                                        </li>
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                            onclick="selectOption('stop-2', 'TIA Airport')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
+                                                TIA Airport
+                                            </span>
+
+                                        </li>
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                            onclick="selectOption('stop-2', 'Thamel')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="images/svg/location.svg"
+                                                    alt="map-marker--v2" />
+                                                Thamel
+                                            </span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
 
@@ -842,8 +914,7 @@
                                 <span class="text-gray-700 text-sm font-medium">Drop Off</span>
                             </label>
                         </div>
-                        <div
-                            class="relative grid grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center">
+                        <div class="relative grid grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center">
                             <!-- Pick-Up Location Field -->
                             <div id="airport-main-pickup" class="col-span-10">
                                 <div class="relative">
