@@ -48,7 +48,7 @@
 
 <body class="bg-white font-roboto">
 
-    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-30 shadow-lg">
         <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
 
 
@@ -148,7 +148,7 @@
 
     <div class="flex">
         <main
-            class="fixed  top-[112px] left-0 h-[calc(100vh-112px)] w-[calc(100%-350px)] py-4 px-8 overflow-auto scrollbar-hide">
+            class="absolute  top-[112px] left-0 h-[calc(100vh-112px)] w-[calc(100%-350px)] py-4 px-8 overflow-auto scrollbar-hide">
 
             <div class=" p-4">
                 <div class="mb-4">
@@ -234,9 +234,9 @@
 
                         <!-- Popup -->
                         <div id="additional-info-popup"
-                            class="fixed inset-0 hidden bg-black bg-opacity-50 z-50 items-center justify-center">
+                            class="fixed hidden inset-0  bg-black bg-opacity-50 z-50 items-center justify-center">
                             <div
-                                class="bg-white w-[90%] h-[500px] lg:w-[50%] max-w-[700px] rounded-lg shadow-lg overflow-hidden relative overflow-y-scroll">
+                                class="bg-white w-[90%] h-[700px] lg:w-[80%]  max-w-[1000px] rounded-lg shadow-lg  relative overflow-y-scroll">
                                 <!-- Popup Content -->
                                 <div class="p-6 ">
                                     <div class="flex justify-end p-1">
@@ -252,13 +252,13 @@
                                                 <div class="relative min-w-full lg:max-w-full">
                                                     <img id="main-image-card1" src="images/rental_vehicle_1.jpeg"
                                                         alt="Main Photo"
-                                                        class="min-w-full h-[150px] lg:w-full lg:h-full object-cover rounded-tl-md">
+                                                        class="min-w-full max-h-[200px] lg:w-full lg:h-full object-cover rounded-tl-md">
                                                 </div>
 
                                             </div>
 
                                             <!-- Content Section -->
-                                            <div class="w-full lg:w-2/3 lg:py-4 lg:pl-4">
+                                            <div class="w-full lg:w-2/3 lg:py-4 lg:pl-4 flex flex-col gap-3 justify-center">
                                                 <!-- Title and Tagline -->
                                                 <div class="flex justify-between items-start p-2 lg:p-0">
                                                     <div class="">
@@ -271,9 +271,8 @@
                                                 </div>
 
                                                 <!-- Features -->
-                                                <!-- <div class="flex items-center mt-4 space-x-6 text-gray-600"> -->
                                                 <div
-                                                    class="w-full grid grid-rows-2 grid-flow-col gap-4 text-[#606060] py-2 px-4 border-b border-[#BFC8CC]">
+                                                    class="w-full grid grid-rows-2 grid-flow-col gap-4 text-[#606060] py-2 px-4 ">
                                                     <div class="flex items-center"><img
                                                             src="images/svg/vehicle-seat.svg" class="h-4 w-4 mr-2"
                                                             alt="seat">
@@ -467,12 +466,7 @@
                             </div>
                         </div>
 
-
-
-
-
                         <!-- Features -->
-
                         <div class="w-full grid  grid-rows-2 grid-flow-col gap-4 text-[#606060] py-2 px-4 ">
                             <div class="flex items-center"><img src="images/svg/vehicle-seat.svg" class="h-4 w-4 mr-2"
                                     alt="seat">
@@ -620,7 +614,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="bg-white border border-[#C4C6D0] rounded-lg p-6 mt-6 shadow-sm flex flex-col items-center">
                 <div class="flex justify-start items-start w-full mb-2">
@@ -823,7 +816,7 @@
 
         </main>
         <aside
-            class="fixed top-[112px] right-0 h-[calc(100vh-112px)] w-[350px] text-black z-30 p-4 overflow-auto scrollbar-hide">
+            class="absolute top-[112px] right-0 h-[calc(100vh-112px)] w-[350px] text-black z-40 p-4 ">
 
             <div class="border border-[#C4C6D0] rounded-sm p-6 mt-[105px]">
                 <!-- Booking Details Header -->
