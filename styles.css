@@ -222,11 +222,6 @@ body.sticky-active {
     cursor: pointer;
 }
 
-
-.hidden {
-    display: none;
-}
-
 /* Popup Sliding Effect */
 #mobile-popup {
     transform: translateX(100%); /* Initially off-screen */
