@@ -52,29 +52,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Select elements
-const wtabs = document.querySelectorAll("#wpopup-tabs li"); // Select all tabs
-const wtabContents = document.querySelectorAll(".tab-content"); // Select all tab content containers
+// const wtabs = document.querySelectorAll("#wpopup-tabs li"); // Select all tabs
+// const wtabContents = document.querySelectorAll(".tab-content"); // Select all tab content containers
 
-// Add click event listener to each tab
-wtabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-        const targetTab = tab.getAttribute("data-tab"); // Get the data-tab attribute of the clicked tab
+// // Add click event listener to each tab
+// wtabs.forEach((tab) => {
+//     tab.addEventListener("click", () => {
+//         const targetTab = tab.getAttribute("data-tab"); // Get the data-tab attribute of the clicked tab
 
-        // Remove active-tab class from all tabs
-        wtabs.forEach((t) => t.classList.remove("active-tab", "font-bold"));
-        // Hide all tab contents
-        wtabContents.forEach((content) => content.classList.add("hidden"));
+//         // Remove active-tab class from all tabs
+//         wtabs.forEach((t) => t.classList.remove("active-tab", "font-bold"));
+//         // Hide all tab contents
+//         wtabContents.forEach((content) => content.classList.add("hidden"));
 
-        // Add active-tab class to the clicked tab
-        tab.classList.add("active-tab", "font-bold");
+//         // Add active-tab class to the clicked tab
+//         tab.classList.add("active-tab", "font-bold");
 
-        // Show the corresponding tab content
-        const targetContent = document.getElementById(`${targetTab}-content-popup`);
-        if (targetContent) {
-            targetContent.classList.remove("hidden");
-        }
-    });
-});
+//         // Show the corresponding tab content
+//         const targetContent = document.getElementById(`${targetTab}-content-popup`);
+//         if (targetContent) {
+//             targetContent.classList.remove("hidden");
+//         }
+//     });
+// });
 
 
 

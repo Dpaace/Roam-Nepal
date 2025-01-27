@@ -149,7 +149,8 @@ function initializeTabs(cardId) {
 
 // Initialize tabs for each card dynamically
 initializeTabs('card1');
-initializeTabs('card2'); // Add more cards as needed
+initializeTabs('card2');
+
 
 
 
