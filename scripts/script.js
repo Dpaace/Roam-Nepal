@@ -587,25 +587,69 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const testimonials = [
-    {
-        text: "Absolutely love this app! Booking bus tickets across Nepal has never been easier. Smooth transactions and timely updates make my travel planning a breeze. Highly recommended!",
-        author: "-- Harris Magar, CEO of XYZ",
-    },
-    {
-        text: "This service has been a lifesaver for our family trips. The convenience and ease of booking are unparalleled. The support team is fantastic too!",
-        author: "-- Sarita Sharma, Travel Enthusiast",
-    },
-    {
-        text: "I highly recommend this platform to anyone looking to travel within Nepal. It has never been this easy to plan a trip before!",
-        author: "-- Prakash Thapa, Business Professional",
-    },
-];
+// const testimonials = [
+//     {
+//         text: "Absolutely love this app! Booking bus tickets across Nepal has never been easier. Smooth transactions and timely updates make my travel planning a breeze. Highly recommended!",
+//         author: "-- Harris Magar, CEO of XYZ",
+//     },
+//     {
+//         text: "This service has been a lifesaver for our family trips. The convenience and ease of booking are unparalleled. The support team is fantastic too!",
+//         author: "-- Sarita Sharma, Travel Enthusiast",
+//     },
+//     {
+//         text: "I highly recommend this platform to anyone looking to travel within Nepal. It has never been this easy to plan a trip before!",
+//         author: "-- Prakash Thapa, Business Professional",
+//     },
+// ];
 
 
 // Testimonials Section
 
+// let currentTestimonialIndex = 0;
+
+// const testimonialText = document.getElementById("testimonial-text");
+// const testimonialAuthor = document.getElementById("testimonial-author");
+// const prevBtn = document.getElementById("prev-btn");
+// const nextBtn = document.getElementById("next-btn");
+
+// function updateTestimonial(index) {
+//     testimonialText.textContent = testimonials[index].text;
+//     testimonialAuthor.textContent = testimonials[index].author;
+// }
+
+// prevBtn.addEventListener("click", () => {
+//     currentTestimonialIndex =
+//         (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+//     updateTestimonial(currentTestimonialIndex);
+// });
+
+// nextBtn.addEventListener("click", () => {
+//     currentTestimonialIndex =
+//         (currentTestimonialIndex + 1) % testimonials.length;
+//     updateTestimonial(currentTestimonialIndex);
+// });
+
+// // Initialize with the first testimonial
+// updateTestimonial(currentTestimonialIndex);
+
+
+
 let currentTestimonialIndex = 0;
+
+const testimonials = [
+    {
+        text: "Absolutely love this app! Booking bus tickets across Nepal has never been easier. Smooth transactions and timely updates make my travel planning a breeze. Highly recommended!",
+        author: "-- Harris Magar, CEO of XYZ"
+    },
+    {
+        text: "The customer service is exceptional! Whenever I had questions or issues, the team resolved them quickly. A must-have app for frequent travelers!",
+        author: "-- Priya Sharma, Travel Enthusiast"
+    },
+    {
+        text: "This app is user-friendly and reliable. The seat selection process is seamless, and I can book tickets within minutes. Highly impressed!",
+        author: "-- Ramesh Thapa, Businessman"
+    }
+];
 
 const testimonialText = document.getElementById("testimonial-text");
 const testimonialAuthor = document.getElementById("testimonial-author");
@@ -617,58 +661,73 @@ function updateTestimonial(index) {
     testimonialAuthor.textContent = testimonials[index].author;
 }
 
-prevBtn.addEventListener("click", () => {
-    currentTestimonialIndex =
-        (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
-    updateTestimonial(currentTestimonialIndex);
-});
+function autoScrollTestimonials() {
+    setInterval(() => {
+        currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+        updateTestimonial(currentTestimonialIndex);
+    }, 5000); // Auto-scroll every 5 seconds
+}
 
-nextBtn.addEventListener("click", () => {
-    currentTestimonialIndex =
-        (currentTestimonialIndex + 1) % testimonials.length;
-    updateTestimonial(currentTestimonialIndex);
-});
+// Event Listeners for Navigation Buttons
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+        currentTestimonialIndex =
+            (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+        updateTestimonial(currentTestimonialIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+        currentTestimonialIndex =
+            (currentTestimonialIndex + 1) % testimonials.length;
+        updateTestimonial(currentTestimonialIndex);
+    });
+}
 
 // Initialize with the first testimonial
 updateTestimonial(currentTestimonialIndex);
 
+// Auto-scroll only on mobile view
+if (window.innerWidth < 1024) {
+    autoScrollTestimonials();
+}
+
 
 // For Reels
 
-const reelsContainer = document.getElementById('reels-container');
-const prevButton = document.getElementById('prev-reel-btn');
-const nextButton = document.getElementById('next-reel-btn');
+// const reelsContainer = document.getElementById('reels-container');
+// const prevButton = document.getElementById('prev-reel-btn');
+// const nextButton = document.getElementById('next-reel-btn');
 
-// Constants
-const reelWidth = 280 + 16; // Reel width + margin (adjust as needed)
-const visibleReels = 5; // Number of visible reels
-let currentIndex = 0;
+// // Constants
+// const reelWidth = 280 + 16; // Reel width + margin (adjust as needed)
+// const visibleReels = 5; // Number of visible reels
+// let currentIndex = 0;
 
-// Get total number of reels
-const totalReels = reelsContainer.children.length;
+// // Get total number of reels
+// const totalReels = reelsContainer.children.length;
 
-// Update reel container's transform position
-function updateReelPosition() {
-    const maxTranslateX = (totalReels - visibleReels) * reelWidth;
-    const translateX = Math.min(currentIndex * reelWidth, maxTranslateX); // Prevent scrolling beyond bounds
-    reelsContainer.style.transform = `translateX(-${translateX}px)`;
-}
+// // Update reel container's transform position
+// function updateReelPosition() {
+//     const maxTranslateX = (totalReels - visibleReels) * reelWidth;
+//     const translateX = Math.min(currentIndex * reelWidth, maxTranslateX); // Prevent scrolling beyond bounds
+//     reelsContainer.style.transform = `translateX(-${translateX}px)`;
+// }
 
-// Next button functionality
-nextButton.addEventListener('click', () => {
-    if (currentIndex < totalReels - visibleReels) {
-        currentIndex++;
-        updateReelPosition();
-    }
-});
+// // Next button functionality
+// nextButton.addEventListener('click', () => {
+//     if (currentIndex < totalReels - visibleReels) {
+//         currentIndex++;
+//         updateReelPosition();
+//     }
+// });
 
-// Previous button functionality
-prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateReelPosition();
-    }
-});
+// // Previous button functionality
+// prevButton.addEventListener('click', () => {
+//     if (currentIndex > 0) {
+//         currentIndex--;
+//         updateReelPosition();
+//     }
+// });
 
 
 
