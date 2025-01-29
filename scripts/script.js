@@ -99,6 +99,7 @@ const onewayPickup = document.getElementById("oneway-main-pickup");
 const onewaySwitch = document.getElementById("oneway-switch");
 const onewayStop1 = document.getElementById("oneway-stop-1");
 const onewayStop2 = document.getElementById("oneway-stop-2");
+const onewaycross0 = document.getElementById("oneway-cross-container-0");
 const onewaycross1 = document.getElementById("oneway-cross-container-1");
 const onewaycross2 = document.getElementById("oneway-cross-container-2");
 
@@ -110,6 +111,7 @@ const hourlyPickup = document.getElementById("hourly-main-pickup");
 const hourlySwitch = document.getElementById("hourly-switch");
 const hourlyStop1 = document.getElementById("hourly-stop-1");
 const hourlyStop2 = document.getElementById("hourly-stop-2");
+const hourlycross0 = document.getElementById("hourly-cross-container-0");
 const hourlycross1 = document.getElementById("hourly-cross-container-1");
 const hourlycross2 = document.getElementById("hourly-cross-container-2");
 
@@ -119,16 +121,10 @@ const airportStopContainer1 = document.getElementById("airport-stop-container-1"
 const airportStopContainer2 = document.getElementById("airport-stop-container-2");
 const airportStop1 = document.getElementById("airport-stop-1");
 const airportStop2 = document.getElementById("airport-stop-2");
+const airportcross0 = document.getElementById("airport-cross-container-0");
 const airportcross1 = document.getElementById("airport-cross-container-1");
 const airportcross2 = document.getElementById("airport-cross-container-2");
 const airportMainPickup = document.getElementById("airport-main-pickup");
-
-
-
-// airportAddStopButton.addEventListener("click", () => {
-//     // Toggle the visibility of the menu
-//     airportStopContainer.classList.toggle("hidden");
-// });
 
 
 
@@ -202,13 +198,51 @@ cross2.addEventListener("click", () => {
 
 
 
+// onewayAddStopButton.addEventListener("click", () => {
+//     // Toggle the visibility of the menu
+//     onewayStopContainer1.classList.toggle("hidden");
+//     // Reuse the togglePickupClass function for onewayPickup and onewaySwitch
+//     togglePickupClass(onewayPickup, onewaySwitch);
+//     onewayStop1.style.display = 'none';
+//     onewayStop2.classList.toggle("hidden");
+// });
+
+// onewayStop2.addEventListener("click", () => {
+//     onewayStopContainer1.classList.remove("col-span-10");
+//     onewayStopContainer1.classList.add("col-span-12");
+//     onewayStopContainer2.classList.toggle("hidden");
+//     onewayStop2.style.display = 'none';
+//     onewaycross1.classList.toggle("hidden");
+//     onewaycross2.classList.toggle("hidden");
+// });
+
+// onewaycross1.addEventListener("click", () => {
+//     onewayStopContainer1.classList.remove("col-span-12");
+//     onewayStopContainer1.classList.add("col-span-10");
+//     onewayStopContainer2.classList.toggle("hidden");
+//     onewayStop2.style.display = 'block';
+//     onewaycross1.classList.toggle("hidden");
+//     onewaycross2.classList.toggle("hidden");
+// });
+
+// onewaycross2.addEventListener("click", () => {
+//     onewayStopContainer1.classList.remove("col-span-12");
+//     onewayStopContainer1.classList.add("col-span-10");
+//     onewayStopContainer2.classList.toggle("hidden");
+//     onewayStop2.style.display = 'block';
+//     onewaycross1.classList.toggle("hidden");
+//     onewaycross2.classList.toggle("hidden");
+// });
+
 onewayAddStopButton.addEventListener("click", () => {
-    // Toggle the visibility of the menu
+    // Toggle the visibility of the first stop container
     onewayStopContainer1.classList.toggle("hidden");
-    // Reuse the togglePickupClass function for onewayPickup and onewaySwitch
+    // Toggle the classes for the pickup element
     togglePickupClass(onewayPickup, onewaySwitch);
     onewayStop1.style.display = 'none';
+    onewayStop2.style.display = 'block';
     onewayStop2.classList.toggle("hidden");
+    onewaycross0.classList.remove("hidden");
 });
 
 onewayStop2.addEventListener("click", () => {
@@ -216,8 +250,18 @@ onewayStop2.addEventListener("click", () => {
     onewayStopContainer1.classList.add("col-span-12");
     onewayStopContainer2.classList.toggle("hidden");
     onewayStop2.style.display = 'none';
+    onewaycross0.classList.add("hidden");
     onewaycross1.classList.toggle("hidden");
     onewaycross2.classList.toggle("hidden");
+});
+
+onewaycross0.addEventListener("click", () => {
+    togglePickupClass(onewayPickup, onewaySwitch);
+    onewayStopContainer1.classList.toggle("hidden");
+    onewaycross0.classList.add("hidden");
+    onewayStop1.style.display = 'block';
+    onewayStop2.classList.toggle("hidden");
+    onewayStop2.style.display = 'none';
 });
 
 onewaycross1.addEventListener("click", () => {
@@ -225,6 +269,7 @@ onewaycross1.addEventListener("click", () => {
     onewayStopContainer1.classList.add("col-span-10");
     onewayStopContainer2.classList.toggle("hidden");
     onewayStop2.style.display = 'block';
+    onewaycross0.classList.remove("hidden");
     onewaycross1.classList.toggle("hidden");
     onewaycross2.classList.toggle("hidden");
 });
@@ -234,6 +279,7 @@ onewaycross2.addEventListener("click", () => {
     onewayStopContainer1.classList.add("col-span-10");
     onewayStopContainer2.classList.toggle("hidden");
     onewayStop2.style.display = 'block';
+    onewaycross0.classList.remove("hidden");
     onewaycross1.classList.toggle("hidden");
     onewaycross2.classList.toggle("hidden");
 });
@@ -241,36 +287,89 @@ onewaycross2.addEventListener("click", () => {
 
 
 
+
+// hourlyAddStopButton.addEventListener("click", () => {
+//     // Toggle the visibility of the first stop container
+//     hourlyStopContainer1.classList.toggle("hidden");
+
+//     // Reuse the togglePickupClass function for hourlyPickup and hourlySwitch
+//     togglePickupClass(hourlyPickup, hourlySwitch);
+
+//     // Update visibility for the stops
+//     hourlyStop1.style.display = 'none';
+//     hourlyStop2.classList.toggle("hidden");
+// });
+
+// hourlyStop2.addEventListener("click", () => {
+//     hourlyStopContainer1.classList.remove("col-span-10");
+//     hourlyStopContainer1.classList.add("col-span-12");
+//     hourlyStopContainer2.classList.toggle("hidden");
+
+//     // Hide stop2 and show cross controls
+//     hourlyStop2.style.display = 'none';
+//     hourlycross1.classList.toggle("hidden");
+//     hourlycross2.classList.toggle("hidden");
+// });
+
+// hourlycross1.addEventListener("click", () => {
+//     hourlyStopContainer1.classList.remove("col-span-12");
+//     hourlyStopContainer1.classList.add("col-span-10");
+//     hourlyStopContainer2.classList.toggle("hidden");
+
+//     // Restore stop2 and hide cross controls
+//     hourlyStop2.style.display = 'block';
+//     hourlycross1.classList.toggle("hidden");
+//     hourlycross2.classList.toggle("hidden");
+// });
+
+// hourlycross2.addEventListener("click", () => {
+//     hourlyStopContainer1.classList.remove("col-span-12");
+//     hourlyStopContainer1.classList.add("col-span-10");
+//     hourlyStopContainer2.classList.toggle("hidden");
+
+//     // Restore stop2 and hide cross controls
+//     hourlyStop2.style.display = 'block';
+//     hourlycross1.classList.toggle("hidden");
+//     hourlycross2.classList.toggle("hidden");
+// });
+
+
 hourlyAddStopButton.addEventListener("click", () => {
     // Toggle the visibility of the first stop container
     hourlyStopContainer1.classList.toggle("hidden");
-
-    // Reuse the togglePickupClass function for hourlyPickup and hourlySwitch
+    // Toggle the classes for the pickup element
     togglePickupClass(hourlyPickup, hourlySwitch);
-
-    // Update visibility for the stops
     hourlyStop1.style.display = 'none';
+    hourlyStop2.style.display = 'block';
     hourlyStop2.classList.toggle("hidden");
+    hourlycross0.classList.remove("hidden");
 });
 
 hourlyStop2.addEventListener("click", () => {
     hourlyStopContainer1.classList.remove("col-span-10");
     hourlyStopContainer1.classList.add("col-span-12");
     hourlyStopContainer2.classList.toggle("hidden");
-
-    // Hide stop2 and show cross controls
     hourlyStop2.style.display = 'none';
+    hourlycross0.classList.add("hidden");
     hourlycross1.classList.toggle("hidden");
     hourlycross2.classList.toggle("hidden");
+});
+
+hourlycross0.addEventListener("click", () => {
+    togglePickupClass(hourlyPickup, hourlySwitch);
+    hourlyStopContainer1.classList.toggle("hidden");
+    hourlycross0.classList.add("hidden");
+    hourlyStop1.style.display = 'block';
+    hourlyStop2.classList.toggle("hidden");
+    hourlyStop2.style.display = 'none';
 });
 
 hourlycross1.addEventListener("click", () => {
     hourlyStopContainer1.classList.remove("col-span-12");
     hourlyStopContainer1.classList.add("col-span-10");
     hourlyStopContainer2.classList.toggle("hidden");
-
-    // Restore stop2 and hide cross controls
     hourlyStop2.style.display = 'block';
+    hourlycross0.classList.remove("hidden");
     hourlycross1.classList.toggle("hidden");
     hourlycross2.classList.toggle("hidden");
 });
@@ -279,43 +378,95 @@ hourlycross2.addEventListener("click", () => {
     hourlyStopContainer1.classList.remove("col-span-12");
     hourlyStopContainer1.classList.add("col-span-10");
     hourlyStopContainer2.classList.toggle("hidden");
-
-    // Restore stop2 and hide cross controls
     hourlyStop2.style.display = 'block';
+    hourlycross0.classList.remove("hidden");
     hourlycross1.classList.toggle("hidden");
     hourlycross2.classList.toggle("hidden");
 });
 
 
+
+// airportAddStopButton.addEventListener("click", () => {
+//     // Toggle the visibility of the first stop container
+//     airportMainPickup.classList.remove("col-span-10");
+//     airportMainPickup.classList.add("col-span-12");
+//     airportStopContainer1.classList.toggle("hidden");
+
+//     // Update visibility for the stops
+//     airportStop1.style.display = 'none';
+//     airportStop2.classList.toggle("hidden");
+// });
+
+// airportStop2.addEventListener("click", () => {
+//     airportStopContainer1.classList.remove("col-span-10");
+//     airportStopContainer1.classList.add("col-span-12");
+//     airportStopContainer2.classList.toggle("hidden");
+
+//     // Hide stop2 and show cross controls
+//     airportStop2.style.display = 'none';
+//     airportcross1.classList.toggle("hidden");
+//     airportcross2.classList.toggle("hidden");
+// });
+
+// airportcross1.addEventListener("click", () => {
+//     airportStopContainer1.classList.remove("col-span-12");
+//     airportStopContainer1.classList.add("col-span-10");
+//     airportStopContainer2.classList.toggle("hidden");
+
+//     // Restore stop2 and hide cross controls
+//     airportStop2.style.display = 'block';
+//     airportcross1.classList.toggle("hidden");
+//     airportcross2.classList.toggle("hidden");
+// });
+
+// airportcross2.addEventListener("click", () => {
+//     airportStopContainer1.classList.remove("col-span-12");
+//     airportStopContainer1.classList.add("col-span-10");
+//     airportStopContainer2.classList.toggle("hidden");
+
+//     // Restore stop2 and hide cross controls
+//     airportStop2.style.display = 'block';
+//     airportcross1.classList.toggle("hidden");
+//     airportcross2.classList.toggle("hidden");
+// });
+
+
 airportAddStopButton.addEventListener("click", () => {
     // Toggle the visibility of the first stop container
-    airportMainPickup.classList.remove("col-span-10");
-    airportMainPickup.classList.add("col-span-12");
     airportStopContainer1.classList.toggle("hidden");
-
-    // Update visibility for the stops
+    // Handle pickup element classes if needed
+    togglePickupClass(airportMainPickup, airportStop2); // Assumes togglePickupClass works generically
     airportStop1.style.display = 'none';
+    airportStop2.style.display = 'block';
     airportStop2.classList.toggle("hidden");
+    airportcross0.classList.remove("hidden");
 });
 
 airportStop2.addEventListener("click", () => {
     airportStopContainer1.classList.remove("col-span-10");
     airportStopContainer1.classList.add("col-span-12");
     airportStopContainer2.classList.toggle("hidden");
-
-    // Hide stop2 and show cross controls
     airportStop2.style.display = 'none';
+    airportcross0.classList.add("hidden");
     airportcross1.classList.toggle("hidden");
     airportcross2.classList.toggle("hidden");
+});
+
+airportcross0.addEventListener("click", () => {
+    togglePickupClass(airportMainPickup, airportStop2); // Assumes togglePickupClass works generically
+    airportStopContainer1.classList.toggle("hidden");
+    airportcross0.classList.add("hidden");
+    airportStop1.style.display = 'block';
+    airportStop2.classList.toggle("hidden");
+    airportStop2.style.display = 'none';
 });
 
 airportcross1.addEventListener("click", () => {
     airportStopContainer1.classList.remove("col-span-12");
     airportStopContainer1.classList.add("col-span-10");
     airportStopContainer2.classList.toggle("hidden");
-
-    // Restore stop2 and hide cross controls
     airportStop2.style.display = 'block';
+    airportcross0.classList.remove("hidden");
     airportcross1.classList.toggle("hidden");
     airportcross2.classList.toggle("hidden");
 });
@@ -324,9 +475,8 @@ airportcross2.addEventListener("click", () => {
     airportStopContainer1.classList.remove("col-span-12");
     airportStopContainer1.classList.add("col-span-10");
     airportStopContainer2.classList.toggle("hidden");
-
-    // Restore stop2 and hide cross controls
     airportStop2.style.display = 'block';
+    airportcross0.classList.remove("hidden");
     airportcross1.classList.toggle("hidden");
     airportcross2.classList.toggle("hidden");
 });
