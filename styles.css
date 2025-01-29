@@ -153,7 +153,7 @@ body.sticky-active {
     position: absolute;
     width: 140%;
     height: 2.35em;
-    background-color: #fbc02d;
+    background-color: #FFDB43;
     /* Yellow Color */
     transform: rotate(-45deg) translateY(-1.1em);
     display: flex;
@@ -164,7 +164,8 @@ body.sticky-active {
     /* Black Text */
     font-weight: 600;
     letter-spacing: 0.1em;
-    box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.3em 0.6em rgba(0, 0, 0);
+    /* box-shadow: 0 0.3em 0.6em #000000; */
 }
 
 .card__ribbon::before {
@@ -174,9 +175,9 @@ body.sticky-active {
     bottom: 0;
     width: 1em;
     height: 1em;
-    background-color: #fbc02d;
+    background-color: #000000;
     /* Matches Ribbon Background */
-    box-shadow: 11em -11em #fbc02d;
+    box-shadow: 11em -11em #000000;
 }
 
 

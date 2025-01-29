@@ -32,7 +32,9 @@
                         bgButton: '#0B3C49',
                         txtAsideGrey: '#70787C',
                         bgTrending: '#FFEECB',
-                        txtTrending: '#C87D0C'
+                        txtTrending: '#C87D0C',
+                        textDateWeb: '#000000D9',
+                        textDateMobile: '#013544'
                     },
                     fontFamily: {
                         sans: ['Open Sans', 'sans-serif'],
@@ -46,7 +48,8 @@
 
 <body class="bg-white font-roboto">
 
-    <nav id="navbar" class="bg-primary text-white top-0 left-0 w-full z-50 lg:shadow-lg transition-transform duration-300">
+    <nav id="navbar"
+        class="bg-primary text-white top-0 left-0 w-full z-50 lg:shadow-lg transition-transform duration-300">
         <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
             <div class="flex justify-between w-full lg:w-1/3">
                 <div class="text-2xl font-bold">Roam Nepal</div>
@@ -84,10 +87,6 @@
                         <img class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="us">
                         <span class="text-[12px] leading-4 font-normal">English</span>
                     </span>
-                    <span class="flex items-center space-x-1">
-                        <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="bus">
-                        <span class="text-[12px] leading-4 font-normal">Help</span>
-                    </span>
                     <button class="hover:text-teal-300 flex items-center space-x-1 ">
                         <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets">
                         <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
@@ -95,6 +94,27 @@
                     <div class="flex items-center space-x-1">
                         <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
                         <span class="text-[14px] leading-[22px] font-normal">Harris's Account</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <!-- Notification Button -->
+                        <div class="relative">
+                            <button class="relative flex items-center justify-center">
+                                <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
+                                    alt="notification-icon">
+                            </button>
+                            <!-- Badge -->
+                            <span
+                                class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
+                                11
+                            </span>
+                        </div>
+
+                        <button>
+                            <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
+                        </button>
+                        <button>
+                            <img class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg" alt="search-icon">
+                        </button>
                     </div>
                 </div>
 
@@ -134,47 +154,48 @@
         class=" bg-white lg:flex lg:justify-center lg:left-0 lg:w-full lg:h-[100px] lg:z-30 lg:px-6 lg:border-b-2 lg:shadow-sm">
         <div class="flex flex-col bg-primary lg:bg-white lg:flex-row w-full justify-between items-center">
             <div class="w-full lg:w-[20%]  flex flex-col items-center lg:items-start gap-1 lg:gap-0">
-                <h2 class="font-bold text-2xl font[700] text-white lg:text-[#1A1B20]">Kathmandu - Pokhara</h2>
+                <h2 class="text-2xl font-normal lg:font-[700] text-white lg:text-[#1A1B20]">Kathmandu - Pokhara</h2>
                 <p class="hidden lg:flex text-sm text-[#1A1B20]">5:00 am Mon, Jan 6 - 7:00 pm Tue, Jan 7</p>
-                <a href="#" class="text-white lg:text-[#2A4678] text-sm hover:underline">Change Details</a>
+                <a href="#" class="text-white font-normal underline lg:text-[#2A4678] text-sm hover:underline">Change
+                    Details</a>
             </div>
 
             <!-- Web View -->
-            <div class="hidden lg:flex lg:w-[60%] px-2 py-2 gap-2">
+            <div class="hidden lg:flex lg:w-[60%] text-textDateWeb px-2 py-2 gap-2">
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Today, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Today, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Tomorrow, Jan 7</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Tomorrow, Jan 7</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Tue, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Tue, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Wed, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Wed, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Thurs, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Thurs, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Thurs, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Thurs, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
             </div>
 
             <!-- Mobile View -->
-            <div class="flex lg:hidden w-full flex-wrap gap-2 px-2 py-2">
+            <div class="flex lg:hidden w-full text-textDateMobile flex-wrap gap-2 px-2 py-2">
                 <button
                     class="flex-1 flex flex-col items-center justify-center leading-4 min-w-0 h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
                     <span class="text-xs font-semibold">Today</span>
@@ -206,9 +227,10 @@
                     <span class="text-lg font-bold">11</span>
                 </button>
             </div>
-            
 
-            <div class="hidden h-full px-2 py-2 lg:flex lg:items-center lg:justify-center w-[20%] text-sm text-gray-500">
+
+            <div
+                class="hidden h-full px-2 py-2 lg:flex lg:items-center lg:justify-center w-[20%] text-sm text-gray-500">
                 <span class="font-semibold text-black">Choose</span> > Fill Details > Done
             </div>
         </div>
@@ -586,6 +608,12 @@
                     </div>
                 </div>
 
+                <div class="mb-4">
+                    <button type="button"
+                        class="w-full rounded-sm text-white p-2 font-normal text[16px] leading-6 bg-[#0B3C49]">Apply
+                        Filter</button>
+                </div>
+
 
 
             </div>
@@ -674,10 +702,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
 
                     <div class="mb-4">
                         <h4 class="text-md font-semibold text-gray-800 mb-2">Vehicle Type</h4>
@@ -917,6 +941,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="mb-4">
+                        <button type="button"
+                            class="w-full rounded-sm text-white p-2 font-normal text[16px] leading-6 bg-[#0B3C49]">Apply
+                            Filter</button>
+                    </div>
                 </div>
                 <span class="text-[#49454F] font-normal text-sm">231 Vehicles</span>
                 <div class="flex text-[#49454F] whitespace-nowrap">
@@ -1056,7 +1085,7 @@
                                         </div>
                                         <button
                                             class="bg-bgButton text-sm lg:text[16px] leading-5 w-4/5 h-[32px] lg:h-[38px] flex items-center justify-center text-white px-6 py-3 rounded-sm">
-                                            Book Tickets
+                                            Book Vehicles
                                         </button>
                                         <span class="text-txtPrimary font-bold text-[12px] leading-4">Instant Booking
                                             Available!</span>
@@ -1306,7 +1335,7 @@
                                         </div>
                                         <button
                                             class="bg-bgButton text-sm lg:text[16px] leading-5 w-4/5 h-[32px] lg:h-[38px] flex items-center justify-center text-white px-6 py-3 rounded-sm">
-                                            Book Tickets
+                                            Book Vehicles
                                         </button>
                                         <span class="text-txtPrimary font-bold text-[12px] leading-4">Instant Booking
                                             Available!</span>
@@ -1437,6 +1466,7 @@
 
                 </div>
 
+
                 <!-- Pagination Buttons -->
                 <div class="flex items-center justify-center space-x-2 mt-6">
                     <!-- Previous Button -->
@@ -1483,7 +1513,111 @@
 
     </div>
 
+    <footer class="bg-gray-800 text-gray-400 py-10">
+        <div
+            class="container mx-auto px-6 grid grid-cols-2 justify-start items-start md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Services</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Bus Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Tours</a></li>
+                    <li><a href="#" class="hover:text-white">Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Activities</a></li>
+                    <li><a href="#" class="hover:text-white">Flights</a></li>
+                    <li><a href="#" class="hover:text-white">Hotels</a></li>
+                </ul>
+            </div>
 
+            <!-- Products -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Products</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Tourist BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">Mobile App</a></li>
+                    <li><a href="#" class="hover:text-white">Website</a></li>
+                </ul>
+            </div>
+
+            <!-- Help -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Help</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa Agent</a></li>
+                    <li><a href="#" class="hover:text-white">Help Centre</a></li>
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social Media  class="h-5 w-5" -->
+            <div>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li class="flex items-center space-x-2 ">
+                        <span>
+                            <img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" />
+
+                        </span>
+                        <a href="tel:+9779876567989" class="hover:text-white">+977 9876567989</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" /></span>
+                        <a href="tel:+9779887567890" class="hover:text-white">+977 9887567890</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-email.svg" alt="email" /></span>
+                        <a href="mailto:info@bussewa.com" class="hover:text-white">info@bussewa.com</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-4 mt-4">
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Facebook.svg" alt="facebook" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Instagram.svg" alt="instagram" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Twitter.svg" alt="twitter" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-LinkedIn.svg" alt="linkedin" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-TikTok.svg" alt="tiktok" /></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Download & Footer Bottom -->
+        <div class="mt-10 border-t border-gray-700 pt-6">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm mt-4 md:mt-0">
+                    <p>Copyright © BusSewa All Rights Reserved</p>
+                </div>
+
+                <!-- App Download -->
+                <div class="flex items-center space-x-4">
+                    <a href="#">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-10" />
+                    </a>
+                    <a href="#">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-10" />
+                    </a>
+                </div>
+
+
+
+                <!-- Legal Links -->
+                <div class="flex text-sm mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Cookie <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Privacy <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Terms <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <script type="text/javascript" src="scripts/rentalScript.js"></script>
