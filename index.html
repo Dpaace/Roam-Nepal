@@ -96,10 +96,6 @@
                         <img class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="us">
                         <span class="text-[12px] leading-4 font-normal">English</span>
                     </span>
-                    <span class="flex items-center space-x-1">
-                        <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="bus">
-                        <span class="text-[12px] leading-4 font-normal">Help</span>
-                    </span>
                     <button class="hover:text-teal-300 flex items-center space-x-1 ">
                         <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets">
                         <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
@@ -108,6 +104,33 @@
                         <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
                         <span class="text-[14px] leading-[22px] font-normal">Harris's Account</span>
                     </div>
+                    <div>
+                        <span class="flex items-center space-x-4">
+                            <!-- <button>
+                                <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg" alt="notification-icon">
+                            </button> -->
+                            <!-- Notification Button -->
+                            <div class="relative">
+                                <button class="relative flex items-center justify-center">
+                                    <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
+                                        alt="notification-icon">
+                                </button>
+                                <!-- Badge -->
+                                <span
+                                    class="absolute -top-2 -right-[6px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[10px] font-bold rounded-full px-2 py-1">
+                                    11
+                                </span>
+                            </div>
+
+                            <button>
+                                <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
+                            </button>
+                            <button>
+                                <img class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg" alt="search-icon">
+                            </button>
+                        </span>
+                    </div>
+
                 </div>
 
                 <div id="bottom-nav"
@@ -253,6 +276,10 @@
                                             class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('stop')" onclick="toggleDropdown('stop')">
 
+                                        <button type="button" id="cross-container-0" class="block">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                        </button>
+
                                         <button type="button" id="cross-container-1" class="hidden">
                                             <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
                                         </button>
@@ -294,7 +321,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            
+
 
                             <div id="round-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="add-stop-btn"
@@ -357,7 +384,7 @@
                             <div id="round-stop-2" class="hidden col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="add-stop-btn2"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                   <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
                                 </button>
                             </div>
 
@@ -904,14 +931,14 @@
                             <label class="flex items-center space-x-2 cursor-pointer">
                                 <input type="radio" name="airport-type" value="pickup" checked
                                     class="form-radio h-5 w-5 accent-[#0B3C49]">
-                                <span class="text-gray-700 text-sm font-medium">Pick Up</span>
+                                <span class="text-gray-700 text-sm font-medium">Go to Airport</span>
                             </label>
 
                             <!-- Radio Button 2 -->
                             <label class="flex items-center space-x-2 cursor-pointer">
                                 <input type="radio" name="airport-type" value="dropoff"
                                     class="form-radio h-5 w-5 accent-[#0B3C49]">
-                                <span class="text-gray-700 text-sm font-medium">Drop Off</span>
+                                <span class="text-gray-700 text-sm font-medium">Come from Airport</span>
                             </label>
                         </div>
                         <div class="relative grid grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center">
@@ -1434,14 +1461,14 @@
     </div> -->
 
 
-    <div class="py-5 min-h-[300px] flex lg:py-10 lg:max-w-full lg:max-h-[280px] lg:px-28 my-8 lg:my-[88px]">
+    <div class="py-5 min-h-[300px] flex lg:py-10 lg:max-w-full lg:max-h-[280px] lg:px-28 my-2 lg:my-[88px]">
         <div class="container flex items-center min-h-full w-full lg:min-w-full mx-auto px-6 text-center relative">
             <!-- Testimonial Container -->
             <div id="testimonial-container"
                 class="flex flex-col justify-center min-h-full max-w-[90%] lg:max-w-[70%] mx-auto">
                 <div class="flex justify-center items-center space-x-4">
                     <span class="text-pink-500 text-4xl font-bold">❝</span>
-                    <p class="text-[12px] lg:text-2xl leading-7 font-[700]" id="testimonial-text">
+                    <p class="text-[12px] leading-[15px] lg:text-2xl lg:leading-7 font-[700]" id="testimonial-text">
                         Absolutely love this app! Booking bus tickets across Nepal has never been easier. Smooth
                         transactions and timely updates make my travel planning a breeze. Highly recommended!
                     </p>
@@ -1451,7 +1478,7 @@
                     -- Harris Magar, CEO of XYZ
                 </p>
             </div>
-    
+
             <!-- Navigation Buttons -->
             <div class="absolute top-1/2 -left-0 transform -translate-y-1/2 hidden lg:block">
                 <button id="prev-btn" class="rounded-full p-2">
@@ -1465,7 +1492,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
     <!-- Stories Section -->

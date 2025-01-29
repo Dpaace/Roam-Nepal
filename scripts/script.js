@@ -86,6 +86,7 @@ const roundPickup = document.getElementById("round-pickup");
 const roundSwitch = document.getElementById("round-switch");
 const roundStop1 = document.getElementById("round-stop-1");
 const roundStop2 = document.getElementById("round-stop-2");
+const cross0 = document.getElementById("cross-container-0");
 const cross1 = document.getElementById("cross-container-1");
 const cross2 = document.getElementById("cross-container-2");
 
@@ -155,7 +156,9 @@ addStopButton.addEventListener("click", () => {
     // Toggle the classes for roundDropoff
     togglePickupClass(roundPickup, roundSwitch);
     roundStop1.style.display = 'none';
+    roundStop2.style.display = 'block';
     roundStop2.classList.toggle("hidden");
+    cross0.classList.remove("hidden");
 });
 
 roundStop2.addEventListener("click", () => {
@@ -163,8 +166,18 @@ roundStop2.addEventListener("click", () => {
     stopContainer1.classList.add("col-span-12");
     stopContainer2.classList.toggle("hidden");
     roundStop2.style.display = 'none';
+    cross0.classList.add("hidden");
     cross1.classList.toggle("hidden");
     cross2.classList.toggle("hidden");
+});
+
+cross0.addEventListener("click", () => {
+    togglePickupClass(roundPickup, roundSwitch);
+    stopContainer1.classList.toggle("hidden");
+    cross0.classList.add("hidden");
+    roundStop1.style.display = 'block';
+    roundStop2.classList.toggle("hidden");
+    roundStop2.style.display = 'none';
 });
 
 cross1.addEventListener("click", () => {
@@ -172,6 +185,7 @@ cross1.addEventListener("click", () => {
     stopContainer1.classList.add("col-span-10");
     stopContainer2.classList.toggle("hidden");
     roundStop2.style.display = 'block';
+    cross0.classList.remove("hidden");
     cross1.classList.toggle("hidden");
     cross2.classList.toggle("hidden");
 });
@@ -181,6 +195,7 @@ cross2.addEventListener("click", () => {
     stopContainer1.classList.add("col-span-10");
     stopContainer2.classList.toggle("hidden");
     roundStop2.style.display = 'block';
+    cross0.classList.remove("hidden");
     cross1.classList.toggle("hidden");
     cross2.classList.toggle("hidden");
 });
