@@ -76,6 +76,7 @@ mapPopup.addEventListener('click', (e) => {
 });
 
 
+const nav = document.getElementById("navbar");
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 const btmNav = document.getElementById("bottom-nav");
@@ -86,11 +87,25 @@ menuToggle.addEventListener("click", () => {
     // Toggle the visibility of the menu
     menu.classList.toggle("hidden");
     btmNav.classList.toggle("hidden");
+    nav.classList.add("fixed");
 
     // Toggle the icons
     hamburgerIcon.classList.toggle("hidden");
     closeIcon.classList.toggle("hidden");
 });
+
+closeIcon.addEventListener("click", () => {
+    nav.classList.remove("fixed");
+
+    menu.classList.toggle("hidden");
+    btmNav.classList.toggle("hidden");
+
+     // Toggle the icons
+     hamburgerIcon.classList.toggle("hidden");
+     closeIcon.classList.toggle("hidden");
+})
+
+
 
 
 

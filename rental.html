@@ -63,11 +63,12 @@
                     </svg>
 
                     <!-- Cross Icon (Initially Hidden) -->
-                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <button id="close-icon" class="h-6 w-6 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </button>
             </div>
 
@@ -151,7 +152,7 @@
     </nav>
 
     <div id="sticky-section"
-        class=" bg-white lg:flex lg:justify-center lg:left-0 lg:w-full lg:h-[100px] lg:z-30 lg:px-6 lg:border-b-2 lg:shadow-sm">
+        class=" bg-white  lg:flex lg:justify-center lg:left-0 lg:w-full lg:h-[100px] z-30 lg:z-30 lg:px-6 lg:border-b-2 lg:shadow-sm">
         <div class="flex flex-col bg-primary lg:bg-white lg:flex-row w-full justify-between items-center">
             <div class="w-full lg:w-[20%]  flex flex-col items-center lg:items-start gap-1 lg:gap-0">
                 <h2 class="text-2xl font-normal lg:font-[700] text-white lg:text-[#1A1B20]">Kathmandu - Pokhara</h2>
@@ -195,7 +196,7 @@
             </div>
 
             <!-- Mobile View -->
-            <div class="flex lg:hidden w-full text-textDateMobile flex-wrap gap-2 px-2 py-2">
+            <div class="flex lg:hidden z-30 w-full text-textDateMobile flex-wrap gap-2 px-2 py-2">
                 <button
                     class="flex-1 flex flex-col items-center justify-center leading-4 min-w-0 h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
                     <span class="text-xs font-semibold">Today</span>
@@ -228,20 +229,11 @@
                 </button>
             </div>
 
-
             <div
                 class="hidden h-full px-2 py-2 lg:flex lg:items-center lg:justify-center w-[20%] text-sm text-gray-500">
                 <span class="font-semibold text-black">Choose</span> > Fill Details > Done
             </div>
         </div>
-
-
-
-
-
-
-
-
     </div>
 
     <div class="flex static ">
@@ -623,8 +615,8 @@
 
         <!-- Main content -->
         <main
-            class="flex flex-col mt-5 lg:mt-0 min-h-screen lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] px-4 lg:py-4 lg:px-8 overflow-x-scroll scrollbar-hide">
-            <div class="snap-mandatory snap-x flex w-full lg:w-full overflow-auto scrollbar-hide  lg:min-h-32 lg:max-w-full lg:grid lg:grid-cols-12 lg:gap-4"
+            class="flex flex-col min-h-screen lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] px-4 lg:py-4 lg:px-8 overflow-x-scroll scrollbar-hide">
+            <div class="snap-mandatory snap-x flex w-full lg:w-full overflow-auto scrollbar-hide  lg:min-h-32 lg:max-w-full lg:grid lg:grid-cols-12 lg:gap-4 mt-10 lg:mt-0"
                 onwheel="scrollHorizontally(event)">
                 <!-- Card 1 -->
                 <div

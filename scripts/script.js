@@ -57,6 +57,8 @@ menuToggle.addEventListener("click", () => {
 
 
 
+
+
 // Function to toggle classes dynamically
 // function togglePickupClass(pickupElement) {
 //     if (pickupElement.classList.contains("col-span-10")) {

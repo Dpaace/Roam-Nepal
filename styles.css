@@ -131,6 +131,7 @@ body {
 /* Add padding to content when sticky-section is active */
 body.sticky-active {
     padding-top: 100px;
+    /* margin-bottom: 40px; */
     /* Adjust this value to match the height of your sticky section */
 }
 
