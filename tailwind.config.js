@@ -21,7 +21,9 @@ module.exports = {
         bgButton: '#0B3C49',
         txtAsideGrey: '#70787C',
         bgTrending: '#FFEECB',
-        txtTrending: '#C87D0C'
+        txtTrending: '#C87D0C',
+        textDateWeb: '#000000D9',
+        textDateMobile: '#013544'
       },
       fontFamily: {
         sans: ['Open Sans', 'sans-serif'],
@@ -30,3 +32,5 @@ module.exports = {
   },
   plugins: [],
 }
+
+

@@ -32,7 +32,9 @@
                         bgButton: '#0B3C49',
                         txtAsideGrey: '#70787C',
                         bgTrending: '#FFEECB',
-                        txtTrending: '#C87D0C'
+                        txtTrending: '#C87D0C',
+                        textDateWeb: '#000000D9',
+                        textDateMobile: '#013544'
                     },
                     fontFamily: {
                         sans: ['Open Sans', 'sans-serif'],
@@ -46,7 +48,8 @@
 
 <body class="bg-white font-roboto">
 
-    <nav id="navbar" class="bg-primary text-white top-0 left-0 w-full z-50 lg:shadow-lg transition-transform duration-300">
+    <nav id="navbar"
+        class="bg-primary text-white top-0 left-0 w-full z-50 lg:shadow-lg transition-transform duration-300">
         <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
             <div class="flex justify-between w-full lg:w-1/3">
                 <div class="text-2xl font-bold">Roam Nepal</div>
@@ -60,11 +63,12 @@
                     </svg>
 
                     <!-- Cross Icon (Initially Hidden) -->
-                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <button id="close-icon" class="h-6 w-6 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </button>
             </div>
 
@@ -84,10 +88,6 @@
                         <img class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="us">
                         <span class="text-[12px] leading-4 font-normal">English</span>
                     </span>
-                    <span class="flex items-center space-x-1">
-                        <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="bus">
-                        <span class="text-[12px] leading-4 font-normal">Help</span>
-                    </span>
                     <button class="hover:text-teal-300 flex items-center space-x-1 ">
                         <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets">
                         <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
@@ -95,6 +95,27 @@
                     <div class="flex items-center space-x-1">
                         <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
                         <span class="text-[14px] leading-[22px] font-normal">Harris's Account</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <!-- Notification Button -->
+                        <div class="relative">
+                            <button class="relative flex items-center justify-center">
+                                <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
+                                    alt="notification-icon">
+                            </button>
+                            <!-- Badge -->
+                            <span
+                                class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
+                                11
+                            </span>
+                        </div>
+
+                        <button>
+                            <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
+                        </button>
+                        <button>
+                            <img class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg" alt="search-icon">
+                        </button>
                     </div>
                 </div>
 
@@ -131,50 +152,51 @@
     </nav>
 
     <div id="sticky-section"
-        class=" bg-white lg:flex lg:justify-center lg:left-0 lg:w-full lg:h-[100px] lg:z-30 lg:px-6 lg:border-b-2 lg:shadow-sm">
+        class=" bg-white  lg:flex lg:justify-center lg:left-0 lg:w-full lg:h-[100px] z-30 lg:z-30 lg:px-6 lg:border-b-2 lg:shadow-sm">
         <div class="flex flex-col bg-primary lg:bg-white lg:flex-row w-full justify-between items-center">
             <div class="w-full lg:w-[20%]  flex flex-col items-center lg:items-start gap-1 lg:gap-0">
-                <h2 class="font-bold text-2xl font[700] text-white lg:text-[#1A1B20]">Kathmandu - Pokhara</h2>
+                <h2 class="text-2xl font-normal lg:font-[700] text-white lg:text-[#1A1B20]">Kathmandu - Pokhara</h2>
                 <p class="hidden lg:flex text-sm text-[#1A1B20]">5:00 am Mon, Jan 6 - 7:00 pm Tue, Jan 7</p>
-                <a href="#" class="text-white lg:text-[#2A4678] text-sm hover:underline">Change Details</a>
+                <a href="#" class="text-white font-normal underline lg:text-[#2A4678] text-sm hover:underline">Change
+                    Details</a>
             </div>
 
             <!-- Web View -->
-            <div class="hidden lg:flex lg:w-[60%] px-2 py-2 gap-2">
+            <div class="hidden lg:flex lg:w-[60%] text-textDateWeb px-2 py-2 gap-2">
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Today, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Today, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Tomorrow, Jan 7</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Tomorrow, Jan 7</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Tue, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Tue, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Wed, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Wed, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Thurs, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Thurs, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
                     class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold text-gray-800">Thurs, Jan 6</span>
-                    <span class="text-xs text-gray-500">From Rs 3000</span>
+                    <span class="text-sm font-semibold ">Thurs, Jan 6</span>
+                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
             </div>
 
             <!-- Mobile View -->
-            <div class="flex lg:hidden w-full flex-wrap gap-2 px-2 py-2">
+            <div class="flex lg:hidden z-30 w-full text-textDateMobile flex-wrap gap-2 px-2 py-2">
                 <button
                     class="flex-1 flex flex-col items-center justify-center leading-4 min-w-0 h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
                     <span class="text-xs font-semibold">Today</span>
@@ -206,20 +228,12 @@
                     <span class="text-lg font-bold">11</span>
                 </button>
             </div>
-            
 
-            <div class="hidden h-full px-2 py-2 lg:flex lg:items-center lg:justify-center w-[20%] text-sm text-gray-500">
+            <div
+                class="hidden h-full px-2 py-2 lg:flex lg:items-center lg:justify-center w-[20%] text-sm text-gray-500">
                 <span class="font-semibold text-black">Choose</span> > Fill Details > Done
             </div>
         </div>
-
-
-
-
-
-
-
-
     </div>
 
     <div class="flex static ">
@@ -248,7 +262,7 @@
 
 
             <div id="map-popup"
-                class="fixed inset-0 top-10 bg-black bg-opacity-50 flex justify-center rounded-lg items-center hidden z-50">
+                class="fixed inset-0 top-0 bg-black bg-opacity-50 flex justify-center rounded-lg items-center hidden z-50">
                 <div class="bg-white rounded-lg overflow-hidden w-[90%] md:w-[80%] lg:w-[60%] h-[80%] relative">
                     <!-- Map Section -->
                     <div class="relative h-full">
@@ -258,7 +272,7 @@
                     </div>
 
                     <!-- Form Section -->
-                    <div class="absolute top-4 left-4 bg-white p-4 rounded shadow-lg w-[95%] md:w-[80%] lg:w-[40%]">
+                    <!-- <div class="absolute top-4 left-4 bg-white p-4 rounded shadow-lg w-[95%] md:w-[80%] lg:w-[40%]">
                         <form class="flex flex-col gap-4">
                             <div class="flex gap-2">
                                 <div class="flex flex-grow items-center border border-brcolor rounded px-2 py-2">
@@ -290,7 +304,80 @@
                                 Search
                             </button>
                         </form>
+                    </div> -->
+
+                    <div class="absolute top-4 left-4 bg-white p-4 rounded shadow-lg w-[95%] md:w-[80%] lg:w-[40%]">
+                        <form class="flex flex-col gap-4">
+                            <!-- Pick-Up Section -->
+                            <div class="flex gap-2">
+                                <div class="flex flex-grow items-center border border-brcolor rounded px-2 py-2">
+                                    <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                        alt="search-icon">
+                                    <input type="text" id="map-pickup" placeholder="Pick Up Location"
+                                        class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                </div>
+                                <button id="map-switch-btn" type="button"
+                                    class="bg-bgButton rounded-full text-white text-[14px] p-3 rotate-90">
+                                    <img class="w-5 h-5 rounded-full" src="images/svg/swap.svg" alt="swap">
+                                </button>
+                            </div>
+
+                            <!-- Stop Containers -->
+                            <div id="map-stop-container-1"
+                                class="hidden col-span-10 lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 mr-2" src="images/svg/search-icon.svg" alt="search-icon">
+                                        <input type="text" id="map-stop-1" placeholder="Add Stop 1"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                        <button type="button" id="map-cross-container-0" class="block">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="cross-icon">
+                                        </button>
+                                        <!-- <button type="button" id="map-cross-container-1" class="">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="cross-icon">
+                                        </button> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="map-stop-container-2"
+                                class="hidden col-span-12 lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+                                        <input type="text" id="map-stop-2" placeholder="Add Stop 2"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                        <button type="button" id="map-cross-container-1" class="">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="cross-icon">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Drop-Off Section -->
+                            <div class="flex gap-2">
+                                <div class="flex flex-grow items-center border border-brcolor rounded px-2 py-2">
+                                    <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                        alt="search-icon">
+                                    <input type="text" id="map-dropoff" placeholder="Drop Off Location"
+                                        class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                </div>
+                                <button id="map-add-stop-btn" type="button"
+                                    class="bg-white border border-brcolor rounded-sm text-black px-4 py-0 whitespace-nowrap">
+                                    <p class="text-sm flex-wrap">+ <br>Add Stop</p>
+                                </button>
+                            </div>
+
+                            
+
+                            <!-- Search Button -->
+                            <button type="button" class="bg-bgButton text-white px-6 py-2">
+                                Search
+                            </button>
+                        </form>
                     </div>
+
 
                     <!-- Close Button -->
                     <button id="close-popup-btn" class="absolute top-4 right-4  text-black px-4 py-2 rounded ">
@@ -586,6 +673,12 @@
                     </div>
                 </div>
 
+                <div class="mb-4">
+                    <button type="button"
+                        class="w-full rounded-sm text-white p-2 font-normal text[16px] leading-6 bg-[#0B3C49]">Apply
+                        Filter</button>
+                </div>
+
 
 
             </div>
@@ -595,8 +688,8 @@
 
         <!-- Main content -->
         <main
-            class="flex flex-col mt-5 lg:mt-0 min-h-screen lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] px-4 lg:py-4 lg:px-8 overflow-x-scroll scrollbar-hide">
-            <div class="snap-mandatory snap-x flex w-full lg:w-full overflow-auto scrollbar-hide  lg:min-h-32 lg:max-w-full lg:grid lg:grid-cols-12 lg:gap-4"
+            class="flex flex-col min-h-screen lg:left-[350px] lg:h-full lg:w-[calc(100%-350px)] px-4 lg:py-4 lg:px-8 overflow-x-scroll scrollbar-hide">
+            <div class="snap-mandatory snap-x flex w-full lg:w-full overflow-auto scrollbar-hide  lg:min-h-32 lg:max-w-full lg:grid lg:grid-cols-12 lg:gap-4 mt-10 lg:mt-0"
                 onwheel="scrollHorizontally(event)">
                 <!-- Card 1 -->
                 <div
@@ -674,10 +767,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
 
                     <div class="mb-4">
                         <h4 class="text-md font-semibold text-gray-800 mb-2">Vehicle Type</h4>
@@ -917,6 +1006,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="mb-4">
+                        <button type="button"
+                            class="w-full rounded-sm text-white p-2 font-normal text[16px] leading-6 bg-[#0B3C49]">Apply
+                            Filter</button>
+                    </div>
                 </div>
                 <span class="text-[#49454F] font-normal text-sm">231 Vehicles</span>
                 <div class="flex text-[#49454F] whitespace-nowrap">
@@ -949,7 +1043,7 @@
                                     class="min-w-full h-[150px] lg:w-full lg:h-full object-cover rounded-tl-md">
                                 <!-- Trending Badge -->
                                 <span
-                                    class="absolute top-5 left-10 bg-bgTrending text-txtTrending text-sm font-bold px-2 py-1 rounded-xl">
+                                    class="absolute top-4 left-6 lg:top-5 lg:left-10 bg-bgTrending text-txtTrending text-sm font-bold px-2 py-1 rounded-xl">
                                     Trending
                                 </span>
                             </div>
@@ -1056,7 +1150,7 @@
                                         </div>
                                         <button
                                             class="bg-bgButton text-sm lg:text[16px] leading-5 w-4/5 h-[32px] lg:h-[38px] flex items-center justify-center text-white px-6 py-3 rounded-sm">
-                                            Book Tickets
+                                            Book Vehicles
                                         </button>
                                         <span class="text-txtPrimary font-bold text-[12px] leading-4">Instant Booking
                                             Available!</span>
@@ -1083,7 +1177,7 @@
                         </ul>
 
                         <!-- Tab Content -->
-                        <div id="description-content-card1" class="tab-content p-4">
+                        <div id="description-content-card1" class="tab-rent-content p-4">
                             <p class="text-gray-600 text-sm">
                                 If the car's bodywork gets damaged, the most you'll pay towards repairs covered by the
                                 Collision Damage Waiver is the damage excess (£1,750.00). This cover is only valid if
@@ -1101,7 +1195,7 @@
                             </ul>
                         </div>
 
-                        <div id="security-content-card1" class="tab-content hidden p-4">
+                        <div id="security-content-card1" class="tab-rent-content hidden p-4">
                             <p class="text-gray-600 text-sm">
                                 A security deposit of Rs. 10,000 is required for the rental. This deposit will be
                                 refunded
@@ -1111,7 +1205,7 @@
                             </p>
                         </div>
 
-                        <div id="ratings-content-card1" class="tab-content hidden p-4">
+                        <div id="ratings-content-card1" class="tab-rent-content hidden p-4">
                             <!-- Overall Rating -->
                             <div class="flex items-center mb-2">
                                 <div class="text-5xl font-bold text-gray-800">4.8</div>
@@ -1199,7 +1293,7 @@
                                     class="w-full h-[150px] lg:w-full lg:h-full object-cover rounded-tl-md">
                                 <!-- Trending Badge -->
                                 <span
-                                    class="absolute top-5 left-10 bg-bgTrending text-txtTrending text-sm font-bold px-2 py-1 rounded-xl">
+                                    class="absolute top-4 left-6 lg:top-5 lg:left-10 bg-bgTrending text-txtTrending text-sm font-bold px-2 py-1 rounded-xl">
                                     Trending
                                 </span>
                             </div>
@@ -1306,7 +1400,7 @@
                                         </div>
                                         <button
                                             class="bg-bgButton text-sm lg:text[16px] leading-5 w-4/5 h-[32px] lg:h-[38px] flex items-center justify-center text-white px-6 py-3 rounded-sm">
-                                            Book Tickets
+                                            Book Vehicles
                                         </button>
                                         <span class="text-txtPrimary font-bold text-[12px] leading-4">Instant Booking
                                             Available!</span>
@@ -1333,7 +1427,7 @@
                         </ul>
 
                         <!-- Tab Content -->
-                        <div id="description-content-card2" class="tab-content p-4">
+                        <div id="description-content-card2" class="tab-rent-content p-4">
                             <p class="text-gray-600 text-sm">
                                 If the car's bodywork gets damaged, the most you'll pay towards repairs covered by the
                                 Collision Damage Waiver is the damage excess (£1,750.00). This cover is only valid if
@@ -1351,7 +1445,7 @@
                             </ul>
                         </div>
 
-                        <div id="security-content-card2" class="tab-content hidden p-4">
+                        <div id="security-content-card2" class="tab-rent-content hidden p-4">
                             <p class="text-gray-600 text-sm">
                                 A security deposit of Rs. 10,000 is required for the rental. This deposit will be
                                 refunded
@@ -1361,7 +1455,7 @@
                             </p>
                         </div>
 
-                        <div id="ratings-content-card2" class="tab-content hidden p-4">
+                        <div id="ratings-content-card2" class="tab-rent-content hidden p-4">
                             <!-- Overall Rating -->
                             <div class="flex items-center mb-2">
                                 <div class="text-5xl font-bold text-gray-800">4.8</div>
@@ -1437,6 +1531,7 @@
 
                 </div>
 
+
                 <!-- Pagination Buttons -->
                 <div class="flex items-center justify-center space-x-2 mt-6">
                     <!-- Previous Button -->
@@ -1483,7 +1578,111 @@
 
     </div>
 
+    <footer class="bg-gray-800 text-gray-400 py-10">
+        <div
+            class="container mx-auto px-6 grid grid-cols-2 justify-start items-start md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Services</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Bus Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Tours</a></li>
+                    <li><a href="#" class="hover:text-white">Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Activities</a></li>
+                    <li><a href="#" class="hover:text-white">Flights</a></li>
+                    <li><a href="#" class="hover:text-white">Hotels</a></li>
+                </ul>
+            </div>
 
+            <!-- Products -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Products</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Tourist BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">Mobile App</a></li>
+                    <li><a href="#" class="hover:text-white">Website</a></li>
+                </ul>
+            </div>
+
+            <!-- Help -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Help</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa Agent</a></li>
+                    <li><a href="#" class="hover:text-white">Help Centre</a></li>
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social Media  class="h-5 w-5" -->
+            <div>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li class="flex items-center space-x-2 ">
+                        <span>
+                            <img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" />
+
+                        </span>
+                        <a href="tel:+9779876567989" class="hover:text-white">+977 9876567989</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" /></span>
+                        <a href="tel:+9779887567890" class="hover:text-white">+977 9887567890</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-email.svg" alt="email" /></span>
+                        <a href="mailto:info@bussewa.com" class="hover:text-white">info@bussewa.com</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-4 mt-4">
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Facebook.svg" alt="facebook" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Instagram.svg" alt="instagram" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Twitter.svg" alt="twitter" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-LinkedIn.svg" alt="linkedin" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-TikTok.svg" alt="tiktok" /></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Download & Footer Bottom -->
+        <div class="mt-10 border-t border-gray-700 pt-6">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm mt-4 md:mt-0">
+                    <p>Copyright © BusSewa All Rights Reserved</p>
+                </div>
+
+                <!-- App Download -->
+                <div class="flex items-center space-x-4">
+                    <a href="#">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-10" />
+                    </a>
+                    <a href="#">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-10" />
+                    </a>
+                </div>
+
+
+
+                <!-- Legal Links -->
+                <div class="flex text-sm mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Cookie <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Privacy <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Terms <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <script type="text/javascript" src="scripts/rentalScript.js"></script>
