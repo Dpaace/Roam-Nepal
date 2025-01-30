@@ -767,7 +767,7 @@ scrollableBanner.addEventListener("touchend", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const scrollContainer = document.getElementById("offer-scroll");
-    let scrollAmount = 1; // Speed of auto-scroll
+    let scrollAmount = 1.2; // Speed of auto-scroll
     let direction = 1; // 1 for right, -1 for left
     let autoScroll;
 
@@ -955,7 +955,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollContainer = document.getElementById("reel-scroll");
     const reelsContainer = document.getElementById("reels-container");
 
-    let scrollAmount = 1; // Speed of auto-scroll
+    let scrollAmount = 1.2; // Speed of auto-scroll
     let direction = 1; // 1 for right, -1 for left
     let autoScroll;
 
@@ -1012,3 +1012,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollContainer = document.getElementById("continue-scroll");
+
+    let scrollAmount = 1.2; // Adjust speed
+    let direction = 1; // 1 = Right, -1 = Left
+    let autoScroll;
+
+    function startAutoScroll() {
+        autoScroll = setInterval(() => {
+            scrollContainer.scrollLeft += scrollAmount * direction;
+
+            // Reverse scrolling direction at ends
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                direction = -1; // Scroll left
+            } else if (scrollContainer.scrollLeft <= 0) {
+                direction = 1; // Scroll right
+            }
+        }, 20);
+    }
+
+    // Start auto-scrolling
+    startAutoScroll();
+
+    // Pause auto-scroll when hovering
+    scrollContainer.addEventListener("mouseenter", () => clearInterval(autoScroll));
+
+    // Resume auto-scroll when leaving
+    scrollContainer.addEventListener("mouseleave", () => startAutoScroll());
+
+    // Smooth manual scrolling using mouse wheel
+    scrollContainer.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        scrollContainer.scrollLeft += e.deltaY > 0 ? 100 : -100;
+    });
+
+    // Enable drag-to-scroll (Desktop + Mobile)
+    let isDragging = false;
+    let startX, scrollLeftStart;
+
+    scrollContainer.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        clearInterval(autoScroll);
+        startX = e.pageX;
+        scrollLeftStart = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        let moveX = e.pageX - startX;
+        scrollContainer.scrollLeft = scrollLeftStart - moveX;
+    });
+
+    scrollContainer.addEventListener("mouseup", () => {
+        isDragging = false;
+        startAutoScroll();
+    });
+
+    // Enable touch scrolling for mobile
+    scrollContainer.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        clearInterval(autoScroll);
+        startX = e.touches[0].pageX;
+        scrollLeftStart = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        let moveX = e.touches[0].pageX - startX;
+        scrollContainer.scrollLeft = scrollLeftStart - moveX;
+    });
+
+    scrollContainer.addEventListener("touchend", () => {
+        isDragging = false;
+        startAutoScroll();
+    });
+});
