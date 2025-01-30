@@ -142,7 +142,7 @@ initializeRangeSlider("price-range", "price-tooltip", "Rs.");
 function initializeTabs(cardId) {
     const tabsContainer = document.querySelector(`#${cardId}-tabs`);
     const tabs = tabsContainer.querySelectorAll('li');
-    const tabContents = document.querySelectorAll(`#${cardId} .tab-content`);
+    const tabContents = document.querySelectorAll(`#${cardId} .tab-rent-content`);
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -221,6 +221,45 @@ document.addEventListener("click", (event) => {
 
 
 
+// Select elements
+const mapSwitchBtn = document.getElementById("map-switch-btn");
+const mapPickup = document.getElementById("map-pickup");
+const mapDropoff = document.getElementById("map-dropoff");
+const mapAddStopBtn = document.getElementById("map-add-stop-btn");
+const mapStopContainer1 = document.getElementById("map-stop-container-1");
+const mapStopContainer2 = document.getElementById("map-stop-container-2");
+const mapCrossContainer1 = document.getElementById("map-cross-container-0");
+const mapCrossContainer2 = document.getElementById("map-cross-container-1");
 
+// Switch Button Functionality
+mapSwitchBtn.addEventListener("click", () => {
+    const pickupValue = mapPickup.value;
+    mapPickup.value = mapDropoff.value;
+    mapDropoff.value = pickupValue;
+});
 
+// Add Stop Button Functionality
+mapAddStopBtn.addEventListener("click", () => {
+    if (mapStopContainer1.classList.contains("hidden")) {
+        mapStopContainer1.classList.remove("hidden");
+    } else if (mapStopContainer2.classList.contains("hidden")) {
+        mapStopContainer2.classList.remove("hidden");
+        mapAddStopBtn.classList.add("hidden");
+    } else {
+        console.log("You can only add up to 2 stops.");
+    }
+});
+
+// Remove Stop Buttons Functionality
+mapCrossContainer1.addEventListener("click", () => {
+    mapStopContainer1.classList.add("hidden");
+    document.getElementById("map-stop-1").value = "";
+    mapAddStopBtn.classList.remove("hidden");
+});
+
+mapCrossContainer2.addEventListener("click", () => {
+    mapStopContainer2.classList.add("hidden");
+    document.getElementById("map-stop-2").value = "";
+    mapAddStopBtn.classList.remove("hidden");
+});
 

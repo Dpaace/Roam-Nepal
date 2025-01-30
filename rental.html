@@ -262,7 +262,7 @@
 
 
             <div id="map-popup"
-                class="fixed inset-0 top-10 bg-black bg-opacity-50 flex justify-center rounded-lg items-center hidden z-50">
+                class="fixed inset-0 top-0 bg-black bg-opacity-50 flex justify-center rounded-lg items-center hidden z-50">
                 <div class="bg-white rounded-lg overflow-hidden w-[90%] md:w-[80%] lg:w-[60%] h-[80%] relative">
                     <!-- Map Section -->
                     <div class="relative h-full">
@@ -272,7 +272,7 @@
                     </div>
 
                     <!-- Form Section -->
-                    <div class="absolute top-4 left-4 bg-white p-4 rounded shadow-lg w-[95%] md:w-[80%] lg:w-[40%]">
+                    <!-- <div class="absolute top-4 left-4 bg-white p-4 rounded shadow-lg w-[95%] md:w-[80%] lg:w-[40%]">
                         <form class="flex flex-col gap-4">
                             <div class="flex gap-2">
                                 <div class="flex flex-grow items-center border border-brcolor rounded px-2 py-2">
@@ -304,7 +304,80 @@
                                 Search
                             </button>
                         </form>
+                    </div> -->
+
+                    <div class="absolute top-4 left-4 bg-white p-4 rounded shadow-lg w-[95%] md:w-[80%] lg:w-[40%]">
+                        <form class="flex flex-col gap-4">
+                            <!-- Pick-Up Section -->
+                            <div class="flex gap-2">
+                                <div class="flex flex-grow items-center border border-brcolor rounded px-2 py-2">
+                                    <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                        alt="search-icon">
+                                    <input type="text" id="map-pickup" placeholder="Pick Up Location"
+                                        class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                </div>
+                                <button id="map-switch-btn" type="button"
+                                    class="bg-bgButton rounded-full text-white text-[14px] p-3 rotate-90">
+                                    <img class="w-5 h-5 rounded-full" src="images/svg/swap.svg" alt="swap">
+                                </button>
+                            </div>
+
+                            <!-- Stop Containers -->
+                            <div id="map-stop-container-1"
+                                class="hidden col-span-10 lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 mr-2" src="images/svg/search-icon.svg" alt="search-icon">
+                                        <input type="text" id="map-stop-1" placeholder="Add Stop 1"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                        <button type="button" id="map-cross-container-0" class="block">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="cross-icon">
+                                        </button>
+                                        <!-- <button type="button" id="map-cross-container-1" class="">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="cross-icon">
+                                        </button> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="map-stop-container-2"
+                                class="hidden col-span-12 lg:relative rounded border border-formBorder lg:p-0">
+                                <div class="relative">
+                                    <div class="flex items-center border rounded px-2 py-2">
+                                        <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                            alt="search-icon">
+                                        <input type="text" id="map-stop-2" placeholder="Add Stop 2"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                        <button type="button" id="map-cross-container-1" class="">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="cross-icon">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Drop-Off Section -->
+                            <div class="flex gap-2">
+                                <div class="flex flex-grow items-center border border-brcolor rounded px-2 py-2">
+                                    <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
+                                        alt="search-icon">
+                                    <input type="text" id="map-dropoff" placeholder="Drop Off Location"
+                                        class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                </div>
+                                <button id="map-add-stop-btn" type="button"
+                                    class="bg-white border border-brcolor rounded-sm text-black px-4 py-0 whitespace-nowrap">
+                                    <p class="text-sm flex-wrap">+ <br>Add Stop</p>
+                                </button>
+                            </div>
+
+                            
+
+                            <!-- Search Button -->
+                            <button type="button" class="bg-bgButton text-white px-6 py-2">
+                                Search
+                            </button>
+                        </form>
                     </div>
+
 
                     <!-- Close Button -->
                     <button id="close-popup-btn" class="absolute top-4 right-4  text-black px-4 py-2 rounded ">
@@ -970,7 +1043,7 @@
                                     class="min-w-full h-[150px] lg:w-full lg:h-full object-cover rounded-tl-md">
                                 <!-- Trending Badge -->
                                 <span
-                                    class="absolute top-5 left-10 bg-bgTrending text-txtTrending text-sm font-bold px-2 py-1 rounded-xl">
+                                    class="absolute top-4 left-6 lg:top-5 lg:left-10 bg-bgTrending text-txtTrending text-sm font-bold px-2 py-1 rounded-xl">
                                     Trending
                                 </span>
                             </div>
@@ -1104,7 +1177,7 @@
                         </ul>
 
                         <!-- Tab Content -->
-                        <div id="description-content-card1" class="tab-content p-4">
+                        <div id="description-content-card1" class="tab-rent-content p-4">
                             <p class="text-gray-600 text-sm">
                                 If the car's bodywork gets damaged, the most you'll pay towards repairs covered by the
                                 Collision Damage Waiver is the damage excess (£1,750.00). This cover is only valid if
@@ -1122,7 +1195,7 @@
                             </ul>
                         </div>
 
-                        <div id="security-content-card1" class="tab-content hidden p-4">
+                        <div id="security-content-card1" class="tab-rent-content hidden p-4">
                             <p class="text-gray-600 text-sm">
                                 A security deposit of Rs. 10,000 is required for the rental. This deposit will be
                                 refunded
@@ -1132,7 +1205,7 @@
                             </p>
                         </div>
 
-                        <div id="ratings-content-card1" class="tab-content hidden p-4">
+                        <div id="ratings-content-card1" class="tab-rent-content hidden p-4">
                             <!-- Overall Rating -->
                             <div class="flex items-center mb-2">
                                 <div class="text-5xl font-bold text-gray-800">4.8</div>
@@ -1220,7 +1293,7 @@
                                     class="w-full h-[150px] lg:w-full lg:h-full object-cover rounded-tl-md">
                                 <!-- Trending Badge -->
                                 <span
-                                    class="absolute top-5 left-10 bg-bgTrending text-txtTrending text-sm font-bold px-2 py-1 rounded-xl">
+                                    class="absolute top-4 left-6 lg:top-5 lg:left-10 bg-bgTrending text-txtTrending text-sm font-bold px-2 py-1 rounded-xl">
                                     Trending
                                 </span>
                             </div>
@@ -1354,7 +1427,7 @@
                         </ul>
 
                         <!-- Tab Content -->
-                        <div id="description-content-card2" class="tab-content p-4">
+                        <div id="description-content-card2" class="tab-rent-content p-4">
                             <p class="text-gray-600 text-sm">
                                 If the car's bodywork gets damaged, the most you'll pay towards repairs covered by the
                                 Collision Damage Waiver is the damage excess (£1,750.00). This cover is only valid if
@@ -1372,7 +1445,7 @@
                             </ul>
                         </div>
 
-                        <div id="security-content-card2" class="tab-content hidden p-4">
+                        <div id="security-content-card2" class="tab-rent-content hidden p-4">
                             <p class="text-gray-600 text-sm">
                                 A security deposit of Rs. 10,000 is required for the rental. This deposit will be
                                 refunded
@@ -1382,7 +1455,7 @@
                             </p>
                         </div>
 
-                        <div id="ratings-content-card2" class="tab-content hidden p-4">
+                        <div id="ratings-content-card2" class="tab-rent-content hidden p-4">
                             <!-- Overall Rating -->
                             <div class="flex items-center mb-2">
                                 <div class="text-5xl font-bold text-gray-800">4.8</div>

@@ -136,6 +136,7 @@ body.sticky-active {
 }
 
 
+
 /* Card Ribbon */
 .card__ribbon {
     width: 6.5em;
@@ -155,18 +156,15 @@ body.sticky-active {
     width: 140%;
     height: 2.35em;
     background-color: #FFDB43;
-    /* Yellow Color */
     transform: rotate(-45deg) translateY(-1.1em);
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     color: #000;
-    /* Black Text */
     font-weight: 600;
     letter-spacing: 0.1em;
     box-shadow: 0 0.3em 0.6em rgba(0, 0, 0);
-    /* box-shadow: 0 0.3em 0.6em #000000; */
 }
 
 .card__ribbon::before {
@@ -177,8 +175,30 @@ body.sticky-active {
     width: 1em;
     height: 1em;
     background-color: #000000;
-    /* Matches Ribbon Background */
     box-shadow: 11em -11em #000000;
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 768px) {
+    .card__ribbon {
+        width: 4.5em; /* Smaller size for mobile */
+        height: 4.5em;
+        top: -0.75em; /* Adjust position */
+        left: -0.75em;
+    }
+
+    .card__ribbon::after {
+        height: 1.8em; /* Reduce height */
+        font-size: 0.8em; /* Smaller text size */
+        transform: rotate(-45deg) translateY(-0.9em); /* Adjust placement */
+        letter-spacing: 0.08em; /* Slightly smaller spacing */
+    }
+
+    .card__ribbon::before {
+        width: 0.75em; /* Adjust for ribbon triangle */
+        height: 0.75em;
+        box-shadow: 8em -8em #000000; /* Adjust shadow size */
+    }
 }
 
 
@@ -188,16 +208,11 @@ body.sticky-active {
     left: 0;
     height: 100%;
     width: 80%;
-    /* Adjust the width as needed */
     max-width: 320px;
-    /* Limit the width */
     background-color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    /* Shadow for popup */
     transform: translateX(-100%);
-    /* Hidden off-screen initially */
     transition: transform 0.3s ease-in-out;
-    /* Smooth sliding effect */
     z-index: 50;
 }
 
