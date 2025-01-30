@@ -507,7 +507,7 @@
                                             alt="search-icon">
 
                                         <input type="text" id="oneway-pickup" placeholder="Pick-Up"
-                                            class="w-full outline-none placeholder:text-sm"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('oneway-pickup')"
                                             onclick="toggleDropdown('oneway-pickup')">
                                     </div>
@@ -567,7 +567,7 @@
                                         <img class="w-5 h-5  mr-2" src="images/svg/search-icon.svg" alt="search-icon">
 
                                         <input type="text" id="stop" placeholder="Add Stop 1"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder ">
 
                                         <button type="button" id="oneway-cross-container-0" class="block">
                                             <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
@@ -620,7 +620,7 @@
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
                                             alt="search-icon">
                                         <input type="text" id="oneway-dropoff" placeholder="Drop-Off"
-                                            class="w-full outline-none placeholder:text-sm"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('oneway-dropoff')"
                                             onclick="toggleDropdown('oneway-dropoff')">
                                     </div>
@@ -673,7 +673,7 @@
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
 
                                     <input type="text" id="oneway-pickup-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
                                         placeholder="Pick-Up Date / Time" />
                                 </div>
                             </div>
@@ -713,7 +713,7 @@
                                             alt="search-icon">
 
                                         <input type="text" id="hourly-pickup" placeholder="Pick-Up"
-                                            class="w-full outline-none placeholder:text-sm"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('hourly-pickup')"
                                             onclick="toggleDropdown('hourly-pickup')">
                                     </div>
@@ -825,7 +825,7 @@
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
                                             alt="search-icon">
                                         <input type="text" id="hourly-dropoff" placeholder="Drop-Off"
-                                            class="w-full outline-none placeholder:text-sm"
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('hourly-dropoff')"
                                             onclick="toggleDropdown('hourly-dropoff')">
                                     </div>
@@ -877,7 +877,7 @@
                             <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                 <img class="w-5 h-5 text-black mr-2" src="images/svg/num-hours.svg" alt="time" />
                                 <input type="number" id="hourly-num-hours" min="0" max="10"
-                                    class="w-full bg-transparent outline-none placeholder:text-sm"
+                                    class="w-full bg-transparent outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                     placeholder="Enter number of hours">
                             </div>
                             <!-- <h1 class="font-normal text-sm text-[#49454F]">Maximum is 10. Goto <a href="">Round Trip </a>for more options.</h1> -->
@@ -898,7 +898,7 @@
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
 
                                     <input type="text" id="hourly-pickup-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
                                         placeholder="Pick-Up Date / Time" />
                                 </div>
                             </div>
@@ -957,7 +957,7 @@
                                                 alt="search-icon">
 
                                             <input type="text" id="airport-pickup" placeholder="Pick-Up"
-                                                class="w-full outline-none placeholder:text-sm"
+                                                class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                                 oninput="filterOptions('airport-pickup')"
                                                 onclick="toggleDropdown('airport-pickup')">
                                         </div>
@@ -1068,7 +1068,7 @@
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
 
                                     <input type="text" id="airport-pickup-date"
-                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm"
+                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
                                         placeholder="Pick-Up Date / Time" />
                                 </div>
                             </div>
@@ -1118,7 +1118,6 @@
             <div class="flex w-full lg:w-full space-x-4 overflow-x-auto scrollbar-hide"
                 onwheel="scrollHorizontally(event)">
                 <!-- Card 1 -->
-                <!-- <div class="bg-[#C4C6D0] w-[480px] h-[100px] rounded-lg  p-4 flex items-center space-x-4"> -->
                 <div
                     class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
                     <div class="flex items-center">
@@ -1171,10 +1170,10 @@
     </div>
 
     <!-- Travel Experience Section -->
-    <div class="bg-white py-5 lg:py-0 container h-[300px] lg:max-w-full lg:px-28 lg:min-h-[450px] lg:max-h-[600px]">
-        <div class="relative w-full h-full overflow-hidden scrollbar-hide" id="scrollable-banner">
+    <div class="bg-white py-5  lg:py-0 container h-[300px] lg:max-w-full lg:px-28 lg:min-h-[450px] lg:max-h-[600px]">
+        <div  class="relative snap-mandatory snap-x w-full h-full overflow-hidden scrollbar-hide" id="scrollable-banner">
             <!-- Banner 1 -->
-            <div class="relative bg-cover bg-center h-full w-full flex-shrink-0"
+            <div class="relative snap-center bg-cover bg-center h-full w-full flex-shrink-0"
                 style="background-image: url('images/home2.jpg');">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-start text-center pl-5 pb-5">
@@ -1191,7 +1190,7 @@
                 </div>
             </div>
             <!-- Banner 2 -->
-            <div class="relative bg-cover bg-center h-full w-full flex-shrink-0"
+            <div class="relative snap-center bg-cover bg-center h-full w-full flex-shrink-0"
                 style="background-image: url('images/home1.jpg');">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-start text-center pl-5 pb-5">
@@ -1208,7 +1207,7 @@
                 </div>
             </div>
             <!-- Banner 3 -->
-            <div class="relative bg-cover bg-center h-full w-full flex-shrink-0"
+            <div class="relative snap-center bg-cover bg-center h-full w-full flex-shrink-0"
                 style="background-image: url('images/home2.jpg');">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-start text-center pl-5 pb-5">
@@ -1236,7 +1235,7 @@
                 <a href="#" class="text-primary text-[14px] lg:text-[16px] font-[400] leading-10">Explore more
                     &gt;&gt;</a>
             </div>
-            <div class="flex items-center p-0 lg:p-2 h-[245px] lg:h-[270px] space-x-[10px] overflow-x-auto scrollbar-hide"
+            <div id="offer-scroll" class="flex items-center p-0 lg:p-2 h-[245px] lg:h-[270px] space-x-[10px] overflow-x-auto scrollbar-hide"
                 onwheel="scrollHorizontally(event)">
                 <!-- Card 1 -->
                 <div
@@ -1514,7 +1513,7 @@
         </div>
 
         <!-- Reels Section -->
-        <div class="relative overflow-x-auto overflow-hidden scrollbar-hide" onwheel="scrollHorizontally(event)">
+        <div id="reel-scroll" class="relative overflow-x-auto overflow-hidden scrollbar-hide" onwheel="scrollHorizontally(event)">
             <!-- Reels Container -->
             <div id="reels-container" class="flex transition-transform duration-500" style="transform: translateX(0);">
                 <!-- Reel Card -->
@@ -1608,29 +1607,29 @@
         </div>
 
         <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-1 lg:gap-2 mb-[10px]">
+        <div class="flex flex-wrap gap-1 lg:gap-2 mb-[10px] overflow-x-scroll overflow-hidden ">
             <button
-                class="p-[0.5px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm  lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
+                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm  lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 All
             </button>
             <button
-                class=" p-[0.5px] w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class=" p-[6px] w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Bus tickets
             </button>
             <button
-                class="p-[0.5px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Hotels
             </button>
             <button
-                class="p-[0.5px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Tours
             </button>
             <button
-                class="p-[0.5px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
                 Reservations
             </button>
             <button
-                class="p-[0.5px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
+                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 Flights
             </button>
         </div>
