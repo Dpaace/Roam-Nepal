@@ -486,32 +486,6 @@ airportcross2.addEventListener("click", () => {
 
 
 
-
-// Set the maximum number of inputs allowed
-let maxInputs = 2;
-
-// addStopButton.addEventListener("click", (event) => {
-//     // Prevent default button behavior
-//     event.preventDefault();
-
-//     stopContainer.classList.remove('hidden')
-//     // Check the current number of inputs in the container
-//     const existingInputs = stopContainer.querySelectorAll("input").length;
-
-//     // Add an input field only if the current number is less than the allowed maximum
-//     if (existingInputs < maxInputs) {
-//         const newInput = document.createElement("input");
-//         newInput.type = "text";
-//         newInput.placeholder = "Enter stop 2";
-//         newInput.className = "col-span-12 border border-black rounded px-4 py-2";
-
-//         // Append the new input field to the container
-//         stopContainer.appendChild(newInput);
-//     }
-// });
-
-
-
 // Tab switching logic
 const tabs = document.querySelectorAll('#round-trip-tab, #one-way-tab, #hourly-tab, #airport-tab');
 const containers = {
@@ -661,32 +635,192 @@ document.querySelectorAll('.overflow-x-auto').forEach((container) => {
 });
 
 
+// const scrollableBanner = document.getElementById("scrollable-banner");
+
+// let scrollInterval = setInterval(() => {
+//     const scrollAmount = scrollableBanner.offsetWidth;
+//     if (scrollableBanner.scrollLeft + scrollAmount >= scrollableBanner.scrollWidth) {
+//         scrollableBanner.scrollTo({ left: 0, behavior: "smooth" });
+//     } else {
+//         scrollableBanner.scrollBy({ left: scrollAmount, behavior: "smooth" });
+//     }
+// }, 3000);
+
+
+// // Pause auto-scroll on hover
+// scrollableBanner.addEventListener("mouseover", () => clearInterval(scrollInterval));
+
+// // Resume auto-scroll when not hovering
+// scrollableBanner.addEventListener("mouseleave", () => {
+//     scrollInterval = setInterval(() => {
+//         const scrollAmount = scrollableBanner.offsetWidth;
+//         if (scrollableBanner.scrollLeft + scrollAmount >= scrollableBanner.scrollWidth) {
+//             scrollableBanner.scrollTo({ left: 0, behavior: "smooth" });
+//         } else {
+//             scrollableBanner.scrollBy({ left: scrollAmount, behavior: "smooth" });
+//         }
+//     }, 5000);
+// });
+
+
 const scrollableBanner = document.getElementById("scrollable-banner");
 
-let scrollInterval = setInterval(() => {
-    const scrollAmount = scrollableBanner.offsetWidth;
-    if (scrollableBanner.scrollLeft + scrollAmount >= scrollableBanner.scrollWidth) {
-        scrollableBanner.scrollTo({ left: 0, behavior: "smooth" });
-    } else {
-        scrollableBanner.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-}, 3000);
+// Variables for Dragging
+let isDragging = false;
+let startX, scrollLeft;
+let autoScrollActive = true; // To track if auto-scrolling should run
 
-
-// Pause auto-scroll on hover
-scrollableBanner.addEventListener("mouseover", () => clearInterval(scrollInterval));
-
-// Resume auto-scroll when not hovering
-scrollableBanner.addEventListener("mouseleave", () => {
-    scrollInterval = setInterval(() => {
+// Function to start auto-scrolling
+function startAutoScroll() {
+    return setInterval(() => {
+        if (!autoScrollActive) return; // Prevent auto-scroll while dragging
         const scrollAmount = scrollableBanner.offsetWidth;
         if (scrollableBanner.scrollLeft + scrollAmount >= scrollableBanner.scrollWidth) {
             scrollableBanner.scrollTo({ left: 0, behavior: "smooth" });
         } else {
             scrollableBanner.scrollBy({ left: scrollAmount, behavior: "smooth" });
         }
-    }, 5000);
+    }, 3000);
+}
+
+// Start auto-scrolling initially
+let scrollInterval = startAutoScroll();
+
+// Drag Scroll for Desktop (Mouse)
+scrollableBanner.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    autoScrollActive = false; // Stop auto-scrolling when dragging starts
+    scrollableBanner.classList.add("scrolling");
+    startX = e.pageX - scrollableBanner.offsetLeft;
+    scrollLeft = scrollableBanner.scrollLeft;
 });
+
+scrollableBanner.addEventListener("mouseleave", () => {
+    isDragging = false;
+    scrollableBanner.classList.remove("scrolling");
+    autoScrollActive = true; // Resume auto-scroll
+});
+
+scrollableBanner.addEventListener("mouseup", () => {
+    isDragging = false;
+    scrollableBanner.classList.remove("scrolling");
+    autoScrollActive = true; // Resume auto-scroll
+});
+
+scrollableBanner.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollableBanner.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust the sensitivity
+    scrollableBanner.scrollLeft = scrollLeft - walk;
+});
+
+// Touch Scroll for Mobile (Touch)
+scrollableBanner.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    autoScrollActive = false; // Stop auto-scrolling when dragging starts
+    startX = e.touches[0].pageX - scrollableBanner.offsetLeft;
+    scrollLeft = scrollableBanner.scrollLeft;
+});
+
+scrollableBanner.addEventListener("touchend", () => {
+    isDragging = false;
+    autoScrollActive = true; // Resume auto-scroll
+});
+
+scrollableBanner.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - scrollableBanner.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust the sensitivity
+    scrollableBanner.scrollLeft = scrollLeft - walk;
+});
+
+// Resume Auto-Scroll when Interaction Ends
+scrollableBanner.addEventListener("mouseleave", () => {
+    if (!isDragging) {
+        autoScrollActive = true;
+    }
+});
+
+// Clear Interval on Interaction, Restart After 5 Sec
+scrollableBanner.addEventListener("mousedown", () => {
+    clearInterval(scrollInterval);
+});
+scrollableBanner.addEventListener("touchstart", () => {
+    clearInterval(scrollInterval);
+});
+
+scrollableBanner.addEventListener("mouseup", () => {
+    scrollInterval = setTimeout(() => {
+        autoScrollActive = true;
+        scrollInterval = startAutoScroll();
+    }, 3000);
+});
+
+scrollableBanner.addEventListener("touchend", () => {
+    scrollInterval = setTimeout(() => {
+        autoScrollActive = true;
+        scrollInterval = startAutoScroll();
+    }, 3000);
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollContainer = document.getElementById("offer-scroll");
+    let scrollAmount = 1; // Speed of auto-scroll
+    let direction = 1; // 1 for right, -1 for left
+    let autoScroll;
+
+    function startAutoScroll() {
+        autoScroll = setInterval(() => {
+            scrollContainer.scrollLeft += scrollAmount * direction;
+
+            // Reverse direction when reaching the end or beginning
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                direction = -1; // Change to left
+            } else if (scrollContainer.scrollLeft <= 0) {
+                direction = 1; // Change to right
+            }
+        }, 20);
+    }
+
+    // Start auto-scroll
+    startAutoScroll();
+
+    // Pause auto-scroll when user interacts
+    scrollContainer.addEventListener("mouseenter", () => clearInterval(autoScroll));
+    scrollContainer.addEventListener("mouseleave", () => startAutoScroll());
+
+    // Enable smooth manual scrolling with mouse wheel
+    scrollContainer.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        scrollContainer.scrollLeft += e.deltaY > 0 ? 100 : -100;
+    });
+
+    // Enable smooth manual scrolling with touch (Mobile)
+    let isDragging = false;
+    let startX, scrollLeftStart;
+
+    scrollContainer.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        clearInterval(autoScroll); // Pause auto-scroll
+        startX = e.touches[0].pageX;
+        scrollLeftStart = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        let moveX = e.touches[0].pageX - startX;
+        scrollContainer.scrollLeft = scrollLeftStart - moveX;
+    });
+
+    scrollContainer.addEventListener("touchend", () => {
+        isDragging = false;
+        startAutoScroll(); // Resume auto-scroll
+    });
+});
+
+
 
 
 
@@ -754,50 +888,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// const testimonials = [
-//     {
-//         text: "Absolutely love this app! Booking bus tickets across Nepal has never been easier. Smooth transactions and timely updates make my travel planning a breeze. Highly recommended!",
-//         author: "-- Harris Magar, CEO of XYZ",
-//     },
-//     {
-//         text: "This service has been a lifesaver for our family trips. The convenience and ease of booking are unparalleled. The support team is fantastic too!",
-//         author: "-- Sarita Sharma, Travel Enthusiast",
-//     },
-//     {
-//         text: "I highly recommend this platform to anyone looking to travel within Nepal. It has never been this easy to plan a trip before!",
-//         author: "-- Prakash Thapa, Business Professional",
-//     },
-// ];
 
-
-// Testimonials Section
-
-// let currentTestimonialIndex = 0;
-
-// const testimonialText = document.getElementById("testimonial-text");
-// const testimonialAuthor = document.getElementById("testimonial-author");
-// const prevBtn = document.getElementById("prev-btn");
-// const nextBtn = document.getElementById("next-btn");
-
-// function updateTestimonial(index) {
-//     testimonialText.textContent = testimonials[index].text;
-//     testimonialAuthor.textContent = testimonials[index].author;
-// }
-
-// prevBtn.addEventListener("click", () => {
-//     currentTestimonialIndex =
-//         (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
-//     updateTestimonial(currentTestimonialIndex);
-// });
-
-// nextBtn.addEventListener("click", () => {
-//     currentTestimonialIndex =
-//         (currentTestimonialIndex + 1) % testimonials.length;
-//     updateTestimonial(currentTestimonialIndex);
-// });
-
-// // Initialize with the first testimonial
-// updateTestimonial(currentTestimonialIndex);
 
 
 
@@ -860,41 +951,64 @@ if (window.innerWidth < 1024) {
 
 
 // For Reels
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollContainer = document.getElementById("reel-scroll");
+    const reelsContainer = document.getElementById("reels-container");
 
-// const reelsContainer = document.getElementById('reels-container');
-// const prevButton = document.getElementById('prev-reel-btn');
-// const nextButton = document.getElementById('next-reel-btn');
+    let scrollAmount = 1; // Speed of auto-scroll
+    let direction = 1; // 1 for right, -1 for left
+    let autoScroll;
 
-// // Constants
-// const reelWidth = 280 + 16; // Reel width + margin (adjust as needed)
-// const visibleReels = 5; // Number of visible reels
-// let currentIndex = 0;
+    function startAutoScroll() {
+        autoScroll = setInterval(() => {
+            reelsContainer.style.transform = `translateX(-${scrollContainer.scrollLeft}px)`;
+            scrollContainer.scrollLeft += scrollAmount * direction;
 
-// // Get total number of reels
-// const totalReels = reelsContainer.children.length;
+            // Reverse direction when reaching the end or beginning
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                direction = -1; // Change to left
+            } else if (scrollContainer.scrollLeft <= 0) {
+                direction = 1; // Change to right
+            }
+        }, 20);
+    }
 
-// // Update reel container's transform position
-// function updateReelPosition() {
-//     const maxTranslateX = (totalReels - visibleReels) * reelWidth;
-//     const translateX = Math.min(currentIndex * reelWidth, maxTranslateX); // Prevent scrolling beyond bounds
-//     reelsContainer.style.transform = `translateX(-${translateX}px)`;
-// }
+    // Start auto-scroll
+    startAutoScroll();
 
-// // Next button functionality
-// nextButton.addEventListener('click', () => {
-//     if (currentIndex < totalReels - visibleReels) {
-//         currentIndex++;
-//         updateReelPosition();
-//     }
-// });
+    // Pause auto-scroll when user interacts
+    scrollContainer.addEventListener("mouseenter", () => clearInterval(autoScroll));
+    scrollContainer.addEventListener("mouseleave", () => startAutoScroll());
 
-// // Previous button functionality
-// prevButton.addEventListener('click', () => {
-//     if (currentIndex > 0) {
-//         currentIndex--;
-//         updateReelPosition();
-//     }
-// });
+    // Enable smooth manual scrolling with mouse wheel
+    scrollContainer.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        scrollContainer.scrollLeft += e.deltaY > 0 ? 100 : -100;
+    });
+
+    // Enable smooth manual scrolling with touch (Mobile)
+    let isDragging = false;
+    let startX, scrollLeftStart;
+
+    scrollContainer.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        clearInterval(autoScroll); // Pause auto-scroll
+        startX = e.touches[0].pageX;
+        scrollLeftStart = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        let moveX = e.touches[0].pageX - startX;
+        scrollContainer.scrollLeft = scrollLeftStart - moveX;
+    });
+
+    scrollContainer.addEventListener("touchend", () => {
+        isDragging = false;
+        startAutoScroll(); // Resume auto-scroll
+    });
+});
+
 
 
 
