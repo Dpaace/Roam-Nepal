@@ -212,7 +212,8 @@
                     <div class="w-full lg:w-2/3 py-4 pl-4 ">
                         <div class="flex justify-between items-start border-b border-[#C4C6D0]">
                             <div>
-                                <h2 class="text-[16px] lg:text-xl leading-4 font-bold">Midsize Elite SUV</h2>
+                                <h2 class="text-[16px mt-3 lg:mt-0 lg:text-xl leading-4 font-bold">Midsize Elite SUV
+                                </h2>
                                 <p class="text-sm leading-5 font-normal text-[#135200] mt-2">Tata Nexon</p>
                             </div>
                             <div
@@ -235,12 +236,16 @@
                             <div
                                 class="bg-white w-[90%] h-[700px] lg:w-[80%]  max-w-[1000px] rounded-lg shadow-lg  relative overflow-y-scroll">
                                 <!-- Popup Content -->
-                                <div class="p-6 ">
-                                    <div class="flex justify-end p-1">
+                                <div class="p-2 h-full relative">
+                                    <div class="absolute right-4 z-50 flex justify-end p-1">
                                         <button id="additional-close-popup-btn"
-                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">x</button>
+                                            class="text-black hover:text-gray-700 text-lg font-bold">
+                                            x
+                                        </button>
                                     </div>
-                                    <div id="popup-info" class="border rounded-md border-[#BFC8CC] ">
+
+                                    <div id="popup-info" class="relative border rounded-md border-[#BFC8CC] h-full">
+
                                         <div
                                             class="flex flex-col lg:flex lg:flex-row border-b-[1px] w-full max-h-[200px] lg:max-h-[270px] border-[#BFC8CC] ">
                                             <div
@@ -620,7 +625,7 @@
             <!-- Driver Details -->
             <div class="border border-[#C4C6D0] rounded-lg p-4 flex flex-col ">
                 <h1 class="font-bold text-[16px] lg:text-[20px] leading-4 my-4">Driver Details</h1>
-                <div class="flex flex-col lg:flex-row items-center gap-4 justify-between  mb-5">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center gap-4 justify-between  mb-5">
                     <div class="flex w-full items-center gap-3">
                         <img src="images/sample_1.jpg" alt="Driver" class="w-[76px] h-[76px] rounded-full border">
                         <div class="flex flex-col gap-1">
@@ -646,7 +651,7 @@
                         </div>
                     </div>
                     <button type="button" id="driver-info-btn"
-                        class="text-[#03677E] text-xs lg:text-sm font-normal leading-4 whitespace-nowrap">View
+                        class="text-[#03677E]  text-xs lg:text-sm font-normal leading-4 whitespace-nowrap">View
                         all ratings</button>
                 </div>
                 <div id="driver-info" class="hidden">
@@ -929,25 +934,26 @@
             <div class="mt-6 hidden lg:block">
                 <button type="button"
                     class="w-full bg-[#0B3C49] text-white py-3 rounded-md text-center text-sm lg:text-[16px] leading-6 font-normal focus:outline-none">
-                    Book Tickets
+                    Book Vehicles
                 </button>
             </div>
 
             <!-- Book Tickets Button Mobile View -->
             <div
-                class="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t shadow-lg p-4 flex justify-between items-center">
+                class="lg:hidden fixed bottom-0 left-0 w-full bg-white h-[70px] border-t shadow-[0px_-4px_10px_rgba(0,0,0,0.15)] px-4  py-2 flex justify-between items-center">
                 <!-- Price Section -->
-                <div class="flex flex-col items-end w-2/4">
-                    <p class="text-sm text-gray-500">Price</p>
-                    <p class="text-xl font-bold text-black">Rs. 4,400</p>
-                    <button id="view-price-details-btn" class="text-sm text-[#03677E] hover:underline">view price
-                        details ></button>
+                <div class="flex flex-col items-end w-2/4 gap-1">
+                    <p class="font-normal text-[10px] leading-4 text-[#4A4A4A]">Price</p>
+                    <p class="font-bold text-xl leading-4 text-[#171C1E]">Rs. 4,400</p>
+                    <button id="view-price-details-btn" class="font-normal text-[10px] leading-4 text-[#03677E] hover:underline">
+                        view price details >
+                    </button>
                 </div>
 
                 <!-- Book Tickets Button -->
                 <button type="button"
-                    class="bg-[#0B3C49] w-[40%] text-white px-6 py-3 rounded-md text-center text-sm font-normal focus:outline-none">
-                    Book Tickets
+                    class="bg-[#0B3C49] w-[40%] text-white px-6 py-3 rounded-md text-center text-sm font-normal focus:outline-none whitespace-nowrap">
+                    Book Vehicles
                 </button>
             </div>
 
