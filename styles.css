@@ -137,7 +137,8 @@ body.sticky-active {
 
 
 
-/* Card Ribbon */
+
+
 .card__ribbon {
     width: 6.5em;
     height: 6.5em;
@@ -164,40 +165,60 @@ body.sticky-active {
     color: #000;
     font-weight: 600;
     letter-spacing: 0.1em;
-    box-shadow: 0 0.3em 0.6em rgba(0, 0, 0);
 }
 
-.card__ribbon::before {
-    content: '';
+.box-top {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 87.5px;
+    top: 0.5px;
     width: 1em;
     height: 1em;
-    background-color: #000000;
+    background-color: #000;
+    z-index: 0;
     box-shadow: 11em -11em #000000;
 }
 
-/* Responsive adjustments for mobile view */
+.box-bottom {
+    position: absolute;
+    left: 0.5px;
+    bottom: 0.5px;
+    width: 1em;
+    height: 1em;
+    background-color: #000;
+    z-index: 0;
+    box-shadow: 11em -11em #000000;
+}
+
+/* Responsive Styling for Mobile Screens */
 @media (max-width: 768px) {
     .card__ribbon {
-        width: 4.5em; /* Smaller size for mobile */
+        width: 4.5em;
         height: 4.5em;
-        top: -0.75em; /* Adjust position */
+        top: -0.75em;
         left: -0.75em;
     }
 
     .card__ribbon::after {
-        height: 1.8em; /* Reduce height */
-        font-size: 0.8em; /* Smaller text size */
-        transform: rotate(-45deg) translateY(-0.9em); /* Adjust placement */
-        letter-spacing: 0.08em; /* Slightly smaller spacing */
+        height: 1.8em;
+        font-size: 0.8em;
+        transform: rotate(-45deg) translateY(-0.9em);
+        letter-spacing: 0.08em;
     }
 
-    .card__ribbon::before {
-        width: 0.75em; /* Adjust for ribbon triangle */
+    .box-top {
+        left: 60px;
+        top: 0.25px;
+        width: 0.72em;
+        height: 0.72em;
+        box-shadow: 8em -8em #000000;
+    }
+
+    .box-bottom {
+        left: 0.25px;
+        bottom: 0.5px;
+        width: 0.72em;
         height: 0.75em;
-        box-shadow: 8em -8em #000000; /* Adjust shadow size */
+        box-shadow: 8em -8em #000000;
     }
 }
 
@@ -241,8 +262,10 @@ body.sticky-active {
 
 /* Popup Sliding Effect */
 #mobile-popup {
-    transform: translateX(100%); /* Initially off-screen */
-    transition: transform 0.3s ease-in-out; /* Smooth slide-in/out effect */
+    transform: translateX(100%);
+    /* Initially off-screen */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth slide-in/out effect */
 }
 
 .tab-content {
@@ -262,7 +285,3 @@ body.sticky-active {
 .active-tab {
     font-weight: bold;
 }
-
-
-
-
