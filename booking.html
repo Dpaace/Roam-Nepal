@@ -88,10 +88,6 @@
                         <img class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="us">
                         <span class="text-[12px] leading-4 font-normal">English</span>
                     </span>
-                    <span class="flex items-center space-x-1">
-                        <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="bus">
-                        <span class="text-[12px] leading-4 font-normal">Help</span>
-                    </span>
                     <button class="hover:text-teal-300 flex items-center space-x-1 ">
                         <img class="w-5 h-5" src="images/svg/ticket.svg" alt="tickets">
                         <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
@@ -99,6 +95,27 @@
                     <div class="flex items-center space-x-1">
                         <img src="images/sample_1.jpg" alt="Profile" class="w-8 h-8 rounded-full border">
                         <span class="text-[12px] leading-4 font-normal">Harris's Account</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <!-- Notification Button -->
+                        <div class="relative">
+                            <button class="relative flex items-center justify-center">
+                                <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
+                                    alt="notification-icon">
+                            </button>
+                            <!-- Badge -->
+                            <span
+                                class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
+                                11
+                            </span>
+                        </div>
+
+                        <button>
+                            <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
+                        </button>
+                        <button>
+                            <img class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg" alt="search-icon">
+                        </button>
                     </div>
                 </div>
 
@@ -146,11 +163,10 @@
         </aside>
     </div> -->
 
-    <div class="flex flex-col lg:flex-row">
-        <main
-            class="flex mt-14 lg:mt-0 flex-col lg:absolute  lg:top-[112px] lg:left-0 lg:h-[calc(100vh-112px)] lg:w-[calc(100%-350px)] py-2 px-4 lg:py-4 lg:px-8 overflow-auto scrollbar-hide">
+    <div class="flex flex-col lg:flex-row lg:relative lg:top-[112px] h-fit">
+        <main class="flex mt-14 lg:mt-0 flex-col  lg:left-0 h-full lg:w-[calc(100%-350px)] py-2 px-4 lg:py-4 lg:px-8 ">
 
-            <div class=" p-4">
+            <div class=" py-4">
                 <div class="mb-4">
                     <a href="#" class="text-[#435E91] font-normal text-xs lg:text-[16px] leading-6">Back to Search
                         results</a>
@@ -940,7 +956,7 @@
 
             <!-- Book Tickets Button Mobile View -->
             <div
-                class="lg:hidden fixed bottom-0 left-0 w-full bg-white h-[70px] border-t shadow-[0px_-4px_10px_rgba(0,0,0,0.15)] px-4  py-2 flex justify-between items-center">
+                class="lg:hidden z-50 fixed bottom-0 left-0 w-full bg-white h-[70px] border-t shadow-[0px_-4px_10px_rgba(0,0,0,0.15)] px-4  py-2 flex justify-between items-center">
                 <!-- Price Section -->
                 <div class="flex flex-col items-end w-2/4 gap-1">
                     <p class="font-normal text-[10px] leading-4 text-[#4A4A4A]">Price</p>
@@ -1011,8 +1027,7 @@
 
 
         </main>
-        <aside
-            class="hidden lg:flex lg:flex-col lg:absolute lg:top-[112px] lg:right-0 lg:h-[calc(100vh-112px)] lg:w-[350px] text-black z-40 lg:p-4 ">
+        <aside class="hidden lg:flex lg:flex-col  lg:right-0  lg:w-[350px] text-black lg:p-4 ">
 
             <div class="border border-[#C4C6D0] rounded-sm p-6 mt-[105px]">
                 <!-- Booking Details Header -->
@@ -1055,6 +1070,112 @@
         </aside>
 
     </div>
+
+    <footer class="bg-gray-800 relative text-gray-400 py-10 mt-0 lg:mt-40 mb-16 lg:mb-0">
+        <div
+            class="container mx-auto px-6 grid grid-cols-2 justify-start items-start md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Services</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Bus Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Tours</a></li>
+                    <li><a href="#" class="hover:text-white">Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Activities</a></li>
+                    <li><a href="#" class="hover:text-white">Flights</a></li>
+                    <li><a href="#" class="hover:text-white">Hotels</a></li>
+                </ul>
+            </div>
+
+            <!-- Products -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Products</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Tourist BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">Mobile App</a></li>
+                    <li><a href="#" class="hover:text-white">Website</a></li>
+                </ul>
+            </div>
+
+            <!-- Help -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Help</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa Agent</a></li>
+                    <li><a href="#" class="hover:text-white">Help Centre</a></li>
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social Media  class="h-5 w-5" -->
+            <div>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li class="flex items-center space-x-2 ">
+                        <span>
+                            <img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" />
+
+                        </span>
+                        <a href="tel:+9779876567989" class="hover:text-white">+977 9876567989</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" /></span>
+                        <a href="tel:+9779887567890" class="hover:text-white">+977 9887567890</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-email.svg" alt="email" /></span>
+                        <a href="mailto:info@bussewa.com" class="hover:text-white">info@bussewa.com</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-4 mt-4">
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Facebook.svg" alt="facebook" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Instagram.svg" alt="instagram" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Twitter.svg" alt="twitter" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-LinkedIn.svg" alt="linkedin" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-TikTok.svg" alt="tiktok" /></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Download & Footer Bottom -->
+        <div class="mt-10 border-t border-gray-700 pt-6">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm mt-4 md:mt-0">
+                    <p>Copyright © BusSewa All Rights Reserved</p>
+                </div>
+
+                <!-- App Download -->
+                <div class="flex items-center space-x-4">
+                    <a href="#">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-10" />
+                    </a>
+                    <a href="#">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-10" />
+                    </a>
+                </div>
+
+
+
+                <!-- Legal Links -->
+                <div class="flex text-sm mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Cookie <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Privacy <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Terms <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <script>
