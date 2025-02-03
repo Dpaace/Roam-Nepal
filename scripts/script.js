@@ -2,17 +2,62 @@
 console.log("External Script Connected!!!")
 
 
-// Initialize Flatpickr for Pick-Up Date/Time
-// flatpickr("#pickup-date", "#oneway-pickup-date",{
-// flatpickr(".date-picker", {
-//     enableTime: true,
-//     noCalendar: false,
-//     time_24hr: false,
-//     dateFormat: "Y-m-d H:i K",
-//     minuteIncrement: 30,
-//     minDate: "today",
-//     position: "auto center",
-// });
+// For top navbar
+document.addEventListener("DOMContentLoaded", () => {
+    const bsSpan = document.getElementById("toggle-bs");
+    const adSpan = document.getElementById("toggle-ad");
+
+    // Add event listeners for toggling
+    bsSpan.addEventListener("click", () => {
+        bsSpan.classList.add("hidden");
+        adSpan.classList.remove("hidden");
+    });
+
+    adSpan.addEventListener("click", () => {
+        adSpan.classList.add("hidden");
+        bsSpan.classList.remove("hidden");
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const languageFlag = document.getElementById("language-flag");
+    const languageText = document.getElementById("language-text");
+
+    // Add event listener for toggling
+    languageText.addEventListener("click", () => {
+        if (languageText.textContent === "English") {
+            // Switch to Nepali
+            languageFlag.src = "images/nepal-flag.png";
+            languageFlag.alt = "Nepali";
+            languageText.textContent = "Nepali";
+        } else {
+            // Switch to English
+            languageFlag.src = "images/svg/us.svg";
+            languageFlag.alt = "English";
+            languageText.textContent = "English";
+        }
+    });
+});
+
+
+const notificationBtn = document.getElementById("notification-btn");
+const notificationPopup = document.getElementById("notification-popup");
+
+// Toggle notification popup on button click
+notificationBtn.addEventListener("click", () => {
+    notificationPopup.classList.toggle("hidden");
+});
+
+// Close the popup when clicking outside
+document.addEventListener("click", (event) => {
+    if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
+        notificationPopup.classList.add("hidden");
+    }
+});
+
+
+
+
 
 flatpickr(".date-picker", {
     enableTime: true,
@@ -26,17 +71,6 @@ flatpickr(".date-picker", {
 });
 
 
-
-
-// const menuToggle = document.getElementById("menu-toggle");
-// const menu = document.getElementById("menu");
-// const btmNav = document.getElementById("bottom-nav");
-
-// menuToggle.addEventListener("click", () => {
-//     menu.classList.toggle("hidden");
-//     btmNav.classList.toggle("hidden");
-
-// });
 
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
@@ -55,29 +89,6 @@ menuToggle.addEventListener("click", () => {
 });
 
 
-
-
-
-
-// Function to toggle classes dynamically
-// function togglePickupClass(pickupElement) {
-//     if (pickupElement.classList.contains("col-span-10")) {
-//         pickupElement.classList.remove("col-span-10");
-//         pickupElement.classList.add("col-span-12");
-//     } else {
-//         pickupElement.classList.remove("col-span-12");
-//         pickupElement.classList.add("col-span-10");
-//     }
-// }
-
-// addStopButton.addEventListener("click", () => {
-//     // Toggle the visibility of the menu
-//     stopContainer.classList.toggle("hidden");
-//     // Toggle the classes for roundDropoff
-//     togglePickupClass(roundPickup);
-//     roundSwitch.classList.remove('top-[25%]', 'left-3/4');
-//     roundSwitch.classList.add('top-[1%]', 'left-[85%]');
-// });
 
 
 // Get the button and the container

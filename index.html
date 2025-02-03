@@ -90,13 +90,21 @@
                     </span>
                     <span class="flex items-center space-x-1">
                         <img class="w-[12px] h-[12px]" src="images/svg/calendar_today.svg" alt="calendar">
-                        <span class="text-[12px] leading-4 font-normal">B.S</span>
+                        <span id="toggle-bs" class="text-[12px] leading-4 font-normal cursor-pointer">B.S</span>
+                        <span id="toggle-ad" class="hidden text-[12px] leading-4 font-normal cursor-pointer">A.D</span>
                     </span>
-                    <span class="flex items-center space-x-1">
-                        <img class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="us">
+                    <!-- <span class="flex items-center space-x-1">
+                        <img class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English">
+                        <img class="w-[14px] h-[14px]" src="images/nepal-flag.png" alt="Nepali">
                         <span class="text-[12px] leading-4 font-normal">English</span>
+                        <span class="text-[12px] leading-4 font-normal">Nepali</span>
+                    </span> -->
+                    <span class="flex items-center space-x-1">
+                        <img id="language-flag" class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English">
+                        <span id="language-text" class="text-[12px] leading-4 font-normal cursor-pointer">English</span>
                     </span>
-                    <button class="hover:text-teal-300 flex items-center space-x-1 ">
+
+                    <button class="flex items-center space-x-1 ">
                         <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets">
                         <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
                     </button>
@@ -107,8 +115,19 @@
                     <div class="flex items-center space-x-4">
 
                         <!-- Notification Button -->
-                        <div class="relative">
+                        <!-- <div class="relative">
                             <button class="relative flex items-center justify-center">
+                                <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
+                                    alt="notification-icon">
+                            <span
+                                class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
+                                11
+                            </span>
+                        </div> -->
+
+                        <div class="relative">
+                            <!-- Notification Button -->
+                            <button id="notification-btn" class="relative flex items-center justify-center">
                                 <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
                                     alt="notification-icon">
                             </button>
@@ -117,7 +136,73 @@
                                 class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
                                 11
                             </span>
+
+                            <!-- Notification Popup -->
+                            <div id="notification-popup"
+                                class="absolute right-0 top-10 bg-white w-[300px] h-[400px] lg:w-[650px] shadow-lg rounded-lg hidden z-10 overflow-y-scroll overflow-hidden">
+                                <div class="p-4">
+                                    <h3 class="text-lg font-bold text-black">Notifications</h3>
+                                </div>
+                                <div class="max-h-[380px] px-2  ">
+                                    <!-- Example Notification -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <!-- Repeat notifications -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
+
 
                         <button>
                             <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
@@ -169,10 +254,12 @@
         <!-- <div class="absolute inset-0 bg-black opacity-30"></div> -->
         <div
             class="lg:min-h-[75%] min-h-[70%] lg:absolute lg:top-40 container flex flex-col lg:max-w-full  lg:items-start lg:px-28 px-5 ">
-            <h1 class="block  lg:mt-0 lg:flex px-1 lg:px-0 text-white text-xl leading-6 font-bold lg:text-[40px] lg:leading-[70px] ">
+            <h1
+                class="block  lg:mt-0 lg:flex px-1 lg:px-0 text-white text-xl leading-6 font-bold lg:text-[40px] lg:leading-[70px] ">
                 Explore Nepal Like Never Before.
             </h1>
-            <h1 class="block mt-1 lg:mt-0 leading-[18px] font-normal lg:flex px-1 lg:px-0 text-white text-sm lg:font-normal lg:text-2xl lg:leading-8">
+            <h1
+                class="block mt-1 lg:mt-0 leading-[18px] font-normal lg:flex px-1 lg:px-0 text-white text-sm lg:font-normal lg:text-2xl lg:leading-8">
                 Reliable bus journeys at unbelievable prices.
             </h1>
             <div class="bg-white container px-1 lg:px-0 mt-5 lg:w-fit z-40 border-b">
@@ -1171,7 +1258,7 @@
 
     <!-- Travel Experience Section -->
     <div class="bg-white py-5  lg:py-0 container h-[300px] lg:max-w-full lg:px-28 lg:min-h-[450px] lg:max-h-[600px]">
-        <div  class="relative snap-mandatory snap-x w-full h-full overflow-hidden scrollbar-hide" id="scrollable-banner">
+        <div class="relative snap-mandatory snap-x w-full h-full overflow-hidden scrollbar-hide" id="scrollable-banner">
             <!-- Banner 1 -->
             <div class="relative snap-center bg-cover bg-center h-full w-full flex-shrink-0"
                 style="background-image: url('images/home2.jpg');">
@@ -1226,7 +1313,6 @@
         </div>
     </div>
 
-
     <!-- Offers and Deals Section -->
     <div class="bg-white py-5 my-4 lg:my-[88px]  container px-5 lg:max-w-full lg:px-28">
         <div class="container w-full lg:min-w-full mx-auto">
@@ -1235,7 +1321,8 @@
                 <a href="#" class="text-primary text-[14px] lg:text-[16px] font-[400] leading-10">Explore more
                     &gt;&gt;</a>
             </div>
-            <div id="offer-scroll" class="flex items-center p-0 lg:p-2 h-[245px] lg:h-[270px] space-x-[10px] overflow-x-auto scrollbar-hide"
+            <div id="offer-scroll"
+                class="flex items-center p-0 lg:p-2 h-[245px] lg:h-[270px] space-x-[10px] overflow-x-auto scrollbar-hide"
                 onwheel="scrollHorizontally(event)">
                 <!-- Card 1 -->
                 <div
@@ -1434,41 +1521,6 @@
     </div>
 
     <!-- Testimonials Section -->
-    <!-- <div class=" py-5 min-h-[300px]  flex lg:py-10 lg:max-w-full lg:max-h-[280px] lg:px-28 my-8 lg:my-[88px]">
-        <div class="container flex items-center min-h-full w-full lg:min-w-full mx-auto px-6 text-center relative">
-           
-            <div id="testimonial-container"
-                class="flex flex-col justify-center min-h-full max-w-[90%] lg:max-w-[70%] mx-auto">
-                <div class="flex justify-center items-center space-x-4">
-                    <span class="text-pink-500 text-4xl font-bold">❝</span>
-                    <p class="text-[12px]  lg:text-2xl  leading-7 font-[700]" id="testimonial-text">
-                        Absolutely love this app! Booking bus tickets across Nepal has never been easier. Smooth
-                        transactions and timely updates make my travel planning a breeze. Highly recommended!
-                    </p>
-                    <span class="text-pink-500 text-4xl font-bold">❞</span>
-
-                </div>
-                <p class="text-sm font-normal lg:text-[16px] leading-7 text-[#40484B] mt-4" id="testimonial-author">
-                    -- Harris Magar, CEO of XYZ
-                </p>
-            </div>
-
-          
-            <div class="absolute top-1/2 -left-0 transform -translate-y-1/2">
-                <button id="prev-btn" class=" rounded-full p-2">
-                    <img class="w-6 h-6" src="images/svg/left-arrow.svg" alt="left-arrow">
-                </button>
-            </div>
-            <div class="absolute top-1/2 -right-0 transform -translate-y-1/2">
-                <button id="next-btn" class="rounded-full p-2">
-                    <img class="w-6 h-6" src="images/svg/right-arrow.svg" alt="right-arrow">
-
-                </button>
-            </div>
-        </div>
-    </div> -->
-
-
     <div class="py-5 min-h-[300px] flex lg:py-10 lg:max-w-full lg:max-h-[280px] lg:px-28 my-2 lg:my-[88px]">
         <div class="container flex items-center min-h-full w-full lg:min-w-full mx-auto px-6 text-center relative">
             <!-- Testimonial Container -->
@@ -1501,8 +1553,6 @@
         </div>
     </div>
 
-
-
     <!-- Stories Section -->
     <div class="container my-2 lg:my-[88px]  lg:max-w-full lg:px-28 px-4">
         <!-- Title Section -->
@@ -1513,7 +1563,8 @@
         </div>
 
         <!-- Reels Section -->
-        <div id="reel-scroll" class="relative overflow-x-auto overflow-hidden scrollbar-hide" onwheel="scrollHorizontally(event)">
+        <div id="reel-scroll" class="relative overflow-x-auto overflow-hidden scrollbar-hide"
+            onwheel="scrollHorizontally(event)">
             <!-- Reels Container -->
             <div id="reels-container" class="flex transition-transform duration-500" style="transform: translateX(0);">
                 <!-- Reel Card -->
@@ -1722,7 +1773,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Mobile apps -->
 
