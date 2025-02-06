@@ -127,13 +127,13 @@ togglePhonePasswordVisibilityBtn.addEventListener("click", () => {
 // Open Password Popup
 changePhoneBtn.addEventListener("click", () => {
     passwordPopup.classList.remove("hidden");
-    document.body.style.overflow = "hidden"; // Disable scrolling
+    document.body.style.overflow = "hidden";
 });
 
 // Close Password Popup
 cancelPasswordBtn.addEventListener("click", () => {
     passwordPopup.classList.add("hidden");
-    document.body.style.overflow = "auto"; // Re-enable scrolling
+    document.body.style.overflow = "auto";
 });
 
 // Show Phone Confirmation Popup after Password Confirmation
@@ -151,7 +151,7 @@ cancelPhoneChangesBtn.addEventListener("click", () => {
 // Confirm Phone Changes
 confirmPhoneChangesBtn.addEventListener("click", () => {
     phoneConfirmationPopup.classList.add("hidden");
-    document.body.style.overflow = "auto"; // Re-enable scrolling
+    document.body.style.overflow = "auto";
 });
 
 
@@ -165,18 +165,31 @@ const cancelPasswordChangesBtn = document.getElementById("cancel-password-change
 // Open Password Confirmation Popup
 updatePasswordBtn.addEventListener("click", () => {
     passwordConfirmationPopup.classList.remove("hidden");
-    document.body.style.overflow = "hidden"; // Disable background scrolling
+    document.body.style.overflow = "hidden"; 
 });
 
 // Close Password Confirmation Popup
 cancelPasswordChangesBtn.addEventListener("click", () => {
     passwordConfirmationPopup.classList.add("hidden");
-    document.body.style.overflow = "auto"; // Re-enable background scrolling
+    document.body.style.overflow = "auto";
 });
 
 // Confirm Password Changes
 confirmPasswordChangesBtn.addEventListener("click", () => {
     passwordConfirmationPopup.classList.add("hidden");
     alert("Password updated successfully!");
-    document.body.style.overflow = "auto"; // Re-enable background scrolling
+    document.body.style.overflow = "auto";
 });
+
+
+function updateFileName(inputId, displayId) {
+    const fileInput = document.getElementById(inputId);
+    const fileNameDisplay = document.getElementById(displayId);
+
+    if (fileInput.files.length > 0) {
+        fileNameDisplay.textContent = fileInput.files[0].name;
+    } else {
+        fileNameDisplay.textContent = "No file chosen";
+    }
+}
+
