@@ -405,9 +405,9 @@
                         </div>
                     </div>
                     <button
-                        class="bg-[#834C74] h-10 w-[200px] text-white px-4 py-2 rounded-sm text-[16px] leading-6 font-normal">Be
-                        an
-                        Agent</button>
+                        class="bg-[#834C74] h-10 w-[200px] text-white px-4 py-2 rounded-sm text-[16px] leading-6 font-normal">
+                        Be an Agent
+                    </button>
                 </div>
             </div>
 
@@ -516,33 +516,6 @@
             </div>
 
             <!-- Change Email -->
-            <!-- <div class="bg-white py-4 px-9 mb-6">
-                <h2 class="font-normal text-xl mb-2">Email</h2>
-                <p class="font-normal text-[13px] leading-[17px] mb-6">
-                    Your current email address is abc@gmail.com.
-                </p>
-                <form class="flex flex-col w-full lg:w-4/5 items-center justify-center">
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
-                        <label for="new-email"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Enter new email:
-                        </label>
-                        <input type="email" id="new-email" name="new-email" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-                    </div>
-
-                    <div class="flex w-full lg:w-4/5 items-center gap-2">
-                        <label for="submit"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            &nbsp;
-                        </label>
-                        <button type="button"
-                            class="bg-[#0B3C49] text-white px-6 py-2 rounded-sm font-normal text-sm leading-[22px]">
-                            Change Email
-                        </button>
-                    </div>
-                </form>
-            </div> -->
 
             <div class="bg-white py-4 px-9 mb-6">
                 <h2 class="font-normal text-xl mb-2">Email</h2>
@@ -612,7 +585,8 @@
                     </button>
                     <h2 class="font-normal text-[16px] leading-6 mb-4">Update Email</h2>
                     <p class="text-sm mb-6">
-                        You'll be <strong class="font-bold">logged out</strong> and will need to log in again to continue using the app.
+                        You'll be <strong class="font-bold">logged out</strong> and will need to log in again to
+                        continue using the app.
                     </p>
                     <div class="flex justify-end gap-2">
                         <button type="button" id="confirm-changes"
@@ -623,15 +597,12 @@
                 </div>
             </div>
 
-
-
             <!-- Change Phone Number -->
             <div class="bg-white py-4 px-9 mb-6">
                 <h2 class="font-normal text-xl mb-2">Phone Number</h2>
                 <p class="font-normal text-[13px] leading-[17px] mb-6">
                     Your current phone number is +977-9857087654.
                 </p>
-
                 <form class="flex flex-col w-full lg:w-4/5 items-center justify-center">
                     <!-- Enter New Phone Number -->
                     <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
@@ -642,20 +613,60 @@
                         <input type="text" id="new-phone" name="new-phone" placeholder="example"
                             class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
                     </div>
-
                     <!-- Submit Button -->
                     <div class="flex w-full lg:w-4/5 items-center gap-2">
                         <label for="submit"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            &nbsp;
-                        </label>
-                        <button type="button"
+                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">&nbsp;</label>
+                        <button type="button" id="change-phone-btn"
                             class="bg-[#0B3C49] text-white px-6 py-2 rounded-sm font-normal text-sm leading-[22px]">
                             Change Phone
                         </button>
                     </div>
                 </form>
             </div>
+
+            <div id="password-popup"
+                class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white p-6 rounded-md shadow-[4px] w-full max-w-md">
+                    <h2 class="font-normal text-[16px] leading-6 mb-4">Enter your password to confirm changes</h2>
+                    <form>
+                        <div class="mb-4 relative">
+                            <input type="password" id="phone-password-confirmation" placeholder="Enter Password"
+                                class="w-full border border-gray-300 p-2 rounded-sm pr-10 focus:outline-none" />
+                            <button type="button" id="toggle-phone-password-visibility"
+                                class="absolute right-3 top-[10px]">
+                                <img id="phone-password-visibility-icon" class="w-5 h-5"
+                                    src="https://img.icons8.com/ios/50/closed-eye.png" alt="eye-icon" />
+                            </button>
+                        </div>
+                        <div class="flex justify-end gap-2">
+                            <button type="button" id="submit-password"
+                                class="bg-[#03677E] text-white px-6 py-1 rounded-sm">Enter</button>
+                            <button type="button" id="cancel-password"
+                                class="border border-[#D9D9D9] text-[#000000D9] px-6 py-1 rounded-sm">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Phone Confirmation Popup -->
+            <div id="phone-confirmation-popup"
+                class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white p-6 rounded-[4px] shadow-lg w-full max-w-md">
+                    <h2 class="font-normal text-[16px] leading-6 mb-4">Update phone number</h2>
+                    <p class="text-sm text-gray-700 mb-6">
+                        A link has been sent to +977 9867564563. Follow the link to confirm your new phone number.
+                    </p>
+                    <div class="flex justify-end gap-2">
+                        <button type="button" id="confirm-phone-changes"
+                            class="bg-[#03677E] text-white px-6 py-1 rounded-sm">Confirm changes</button>
+                        <button type="button" id="cancel-phone-changes"
+                            class="border border-[#D9D9D9] text-[#000000D9] px-6 py-1 rounded-sm">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+
 
             <!-- Change Password -->
             <div class="bg-white py-4 px-9">
@@ -677,7 +688,6 @@
                                 alt="visible-eye" />
                         </button>
                     </div>
-
                     <!-- New Password -->
                     <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2 relative">
                         <label for="new-password"
@@ -694,7 +704,6 @@
                                 alt="visible-eye" />
                         </button>
                     </div>
-
                     <!-- Confirm Password -->
                     <div class="flex w-full lg:w-4/5 mb-8 items-center gap-2 relative">
                         <label for="confirm-password"
@@ -711,18 +720,40 @@
                                 alt="visible-eye" />
                         </button>
                     </div>
-
                     <!-- Submit Button -->
                     <div class="flex w-full lg:w-4/5 items-center gap-2">
                         <label for="submit"
                             class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">&nbsp;</label>
-                        <button type="submit"
+                        <button type="button" id="update-password-btn"
                             class="bg-[#0B3C49] text-white px-6 py-2 rounded-sm font-normal text-sm leading-[22px]">
                             Update Password
                         </button>
                     </div>
                 </form>
             </div>
+
+            <!-- Password Update Confirmation Popup -->
+            <div id="password-confirmation-popup"
+                class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white p-6 rounded-md shadow-lg w-full max-w-md">
+                    <h2 class="font-normal text-[16px] leading-6 mb-4">Change Password</h2>
+                    <p class="text-sm mb-6">
+                        You'll be <strong class="font-bold">logged out</strong> and will need to log in again to
+                        continue using the app.
+                    </p>
+                    <div class="flex justify-end gap-2">
+                        <button type="button" id="confirm-password-changes"
+                            class="bg-[#03677E] text-white px-6 py-1 rounded-sm">
+                            Confirm changes
+                        </button>
+                        <button type="button" id="cancel-password-changes"
+                            class="border border-[#D9D9D9] text-[#000000D9] px-6 py-1 rounded-sm">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </main>
     </div>
 

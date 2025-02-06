@@ -47,29 +47,6 @@ feedbackDetails.addEventListener("input", () => {
 
 
 // For Update Email
-// const changeEmailBtn = document.getElementById("change-email-btn");
-// const emailPopup = document.getElementById("email-popup");
-// const closeEmailPopup = document.getElementById("close-email-popup");
-// const cancelEmailPopup = document.getElementById("cancel-email-popup");
-
-// // Open popup
-// changeEmailBtn.addEventListener("click", () => {
-//     emailPopup.classList.remove("hidden");
-//     document.body.classList.add("disable-scroll"); // Disable background scrolling
-// });
-
-// // Close popup
-// closeEmailPopup.addEventListener("click", () => {
-//     emailPopup.classList.add("hidden");
-//     document.body.classList.remove("disable-scroll");
-// });
-
-// cancelEmailPopup.addEventListener("click", () => {
-//     emailPopup.classList.add("hidden");
-//     document.body.classList.remove("disable-scroll");
-// });
-
-// Get elements
 const emailPopup = document.getElementById("email-popup");
 const confirmationPopup = document.getElementById("confirmation-popup");
 const submitEmailPopup = document.getElementById("submit-email-popup");
@@ -125,5 +102,81 @@ cancelConfirmation.addEventListener("click", () => {
     document.body.classList.remove("disable-scroll");
 });
 
+// For Update Phone Number
+const passwordPopup = document.getElementById("password-popup");
+const phoneConfirmationPopup = document.getElementById("phone-confirmation-popup");
+const changePhoneBtn = document.getElementById("change-phone-btn");
+const submitPasswordBtn = document.getElementById("submit-password");
+const cancelPasswordBtn = document.getElementById("cancel-password");
+const confirmPhoneChangesBtn = document.getElementById("confirm-phone-changes");
+const cancelPhoneChangesBtn = document.getElementById("cancel-phone-changes");
+
+// Password Visibility
+const phonePasswordField = document.getElementById("phone-password-confirmation");
+const togglePhonePasswordVisibilityBtn = document.getElementById("toggle-phone-password-visibility");
+const phonePasswordVisibilityIcon = document.getElementById("phone-password-visibility-icon");
+
+togglePhonePasswordVisibilityBtn.addEventListener("click", () => {
+    const isPasswordVisible = phonePasswordField.type === "text";
+    phonePasswordField.type = isPasswordVisible ? "password" : "text";
+    phonePasswordVisibilityIcon.src = isPasswordVisible
+        ? "https://img.icons8.com/ios/50/closed-eye.png" // Closed eye
+        : "images/svg/password_visible.svg"; // Open eye
+});
+
+// Open Password Popup
+changePhoneBtn.addEventListener("click", () => {
+    passwordPopup.classList.remove("hidden");
+    document.body.style.overflow = "hidden"; // Disable scrolling
+});
+
+// Close Password Popup
+cancelPasswordBtn.addEventListener("click", () => {
+    passwordPopup.classList.add("hidden");
+    document.body.style.overflow = "auto"; // Re-enable scrolling
+});
+
+// Show Phone Confirmation Popup after Password Confirmation
+submitPasswordBtn.addEventListener("click", () => {
+    passwordPopup.classList.add("hidden");
+    phoneConfirmationPopup.classList.remove("hidden");
+});
+
+// Close Phone Confirmation Popup
+cancelPhoneChangesBtn.addEventListener("click", () => {
+    phoneConfirmationPopup.classList.add("hidden");
+    document.body.style.overflow = "auto";
+});
+
+// Confirm Phone Changes
+confirmPhoneChangesBtn.addEventListener("click", () => {
+    phoneConfirmationPopup.classList.add("hidden");
+    document.body.style.overflow = "auto"; // Re-enable scrolling
+});
 
 
+
+
+const updatePasswordBtn = document.getElementById("update-password-btn");
+const passwordConfirmationPopup = document.getElementById("password-confirmation-popup");
+const confirmPasswordChangesBtn = document.getElementById("confirm-password-changes");
+const cancelPasswordChangesBtn = document.getElementById("cancel-password-changes");
+
+// Open Password Confirmation Popup
+updatePasswordBtn.addEventListener("click", () => {
+    passwordConfirmationPopup.classList.remove("hidden");
+    document.body.style.overflow = "hidden"; // Disable background scrolling
+});
+
+// Close Password Confirmation Popup
+cancelPasswordChangesBtn.addEventListener("click", () => {
+    passwordConfirmationPopup.classList.add("hidden");
+    document.body.style.overflow = "auto"; // Re-enable background scrolling
+});
+
+// Confirm Password Changes
+confirmPasswordChangesBtn.addEventListener("click", () => {
+    passwordConfirmationPopup.classList.add("hidden");
+    alert("Password updated successfully!");
+    document.body.style.overflow = "auto"; // Re-enable background scrolling
+});
