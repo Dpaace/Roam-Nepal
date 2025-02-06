@@ -58,6 +58,21 @@ document.addEventListener("click", (event) => {
 
 
 
+const searchToggleBtn = document.getElementById("search-toggle-btn");
+const searchBar = document.getElementById("search-bar");
+const searchIcon = document.getElementById("search-icon");
+
+// Toggle search bar visibility
+searchToggleBtn.addEventListener("click", () => {
+    // Hide the search icon and show the search bar
+    searchIcon.classList.add("hidden");
+    searchBar.classList.remove("hidden");
+});
+
+
+
+
+
 
 flatpickr(".date-picker", {
     enableTime: true,
