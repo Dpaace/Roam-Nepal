@@ -287,3 +287,9 @@ body.sticky-active {
 .disable-scroll {
     overflow: hidden;
 }
+
+
+.tab-btn.active-tab {
+    color: #0b3c49;
+    border-bottom: 3px solid #03677E;
+}

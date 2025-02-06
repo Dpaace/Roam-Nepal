@@ -165,7 +165,7 @@ const cancelPasswordChangesBtn = document.getElementById("cancel-password-change
 // Open Password Confirmation Popup
 updatePasswordBtn.addEventListener("click", () => {
     passwordConfirmationPopup.classList.remove("hidden");
-    document.body.style.overflow = "hidden"; 
+    document.body.style.overflow = "hidden";
 });
 
 // Close Password Confirmation Popup
@@ -192,4 +192,6 @@ function updateFileName(inputId, displayId) {
         fileNameDisplay.textContent = "No file chosen";
     }
 }
+
+
 
