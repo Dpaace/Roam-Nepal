@@ -56,14 +56,12 @@
                 <div class="text-2xl font-bold">Roam Nepal</div>
 
                 <button id="menu-toggle" class="block md:block lg:hidden focus:outline-none">
-                    <!-- Hamburger Icon -->
                     <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
 
-                    <!-- Cross Icon (Initially Hidden) -->
                     <button id="close-icon" class="h-6 w-6 hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -76,6 +74,7 @@
             <div id="menu"
                 class="hidden  flex flex-row justify-end items-end lg:flex lg:flex-col lg:items-end lg:w-2/3">
 
+
                 <div class="hidden  md:hidden lg:flex items-center justify-center gap-9 text-sm">
                     <span class="flex items-center space-x-1">
                         <img class="w-[14px] h-[12px]" src="images/svg/dot.svg" alt="dot">
@@ -83,24 +82,28 @@
                     </span>
                     <span class="flex items-center space-x-1">
                         <img class="w-[12px] h-[12px]" src="images/svg/calendar_today.svg" alt="calendar">
-                        <span class="text-[12px] leading-4 font-normal">B.S</span>
+                        <span id="toggle-bs" class="text-[12px] leading-4 font-normal cursor-pointer">B.S</span>
+                        <span id="toggle-ad" class="hidden text-[12px] leading-4 font-normal cursor-pointer">A.D</span>
                     </span>
                     <span class="flex items-center space-x-1">
-                        <img class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="us">
-                        <span class="text-[12px] leading-4 font-normal">English</span>
+                        <img id="language-flag" class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English">
+                        <span id="language-text" class="text-[12px] leading-4 font-normal cursor-pointer">English</span>
                     </span>
-                    <button class="hover:text-teal-300 flex items-center space-x-1 ">
+
+                    <button class="flex items-center space-x-1 ">
                         <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets">
                         <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
                     </button>
                     <div class="flex items-center space-x-1">
                         <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
-                        <span class="text-[14px] leading-[22px] font-normal">Harris's Account</span>
+                        <span class="text-[14px] leading-[22px] font-normal"><a href="profile-home.html">Harris's
+                                Account</a></span>
                     </div>
                     <div class="flex items-center space-x-4">
-                        <!-- Notification Button -->
+
                         <div class="relative">
-                            <button class="relative flex items-center justify-center">
+                            <!-- Notification Button -->
+                            <button id="notification-btn" class="relative flex items-center justify-center">
                                 <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
                                     alt="notification-icon">
                             </button>
@@ -109,54 +112,137 @@
                                 class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
                                 11
                             </span>
+
+                            <!-- Notification Popup -->
+                            <div id="notification-popup"
+                                class="absolute right-0 top-10 bg-white w-[300px] h-[400px] lg:w-[650px] shadow-lg rounded-lg hidden z-10 overflow-y-scroll overflow-hidden">
+                                <div class="p-4">
+                                    <h3 class="text-lg font-bold text-black">Notifications</h3>
+                                </div>
+                                <div class="max-h-[380px] px-2  ">
+                                    <!-- Example Notification -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <!-- Repeat notifications -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
+
 
                         <button>
                             <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
                         </button>
-                        <button>
-                            <img class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg" alt="search-icon">
-                        </button>
+
+                        <div id="search-container">
+                            <!-- Search Button -->
+                            <button id="search-toggle-btn" class="flex items-center">
+                                <img id="search-icon" class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg"
+                                    alt="search-icon">
+                            </button>
+                            <div id="search-bar"
+                                class="relative w-[250px] flex bg-white items-center border border-[#D9D9D9] rounded-sm p-1 hidden">
+                                <input type="text" placeholder="Search"
+                                    class="w-full outline-none text-black text-sm px-1">
+                                <img id="search-icon" class="w-[14px] h-[14px] cursor-pointer"
+                                    src="images/svg/search-icon.svg" alt="search-icon">
+                            </div>
+                        </div>
+
+
                     </div>
+
                 </div>
 
                 <div id="bottom-nav"
-                    class="hidden flex  flex-col justify-center items-start mt-6 p-5 lg:p-0 gap-5 w-2/3 lg:w-full lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 text-base leading-4 lg:mt-5 font-semibold">
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/bus.svg" alt="bus"></span>
-                        <span>Bus Ticket</span>
-                    </a>
-                    <a href="#" class=" flex items-center space-x-2 cus-active w-fit">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/rental.svg" alt="rental"></span>
-                        <span>Rental</span>
-                    </a>
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/hotels.svg" alt="hotels"></span>
-                        <span>Hotels</span>
-                    </a>
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/activities.svg" alt="activities"></span>
-                        <span>Activities</span>
-                    </a>
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/packages.svg" alt="packages"></span>
-                        <span>Packages</span>
-                    </a>
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/airport-plane.svg" alt="flights"></span>
-                        <span>Flights</span>
-                    </a>
-
-                </div>
+                class="hidden flex flex-col justify-center items-start mt-6 p-5 lg:p-0 gap-5 w-2/3 lg:w-full lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 text-base leading-4 lg:mt-5 font-semibold">
+                <a href="#" class=" flex items-center space-x-2">
+                    <span><img class="w-[14px] h-[14px]" src="images/svg/bus.svg" alt="bus"></span>
+                    <span>Bus Ticket</span>
+                </a>
+                <a href="#" class=" flex items-center space-x-2 cus-active w-fit">
+                    <span><img class="w-[14px] h-[14px]" src="images/svg/rental.svg" alt="rental"></span>
+                    <span>Rental</span>
+                </a>
+                <a href="#" class=" flex items-center space-x-2">
+                    <span><img class="w-[14px] h-[14px]" src="images/svg/hotels.svg" alt="hotels"></span>
+                    <span>Hotels</span>
+                </a>
+                <a href="#" class=" flex items-center space-x-2">
+                    <span><img class="w-[14px] h-[14px]" src="images/svg/activities.svg" alt="activities"></span>
+                    <span>Activities</span>
+                </a>
+                <a href="#" class=" flex items-center space-x-2">
+                    <span><img class="w-[14px] h-[14px]" src="images/svg/packages.svg" alt="packages"></span>
+                    <span>Packages</span>
+                </a>
+                <a href="#" class=" flex items-center space-x-2">
+                    <span><img class="w-[14px] h-[14px]" src="images/svg/airport-plane.svg" alt="flights"></span>
+                    <span>Flights</span>
+                </a>
+            </div>
             </div>
         </div>
     </nav>
 
+
+
     <div id="sticky-section"
         class=" bg-white  lg:flex lg:justify-center lg:left-0 lg:w-full lg:h-[100px] z-30 lg:z-30 lg:px-6 lg:border-b-2 lg:shadow-sm">
         <div class="flex flex-col bg-primary lg:bg-white lg:flex-row w-full justify-between items-center">
-            <div class="w-full lg:w-[20%]  flex flex-col items-center lg:items-start gap-1 lg:gap-0">
-                <h2 class="text-2xl font-normal lg:font-[700] text-white lg:text-[#1A1B20]">Kathmandu - Pokhara</h2>
+            <div class="w-full lg:w-[20%]  flex flex-col items-center lg:items-start gap-1 lg:gap-0 pt-4">
+                <h2 class="text-[22px] leading-[28px] font-normal lg:font-[700] text-white lg:text-[#1A1B20]">Kathmandu
+                    - Pokhara</h2>
                 <p class="hidden lg:flex text-sm text-[#1A1B20]">5:00 am Mon, Jan 6 - 7:00 pm Tue, Jan 7</p>
                 <a href="#" class="text-white font-normal underline lg:text-[#2A4678] text-sm hover:underline">Change
                     Details</a>
@@ -165,68 +251,69 @@
             <!-- Web View -->
             <div class="hidden lg:flex lg:w-[60%] text-textDateWeb px-2 py-2 gap-2">
                 <button
-                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold ">Today, Jan 6</span>
+                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-sm hover:bg-gray-200 focus:bg-gray-200">
+                    <span class="text-sm font-normal ">Today, Jan 6</span>
                     <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
-                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold ">Tomorrow, Jan 7</span>
+                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-sm hover:bg-gray-200 focus:bg-gray-200">
+                    <span class="text-sm font-normal ">Tomorrow, Jan 7</span>
                     <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
-                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold ">Tue, Jan 6</span>
+                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-sm hover:bg-gray-200 focus:bg-gray-200">
+                    <span class="text-sm font-normal ">Tue, Jan 6</span>
                     <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
-                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold ">Wed, Jan 6</span>
+                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-sm hover:bg-gray-200 focus:bg-gray-200">
+                    <span class="text-sm font-normal ">Wed, Jan 6</span>
                     <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
-                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold ">Thurs, Jan 6</span>
+                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-sm hover:bg-gray-200 focus:bg-gray-200">
+                    <span class="text-sm font-normal ">Thurs, Jan 6</span>
                     <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
-                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:bg-gray-200">
-                    <span class="text-sm font-semibold ">Thurs, Jan 6</span>
-                    <span class="text-xs text-[#00000073]">From Rs 3000</span>
+                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-sm border-[#BFC8CC] hover:bg-gray-200 focus:bg-gray-200 focus:border-primary">
+                    <span class="text-sm font-normal "><img src="images/svg/select-date.svg" alt="select-date"></span>
+                    <span class="text-xs text-[#000000D9]">Choose a date</span>
                 </button>
             </div>
 
             <!-- Mobile View -->
             <div class="flex lg:hidden z-30 w-full text-textDateMobile flex-wrap gap-2 px-2 py-2">
                 <button
-                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-0 h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
-                    <span class="text-xs font-semibold">Today</span>
-                    <span class="text-lg font-bold">06</span>
+                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-[45px] h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
+                    <span class="text-sm leading-4 font-[500]">Today</span>
+                    <span class="text-sm leading-4 font-[500">06</span>
                 </button>
                 <button
-                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-0 h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
-                    <span class="text-xs font-semibold">Tom</span>
-                    <span class="text-lg font-bold">07</span>
+                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-[45px] h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
+                    <span class="text-sm leading-4 font-[500">Tom</span>
+                    <span class="text-sm leading-4 font-[500">07</span>
                 </button>
                 <button
-                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-0 h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
-                    <span class="text-xs font-semibold">Dec</span>
-                    <span class="text-lg font-bold">08</span>
+                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-[45px] h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
+                    <span class="text-sm leading-4 font-[500">Dec</span>
+                    <span class="text-sm leading-4 font-[500">08</span>
                 </button>
                 <button
-                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-0 h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
-                    <span class="text-xs font-semibold">Dec</span>
-                    <span class="text-lg font-bold">09</span>
+                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-[45px] h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
+                    <span class="text-sm leading-4 font-[500">Dec</span>
+                    <span class="text-sm leading-4 font-[500">09</span>
                 </button>
                 <button
-                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-0 h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
-                    <span class="text-xs font-semibold">Dec</span>
-                    <span class="text-lg font-bold">10</span>
+                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-[45px] h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
+                    <span class="text-sm leading-4 font-[500">Dec</span>
+                    <span class="text-sm leading-4 font-[500">10</span>
                 </button>
                 <button
-                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-0 h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
-                    <span class="text-xs font-semibold">Select</span>
-                    <span class="text-lg font-bold p-1"><img src="images/svg/select-date.svg" alt="select-date"></span>
+                    class="flex-1 flex flex-col items-center justify-center leading-4 min-w-[45px] h-[55px] bg-white  px-2 py-1 rounded-md hover:bg-gray-200 focus:bg-[#004E5F] focus:text-white">
+                    <span class="text-sm leading-4 font-[500">Select</span>
+                    <span class="text-sm leading-4 font-[500 p-1"><img src="images/svg/select-date.svg"
+                            alt="select-date"></span>
                 </button>
             </div>
 
@@ -1070,7 +1157,7 @@
                         <!-- Content Section -->
                         <div class="w-full lg:w-2/3 lg:py-4 lg:pl-4">
                             <!-- Title and Tagline -->
-                            <div class="flex justify-between items-start p-2 lg:p-0">
+                            <div class="flex justify-between items-start p-2 lg:p-0 mb-2">
                                 <div class="">
                                     <h2 class="text-[16px] lg:text-xl leading-4 font-bold text-black">Midsize Elite SUV
                                     </h2>
@@ -1082,9 +1169,8 @@
                             </div>
 
                             <!-- Features -->
-                            <!-- <div class="flex items-center mt-4 space-x-6 text-gray-600"> -->
                             <div
-                                class="w-full grid grid-rows-2 grid-flow-col gap-4 text-[#606060] py-2 px-4 border-b border-[#BFC8CC]">
+                                class="w-full grid grid-rows-2 grid-flow-col gap-4 lg:gap-10 text-[#606060] py-4 px-4 border-b border-[#BFC8CC]">
                                 <div class="flex items-center"><img src="images/svg/vehicle-seat.svg"
                                         class="h-4 w-4 mr-2" alt="seat">
                                     <span class="font-normal text-sm leading-4">
@@ -1126,16 +1212,18 @@
                             </div>
 
                             <!-- Price and Booking -->
-                            <div class="flex items-center justify-between mt-3 ">
-                                <div class="w-1/3 min-h-full flex flex-col gap-0 lg:gap-2 items-end lg:pr-1">
-                                    <p class="font-normal text-[10px] lg:text-[12px] leading-4 text-[#4A4A4A] ">Starts
+                            <div class="flex items-center justify-between mt-1  ">
+                                <div
+                                    class="w-1/3 min-h-full flex flex-col gap-0 lg:gap-2 items-end lg:pr-1 leading-[0px]">
+                                    <p class="font-normal text-[10px] lg:text-[12px] leading-4  text-[#4A4A4A] ">Starts
                                         From</p>
-                                    <p class="text-[12px] lg:text-4xl leading-4 font-bold text-txtPrimary">Rs.3000</p>
-                                    <p class="text-[10px] lg:text-sm leading-4 font-bold text-[#834C74] ">Free
+                                    <p class="text-[12px] lg:text-[36px] leading-4 font-bold text-txtPrimary">Rs.3000
+                                    </p>
+                                    <p class="text-[10px] lg:text-[14px] leading-4 font-bold text-[#834C74] ">Free
                                         Cancellation</p>
                                 </div>
-                                <div class="w-2/3 flex flex-col items-end p-0 gap-0 lg:p-4 lg:gap-2">
-                                    <div class="flex flex-col items-center w-full min-h-full gap-2">
+                                <div class="w-2/3 flex flex-col items-end p-0 gap-0 lg:p-2 lg:gap-2">
+                                    <div class="flex flex-col items-center w-full min-h-full gap-1">
                                         <div class="text-sm flex items-center gap-1">
                                             <img src="images/svg/Star.svg" alt="5 stars"
                                                 class="w-[14px] h-14px lg:w-[18px] lg:h-[18px]" />
@@ -1153,10 +1241,11 @@
                                             </span>
                                         </div>
                                         <button
-                                            class="bg-bgButton text-sm lg:text[16px] leading-5 w-4/5 h-[32px] lg:h-[38px] flex items-center justify-center text-white px-6 py-3 rounded-sm">
+                                            class="bg-bgButton text-sm lg:text[16px] leading-5 w-4/5 h-[32px] lg:h-[34px] flex items-center justify-center text-white px-6 py-3 rounded-sm">
                                             Book Vehicles
                                         </button>
-                                        <span class="text-txtPrimary font-bold text-[12px] leading-4">Instant Booking
+                                        <span class="text-txtPrimary font-bold text-[12px] leading-[14px]">Instant
+                                            Booking
                                             Available!</span>
                                     </div>
 
@@ -1332,9 +1421,8 @@
                             </div>
 
                             <!-- Features -->
-                            <!-- <div class="flex items-center mt-4 space-x-6 text-gray-600"> -->
                             <div
-                                class="w-full grid grid-rows-2 grid-flow-col gap-4 text-[#606060] py-2 px-4 border-b border-[#BFC8CC]">
+                                class="w-full grid grid-rows-2 grid-flow-col gap-4 lg:gap-10 text-[#606060] py-4 px-4 border-b border-[#BFC8CC]">
                                 <div class="flex items-center"><img src="images/svg/vehicle-seat.svg"
                                         class="h-4 w-4 mr-2" alt="seat">
                                     <span class="font-normal text-sm leading-4">
@@ -1376,16 +1464,18 @@
                             </div>
 
                             <!-- Price and Booking -->
-                            <div class="flex items-center justify-between mt-3 ">
-                                <div class="w-1/3 min-h-full flex flex-col gap-0 lg:gap-2 items-end lg:pr-1">
-                                    <p class="font-normal text-[10px] lg:text-[12px] leading-4 text-[#4A4A4A] ">Starts
+                            <div class="flex items-center justify-between mt-1  ">
+                                <div
+                                    class="w-1/3 min-h-full flex flex-col gap-0 lg:gap-2 items-end lg:pr-1 leading-[0px]">
+                                    <p class="font-normal text-[10px] lg:text-[12px] leading-4  text-[#4A4A4A]">Starts
                                         From</p>
-                                    <p class="text-[12px] lg:text-4xl leading-4 font-bold text-txtPrimary">Rs.3000</p>
-                                    <p class="text-[10px] lg:text-sm leading-4 font-bold text-[#834C74] ">Free
+                                    <p class="text-[12px] lg:text-[36px] leading-4 font-bold text-txtPrimary">Rs.3000
+                                    </p>
+                                    <p class="text-[10px] lg:text-[14px] leading-4 font-bold text-[#834C74] ">Free
                                         Cancellation</p>
                                 </div>
-                                <div class="w-2/3 flex flex-col items-end p-0 gap-0 lg:p-4 lg:gap-2">
-                                    <div class="flex flex-col items-center w-full min-h-full gap-2">
+                                <div class="w-2/3 flex flex-col items-end p-0 gap-0 lg:p-2 lg:gap-2">
+                                    <div class="flex flex-col items-center w-full min-h-full gap-1">
                                         <div class="text-sm flex items-center gap-1">
                                             <img src="images/svg/Star.svg" alt="5 stars"
                                                 class="w-[14px] h-14px lg:w-[18px] lg:h-[18px]" />
@@ -1406,7 +1496,8 @@
                                             class="bg-bgButton text-sm lg:text[16px] leading-5 w-4/5 h-[32px] lg:h-[38px] flex items-center justify-center text-white px-6 py-3 rounded-sm">
                                             Book Vehicles
                                         </button>
-                                        <span class="text-txtPrimary font-bold text-[12px] leading-4">Instant Booking
+                                        <span class="text-txtPrimary font-bold text-[12px] leading-[14px]">Instant
+                                            Booking
                                             Available!</span>
                                     </div>
 
@@ -1691,6 +1782,74 @@
 
     <script type="text/javascript" src="scripts/rentalScript.js"></script>
     <script type="text/javascript" src="scripts/Script.js"></script>
+    <script>
+        // For top navbar
+        document.addEventListener("DOMContentLoaded", () => {
+            const bsSpan = document.getElementById("toggle-bs");
+            const adSpan = document.getElementById("toggle-ad");
+
+            // Add event listeners for toggling
+            bsSpan.addEventListener("click", () => {
+                bsSpan.classList.add("hidden");
+                adSpan.classList.remove("hidden");
+            });
+
+            adSpan.addEventListener("click", () => {
+                adSpan.classList.add("hidden");
+                bsSpan.classList.remove("hidden");
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const languageFlag = document.getElementById("language-flag");
+            const languageText = document.getElementById("language-text");
+
+            // Add event listener for toggling
+            languageText.addEventListener("click", () => {
+                if (languageText.textContent === "English") {
+                    // Switch to Nepali
+                    languageFlag.src = "images/nepal-flag.png";
+                    languageFlag.alt = "Nepali";
+                    languageText.textContent = "Nepali";
+                } else {
+                    // Switch to English
+                    languageFlag.src = "images/svg/us.svg";
+                    languageFlag.alt = "English";
+                    languageText.textContent = "English";
+                }
+            });
+        });
+
+
+        const notificationBtn = document.getElementById("notification-btn");
+        const notificationPopup = document.getElementById("notification-popup");
+
+        // Toggle notification popup on button click
+        notificationBtn.addEventListener("click", () => {
+            notificationPopup.classList.toggle("hidden");
+        });
+
+        // Close the popup when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
+                notificationPopup.classList.add("hidden");
+            }
+        });
+
+
+
+
+        const searchToggleBtn = document.getElementById("search-toggle-btn");
+        const searchBar = document.getElementById("search-bar");
+        const searchIcon = document.getElementById("search-icon");
+
+        // Toggle search bar visibility
+        searchToggleBtn.addEventListener("click", () => {
+            // Hide the search icon and show the search bar
+            searchIcon.classList.add("hidden");
+            searchBar.classList.remove("hidden");
+        });
+    </script>
 </body>
 
 </html>

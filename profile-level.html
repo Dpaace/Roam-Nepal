@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roam Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link href="./output.css" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#03677E',
+                        txtPrimary: '#03677E',
+                        txtPlaceholder: '#49454F',
+                        formText: '#0B3C49',
+                        formBorder: '#79747E',
+                        brcolor: '#03677E',
+                        btnbg: '#03677E',
+                        btnOutline: '#03677E',
+                        bannerTxt: '#001A42',
+                        bannerBorder: '#40A9FF',
+                        txtStatistics: '#036773',
+                        bgButton: '#0B3C49',
+                        txtAsideGrey: '#70787C',
+                        bgTrending: '#FFEECB',
+                        txtTrending: '#C87D0C'
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+
+    <!-- Flatpickr CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
+
+
+            <div class="flex justify-between w-full lg:w-1/3">
+                <div class="text-2xl font-bold">Roam Nepal</div>
+
+                <button id="menu-toggle" class="block md:block lg:hidden focus:outline-none">
+                    <!-- Hamburger Icon -->
+                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+
+                    <!-- Cross Icon (Initially Hidden) -->
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="menu"
+                class="hidden  flex flex-row justify-end items-end lg:flex lg:flex-col lg:items-end lg:w-2/3">
+
+                <div class="hidden  md:hidden lg:flex items-center justify-center gap-9 text-sm">
+                    <span class="flex items-center space-x-1">
+                        <img class="w-[14px] h-[12px]" src="images/svg/dot.svg" alt="dot">
+                        <span class="text-[12px] leading-4 font-normal">NPR</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <img class="w-[12px] h-[12px]" src="images/svg/calendar_today.svg" alt="calendar">
+                        <span id="toggle-bs" class="text-[12px] leading-4 font-normal cursor-pointer">B.S</span>
+                        <span id="toggle-ad" class="hidden text-[12px] leading-4 font-normal cursor-pointer">A.D</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <img id="language-flag" class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English">
+                        <span id="language-text" class="text-[12px] leading-4 font-normal cursor-pointer">English</span>
+                    </span>
+
+                    <button class="flex items-center space-x-1 ">
+                        <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets">
+                        <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
+                    </button>
+                    <div class="flex items-center space-x-1">
+                        <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
+                        <span class="text-[14px] leading-[22px] font-normal"><a href="profile-home.html">Harris's
+                                Account</a></span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+
+                        <div class="relative">
+                            <!-- Notification Button -->
+                            <button id="notification-btn" class="relative flex items-center justify-center">
+                                <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
+                                    alt="notification-icon">
+                            </button>
+                            <!-- Badge -->
+                            <span
+                                class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
+                                11
+                            </span>
+
+                            <!-- Notification Popup -->
+                            <div id="notification-popup"
+                                class="absolute right-0 top-10 bg-white w-[300px] h-[400px] lg:w-[650px] shadow-lg rounded-lg hidden z-10 overflow-y-scroll overflow-hidden">
+                                <div class="p-4">
+                                    <h3 class="text-lg font-bold text-black">Notifications</h3>
+                                </div>
+                                <div class="max-h-[380px] px-2  ">
+                                    <!-- Example Notification -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <!-- Repeat notifications -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button>
+                            <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
+                        </button>
+
+                        <div id="search-container">
+                            <!-- Search Button -->
+                            <button id="search-toggle-btn" class="flex items-center">
+                                <img id="search-icon" class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg"
+                                    alt="search-icon">
+                            </button>
+                            <div id="search-bar"
+                                class="relative w-[250px] flex bg-white items-center border border-[#D9D9D9] rounded-sm p-1 hidden">
+                                <input type="text" placeholder="Search"
+                                    class="w-full outline-none text-black text-sm px-1">
+                                <img id="search-icon" class="w-[14px] h-[14px] cursor-pointer"
+                                    src="images/svg/search-icon.svg" alt="search-icon">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div id="bottom-nav"
+                    class="hidden flex flex-col justify-center items-start mt-6 p-5 lg:p-0 gap-5 w-2/3 lg:w-full lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 text-base leading-4 lg:mt-5 font-semibold">
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/bus.svg" alt="bus"></span>
+                        <span>Bus Ticket</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2 cus-active w-fit">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/rental.svg" alt="rental"></span>
+                        <span>Rental</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/hotels.svg" alt="hotels"></span>
+                        <span>Hotels</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/activities.svg" alt="activities"></span>
+                        <span>Activities</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/packages.svg" alt="packages"></span>
+                        <span>Packages</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/airport-plane.svg" alt="flights"></span>
+                        <span>Flights</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-fit flex static mt-[92px] p-4 gap-4">
+        <!-- Aside Section -->
+        <aside class="w-[210px] h-[680px] flex flex-col bg-white ">
+            <div class="flex flex-col h-fit items-start pt-8 px-4">
+                <img src="images/sample_1.jpg" alt="Profile Image" class="w-[96px] h-[89px] rounded-full mb-[10px]">
+                <h2 class="text-xl font-normal text-[#000000D9]">Kamala Harris</h2>
+            </div>
+            <!-- h-[calc(100%-160px)] -->
+            <nav class="mt-4 h-full pb-4">
+                <ul class="flex flex-col h-full justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
+                    <div class="space-y-4">
+                        <li>
+                            <a href="profile-home.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/person.svg" alt="Profile Details" class="w-[14px] h-[14px]">
+                                <span>Profile Details</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-level.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/my-level.svg" alt="My Level" class="w-[14px] h-[14px]">
+                                <span>My Level</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 ">
+                                <img src="images/svg/num-hours.svg" alt="My Bookings" class="w-[14px] h-[14px]">
+                                <span>My Bookings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 ">
+                                <img src="images/svg/referrals.svg" alt="Referrals" class="w-[14px] h-[14px]">
+                                <span>Referrals</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="#" class="flex items-center space-x-3 ">
+                                <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
+                                <span>Feedback</span>
+                            </a>
+                        </li> -->
+                        <!-- Feedback List Item -->
+                        <li>
+                            <a href="#" id="open-feedback-popup" class="flex items-center space-x-3">
+                                <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
+                                <span>Feedback</span>
+                            </a>
+                        </li>
+
+                        <!-- Feedback Popup -->
+                        <div id="feedback-popup"
+                            class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+                            <div class="bg-white w-[90%] max-w-md rounded-[4px] shadow-lg p-6 relative">
+                                <!-- Close Button -->
+                                <button id="close-feedback-popup"
+                                    class="absolute top-2 right-4 text-gray-600 hover:text-gray-900">
+                                    x
+                                </button>
+                                <!-- Popup Content -->
+                                <h2 class="text-[16px] leading-6 font-normal mb-4">Feedback</h2>
+                                <form>
+                                    <!-- Feedback Type -->
+                                    <div class="mb-4">
+                                        <label for="feedback-type" class="block text-sm font-normal">Feedback
+                                            Type:</label>
+                                        <select id="feedback-type" name="feedback-type"
+                                            class="mt-1 block w-full p-2 border border-[#D9D9D9] rounded-sm focus:outline-none">
+                                            <option value="" disabled selected>Type</option>
+                                            <option value="bug">Bug Report</option>
+                                            <option value="suggestion">Suggestion</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <!-- Feedback Details -->
+                                    <div class="mb-4">
+                                        <label for="feedback-details" class="block text-sm font-normal">Details:</label>
+                                        <textarea id="feedback-details" name="feedback-details" rows="3" maxlength="100"
+                                            class="mt-1 block w-full p-2 border border-[#D9D9D9] rounded-sm min-h-20 max-h-56 resize-y focus:outline-none"
+                                            placeholder=" Write details here"></textarea>
+                                        <div class="text-right text-sm text-gray-500">
+                                            <span id="char-count">0</span> / 100
+                                        </div>
+                                    </div>
+                                    <!-- Actions -->
+                                    <div class="flex justify-end space-x-4">
+                                        <button type="submit"
+                                            class="bg-[#03677E] text-white px-4 py-2 rounded-sm hover:bg-[#065162] font-normal text-sm">Submit</button>
+                                        <button type="button" id="cancel-feedback"
+                                            class="border border-[#D9D9D9] px-4 py-2 rounded-sm font-normal text-sm">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="space-y-4">
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 ">
+                                <img src="images/svg/logout.svg" alt="Logout" class="w-[14px] h-[14px]">
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 ">
+                                <img src="images/svg/settings.svg" alt="Settings" class="w-[14px] h-[14px]">
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 ">
+                                <img src="images/svg/terms.svg" alt="Terms" class="w-[14px] h-[14px]">
+                                <span>Terms & Privacy Policy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 ">
+                                <img src="images/svg/profile-help.svg" alt="FAQ" class="w-[14px] h-[14px]">
+                                <span>FAQ</span>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Section -->
+        <main class="flex-1 p-2">
+            <!-- Tabs Heading -->
+            <div class="bg-white pt-6 px-8">
+                <h2 class="font-normal text-xl mb-4">My Level</h2>
+                <div class="flex justify-between items-center">
+                    <!-- Tabs -->
+                    <button
+                        class="tab-btn flex flex-col items-center px-4 pb-2 text-[#374151] font-bold focus:outline-none active-tab"
+                        data-tab="bronze">
+                        <img src="images/bronze-voyager.png" alt="Bronze Voyager" class="w-[94px] h-[74px] mb-2" />
+                        <span>Bronze Voyager</span>
+                    </button>
+                    <button
+                        class="tab-btn flex flex-col items-center px-4 pb-2 text-[#374151] font-bold focus:outline-none"
+                        data-tab="silver">
+                        <img src="images/silver-explorer.png" alt="Silver Explorer" class="w-[94px] h-[74px] mb-2" />
+                        <span>Silver Explorer</span>
+                    </button>
+                    <button
+                        class="tab-btn flex flex-col items-center px-4 pb-2 text-[#374151] font-bold focus:outline-none"
+                        data-tab="gold">
+                        <img src="images/gold-adventurer.png" alt="Gold Adventurer" class="w-[94px] h-[74px] mb-2" />
+                        <span>Gold Adventurer</span>
+                    </button>
+                    <button
+                        class="tab-btn flex flex-col items-center px-4 pb-2 text-[#374151] font-bold focus:outline-none"
+                        data-tab="redeem">
+                        <img src="images/Shopping cart.png" alt="Redeem Points" class="w-[94px] h-[74px] mb-2" />
+                        <span>Redeem Points</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabs Content -->
+            <div class="bg-white py-6 px-8 mt-6">
+                <!-- Bronze Voyager Content -->
+                <div class="level-tab-content active-content h-fit" id="bronze">
+                    <!-- Tab Content Header -->
+                    <div class="flex items-center mb-4">
+                        <button
+                            class="tab-switch-btn py-2 px-4 font-medium text-[#0B3C49] border  border-[#0B3C49] rounded-tl rounded-bl focus:outline-none"
+                            data-content="tasks">
+                            View Tasks
+                        </button>
+                        <button
+                            class="tab-switch-btn py-2 px-4 font-medium border border-[#D9D9D9] rounded-tr rounded-br text-[#000000D9] focus:outline-none"
+                            data-content="benefits">
+                            View Benefits
+                        </button>
+                    </div>
+
+                    <!-- Tasks Content -->
+                    <div class="tab-content-tasks h-fit">
+                        <!-- Task Item -->
+                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
+                            <div class="flex justify-center items-center w-full">
+                                <div class="flex items-center gap-4 w-4/5">
+                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
+                                        class="w-[42px] h-[40px]" />
+                                    <div class="w-full flex flex-col gap-[9px]">
+                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">Blog
+                                            Comments</h3>
+                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
+                                        </div>
+                                        <p class="text-xs font-[600] text-[#00000066]">Comment on 5 more blogs</p>
+                                    </div>
+                                </div>
+                                <div class="text-right w-1/5">
+                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
+                                        Task</button>
+                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
+                            <div class="flex justify-center items-center w-full">
+                                <div class="flex items-center gap-4 w-4/5">
+                                    <img src="images/bus-tickets.png" alt="Blog Comments" class="w-[42px] h-[40px]" />
+                                    <div class="w-full flex flex-col gap-[9px]">
+                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">
+                                            Bus Tickets
+                                        </h3>
+                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
+                                        </div>
+                                        <p class="text-xs font-[600] text-[#00000066]">Book 2 more bus ticket</p>
+                                    </div>
+                                </div>
+                                <div class="text-right w-1/5">
+
+                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
+                                        Task</button>
+                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
+                            <div class="flex justify-center items-center w-full">
+                                <div class="flex items-center gap-4 w-4/5">
+                                    <img src="images/rent-vehicles.png" alt="Blog Comments" class="w-[42px] h-[40px]" />
+                                    <div class="w-full flex flex-col gap-[9px]">
+                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">
+                                            Rent Vehicles
+                                        </h3>
+                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
+                                        </div>
+                                        <p class="text-xs font-[600] text-[#00000066]">Rent 2 more vehicles</p>
+                                    </div>
+                                </div>
+                                <div class="text-right w-1/5">
+                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
+                                        Task</button>
+                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
+                            <div class="flex justify-center items-center w-full">
+                                <div class="flex items-center gap-4 w-4/5">
+                                    <img src="images/blog-comments-2.png" alt="Blog Comments"
+                                        class="w-[42px] h-[40px]" />
+                                    <div class="w-full flex flex-col gap-[9px]">
+                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">Blog
+                                            Comments</h3>
+                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
+                                        </div>
+                                        <p class="text-xs font-[600] text-[#00000066]">Comment on 5 more blogs</p>
+                                    </div>
+                                </div>
+                                <div class="text-right w-1/5">
+                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
+                                        Task</button>
+                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
+                            <div class="flex justify-center items-center w-full">
+                                <div class="flex items-center gap-4 w-4/5">
+                                    <img src="images/blog-comments-3.png" alt="Blog Comments"
+                                        class="w-[42px] h-[40px]" />
+                                    <div class="w-full flex flex-col gap-[9px]">
+                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">Blog
+                                            Comments</h3>
+                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
+                                        </div>
+                                        <p class="text-xs font-[600] text-[#00000066]">Comment on 5 more blogs</p>
+                                    </div>
+                                </div>
+                                <div class="text-right w-1/5">
+                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
+                                        Task</button>
+                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
+                            <div class="flex justify-center items-center w-full">
+                                <div class="flex items-center gap-4 w-4/5">
+                                    <img src="images/blog-comments-4.png" alt="Blog Comments"
+                                        class="w-[42px] h-[40px]" />
+                                    <div class="w-full flex flex-col gap-[9px]">
+                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">Blog
+                                            Comments</h3>
+                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
+                                        </div>
+                                        <p class="text-xs font-[600] text-[#00000066]">Comment on 5 more blogs</p>
+                                    </div>
+                                </div>
+                                <div class="text-right w-1/5">
+                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
+                                        Task</button>
+                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits Content -->
+                    <div class="tab-content-benefits hidden">
+                        <div class="space-y-2">
+                            <!-- Benefit Item -->
+                            <div class="flex gap-4 items-center h-[74px]">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <!-- Repeat Benefit Items as needed -->
+                            <div class="flex gap-4 items-center h-[74px]">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-center h-[74px]">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-center h-[74px]">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-center h-[74px]">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-center h-[74px]">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silver Explorer Content -->
+                <div class="level-tab-content hidden" id="silver">
+                    <h1 class="text-2xl font-bold">Silver Explorer Content</h1>
+                </div>
+
+                <!-- Gold Adventurer Content -->
+                <div class="level-tab-content hidden" id="gold">
+                    <h1 class="text-2xl font-bold">Gold Adventurer Content</h1>
+                </div>
+
+                <!-- Redeem Points Content -->
+                <div class="level-tab-content hidden" id="redeem">
+                    <h1 class="text-[16px] flex items-center justify-center leading-[22px] font-semibold">
+                        20% off on Hotel Bookings
+                        <span class="text-[#03677E] font-bold text-[32px] leading-[44px] ml-4">
+                            5000
+                            <span class="text-[16px]">
+                                Points
+                            </span>
+                        </span>
+                    </h1>
+
+                    <!-- Redeem Cards -->
+
+                    <div class="space-y-2 ">
+                        <div class="flex justify-between">
+                            <div class="flex gap-4 items-center h-[74px] w-full">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="flex flex-col items-end leading-4">
+                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
+                                        5000&nbsp;
+                                        <span class="text-[16px]">
+                                            Points
+                                        </span>
+                                    </span>
+                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
+                                        points
+                                    </p>
+
+                                </div>
+                                <div>
+                                    <button type="button" id="confirm-changes"
+                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
+                                        Redeem Points
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" flex justify-between">
+                            <div class="flex gap-4 items-center h-[74px] w-full">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="flex flex-col items-end leading-4">
+                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
+                                        5000&nbsp;
+                                        <span class="text-[16px]">
+                                            Points
+                                        </span>
+                                    </span>
+                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
+                                        points
+                                    </p>
+
+                                </div>
+                                <div>
+                                    <button type="button" id="confirm-changes"
+                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
+                                        Redeem Points
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" flex justify-between">
+                            <div class="flex gap-4 items-center h-[74px] w-full">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="flex flex-col items-end leading-4">
+                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
+                                        5000&nbsp;
+                                        <span class="text-[16px]">
+                                            Points
+                                        </span>
+                                    </span>
+                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
+                                        points
+                                    </p>
+
+                                </div>
+                                <div>
+                                    <button type="button" id="confirm-changes"
+                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
+                                        Redeem Points
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" flex justify-between">
+                            <div class="flex gap-4 items-center h-[74px] w-full">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="flex flex-col items-end leading-4">
+                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
+                                        5000&nbsp;
+                                        <span class="text-[16px]">
+                                            Points
+                                        </span>
+                                    </span>
+                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
+                                        points
+                                    </p>
+
+                                </div>
+                                <div>
+                                    <button type="button" id="confirm-changes"
+                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
+                                        Redeem Points
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" flex justify-between">
+                            <div class="flex gap-4 items-center h-[74px] w-full">
+                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                        hotels</h3>
+                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                        booking</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="flex flex-col items-end leading-4">
+                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
+                                        5000&nbsp;
+                                        <span class="text-[16px]">
+                                            Points
+                                        </span>
+                                    </span>
+                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
+                                        points
+                                    </p>
+
+                                </div>
+                                <div>
+                                    <button type="button" id="confirm-changes"
+                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
+                                        Redeem Points
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+
+
+
+    <footer class="bg-gray-800 text-gray-400 py-10">
+        <div
+            class="container mx-auto px-6 grid grid-cols-2 justify-start items-start md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Services</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Bus Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Tours</a></li>
+                    <li><a href="#" class="hover:text-white">Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Activities</a></li>
+                    <li><a href="#" class="hover:text-white">Flights</a></li>
+                    <li><a href="#" class="hover:text-white">Hotels</a></li>
+                </ul>
+            </div>
+
+            <!-- Products -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Products</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Tourist BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">Mobile App</a></li>
+                    <li><a href="#" class="hover:text-white">Website</a></li>
+                </ul>
+            </div>
+
+            <!-- Help -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Help</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa Agent</a></li>
+                    <li><a href="#" class="hover:text-white">Help Centre</a></li>
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social Media  class="h-5 w-5" -->
+            <div>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li class="flex items-center space-x-2 ">
+                        <span>
+                            <img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" />
+
+                        </span>
+                        <a href="tel:+9779876567989" class="hover:text-white">+977 9876567989</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" /></span>
+                        <a href="tel:+9779887567890" class="hover:text-white">+977 9887567890</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-email.svg" alt="email" /></span>
+                        <a href="mailto:info@bussewa.com" class="hover:text-white">info@bussewa.com</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-4 mt-4">
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Facebook.svg" alt="facebook" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Instagram.svg" alt="instagram" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Twitter.svg" alt="twitter" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-LinkedIn.svg" alt="linkedin" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-TikTok.svg" alt="tiktok" /></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Download & Footer Bottom -->
+        <div class="mt-10 border-t border-gray-700 pt-6">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm mt-4 md:mt-0">
+                    <p>Copyright © BusSewa All Rights Reserved</p>
+                </div>
+
+                <!-- App Download -->
+                <div class="flex items-center space-x-4">
+                    <a href="#">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-10" />
+                    </a>
+                    <a href="#">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-10" />
+                    </a>
+                </div>
+
+
+
+                <!-- Legal Links -->
+                <div class="flex text-sm mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Cookie <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Privacy <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Terms <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/profileScript.js"></script>
+    <script>
+        const leveltabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.level-tab-content');
+
+        leveltabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all leveltabs
+                leveltabs.forEach(t => t.classList.remove('active-tab'));
+                // Hide all tab contents
+                contents.forEach(c => c.classList.add('hidden'));
+                contents.forEach(c => c.classList.remove('active-content'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active-tab');
+                // Show the corresponding tab content
+                const contentId = tab.getAttribute('data-tab');
+                document.getElementById(contentId).classList.remove('hidden');
+                document.getElementById(contentId).classList.add('active-content');
+            });
+        });
+
+
+        // Get all tab buttons and tab contents
+        const tabSwitchBtns = document.querySelectorAll('.tab-switch-btn');
+        const tabContent = document.getElementById('tab-content');
+        const tasksContent = document.querySelector('.tab-content-tasks');
+        const benefitsContent = document.querySelector('.tab-content-benefits');
+
+        // Add event listener for tab buttons
+        tabSwitchBtns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                // Reset all buttons to default style
+                tabSwitchBtns.forEach((b) => {
+                    b.classList.remove('text-[#0B3C49]', 'border-[#0B3C49]', 'active-tab');
+                    b.classList.add('text-[#000000D9]', 'border-[#D9D9D9]');
+                });
+
+                // Apply active style to clicked button
+                btn.classList.remove('text-[#000000D9]', 'border-[#D9D9D9]');
+                btn.classList.add('text-[#0B3C49]', 'border-[#0B3C49]', 'active-tab');
+
+                // Show/hide tab content based on data-content attribute
+                if (btn.getAttribute('data-content') === 'tasks') {
+                    tasksContent.classList.remove('hidden');
+                    benefitsContent.classList.add('hidden');
+                } else {
+                    benefitsContent.classList.remove('hidden');
+                    tasksContent.classList.add('hidden');
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        // For top navbar
+        document.addEventListener("DOMContentLoaded", () => {
+            const bsSpan = document.getElementById("toggle-bs");
+            const adSpan = document.getElementById("toggle-ad");
+
+            // Add event listeners for toggling
+            bsSpan.addEventListener("click", () => {
+                bsSpan.classList.add("hidden");
+                adSpan.classList.remove("hidden");
+            });
+
+            adSpan.addEventListener("click", () => {
+                adSpan.classList.add("hidden");
+                bsSpan.classList.remove("hidden");
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const languageFlag = document.getElementById("language-flag");
+            const languageText = document.getElementById("language-text");
+
+            // Add event listener for toggling
+            languageText.addEventListener("click", () => {
+                if (languageText.textContent === "English") {
+                    // Switch to Nepali
+                    languageFlag.src = "images/nepal-flag.png";
+                    languageFlag.alt = "Nepali";
+                    languageText.textContent = "Nepali";
+                } else {
+                    // Switch to English
+                    languageFlag.src = "images/svg/us.svg";
+                    languageFlag.alt = "English";
+                    languageText.textContent = "English";
+                }
+            });
+        });
+
+
+        const notificationBtn = document.getElementById("notification-btn");
+        const notificationPopup = document.getElementById("notification-popup");
+
+        // Toggle notification popup on button click
+        notificationBtn.addEventListener("click", () => {
+            notificationPopup.classList.toggle("hidden");
+        });
+
+        // Close the popup when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
+                notificationPopup.classList.add("hidden");
+            }
+        });
+
+
+
+
+        const searchToggleBtn = document.getElementById("search-toggle-btn");
+        const searchBar = document.getElementById("search-bar");
+        const searchIcon = document.getElementById("search-icon");
+
+        // Toggle search bar visibility
+        searchToggleBtn.addEventListener("click", () => {
+            // Hide the search icon and show the search bar
+            searchIcon.classList.add("hidden");
+            searchBar.classList.remove("hidden");
+        });
+    </script>
+
+</body>
+
+</html>
