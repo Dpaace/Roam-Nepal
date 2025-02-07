@@ -2,72 +2,72 @@
 console.log("External Script Connected!!!")
 
 
-// For top navbar
-document.addEventListener("DOMContentLoaded", () => {
-    const bsSpan = document.getElementById("toggle-bs");
-    const adSpan = document.getElementById("toggle-ad");
+// // For top navbar
+// document.addEventListener("DOMContentLoaded", () => {
+//     const bsSpan = document.getElementById("toggle-bs");
+//     const adSpan = document.getElementById("toggle-ad");
 
-    // Add event listeners for toggling
-    bsSpan.addEventListener("click", () => {
-        bsSpan.classList.add("hidden");
-        adSpan.classList.remove("hidden");
-    });
+//     // Add event listeners for toggling
+//     bsSpan.addEventListener("click", () => {
+//         bsSpan.classList.add("hidden");
+//         adSpan.classList.remove("hidden");
+//     });
 
-    adSpan.addEventListener("click", () => {
-        adSpan.classList.add("hidden");
-        bsSpan.classList.remove("hidden");
-    });
-});
+//     adSpan.addEventListener("click", () => {
+//         adSpan.classList.add("hidden");
+//         bsSpan.classList.remove("hidden");
+//     });
+// });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const languageFlag = document.getElementById("language-flag");
-    const languageText = document.getElementById("language-text");
+// document.addEventListener("DOMContentLoaded", () => {
+//     const languageFlag = document.getElementById("language-flag");
+//     const languageText = document.getElementById("language-text");
 
-    // Add event listener for toggling
-    languageText.addEventListener("click", () => {
-        if (languageText.textContent === "English") {
-            // Switch to Nepali
-            languageFlag.src = "images/nepal-flag.png";
-            languageFlag.alt = "Nepali";
-            languageText.textContent = "Nepali";
-        } else {
-            // Switch to English
-            languageFlag.src = "images/svg/us.svg";
-            languageFlag.alt = "English";
-            languageText.textContent = "English";
-        }
-    });
-});
-
-
-const notificationBtn = document.getElementById("notification-btn");
-const notificationPopup = document.getElementById("notification-popup");
-
-// Toggle notification popup on button click
-notificationBtn.addEventListener("click", () => {
-    notificationPopup.classList.toggle("hidden");
-});
-
-// Close the popup when clicking outside
-document.addEventListener("click", (event) => {
-    if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
-        notificationPopup.classList.add("hidden");
-    }
-});
+//     // Add event listener for toggling
+//     languageText.addEventListener("click", () => {
+//         if (languageText.textContent === "English") {
+//             // Switch to Nepali
+//             languageFlag.src = "images/nepal-flag.png";
+//             languageFlag.alt = "Nepali";
+//             languageText.textContent = "Nepali";
+//         } else {
+//             // Switch to English
+//             languageFlag.src = "images/svg/us.svg";
+//             languageFlag.alt = "English";
+//             languageText.textContent = "English";
+//         }
+//     });
+// });
 
 
+// const notificationBtn = document.getElementById("notification-btn");
+// const notificationPopup = document.getElementById("notification-popup");
+
+// // Toggle notification popup on button click
+// notificationBtn.addEventListener("click", () => {
+//     notificationPopup.classList.toggle("hidden");
+// });
+
+// // Close the popup when clicking outside
+// document.addEventListener("click", (event) => {
+//     if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
+//         notificationPopup.classList.add("hidden");
+//     }
+// });
 
 
-const searchToggleBtn = document.getElementById("search-toggle-btn");
-const searchBar = document.getElementById("search-bar");
-const searchIcon = document.getElementById("search-icon");
 
-// Toggle search bar visibility
-searchToggleBtn.addEventListener("click", () => {
-    // Hide the search icon and show the search bar
-    searchIcon.classList.add("hidden");
-    searchBar.classList.remove("hidden");
-});
+
+// const searchToggleBtn = document.getElementById("search-toggle-btn");
+// const searchBar = document.getElementById("search-bar");
+// const searchIcon = document.getElementById("search-icon");
+
+// // Toggle search bar visibility
+// searchToggleBtn.addEventListener("click", () => {
+//     // Hide the search icon and show the search bar
+//     searchIcon.classList.add("hidden");
+//     searchBar.classList.remove("hidden");
+// });
 
 
 
@@ -1038,79 +1038,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const scrollContainer = document.getElementById("continue-scroll");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const scrollContainer = document.getElementById("continue-scroll");
 
-    let scrollAmount = 1.2; // Adjust speed
-    let direction = 1; // 1 = Right, -1 = Left
-    let autoScroll;
+//     let scrollAmount = 1.2; // Adjust speed
+//     let direction = 1; // 1 = Right, -1 = Left
+//     let autoScroll;
 
-    function startAutoScroll() {
-        autoScroll = setInterval(() => {
-            scrollContainer.scrollLeft += scrollAmount * direction;
+//     function startAutoScroll() {
+//         autoScroll = setInterval(() => {
+//             scrollContainer.scrollLeft += scrollAmount * direction;
 
-            // Reverse scrolling direction at ends
-            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-                direction = -1; // Scroll left
-            } else if (scrollContainer.scrollLeft <= 0) {
-                direction = 1; // Scroll right
-            }
-        }, 20);
-    }
+//             // Reverse scrolling direction at ends
+//             if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+//                 direction = -1; // Scroll left
+//             } else if (scrollContainer.scrollLeft <= 0) {
+//                 direction = 1; // Scroll right
+//             }
+//         }, 20);
+//     }
 
-    // Start auto-scrolling
-    startAutoScroll();
+//     // Start auto-scrolling
+//     startAutoScroll();
 
-    // Pause auto-scroll when hovering
-    scrollContainer.addEventListener("mouseenter", () => clearInterval(autoScroll));
+//     // Pause auto-scroll when hovering
+//     scrollContainer.addEventListener("mouseenter", () => clearInterval(autoScroll));
 
-    // Resume auto-scroll when leaving
-    scrollContainer.addEventListener("mouseleave", () => startAutoScroll());
+//     // Resume auto-scroll when leaving
+//     scrollContainer.addEventListener("mouseleave", () => startAutoScroll());
 
-    // Smooth manual scrolling using mouse wheel
-    scrollContainer.addEventListener("wheel", (e) => {
-        e.preventDefault();
-        scrollContainer.scrollLeft += e.deltaY > 0 ? 100 : -100;
-    });
+//     // Smooth manual scrolling using mouse wheel
+//     scrollContainer.addEventListener("wheel", (e) => {
+//         e.preventDefault();
+//         scrollContainer.scrollLeft += e.deltaY > 0 ? 100 : -100;
+//     });
 
-    // Enable drag-to-scroll (Desktop + Mobile)
-    let isDragging = false;
-    let startX, scrollLeftStart;
+//     // Enable drag-to-scroll (Desktop + Mobile)
+//     let isDragging = false;
+//     let startX, scrollLeftStart;
 
-    scrollContainer.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        clearInterval(autoScroll);
-        startX = e.pageX;
-        scrollLeftStart = scrollContainer.scrollLeft;
-    });
+//     scrollContainer.addEventListener("mousedown", (e) => {
+//         isDragging = true;
+//         clearInterval(autoScroll);
+//         startX = e.pageX;
+//         scrollLeftStart = scrollContainer.scrollLeft;
+//     });
 
-    scrollContainer.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        let moveX = e.pageX - startX;
-        scrollContainer.scrollLeft = scrollLeftStart - moveX;
-    });
+//     scrollContainer.addEventListener("mousemove", (e) => {
+//         if (!isDragging) return;
+//         let moveX = e.pageX - startX;
+//         scrollContainer.scrollLeft = scrollLeftStart - moveX;
+//     });
 
-    scrollContainer.addEventListener("mouseup", () => {
-        isDragging = false;
-        startAutoScroll();
-    });
+//     scrollContainer.addEventListener("mouseup", () => {
+//         isDragging = false;
+//         startAutoScroll();
+//     });
 
-    // Enable touch scrolling for mobile
-    scrollContainer.addEventListener("touchstart", (e) => {
-        isDragging = true;
-        clearInterval(autoScroll);
-        startX = e.touches[0].pageX;
-        scrollLeftStart = scrollContainer.scrollLeft;
-    });
+//     // Enable touch scrolling for mobile
+//     scrollContainer.addEventListener("touchstart", (e) => {
+//         isDragging = true;
+//         clearInterval(autoScroll);
+//         startX = e.touches[0].pageX;
+//         scrollLeftStart = scrollContainer.scrollLeft;
+//     });
 
-    scrollContainer.addEventListener("touchmove", (e) => {
-        if (!isDragging) return;
-        let moveX = e.touches[0].pageX - startX;
-        scrollContainer.scrollLeft = scrollLeftStart - moveX;
-    });
+//     scrollContainer.addEventListener("touchmove", (e) => {
+//         if (!isDragging) return;
+//         let moveX = e.touches[0].pageX - startX;
+//         scrollContainer.scrollLeft = scrollLeftStart - moveX;
+//     });
 
-    scrollContainer.addEventListener("touchend", () => {
-        isDragging = false;
-        startAutoScroll();
-    });
-});
+//     scrollContainer.addEventListener("touchend", () => {
+//         isDragging = false;
+//         startAutoScroll();
+//     });
+// });

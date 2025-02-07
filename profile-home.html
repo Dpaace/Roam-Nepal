@@ -93,12 +93,6 @@
                         <span id="toggle-bs" class="text-[12px] leading-4 font-normal cursor-pointer">B.S</span>
                         <span id="toggle-ad" class="hidden text-[12px] leading-4 font-normal cursor-pointer">A.D</span>
                     </span>
-                    <!-- <span class="flex items-center space-x-1">
-                        <img class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English">
-                        <img class="w-[14px] h-[14px]" src="images/nepal-flag.png" alt="Nepali">
-                        <span class="text-[12px] leading-4 font-normal">English</span>
-                        <span class="text-[12px] leading-4 font-normal">Nepali</span>
-                    </span> -->
                     <span class="flex items-center space-x-1">
                         <img id="language-flag" class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English">
                         <span id="language-text" class="text-[12px] leading-4 font-normal cursor-pointer">English</span>
@@ -110,20 +104,10 @@
                     </button>
                     <div class="flex items-center space-x-1">
                         <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
-                        <span class="text-[14px] leading-[22px] font-normal">Harris's Account</span>
+                        <span class="text-[14px] leading-[22px] font-normal"><a href="profile-home.html">Harris's
+                                Account</a></span>
                     </div>
                     <div class="flex items-center space-x-4">
-
-                        <!-- Notification Button -->
-                        <!-- <div class="relative">
-                            <button class="relative flex items-center justify-center">
-                                <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
-                                    alt="notification-icon">
-                            <span
-                                class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
-                                11
-                            </span>
-                        </div> -->
 
                         <div class="relative">
                             <!-- Notification Button -->
@@ -207,9 +191,23 @@
                         <button>
                             <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
                         </button>
-                        <button>
-                            <img class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg" alt="search-icon">
-                        </button>
+
+                        <div id="search-container">
+                            <!-- Search Button -->
+                            <button id="search-toggle-btn" class="flex items-center">
+                                <img id="search-icon" class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg"
+                                    alt="search-icon">
+                            </button>
+                            <div id="search-bar"
+                                class="relative w-[250px] flex bg-white items-center border border-[#D9D9D9] rounded-sm p-1 hidden">
+                                <input type="text" placeholder="Search"
+                                    class="w-full outline-none text-black text-sm px-1">
+                                <img id="search-icon" class="w-[14px] h-[14px] cursor-pointer"
+                                    src="images/svg/search-icon.svg" alt="search-icon">
+                            </div>
+                        </div>
+
+
                     </div>
 
                 </div>
@@ -240,7 +238,6 @@
                         <span><img class="w-[14px] h-[14px]" src="images/svg/airport-plane.svg" alt="flights"></span>
                         <span>Flights</span>
                     </a>
-
                 </div>
             </div>
         </div>
@@ -873,7 +870,72 @@
     <script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="scripts/profileScript.js"></script>
     <script>
+        // For top navbar
+        document.addEventListener("DOMContentLoaded", () => {
+            const bsSpan = document.getElementById("toggle-bs");
+            const adSpan = document.getElementById("toggle-ad");
 
+            // Add event listeners for toggling
+            bsSpan.addEventListener("click", () => {
+                bsSpan.classList.add("hidden");
+                adSpan.classList.remove("hidden");
+            });
+
+            adSpan.addEventListener("click", () => {
+                adSpan.classList.add("hidden");
+                bsSpan.classList.remove("hidden");
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const languageFlag = document.getElementById("language-flag");
+            const languageText = document.getElementById("language-text");
+
+            // Add event listener for toggling
+            languageText.addEventListener("click", () => {
+                if (languageText.textContent === "English") {
+                    // Switch to Nepali
+                    languageFlag.src = "images/nepal-flag.png";
+                    languageFlag.alt = "Nepali";
+                    languageText.textContent = "Nepali";
+                } else {
+                    // Switch to English
+                    languageFlag.src = "images/svg/us.svg";
+                    languageFlag.alt = "English";
+                    languageText.textContent = "English";
+                }
+            });
+        });
+
+
+        const notificationBtn = document.getElementById("notification-btn");
+        const notificationPopup = document.getElementById("notification-popup");
+
+        // Toggle notification popup on button click
+        notificationBtn.addEventListener("click", () => {
+            notificationPopup.classList.toggle("hidden");
+        });
+
+        // Close the popup when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
+                notificationPopup.classList.add("hidden");
+            }
+        });
+
+
+
+
+        const searchToggleBtn = document.getElementById("search-toggle-btn");
+        const searchBar = document.getElementById("search-bar");
+        const searchIcon = document.getElementById("search-icon");
+
+        // Toggle search bar visibility
+        searchToggleBtn.addEventListener("click", () => {
+            // Hide the search icon and show the search bar
+            searchIcon.classList.add("hidden");
+            searchBar.classList.remove("hidden");
+        });
     </script>
 
 
