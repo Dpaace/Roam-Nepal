@@ -70,6 +70,84 @@ console.log("External Script Connected!!!")
 // });
 
 
+const signInPopup = document.getElementById("sign-in-popup");
+const openSignInBtn = document.getElementById("open-sign-in-popup");
+const closeSignInBtn = document.getElementById("close-sign-in-popup");
+
+
+
+// Open Popup
+openSignInBtn.addEventListener("click", () => {
+    signInPopup.classList.remove("hidden");
+    document.body.classList.add("disable-scroll");
+});
+
+// Close Popup
+closeSignInBtn.addEventListener("click", () => {
+    signInPopup.classList.add("hidden");
+    document.body.classList.remove("disable-scroll");
+
+});
+
+//Toggle Password Visibility
+function togglePasswordVisibility() {
+    const passwordInput = document.getElementById("sign-in-password");
+    const type = passwordInput.type === "password" ? "text" : "password";
+    passwordInput.type = type;
+}
+
+const signUpButton = document.getElementById('sign-up-btn-otp');
+const otpPopup = document.getElementById('otp-popup');
+const closeOtpPopup = document.getElementById('close-otp-popup');
+
+// Open OTP Popup on Sign-Up Button Click
+signUpButton.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    signInPopup.classList.add("hidden");
+    otpPopup.classList.remove('hidden'); 
+});
+
+// Close OTP Popup
+closeOtpPopup.addEventListener('click', () => {
+    otpPopup.classList.add('hidden'); 
+    document.body.classList.remove("disable-scroll");
+});
+
+
+
+const loginPopup = document.getElementById("login-popup");
+const openLoginPopup = document.getElementById("open-login-popup");
+const closeLoginPopup = document.getElementById("close-login-popup");
+const backToSignUp = document.getElementById("back-to-signup");
+
+// Open Login Popup
+openLoginPopup.addEventListener("click", (e) => {
+    e.preventDefault();
+    loginPopup.classList.remove("hidden");
+    signInPopup.classList.add("hidden");
+});
+
+// Close Login Popup
+closeLoginPopup.addEventListener("click", () => {
+    loginPopup.classList.add("hidden");
+    document.body.classList.remove("disable-scroll");
+});
+
+// Back to Sign Up
+backToSignUp.addEventListener("click", () => {
+    loginPopup.classList.add("hidden");
+    signInPopup.classList.remove("hidden")
+});
+
+
+// Toggle Password Visibility for Login
+function toggleLoginPasswordVisibility() {
+    const passwordInput = document.getElementById("login-password");
+    const type = passwordInput.type === "password" ? "text" : "password";
+    passwordInput.type = type;
+}
+
+
 
 
 
