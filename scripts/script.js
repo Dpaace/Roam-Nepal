@@ -102,14 +102,14 @@ const closeOtpPopup = document.getElementById('close-otp-popup');
 
 // Open OTP Popup on Sign-Up Button Click
 signUpButton.addEventListener('click', (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     signInPopup.classList.add("hidden");
-    otpPopup.classList.remove('hidden'); 
+    otpPopup.classList.remove('hidden');
 });
 
 // Close OTP Popup
 closeOtpPopup.addEventListener('click', () => {
-    otpPopup.classList.add('hidden'); 
+    otpPopup.classList.add('hidden');
     document.body.classList.remove("disable-scroll");
 });
 
@@ -1192,3 +1192,31 @@ document.addEventListener("DOMContentLoaded", function () {
 //         startAutoScroll();
 //     });
 // });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollContainer = document.getElementById('continue-scroll');
+    const cards = scrollContainer.children;
+    const cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
+    const totalCards = cards.length;
+    let currentIndex = 2;
+
+    function centerCard(index) {
+        const offset = (scrollContainer.offsetWidth / 2) - (cardWidth / 2) - (index * cardWidth);
+        scrollContainer.scrollTo({
+            left: -offset,
+            behavior: 'smooth'
+        });
+    }
+
+    function autoScroll() {
+        currentIndex = (currentIndex + 1) % totalCards;
+        centerCard(currentIndex);
+    }
+
+    centerCard(currentIndex);
+
+    setInterval(autoScroll, 3000);
+});
+
+
