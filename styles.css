@@ -294,8 +294,7 @@ body.sticky-active {
     border-bottom: 3px solid #03677E;
 }
 
-
-/* Ensure the container is flexible and can scroll */
+/* 
 #continue-scroll {
     display: flex;
     overflow-x: hidden; 
@@ -313,4 +312,7 @@ body.sticky-active {
 #continue-scroll > div:nth-child(3) {
     transform: translateX(calc(50% - 240px)); 
 }
+ */
 
+
+ 

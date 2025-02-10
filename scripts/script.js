@@ -1194,29 +1194,29 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const scrollContainer = document.getElementById('continue-scroll');
-    const cards = scrollContainer.children;
-    const cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
-    const totalCards = cards.length;
-    let currentIndex = 2;
+// document.addEventListener('DOMContentLoaded', function () {
+//     const scrollContainer = document.getElementById('continue-scroll');
+//     const cards = scrollContainer.children;
+//     const cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
+//     const totalCards = cards.length;
+//     let currentIndex = 2;
 
-    function centerCard(index) {
-        const offset = (scrollContainer.offsetWidth / 2) - (cardWidth / 2) - (index * cardWidth);
-        scrollContainer.scrollTo({
-            left: -offset,
-            behavior: 'smooth'
-        });
-    }
+//     function centerCard(index) {
+//         const offset = (scrollContainer.offsetWidth / 2) - (cardWidth / 2) - (index * cardWidth);
+//         scrollContainer.scrollTo({
+//             left: -offset,
+//             behavior: 'smooth'
+//         });
+//     }
 
-    function autoScroll() {
-        currentIndex = (currentIndex + 1) % totalCards;
-        centerCard(currentIndex);
-    }
+//     function autoScroll() {
+//         currentIndex = (currentIndex + 1) % totalCards;
+//         centerCard(currentIndex);
+//     }
 
-    centerCard(currentIndex);
+//     centerCard(currentIndex);
 
-    setInterval(autoScroll, 3000);
-});
+//     setInterval(autoScroll, 3000);
+// });
 
 
