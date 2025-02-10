@@ -293,3 +293,24 @@ body.sticky-active {
     color: #0b3c49;
     border-bottom: 3px solid #03677E;
 }
+
+
+/* Ensure the container is flexible and can scroll */
+#continue-scroll {
+    display: flex;
+    overflow-x: hidden; 
+    scroll-behavior: smooth; 
+    position: relative;
+}
+
+#continue-scroll > div {
+    flex: 0 0 auto;
+    width: 480px; 
+    margin-right: 8px; 
+    transition: transform 0.5s ease-in-out;
+}
+
+#continue-scroll > div:nth-child(3) {
+    transform: translateX(calc(50% - 240px)); 
+}
+
