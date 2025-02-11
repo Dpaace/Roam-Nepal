@@ -372,390 +372,352 @@
 
         <!-- Main Section -->
         <main class="flex-1 p-2">
-            <h1 class="font-normal text-xl">Profile Details</h1>
-            <!-- Profile Completion -->
-            <div class="bg-white p-4 mt-[22px] mb-6 h-[112px]">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-4">
-                        <div class="relative w-20 h-20">
-                            <!-- Background circle -->
-                            <svg class="w-full h-full" viewBox="0 0 120 120">
-                                <circle class="text-[#F5F5F5]" stroke-width="6" stroke="currentColor" fill="transparent"
-                                    r="56" cx="60" cy="60" />
-                                <!-- Progress circle -->
-                                <circle class="text-[#0B3C49] rotate-[-90deg] origin-center" stroke-width="6"
-                                    stroke="currentColor" fill="transparent" r="56" cx="60" cy="60"
-                                    stroke-dasharray="351.86" stroke-dashoffset="270" stroke-linecap="round" />
-                            </svg>
-                            <!-- Percentage text -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <span class="text-lg leading-[22px] font-normal text-[#000000D9]">30%</span>
+
+
+            <!-- Tab Navigation -->
+            <div class=" bg-white border-b border[#0000000F] p-4">
+                <h2 class="text-xl font-normal mb-4">My Bookings</h2>
+                <div class="flex items-center gap-10">
+                    <button
+                        class="tab-booking-btn py-2 text-[#0B3C49] font-normal text-[16px] leading-6 border-b-2 border-[#0B3C49]"
+                        data-tab="today">
+                        Today
+                    </button>
+                    <button class="tab-booking-btn py-2 text-[#000000D9] font-normal text-[16px] leading-6"
+                        data-tab="upcoming">
+                        Upcoming
+                    </button>
+                    <button class="tab-booking-btn py-2 text-[#000000D9] font-normal text-[16px] leading-6"
+                        data-tab="completed">
+                        Completed
+                    </button>
+                    <button class="tab-booking-btn py-2 text-[#000000D9] font-normal text-[16px] leading-6"
+                        data-tab="cancelled">
+                        Cancelled
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="bg-white mt-6 p-4">
+
+
+                <div id="today" class="tab-booking-content">
+                    <h3 class="text-lg font-semibold mb-4">Today's Bookings</h3>
+
+                    <!-- Accordion Container -->
+                    <div class="space-y-2">
+                        <!-- Accordion Item 1 - Bus Tickets -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span>Bus Tickets</span>
+                            </button>
+                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+                                <!-- Bus Ticket Card -->
+                                <div class="border rounded-[4px] px-8 py-4 bg-white">
+                                    <div class="flex justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[20px] leading-4 text-black">Tourist Bus with
+                                                Sleeper</h2>
+                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Tourist Bus</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3,
+                                                A4)</p>
+                                        </div>
+                                        <div class="flex space-x-2 items-center">
+                                            <button
+                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">View
+                                                Ticket</button>
+                                            <button
+                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">Track
+                                                Vehicle</button>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex items-center justify-between w-full">
+                                        <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><strong>Boarding Point:</strong> Buspark, Kathmandu</p>
+                                            <p><strong>Arrive at boarding point:</strong> 27 Nov 2024, 06:00 AM</p>
+                                            <p><strong>Dropping Point:</strong> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="w-3/5 flex items-center justify-between py-4">
+                                            <!-- Start Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[20px] leading-4 text-black">17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black"">Kathmandu</p>
+                                            </div>
+
+                                            <!-- Travel Duration -->
+                                            <div class="flex-1 flex flex-col items-center relative mx-4">
+                                                <!-- <div
+                                                    class="w-full border-t border-gray-300 absolute top-1/2 transform -translate-y-1/2">
+                                                </div> -->
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
+                                                <hr class="w-full ">
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453</p>
+                                            </div>
+
+                                            <!-- End Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex justify-between items-center mt-4">
+                                        <div>
+                                            <span class="font-bold text-[24px] leading-4 text-[#0B3C49]">Rs. <span
+                                                    class="text-[36px]">3000</span></span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button
+                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">Cancel
+                                                Ticket</button>
+                                            <button
+                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">Reschedule
+                                                Ticket</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="border rounded-[4px] px-8 py-4 bg-white">
+                                    <div class="flex justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[20px] leading-4 text-black">Tourist Bus with
+                                                Sleeper</h2>
+                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Tourist Bus</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3,
+                                                A4)</p>
+                                        </div>
+                                        <!-- <div class="flex space-x-2 items-center">
+                                            <button
+                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">View
+                                                Ticket</button>
+                                            <button
+                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">Track
+                                                Vehicle</button>
+                                        </div> -->
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex items-center justify-between w-full">
+                                        <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><strong>Boarding Point:</strong> Buspark, Kathmandu</p>
+                                            <p><strong>Arrive at boarding point:</strong> 27 Nov 2024, 06:00 AM</p>
+                                            <p><strong>Dropping Point:</strong> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="w-3/5 flex items-center justify-between py-4">
+                                            <!-- Start Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[20px] leading-4 text-black">17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black"">Kathmandu</p>
+                                            </div>
+
+                                            <!-- Travel Duration -->
+                                            <div class="flex-1 flex flex-col items-center relative mx-4">
+                                                <!-- <div
+                                                    class="w-full border-t border-gray-300 absolute top-1/2 transform -translate-y-1/2">
+                                                </div> -->
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
+                                                <hr class="w-full ">
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453</p>
+                                            </div>
+
+                                            <!-- End Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex justify-between items-center mt-4">
+                                        <div>
+                                            <span class="font-bold text-[24px] leading-4 text-[#0B3C49]">Rs. <span
+                                                    class="text-[36px]">3000</span></span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <!-- <button
+                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Cancel Ticket
+                                            </button> -->
+                                            <button
+                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Report Issue
+                                            </button>
+                                            <button
+                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Reschedule Ticket
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="border rounded-[4px] px-8 py-4 bg-white">
+                                    <div class="flex justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[20px] leading-4 text-black">Tourist Bus with
+                                                Sleeper</h2>
+                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Tourist Bus</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3,
+                                                A4)</p>
+                                        </div>
+                                        <!-- <div class="flex space-x-2 items-center">
+                                            <button
+                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">View
+                                                Ticket</button>
+                                            <button
+                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">Track
+                                                Vehicle</button>
+                                        </div> -->
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex items-center justify-between w-full">
+                                        <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><strong>Boarding Point:</strong> Buspark, Kathmandu</p>
+                                            <p><strong>Arrive at boarding point:</strong> 27 Nov 2024, 06:00 AM</p>
+                                            <p><strong>Dropping Point:</strong> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="w-3/5 flex items-center justify-between py-4">
+                                            <!-- Start Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[20px] leading-4 text-black">17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black"">Kathmandu</p>
+                                            </div>
+
+                                            <!-- Travel Duration -->
+                                            <div class="flex-1 flex flex-col items-center relative mx-4">
+                                                <!-- <div
+                                                    class="w-full border-t border-gray-300 absolute top-1/2 transform -translate-y-1/2">
+                                                </div> -->
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
+                                                <hr class="w-full ">
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453</p>
+                                            </div>
+
+                                            <!-- End Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex justify-between items-center mt-4">
+                                        <div>
+                                            <span class="font-bold text-[24px] leading-4 text-[#0B3C49]">Rs. <span
+                                                    class="text-[36px]">3000</span></span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <!-- <button
+                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Cancel Ticket
+                                            </button> -->
+                                            <!-- <button
+                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Report Issue
+                                            </button>
+                                            <button
+                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Reschedule Ticket
+                                            </button> -->
+
+                                            <button
+                                                class="w-[332px] h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Review
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div>
-                            <h2 class="font-normal text-xl text-[#000000D9] mb-2">Complete your profile</h2>
-                            <p class="font-normal text-[13px] leading-[17px] text-[#001F28]">
-                                Your profile is 30% complete. Complete it now for personalized recommendations and
-                                seamless bookings!
-                            </p>
-                        </div>
-                    </div>
-                    <!-- <button
-                        class="bg-[#834C74] h-10 w-[200px] text-white px-4 py-2 rounded-sm text-[16px] leading-6 font-normal">
-                        Be an Agent
-                    </button> -->
-                    <button onclick="window.location.href='profile-agent.html'"
-                        class="bg-[#834C74] h-10 w-[200px] text-white px-4 py-2 rounded-sm text-[16px] leading-6 font-normal">
-                        Be an Agent
-                    </button>
-                </div>
-            </div>
-
-            <!-- Basic Information -->
-            <div class="bg-white py-4 px-9 mb-6">
-                <h2 class="font-normal text-xl mb-2">Basic Information</h2>
-                <p class="font-normal text-[13px] leading-[17px] mb-6">Your information to make the booking faster.</p>
-
-                <form class="flex flex-col w-full lg:w-4/5 items-center justify-center">
-                    <!-- First Name -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
-                        <label for="first-name"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            First Name:
-                        </label>
-                        <input type="text" id="first-name" name="first-name" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-[gray-700] focus:outline-none" />
-                    </div>
-
-                    <!-- Middle Name -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
-                        <label for="middle-name"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Middle Name:
-                        </label>
-                        <input type="text" id="middle-name" name="middle-name" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-                    </div>
-
-                    <!-- Last Name -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
-                        <label for="last-name"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Last Name:
-                        </label>
-                        <input type="text" id="last-name" name="last-name" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-                    </div>
-
-                    <!-- Phone Number -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
-                        <label for="phone"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Phone No:
-                        </label>
-                        <input type="text" id="phone" name="phone" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-
-                    </div>
-
-                    <!-- Email -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
-                        <label for="email"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Email:
-                        </label>
-                        <input type="email" id="email" name="email" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-                    </div>
-
-                    <!-- Gender -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
-                        <label for="gender"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Gender:
-                        </label>
-                        <select id="gender" name="gender"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-[#00000040] focus:outline-none"
-                            onchange="this.classList.toggle('text-black', this.value !== '')">
-                            <option value="" disabled selected>Select an option</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-
-                    <!-- Nationality -->
-                    <div class="flex w-full lg:w-4/5 mb-8 items-center gap-2">
-                        <label for="nationality"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Nationality:
-                        </label>
-                        <select id="nationality" name="nationality"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-[#00000040] focus:outline-none"
-                            onchange="this.classList.toggle('text-black', this.value !== 'Select an option')">
-                            <option value="" disabled selected>Select an option</option>
-                            <option value="nepali">Nepali</option>
-                            <option value="others">Others</option>
-                        </select>
-
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="flex w-full lg:w-4/5 items-center gap-2">
-                        <label for="submit"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            &nbsp;
-                        </label>
-                        <button type="button"
-                            class="bg-[#0B3C49] text-white px-6 py-2 rounded-sm font-normal text-sm leading-[22px]">
-                            Make Changes
-                        </button>
-                    </div>
-
-                </form>
-
-            </div>
-
-            <!-- Change Email -->
-
-            <div class="bg-white py-4 px-9 mb-6">
-                <h2 class="font-normal text-xl mb-2">Email</h2>
-                <p class="font-normal text-[13px] leading-[17px] mb-6">
-                    Your current email address is abc@gmail.com.
-                </p>
-                <form class="flex flex-col w-full lg:w-4/5 items-center justify-center">
-                    <!-- Enter New Email -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
-                        <label for="new-email"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Enter new email:
-                        </label>
-                        <input type="email" id="new-email" name="new-email" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="flex w-full lg:w-4/5 items-center gap-2">
-                        <label for="submit"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            &nbsp;
-                        </label>
-                        <button id="change-email-btn" type="button"
-                            class="bg-[#0B3C49] text-white px-6 py-2 rounded-sm font-normal text-sm leading-[22px]">
-                            Change Email
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <!-- Email Popup -->
-            <div id="email-popup"
-                class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-                <div class="bg-white w-2/5  p-6 rounded-[4px] relative">
-                    <button id="close-email-popup" class="absolute top-2 right-3 text-gray-500 hover:text-gray-700">
-                        &times;
-                    </button>
-                    <h2 class="font-normal text-sm mb-4">Enter your password to confirm changes</h2>
-                    <form>
-                        <div class="mb-4 relative">
-                            <!-- <label for="confirmation-password" class="block text-sm font-normal mb-2">Password:</label> -->
-                            <input type="password" id="confirmation-password" placeholder="Enter Password"
-                                class="w-full border border-gray-300 p-2 rounded-sm pr-10 focus:outline-none" />
-                            <button type="button" id="toggle-confirmation-password-visibility"
-                                class="absolute right-3 top-[10px]">
-                                <img id="confirmation-password-visibility-icon" class="w-5 h-5"
-                                    src="https://img.icons8.com/ios/50/closed-eye.png" alt="eye-icon" />
+                        <!-- Accordion Item 2 - Hotels -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span>Hotels</span>
                             </button>
+                            <div class="accordion-content hidden p-4 bg-white">
+                                <p class="text-gray-600">Hotel Booking Details go here.</p>
+                            </div>
                         </div>
-                        <div class="flex justify-end gap-2">
-                            <button type="button" id="submit-email-popup"
-                                class="bg-[#03677E] text-white px-6 py-1 rounded-sm">Enter</button>
-                            <button type="button" id="cancel-email-popup"
-                                class="border border-[#D9D9D9] text-[[#000000D9]] px-6 py-1 rounded-sm">Cancel</button>
-                        </div>
-                    </form>
 
-                </div>
-            </div>
-            <!-- Confirmation Popup -->
-            <div id="confirmation-popup"
-                class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-                <div class="bg-white w-1/3 p-6 rounded-[4px] relative">
-                    <button id="close-confirmation-popup"
-                        class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-                        &times;
-                    </button>
-                    <h2 class="font-normal text-[16px] leading-6 mb-4">Update Email</h2>
-                    <p class="text-sm mb-6">
-                        You'll be <strong class="font-bold">logged out</strong> and will need to log in again to
-                        continue using the app.
-                    </p>
-                    <div class="flex justify-end gap-2">
-                        <button type="button" id="confirm-changes"
-                            class="bg-[#03677E] text-white px-6 py-1 rounded-sm">Confirm changes</button>
-                        <button type="button" id="cancel-confirmation"
-                            class="border border-[#D9D9D9] text-[#000000D9] px-6 py-1 rounded-sm">Cancel</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Change Phone Number -->
-            <div class="bg-white py-4 px-9 mb-6">
-                <h2 class="font-normal text-xl mb-2">Phone Number</h2>
-                <p class="font-normal text-[13px] leading-[17px] mb-6">
-                    Your current phone number is +977-9857087654.
-                </p>
-                <form class="flex flex-col w-full lg:w-4/5 items-center justify-center">
-                    <!-- Enter New Phone Number -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2">
-                        <label for="new-phone"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Enter new phone no:
-                        </label>
-                        <input type="text" id="new-phone" name="new-phone" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-                    </div>
-                    <!-- Submit Button -->
-                    <div class="flex w-full lg:w-4/5 items-center gap-2">
-                        <label for="submit"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">&nbsp;</label>
-                        <button type="button" id="change-phone-btn"
-                            class="bg-[#0B3C49] text-white px-6 py-2 rounded-sm font-normal text-sm leading-[22px]">
-                            Change Phone
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <div id="password-popup"
-                class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div class="bg-white p-6 rounded-md shadow-[4px] w-full max-w-md">
-                    <h2 class="font-normal text-[16px] leading-6 mb-4">Enter your password to confirm changes</h2>
-                    <form>
-                        <div class="mb-4 relative">
-                            <input type="password" id="phone-password-confirmation" placeholder="Enter Password"
-                                class="w-full border border-gray-300 p-2 rounded-sm pr-10 focus:outline-none" />
-                            <button type="button" id="toggle-phone-password-visibility"
-                                class="absolute right-3 top-[10px]">
-                                <img id="phone-password-visibility-icon" class="w-5 h-5"
-                                    src="https://img.icons8.com/ios/50/closed-eye.png" alt="eye-icon" />
+                        <!-- Accordion Item 3 - Reservation -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span>Reservation</span>
                             </button>
+                            <div class="accordion-content hidden p-4 bg-white">
+                                <p class="text-gray-600">Reservation Details go here.</p>
+                            </div>
                         </div>
-                        <div class="flex justify-end gap-2">
-                            <button type="button" id="submit-password"
-                                class="bg-[#03677E] text-white px-6 py-1 rounded-sm">Enter</button>
-                            <button type="button" id="cancel-password"
-                                class="border border-[#D9D9D9] text-[#000000D9] px-6 py-1 rounded-sm">Cancel</button>
-                        </div>
-                    </form>
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const accordions = document.querySelectorAll(".accordion-header");
+
+                        accordions.forEach(header => {
+                            header.addEventListener("click", function () {
+                                const content = this.nextElementSibling;
+                                const icon = this.querySelector(".accordion-icon");
+
+                                // Toggle the accordion
+                                content.classList.toggle("hidden");
+                                icon.style.transform = content.classList.contains("hidden") ? "rotate(0deg)" : "rotate(90deg)";
+                            });
+                        });
+                    });
+                </script>
+
+
+
+
+
+
+                <div id="upcoming" class="tab-booking-content hidden">
+                    <h3 class="text-lg font-semibold">Upcoming Bookings</h3>
+                    <p class="text-gray-600">You have 5 upcoming bookings.</p>
+                </div>
+                <div id="completed" class="tab-booking-content hidden">
+                    <h3 class="text-lg font-semibold">Completed Bookings</h3>
+                    <p class="text-gray-600">You have successfully completed 12 bookings.</p>
+                </div>
+                <div id="cancelled" class="tab-booking-content hidden">
+                    <h3 class="text-lg font-semibold">Cancelled Bookings</h3>
+                    <p class="text-gray-600">You have 2 cancelled bookings.</p>
                 </div>
             </div>
 
-            <!-- Phone Confirmation Popup -->
-            <div id="phone-confirmation-popup"
-                class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div class="bg-white p-6 rounded-[4px] shadow-lg w-full max-w-md">
-                    <h2 class="font-normal text-[16px] leading-6 mb-4">Update phone number</h2>
-                    <p class="text-sm text-gray-700 mb-6">
-                        A link has been sent to +977 9867564563. Follow the link to confirm your new phone number.
-                    </p>
-                    <div class="flex justify-end gap-2">
-                        <button type="button" id="confirm-phone-changes"
-                            class="bg-[#03677E] text-white px-6 py-1 rounded-sm">Confirm changes</button>
-                        <button type="button" id="cancel-phone-changes"
-                            class="border border-[#D9D9D9] text-[#000000D9] px-6 py-1 rounded-sm">Cancel</button>
-                    </div>
-                </div>
-            </div>
 
 
 
-            <!-- Change Password -->
-            <div class="bg-white py-4 px-9">
-                <h2 class="font-normal text-xl mb-2">Update Password</h2>
-                <form class="flex flex-col w-full lg:w-4/5 items-center justify-center">
-                    <!-- Current Password -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2 relative">
-                        <label for="current-password"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Current Password:
-                        </label>
-                        <input type="password" id="current-password" name="current-password" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-                        <button type="button" class="absolute right-3 lg:right-5"
-                            onclick="togglePassword('current-password', this)">
-                            <img class="w-5 h-5 invisible-eye" src="https://img.icons8.com/ios/50/closed-eye.png"
-                                alt="closed-eye" />
-                            <img class="w-5 h-5 visible-eye hidden" src="images/svg/password_visible.svg"
-                                alt="visible-eye" />
-                        </button>
-                    </div>
-                    <!-- New Password -->
-                    <div class="flex w-full lg:w-4/5 mb-4 items-center gap-2 relative">
-                        <label for="new-password"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Enter New Password:
-                        </label>
-                        <input type="password" id="new-password" name="new-password" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-                        <button type="button" class="absolute right-3 lg:right-5"
-                            onclick="togglePassword('new-password', this)">
-                            <img class="w-5 h-5 invisible-eye" src="https://img.icons8.com/ios/50/closed-eye.png"
-                                alt="closed-eye" />
-                            <img class="w-5 h-5 visible-eye hidden" src="images/svg/password_visible.svg"
-                                alt="visible-eye" />
-                        </button>
-                    </div>
-                    <!-- Confirm Password -->
-                    <div class="flex w-full lg:w-4/5 mb-8 items-center gap-2 relative">
-                        <label for="confirm-password"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">
-                            Confirm New Password:
-                        </label>
-                        <input type="password" id="confirm-password" name="confirm-password" placeholder="example"
-                            class="w-full lg:w-2/3 border border-[#D9D9D9] rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
-                        <button type="button" class="absolute right-3 lg:right-5"
-                            onclick="togglePassword('confirm-password', this)">
-                            <img class="w-5 h-5 invisible-eye" src="https://img.icons8.com/ios/50/closed-eye.png"
-                                alt="closed-eye" />
-                            <img class="w-5 h-5 visible-eye hidden" src="images/svg/password_visible.svg"
-                                alt="visible-eye" />
-                        </button>
-                    </div>
-                    <!-- Submit Button -->
-                    <div class="flex w-full lg:w-4/5 items-center gap-2">
-                        <label for="submit"
-                            class="w-1/3 text-end block text-xs lg:text-sm font-normal leading-[22px] mb-1">&nbsp;</label>
-                        <button type="button" id="update-password-btn"
-                            class="bg-[#0B3C49] text-white px-6 py-2 rounded-sm font-normal text-sm leading-[22px]">
-                            Update Password
-                        </button>
-                    </div>
-                </form>
-            </div>
 
-            <!-- Password Update Confirmation Popup -->
-            <div id="password-confirmation-popup"
-                class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div class="bg-white p-6 rounded-md shadow-lg w-full max-w-md">
-                    <h2 class="font-normal text-[16px] leading-6 mb-4">Change Password</h2>
-                    <p class="text-sm mb-6">
-                        You'll be <strong class="font-bold">logged out</strong> and will need to log in again to
-                        continue using the app.
-                    </p>
-                    <div class="flex justify-end gap-2">
-                        <button type="button" id="confirm-password-changes"
-                            class="bg-[#03677E] text-white px-6 py-1 rounded-sm">
-                            Confirm changes
-                        </button>
-                        <button type="button" id="cancel-password-changes"
-                            class="border border-[#D9D9D9] text-[#000000D9] px-6 py-1 rounded-sm">
-                            Cancel
-                        </button>
-                    </div>
-                </div>
-            </div>
 
         </main>
+
     </div>
 
 
@@ -867,9 +829,54 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="scripts/script.js"></script>
-    <script type="text/javascript" src="scripts/profileScript.js"></script>
+
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tab-booking-btn");
+            const contents = document.querySelectorAll(".tab-booking-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function () {
+                    // Remove active state from all tabs
+                    tabs.forEach(btn => {
+                        btn.classList.remove("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
+                        btn.classList.add("text-[#000000D9]");
+                    });
+
+                    // Add active state to clicked tab
+                    this.classList.add("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
+                    this.classList.remove("text-[#000000D9]");
+
+                    // Hide all tab contents
+                    contents.forEach(content => content.classList.add("hidden"));
+
+                    // Show the selected tab content
+                    document.getElementById(this.getAttribute("data-tab")).classList.remove("hidden");
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        // For navbar menu toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+        const btmNav = document.getElementById("bottom-nav");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const closeIcon = document.getElementById("close-icon");
+
+        menuToggle.addEventListener("click", () => {
+            // Toggle the visibility of the menu
+            menu.classList.toggle("hidden");
+            btmNav.classList.toggle("hidden");
+
+            // Toggle the icons
+            hamburgerIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("hidden");
+        });
+
+
         // For top navbar
         document.addEventListener("DOMContentLoaded", () => {
             const bsSpan = document.getElementById("toggle-bs");
@@ -937,7 +944,6 @@
             searchBar.classList.remove("hidden");
         });
     </script>
-
 
 </body>
 
