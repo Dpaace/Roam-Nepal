@@ -149,22 +149,6 @@ function toggleLoginPasswordVisibility() {
 
 
 
-
-
-
-flatpickr(".date-picker", {
-    enableTime: true,
-    noCalendar: false,
-    time_24hr: false,
-    dateFormat: "Y-m-d H:i K",
-    minuteIncrement: 30,
-    minDate: "today",
-    position: "auto center",
-    disableMobile: true, // Ensures Flatpickr UI is used instead of native pickers
-});
-
-
-
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 const btmNav = document.getElementById("bottom-nav");
@@ -182,6 +166,17 @@ menuToggle.addEventListener("click", () => {
 });
 
 
+
+flatpickr(".date-picker", {
+    enableTime: true,
+    noCalendar: false,
+    time_24hr: false,
+    dateFormat: "Y-m-d H:i K",
+    minuteIncrement: 30,
+    minDate: "today",
+    position: "auto center",
+    disableMobile: true, // Ensures Flatpickr UI is used instead of native pickers
+});
 
 
 // Get the button and the container
@@ -303,43 +298,6 @@ cross2.addEventListener("click", () => {
 });
 
 
-
-// onewayAddStopButton.addEventListener("click", () => {
-//     // Toggle the visibility of the menu
-//     onewayStopContainer1.classList.toggle("hidden");
-//     // Reuse the togglePickupClass function for onewayPickup and onewaySwitch
-//     togglePickupClass(onewayPickup, onewaySwitch);
-//     onewayStop1.style.display = 'none';
-//     onewayStop2.classList.toggle("hidden");
-// });
-
-// onewayStop2.addEventListener("click", () => {
-//     onewayStopContainer1.classList.remove("col-span-10");
-//     onewayStopContainer1.classList.add("col-span-12");
-//     onewayStopContainer2.classList.toggle("hidden");
-//     onewayStop2.style.display = 'none';
-//     onewaycross1.classList.toggle("hidden");
-//     onewaycross2.classList.toggle("hidden");
-// });
-
-// onewaycross1.addEventListener("click", () => {
-//     onewayStopContainer1.classList.remove("col-span-12");
-//     onewayStopContainer1.classList.add("col-span-10");
-//     onewayStopContainer2.classList.toggle("hidden");
-//     onewayStop2.style.display = 'block';
-//     onewaycross1.classList.toggle("hidden");
-//     onewaycross2.classList.toggle("hidden");
-// });
-
-// onewaycross2.addEventListener("click", () => {
-//     onewayStopContainer1.classList.remove("col-span-12");
-//     onewayStopContainer1.classList.add("col-span-10");
-//     onewayStopContainer2.classList.toggle("hidden");
-//     onewayStop2.style.display = 'block';
-//     onewaycross1.classList.toggle("hidden");
-//     onewaycross2.classList.toggle("hidden");
-// });
-
 onewayAddStopButton.addEventListener("click", () => {
     // Toggle the visibility of the first stop container
     onewayStopContainer1.classList.toggle("hidden");
@@ -391,55 +349,6 @@ onewaycross2.addEventListener("click", () => {
 });
 
 
-
-
-
-// hourlyAddStopButton.addEventListener("click", () => {
-//     // Toggle the visibility of the first stop container
-//     hourlyStopContainer1.classList.toggle("hidden");
-
-//     // Reuse the togglePickupClass function for hourlyPickup and hourlySwitch
-//     togglePickupClass(hourlyPickup, hourlySwitch);
-
-//     // Update visibility for the stops
-//     hourlyStop1.style.display = 'none';
-//     hourlyStop2.classList.toggle("hidden");
-// });
-
-// hourlyStop2.addEventListener("click", () => {
-//     hourlyStopContainer1.classList.remove("col-span-10");
-//     hourlyStopContainer1.classList.add("col-span-12");
-//     hourlyStopContainer2.classList.toggle("hidden");
-
-//     // Hide stop2 and show cross controls
-//     hourlyStop2.style.display = 'none';
-//     hourlycross1.classList.toggle("hidden");
-//     hourlycross2.classList.toggle("hidden");
-// });
-
-// hourlycross1.addEventListener("click", () => {
-//     hourlyStopContainer1.classList.remove("col-span-12");
-//     hourlyStopContainer1.classList.add("col-span-10");
-//     hourlyStopContainer2.classList.toggle("hidden");
-
-//     // Restore stop2 and hide cross controls
-//     hourlyStop2.style.display = 'block';
-//     hourlycross1.classList.toggle("hidden");
-//     hourlycross2.classList.toggle("hidden");
-// });
-
-// hourlycross2.addEventListener("click", () => {
-//     hourlyStopContainer1.classList.remove("col-span-12");
-//     hourlyStopContainer1.classList.add("col-span-10");
-//     hourlyStopContainer2.classList.toggle("hidden");
-
-//     // Restore stop2 and hide cross controls
-//     hourlyStop2.style.display = 'block';
-//     hourlycross1.classList.toggle("hidden");
-//     hourlycross2.classList.toggle("hidden");
-// });
-
-
 hourlyAddStopButton.addEventListener("click", () => {
     // Toggle the visibility of the first stop container
     hourlyStopContainer1.classList.toggle("hidden");
@@ -489,52 +398,6 @@ hourlycross2.addEventListener("click", () => {
     hourlycross1.classList.toggle("hidden");
     hourlycross2.classList.toggle("hidden");
 });
-
-
-
-// airportAddStopButton.addEventListener("click", () => {
-//     // Toggle the visibility of the first stop container
-//     airportMainPickup.classList.remove("col-span-10");
-//     airportMainPickup.classList.add("col-span-12");
-//     airportStopContainer1.classList.toggle("hidden");
-
-//     // Update visibility for the stops
-//     airportStop1.style.display = 'none';
-//     airportStop2.classList.toggle("hidden");
-// });
-
-// airportStop2.addEventListener("click", () => {
-//     airportStopContainer1.classList.remove("col-span-10");
-//     airportStopContainer1.classList.add("col-span-12");
-//     airportStopContainer2.classList.toggle("hidden");
-
-//     // Hide stop2 and show cross controls
-//     airportStop2.style.display = 'none';
-//     airportcross1.classList.toggle("hidden");
-//     airportcross2.classList.toggle("hidden");
-// });
-
-// airportcross1.addEventListener("click", () => {
-//     airportStopContainer1.classList.remove("col-span-12");
-//     airportStopContainer1.classList.add("col-span-10");
-//     airportStopContainer2.classList.toggle("hidden");
-
-//     // Restore stop2 and hide cross controls
-//     airportStop2.style.display = 'block';
-//     airportcross1.classList.toggle("hidden");
-//     airportcross2.classList.toggle("hidden");
-// });
-
-// airportcross2.addEventListener("click", () => {
-//     airportStopContainer1.classList.remove("col-span-12");
-//     airportStopContainer1.classList.add("col-span-10");
-//     airportStopContainer2.classList.toggle("hidden");
-
-//     // Restore stop2 and hide cross controls
-//     airportStop2.style.display = 'block';
-//     airportcross1.classList.toggle("hidden");
-//     airportcross2.classList.toggle("hidden");
-// });
 
 
 airportAddStopButton.addEventListener("click", () => {
@@ -1116,107 +979,92 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const scrollContainer = document.getElementById("continue-scroll");
 
-//     let scrollAmount = 1.2; // Adjust speed
-//     let direction = 1; // 1 = Right, -1 = Left
-//     let autoScroll;
+const wrapper = document.querySelector(".wrapper");
+const carousel = document.querySelector(".carousel");
+const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+const arrowBtns = document.querySelectorAll(".wrapper .arrow");
+const carouselChildrens = [...carousel.children];
 
-//     function startAutoScroll() {
-//         autoScroll = setInterval(() => {
-//             scrollContainer.scrollLeft += scrollAmount * direction;
+let issDragging = false, isAutoPlay = true, sstartX, startScrollLeft, timeoutId;
 
-//             // Reverse scrolling direction at ends
-//             if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-//                 direction = -1; // Scroll left
-//             } else if (scrollContainer.scrollLeft <= 0) {
-//                 direction = 1; // Scroll right
-//             }
-//         }, 20);
-//     }
+// Get the number of cards that can fit in the carousel at once
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
-//     // Start auto-scrolling
-//     startAutoScroll();
-
-//     // Pause auto-scroll when hovering
-//     scrollContainer.addEventListener("mouseenter", () => clearInterval(autoScroll));
-
-//     // Resume auto-scroll when leaving
-//     scrollContainer.addEventListener("mouseleave", () => startAutoScroll());
-
-//     // Smooth manual scrolling using mouse wheel
-//     scrollContainer.addEventListener("wheel", (e) => {
-//         e.preventDefault();
-//         scrollContainer.scrollLeft += e.deltaY > 0 ? 100 : -100;
-//     });
-
-//     // Enable drag-to-scroll (Desktop + Mobile)
-//     let isDragging = false;
-//     let startX, scrollLeftStart;
-
-//     scrollContainer.addEventListener("mousedown", (e) => {
-//         isDragging = true;
-//         clearInterval(autoScroll);
-//         startX = e.pageX;
-//         scrollLeftStart = scrollContainer.scrollLeft;
-//     });
-
-//     scrollContainer.addEventListener("mousemove", (e) => {
-//         if (!isDragging) return;
-//         let moveX = e.pageX - startX;
-//         scrollContainer.scrollLeft = scrollLeftStart - moveX;
-//     });
-
-//     scrollContainer.addEventListener("mouseup", () => {
-//         isDragging = false;
-//         startAutoScroll();
-//     });
-
-//     // Enable touch scrolling for mobile
-//     scrollContainer.addEventListener("touchstart", (e) => {
-//         isDragging = true;
-//         clearInterval(autoScroll);
-//         startX = e.touches[0].pageX;
-//         scrollLeftStart = scrollContainer.scrollLeft;
-//     });
-
-//     scrollContainer.addEventListener("touchmove", (e) => {
-//         if (!isDragging) return;
-//         let moveX = e.touches[0].pageX - startX;
-//         scrollContainer.scrollLeft = scrollLeftStart - moveX;
-//     });
-
-//     scrollContainer.addEventListener("touchend", () => {
-//         isDragging = false;
-//         startAutoScroll();
-//     });
-// });
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const scrollContainer = document.getElementById('continue-scroll');
-    const cards = scrollContainer.children;
-    const cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
-    const totalCards = cards.length;
-    let currentIndex = 2;
-
-    function centerCard(index) {
-        const offset = (scrollContainer.offsetWidth / 2) - (cardWidth / 2) - (index * cardWidth);
-        scrollContainer.scrollTo({
-            left: -offset,
-            behavior: 'smooth'
-        });
-    }
-
-    function autoScroll() {
-        currentIndex = (currentIndex + 1) % totalCards;
-        centerCard(currentIndex);
-    }
-
-    centerCard(currentIndex);
-
-    setInterval(autoScroll, 3000);
+// Insert copies of the last few cards to beginning of carousel for infinite scrolling
+carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
 });
 
+// Insert copies of the first few cards to end of carousel for infinite scrolling
+carouselChildrens.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
 
+// Scroll the carousel at appropriate position to hide first few duplicate cards on Firefox
+carousel.classList.add("no-transition");
+carousel.scrollLeft = carousel.offsetWidth;
+carousel.classList.remove("no-transition");
+
+// Add event listeners for the arrow buttons to scroll the carousel left and right
+arrowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+    });
+});
+
+const dragStart = (e) => {
+    issDragging = true;
+    carousel.classList.add("dragging");
+    // Records the initial cursor and scroll position of the carousel
+    sstartX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+}
+
+const dragging = (e) => {
+    if (!issDragging) return; // if issDragging is false return from here
+    // Updates the scroll position of the carousel based on the cursor movement
+    carousel.scrollLeft = startScrollLeft - (e.pageX - sstartX);
+}
+
+const dragStop = () => {
+    issDragging = false;
+    carousel.classList.remove("dragging");
+}
+
+const infiniteScroll = () => {
+    // If the carousel is at the beginning, scroll to the end
+    if (carousel.scrollLeft === 0) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+    }
+    // If the carousel is at the end, scroll to the beginning
+    else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+    }
+    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+    clearTimeout(timeoutId);
+    if (!wrapper.matches(":hover")) autoPlay();
+}
+
+const autoPlay = () => {
+    if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+    // Autoplay the carousel after every 2000 ms
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2000);
+}
+
+autoPlay();
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
+
+
+
+ 

@@ -549,14 +549,11 @@
                         class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100 text-black whitespace-nowrap">
                         Airport Pick/Drop
                     </button>
-
                 </div>
-
             </div>
             <div class="bg-white container flex shadow-lg px-0 lg:px-0 lg:min-h-fit lg:min-w-full">
                 <div id="form-container-round-trip" class="w-full lg:w-1/2 p-4">
                     <form class="space-y-4 ">
-                        <!-- <div class="grid grid-rows-2 grid-cols-12 gap-2 lg:w-full lg:flex lg:items-center "> -->
                         <div
                             class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center">
                             <!-- Pick-Up Field -->
@@ -742,7 +739,6 @@
                             </div>
 
                             <!-- Drop-Off Field -->
-                            <!-- <div id="round-dropff" class="col-span-9 lg:w-[35%] lg:relative rounded border border-formBorder lg:p-0"> -->
                             <div id="round-dropff" class="col-span-12  rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
@@ -851,7 +847,6 @@
 
                 <div id="form-container-one-way" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
-                        <!-- <div class="w-full flex items-center "> -->
                         <div
                             class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
@@ -1056,11 +1051,9 @@
 
                 <div id="form-container-hourly" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
-                        <!-- <div class="w-full flex items-center "> -->
                         <div
                             class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center ">
                             <!-- Pick-Up Field -->
-                            <!-- <div class="w-[35%] "> -->
                             <div id="hourly-main-pickup" class="col-span-10">
                                 <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
@@ -1173,7 +1166,6 @@
                             </div>
 
                             <!-- Drop-Off Field -->
-                            <!-- <div class="w-[35%] relative rounded border border-formBorder p-0"> -->
                             <div id="hourly-dropff" class="col-span-12   rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
@@ -1236,7 +1228,6 @@
                                     class="w-full bg-transparent outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                     placeholder="Enter number of hours">
                             </div>
-                            <!-- <h1 class="font-normal text-sm text-[#49454F]">Maximum is 10. Goto <a href="">Round Trip </a>for more options.</h1> -->
                             <h1 class="font-normal text-xs lg:text-sm text-[#49454F] mt-1">
                                 Maximum is 10. Goto
                                 <a href="#" class="underline text-[#03677E]" onclick="switchToRoundTrip()">Round
@@ -1385,13 +1376,6 @@
                                 </button>
                             </div>
 
-                            <!-- <div id="airport-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
-                                <button type="button" id="airport-add-stop-btn"
-                                    class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
-                                </button>
-                            </div> -->
-
                             <div id="airport-stop-container-2"
                                 class="hidden col-span-12  lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
@@ -1464,7 +1448,7 @@
     </div>
 
     <!-- Continue Where You Left Off Section -->
-    <div class="lg:py-10 py-4 mt-10 my-4 lg:my-[88px] container lg:max-w-full lg:items-center lg:px-28 px-5 ">
+    <!-- <div class="lg:py-10 py-4 mt-10 my-4 lg:my-[88px] container lg:max-w-full lg:items-center lg:px-28 px-5 ">
         <div class="container lg:min-w-full  ">
 
             <h2 class="text-[14px] lg:text-[32px] text-black font-[400] leading-10 mb-2 lg:mb-4">Continue where you left
@@ -1504,31 +1488,83 @@
                         <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
                     </div>
                 </div>
-                <div
-                    class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
-                    <div class="flex items-center">
-                        <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
-                    </div>
-                    <div>
-                        <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to Pokhara
-                        </p>
-                        <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
-                    </div>
-                </div>
-                <div
-                    class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
-                    <div class="flex items-center">
-                        <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
-                    </div>
-                    <div>
-                        <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to Pokhara
-                        </p>
-                        <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
-                    </div>
-                </div>
+
             </div>
         </div>
+    </div> -->
+
+
+    <div class=" w-full lg:py-10 py-4 mt-10 my-4 lg:my-[88px] container lg:max-w-full lg:items-center lg:px-28 px-5">
+        <h2 class="text-[14px] lg:text-[32px] text-black font-[400] leading-10 mb-2 lg:mb-4">Continue where you left
+            off
+        </h2>
+        <div class="wrapper container lg:max-w-full lg:items-center">
+            <img id="left" src="images/svg/left-arrow.svg" alt="left"
+                class="arrow w-6 h-6 -left-[10px] lg:-left-[10px]">
+            <ul class="carousel">
+                <li class="card">
+                    <div
+                        class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
+                        <div class="flex items-center">
+                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
+                        </div>
+                        <div>
+                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to
+                                Pokhara
+                            </p>
+                            <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="card">
+                    <div
+                        class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
+                        <div class="flex items-center">
+                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
+                        </div>
+                        <div>
+                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to
+                                Pokhara
+                            </p>
+                            <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="card">
+                    <div
+                        class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
+                        <div class="flex items-center">
+                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
+                        </div>
+                        <div>
+                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to
+                                Pokhara
+                            </p>
+                            <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="card">
+                    <div
+                        class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
+                        <div class="flex items-center">
+                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
+                        </div>
+                        <div>
+                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to
+                                Pokhara
+                            </p>
+                            <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <img id="right" src="images/svg/right-arrow.svg" alt="right"
+                class="arrow w-6 h-6 -right-[10px] lg:-right-[10px]">
+        </div>
     </div>
+
+
 
     <!-- Travel Experience Section -->
     <div class="bg-white py-5  lg:py-0 container h-[300px] lg:max-w-full lg:px-28 lg:min-h-[450px] lg:max-h-[600px]">
@@ -1598,7 +1634,6 @@
             <div id="offer-scroll"
                 class="flex items-center p-0 lg:p-2 h-[245px] lg:h-[270px] space-x-[10px] overflow-x-auto scrollbar-hide"
                 onwheel="scrollHorizontally(event)">
-                <!-- Card 1 -->
                 <div
                     class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
                     <div class="relative rounded-t-lg overflow-hidden">
@@ -1677,7 +1712,7 @@
                 <div
                     class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
                     <div class="relative rounded-t-lg overflow-hidden">
-                        <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                        <img src="images/svg/black-friday-2.svg" alt="Black Friday Deals"
                             class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
                         <span
                             class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
@@ -1689,13 +1724,12 @@
                         <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
     </div>
+
+    
+
 
     <!-- Reach Section -->
     <div class="bg-white lg:flex px-5 py-5 lg:py-10 lg:max-w-full lg:min-h-[500px] lg:px-28" id="our-reach">
