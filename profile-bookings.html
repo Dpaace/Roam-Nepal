@@ -404,8 +404,6 @@
 
 
                 <div id="today" class="tab-booking-content">
-                    <h3 class="text-lg font-semibold mb-4">Today's Bookings</h3>
-
                     <!-- Accordion Container -->
                     <div class="space-y-2">
                         <!-- Accordion Item 1 - Bus Tickets -->
@@ -535,7 +533,8 @@
                                                 </button>
 
                                                 <!-- Popup Content -->
-                                                <h2 class="font-normal text-[#000000D9] text-[16px] leading-6 mb-2">Choose a new date</h2>
+                                                <h2 class="font-normal text-[#000000D9] text-[16px] leading-6 mb-2">
+                                                    Choose a new date</h2>
                                                 <p class="font-normal text-[#000000D9] text-[14px] leading-[22px] mb-4">
                                                     Please note that your selected dates are <span
                                                         class="font-semibold">NOT confirmed</span>.
@@ -552,7 +551,8 @@
                                                     <!-- <input type="text" id="pickup-datess"
                                                         class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
                                                         placeholder="Pick-Up Date / Time" data-input /> -->
-                                                    <input type="text" id="reschedule-date" name="reschedule-date" placeholder="Select a date"
+                                                    <input type="text" id="reschedule-date" name="reschedule-date"
+                                                        placeholder="Select a date"
                                                         class="date-picker w-full border border-gray-300 p-2 rounded-md focus:outline-none">
                                                     <span class="absolute right-3 top-3 text-gray-500">
                                                         <img src="images/svg/reschedule-date.svg" alt="Calendar Icon"
@@ -847,39 +847,169 @@
                     </div>
                 </div>
 
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const accordions = document.querySelectorAll(".accordion-header");
-
-                        accordions.forEach(header => {
-                            header.addEventListener("click", function () {
-                                const content = this.nextElementSibling;
-                                const icon = this.querySelector(".accordion-icon");
-
-                                // Toggle the accordion
-                                content.classList.toggle("hidden");
-                                icon.style.transform = content.classList.contains("hidden") ? "rotate(0deg)" : "rotate(90deg)";
-                            });
-                        });
-                    });
-                </script>
-
-
-
-
-
 
                 <div id="upcoming" class="tab-booking-content hidden">
                     <h3 class="text-lg font-semibold">Upcoming Bookings</h3>
                     <p class="text-gray-600">You have 5 upcoming bookings.</p>
                 </div>
+
                 <div id="completed" class="tab-booking-content hidden">
                     <h3 class="text-lg font-semibold">Completed Bookings</h3>
                     <p class="text-gray-600">You have successfully completed 12 bookings.</p>
                 </div>
+
                 <div id="cancelled" class="tab-booking-content hidden">
-                    <h3 class="text-lg font-semibold">Cancelled Bookings</h3>
-                    <p class="text-gray-600">You have 2 cancelled bookings.</p>
+                    <!-- Accordion Container -->
+                    <div class="space-y-2">
+                        <!-- Accordion Item 1 - Bus Tickets -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span>Bus Tickets</span>
+                            </button>
+                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+                                <!-- Bus Ticket Card -->
+                                <div class="border rounded-[4px] px-8 py-4 bg-white">
+                                    <div class="flex justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[20px] leading-4 text-black">Tourist Bus with
+                                                Sleeper</h2>
+                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Tourist Bus</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3,
+                                                A4)</p>
+                                        </div>
+                                        <div class="flex space-x-2 items-center">
+                                            <button
+                                                class="bg-black text-white font-normal text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[120px] flex items-center justify-center gap-2">
+                                                <img class="w-[14px] h-[14px]" src="images/svg/moon.svg" alt="halfmoon">
+                                                Night
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex items-center justify-between w-full">
+                                        <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
+                                                06:00 AM</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="w-3/5 flex items-center justify-between py-4">
+                                            <!-- Start Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[20px] leading-4 text-black">17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black"">Kathmandu</p>
+                                            </div>
+
+                                            <!-- Travel Duration -->
+                                            <div class=" flex-1 flex flex-col items-center relative mx-4">
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
+                                                <hr class="w-full ">
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453
+                                                </p>
+                                            </div>
+
+                                            <!-- End Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex justify-center items-center mt-4">
+                                        <div class="flex">
+                                            <span
+                                                class="flex space-x-4 whitespace-nowrap text-nowrap font-normal text-[16px] leading-6">
+                                                Status:&nbsp;
+                                                <span class="font-bold text-[#2D7E95]">
+                                                    Refunded
+                                                </span>
+                                                <img id="open-refund-popup" class="w-6 h-6 hover:cursor-pointer"
+                                                    src="images/svg/InfoCircle.svg" alt="info">
+                                            </span>
+                                        </div>
+                                        <div id="refund-status-popup"
+                                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden text-black z-50 ">
+                                            <div class="bg-white w-[400px] rounded-lg shadow-lg p-6 relative">
+                                                <!-- Close Button -->
+                                                <button id="close-refund-popup"
+                                                    class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                                    &times;
+                                                </button>
+
+                                                <!-- Popup Content -->
+                                                <h2 class="font-normal text-[#000000D9] text-[16px] leading-6 ">Ticket
+                                                    Status
+                                                </h2>
+
+                                                <p class="font-normal text-[#000000D9] text-[16px] leading-6 my-2">
+                                                    Status:
+                                                    <span class="font-bold text-[#2D7E95]">
+                                                        Refunded
+                                                    </span>
+                                                </p>
+                                                <p class="font-normal text-[#000000D9] text-[16px] leading-[22px]">Ticket ID: 123456</p>
+                                                <p class="font-normal text-[#000000D9] text-[16px] leading-[22px]">Cancellation Date: Dec 15, 2024</p>
+                                                <p class="tfont-normal text-[#000000D9] text-[16px] leading-[22px]">Refund Amount: NPR 1,200</p>
+
+                                                <p class="font-normal text-[#44474F] text-[14px] leading-5 mt-[10px]">Refund Date: Dec 20, 2024</p>
+                                                <p class="font-normal text-[#44474F] text-[14px] leading-5">Refund Method: eSewa Wallet</p>
+                                                <p class="font-normal text-[#44474F] text-[14px] leading-5">Transaction ID: TXN789654123</p>
+
+                                                <p class="font-normal text-[#44474F] text-[10px] leading-5 mt-[10px] tracking-[0.25px]">
+                                                    If you don't see the refund in your account, please check your
+                                                    payment method or
+                                                    <a href="#" class="text-[#03677E] underline">contact us</a>.
+                                                </p>
+
+                                                <!-- Close Button -->
+                                                <div class="flex justify-end mt-4">
+                                                    <button id="confirm-refund-close"
+                                                        class="bg-[#0B3C49] text-white px-4 py-2 rounded-md hover:bg-[#092c3a]">
+                                                        Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 2 - Hotels -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span>Hotels</span>
+                            </button>
+                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+                                <p class="text-gray-600">Hotel Cancellation Details go here.</p>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 3 - Reservation -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span>Reservation</span>
+                            </button>
+                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+                                <p class="text-gray-600">Reservation Cancellation Details go here.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1002,6 +1132,51 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const refundPopup = document.getElementById("refund-status-popup");
+            const openRefundBtn = document.getElementById("open-refund-popup");
+            const closeRefundBtn = document.getElementById("close-refund-popup");
+            const confirmCloseBtn = document.getElementById("confirm-refund-close");
+
+            // Open the popup when clicking the info icon
+            openRefundBtn.addEventListener("click", () => {
+                refundPopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close the popup when clicking the (X) close button
+            closeRefundBtn.addEventListener("click", () => {
+                refundPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+            // Close the popup when clicking "Close" button
+            confirmCloseBtn.addEventListener("click", () => {
+                refundPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const accordions = document.querySelectorAll(".accordion-header");
+
+            accordions.forEach(header => {
+                header.addEventListener("click", function () {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector(".accordion-icon");
+
+                    // Toggle the accordion
+                    content.classList.toggle("hidden");
+                    icon.style.transform = content.classList.contains("hidden") ? "rotate(0deg)" : "rotate(90deg)";
+                });
+            });
+        });
+    </script>
 
     <script>
 
