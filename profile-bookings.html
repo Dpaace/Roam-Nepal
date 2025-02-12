@@ -410,7 +410,8 @@
                     <div class="space-y-2">
                         <!-- Accordion Item 1 - Bus Tickets -->
                         <div class="border border-[#D9D9D9] rounded-sm">
-                            <button class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
                                 <span class="accordion-icon transition-transform">▶</span>
                                 <span>Bus Tickets</span>
                             </button>
@@ -441,9 +442,10 @@
 
                                     <div class="flex items-center justify-between w-full">
                                         <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
-                                            <p><strong>Boarding Point:</strong> Buspark, Kathmandu</p>
-                                            <p><strong>Arrive at boarding point:</strong> 27 Nov 2024, 06:00 AM</p>
-                                            <p><strong>Dropping Point:</strong> Basundhara, Pokhara</p>
+                                            <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
+                                                06:00 AM</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
                                         </div>
                                         <div class="w-3/5 flex items-center justify-between py-4">
                                             <!-- Start Time -->
@@ -453,19 +455,17 @@
                                             </div>
 
                                             <!-- Travel Duration -->
-                                            <div class="flex-1 flex flex-col items-center relative mx-4">
-                                                <!-- <div
-                                                    class="w-full border-t border-gray-300 absolute top-1/2 transform -translate-y-1/2">
-                                                </div> -->
+                                            <div class=" flex-1 flex flex-col items-center relative mx-4">
                                                 <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
                                                 <hr class="w-full ">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453</p>
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453
+                                                </p>
                                             </div>
 
                                             <!-- End Time -->
                                             <div class="text-center">
                                                 <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
-                                                <p class="font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black"">Pokhara</p>
                                             </div>
                                         </div>
                                     </div>
@@ -478,13 +478,99 @@
                                                     class="text-[36px]">3000</span></span>
                                         </div>
                                         <div class="flex space-x-2">
-                                            <button
-                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">Cancel
-                                                Ticket</button>
-                                            <button
-                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">Reschedule
-                                                Ticket</button>
+                                            <!-- Cancel Ticket Button -->
+                                            <button id="open-cancel-popup"
+                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Cancel Ticket
+                                            </button>
+
+                                            <!-- Reschedule Ticket Button -->
+                                            <button id="open-reschedule-popup"
+                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Reschedule Ticket
+                                            </button>
                                         </div>
+
+                                        <div id="cancel-ticket-popup"
+                                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden text-black">
+                                            <div class="bg-white w-[400px] rounded-lg shadow-lg p-6 relative">
+                                                <!-- Close Button -->
+                                                <button id="close-cancel-popup"
+                                                    class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                                    &times;
+                                                </button>
+
+                                                <!-- Popup Content -->
+                                                <h2 class="font-normal text-[#000000D9] text-[16px] leading-6 mb-2">
+                                                    Cancel ticket</h2>
+                                                <p class="font-normal text-[#000000D9] text-[14px] leading-[22px] mb-4">
+                                                    You will be charged with <strong>Rs.300</strong> according to our
+                                                    <a href="#" class="text-[#03677E] underline">cancellation
+                                                        policy</a>.
+                                                    This action cannot be undone. Are you sure you want to cancel your
+                                                    ticket?
+                                                </p>
+
+                                                <!-- Popup Buttons -->
+                                                <div class="flex justify-end space-x-2">
+                                                    <button id="go-back-btn"
+                                                        class="border font-normal text-black text-[14px] leading-[22px] px-4 py-2 rounded-sm text-nowrap">
+                                                        Go Back
+                                                    </button>
+                                                    <button id="confirm-cancel-btn"
+                                                        class="bg-[#BA1A1A] font-normal text-white text-[14px] leading-[22px] px-4 py-2 rounded-sm text-nowrap">
+                                                        Cancel Ticket
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="reschedule-ticket-popup"
+                                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 text-black">
+                                            <div class="bg-white w-[400px] rounded-lg shadow-lg p-6 relative">
+                                                <!-- Close Button -->
+                                                <button id="close-reschedule-popup"
+                                                    class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                                    &times;
+                                                </button>
+
+                                                <!-- Popup Content -->
+                                                <h2 class="font-normal text-[#000000D9] text-[16px] leading-6 mb-2">Choose a new date</h2>
+                                                <p class="font-normal text-[#000000D9] text-[14px] leading-[22px] mb-4">
+                                                    Please note that your selected dates are <span
+                                                        class="font-semibold">NOT confirmed</span>.
+                                                    Our customer support will contact you with the confirmation of the
+                                                    new date.
+                                                </p>
+
+                                                <!-- Date Picker -->
+                                                <label for="reschedule-date"
+                                                    class="block font-normal text-[#000000D9] text-[14px] leading-[22px] mb-1">New
+                                                    date</label>
+                                                <div class="relative">
+
+                                                    <!-- <input type="text" id="pickup-datess"
+                                                        class="w-full bg-transparent outline-none cursor-pointer date-picker placeholder:text-sm placeholder:text-txtPlaceholder"
+                                                        placeholder="Pick-Up Date / Time" data-input /> -->
+                                                    <input type="text" id="reschedule-date" name="reschedule-date" placeholder="Select a date"
+                                                        class="date-picker w-full border border-gray-300 p-2 rounded-md focus:outline-none">
+                                                    <span class="absolute right-3 top-3 text-gray-500">
+                                                        <img src="images/svg/reschedule-date.svg" alt="Calendar Icon"
+                                                            class="w-5 h-5">
+                                                    </span>
+                                                </div>
+
+                                                <!-- Popup Buttons -->
+                                                <div class="flex justify-end space-x-2 mt-4">
+                                                    <button id="confirm-reschedule-btn"
+                                                        class="bg-[#0B3C49] text-white px-4 py-2 rounded-md hover:bg-[#092c3a]">
+                                                        Change Dates
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                     </div>
                                 </div>
 
@@ -499,45 +585,36 @@
                                             <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3,
                                                 A4)</p>
                                         </div>
-                                        <!-- <div class="flex space-x-2 items-center">
-                                            <button
-                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">View
-                                                Ticket</button>
-                                            <button
-                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">Track
-                                                Vehicle</button>
-                                        </div> -->
                                     </div>
 
                                     <hr class="my-2">
 
                                     <div class="flex items-center justify-between w-full">
                                         <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
-                                            <p><strong>Boarding Point:</strong> Buspark, Kathmandu</p>
-                                            <p><strong>Arrive at boarding point:</strong> 27 Nov 2024, 06:00 AM</p>
-                                            <p><strong>Dropping Point:</strong> Basundhara, Pokhara</p>
+                                            <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
+                                                06:00 AM</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
                                         </div>
                                         <div class="w-3/5 flex items-center justify-between py-4">
                                             <!-- Start Time -->
                                             <div class="text-center">
                                                 <p class="font-normal text-[20px] leading-4 text-black">17:00 PM</p>
-                                                <p class="font-normal text-[10px] leading-4 text-black"">Kathmandu</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black">Kathmandu</p>
                                             </div>
 
                                             <!-- Travel Duration -->
-                                            <div class="flex-1 flex flex-col items-center relative mx-4">
-                                                <!-- <div
-                                                    class="w-full border-t border-gray-300 absolute top-1/2 transform -translate-y-1/2">
-                                                </div> -->
+                                            <div class=" flex-1 flex flex-col items-center relative mx-4">
                                                 <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
                                                 <hr class="w-full ">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453</p>
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453
+                                                </p>
                                             </div>
 
                                             <!-- End Time -->
                                             <div class="text-center">
                                                 <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
-                                                <p class="font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black"">Pokhara</p>
                                             </div>
                                         </div>
                                     </div>
@@ -591,9 +668,10 @@
 
                                     <div class="flex items-center justify-between w-full">
                                         <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
-                                            <p><strong>Boarding Point:</strong> Buspark, Kathmandu</p>
-                                            <p><strong>Arrive at boarding point:</strong> 27 Nov 2024, 06:00 AM</p>
-                                            <p><strong>Dropping Point:</strong> Basundhara, Pokhara</p>
+                                            <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
+                                                06:00 AM</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
                                         </div>
                                         <div class="w-3/5 flex items-center justify-between py-4">
                                             <!-- Start Time -->
@@ -603,19 +681,20 @@
                                             </div>
 
                                             <!-- Travel Duration -->
-                                            <div class="flex-1 flex flex-col items-center relative mx-4">
-                                                <!-- <div
+                                            <div class=" flex-1 flex flex-col items-center relative mx-4">
+                                                    <!-- <div
                                                     class="w-full border-t border-gray-300 absolute top-1/2 transform -translate-y-1/2">
                                                 </div> -->
                                                 <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
                                                 <hr class="w-full ">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453</p>
+                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453
+                                                </p>
                                             </div>
 
                                             <!-- End Time -->
                                             <div class="text-center">
                                                 <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
-                                                <p class="font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black"">Pokhara</p>
                                             </div>
                                         </div>
                                     </div>
@@ -653,23 +732,116 @@
 
                         <!-- Accordion Item 2 - Hotels -->
                         <div class="border border-[#D9D9D9] rounded-sm">
-                            <button class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
                                 <span class="accordion-icon transition-transform">▶</span>
                                 <span>Hotels</span>
                             </button>
-                            <div class="accordion-content hidden p-4 bg-white">
+                            <div class="accordion-content hidden p-4 bg-white space-y-8">
                                 <p class="text-gray-600">Hotel Booking Details go here.</p>
                             </div>
                         </div>
 
                         <!-- Accordion Item 3 - Reservation -->
                         <div class="border border-[#D9D9D9] rounded-sm">
-                            <button class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
                                 <span class="accordion-icon transition-transform">▶</span>
                                 <span>Reservation</span>
                             </button>
-                            <div class="accordion-content hidden p-4 bg-white">
-                                <p class="text-gray-600">Reservation Details go here.</p>
+                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+                                <div class="border rounded-[4px] px-8 py-4">
+                                    <div class="flex justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[20px] leading-4 text-black">
+                                                Tata Nexon
+                                            </h2>
+                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Big SUV</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <!-- <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3, A4)</p> -->
+                                        </div>
+                                        <div class="flex space-x-2 items-center">
+                                            <button
+                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">
+                                                View Details
+                                            </button>
+                                            <button
+                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">
+                                                Track
+                                                Vehicle
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex items-center justify-between w-full">
+                                        <div
+                                            class="w-2/5 flex items-start justify-center flex-col font-normal text-[14px] leading-5 text-[#171C1F]">
+                                            <p><span class="font-bold">Pickup Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="flex items-center w-3/5 justify-end py-4 space-x-2">
+
+                                            <button
+                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Cancel Booking</button>
+                                            <button
+                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Reschedule Booking</button>
+                                            <!-- <button
+                                                class="w-[332px] h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Review
+                                            </button> -->
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="border rounded-[4px] px-8 py-4">
+                                    <div class="flex justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[20px] leading-4 text-black">
+                                                Tata Nexon
+                                            </h2>
+                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Big SUV</p>
+                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <!-- <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3, A4)</p> -->
+                                        </div>
+                                        <div class="flex space-x-2 items-center">
+                                            <button
+                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">
+                                                View Details
+                                            </button>
+                                            <button
+                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">
+                                                Track
+                                                Vehicle
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex items-center justify-between w-full">
+                                        <div
+                                            class="w-2/5 flex items-start justify-center flex-col font-normal text-[14px] leading-5 text-[#171C1F]">
+                                            <p><span class="font-bold">Pickup Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="flex items-center w-3/5 justify-end py-4">
+                                            <button
+                                                class="w-[332px] h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                Review
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -828,6 +1000,69 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+
+        flatpickr(".date-picker", {
+            enableTime: true,
+            noCalendar: false,
+            time_24hr: false,
+            dateFormat: "Y-m-d H:i K",
+            minuteIncrement: 30,
+            minDate: "today",
+            position: "auto center",
+            disableMobile: true, // Ensures Flatpickr UI is used instead of native pickers
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const reschedulePopup = document.getElementById("reschedule-ticket-popup");
+            const openRescheduleBtn = document.getElementById("open-reschedule-popup");
+            const closeRescheduleBtn = document.getElementById("close-reschedule-popup");
+
+            // Open the popup
+            openRescheduleBtn.addEventListener("click", () => {
+                reschedulePopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close the popup when clicking 'X' button
+            closeRescheduleBtn.addEventListener("click", () => {
+                reschedulePopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cancelPopup = document.getElementById("cancel-ticket-popup");
+            const openCancelBtn = document.getElementById("open-cancel-popup");
+            const closeCancelBtn = document.getElementById("close-cancel-popup");
+            const goBackBtn = document.getElementById("go-back-btn");
+
+            // Open the popup
+            openCancelBtn.addEventListener("click", () => {
+                cancelPopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close the popup when clicking 'X' or 'Go Back'
+            closeCancelBtn.addEventListener("click", () => {
+                cancelPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+            goBackBtn.addEventListener("click", () => {
+                cancelPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+        });
+    </script>
+
 
 
     <script>
