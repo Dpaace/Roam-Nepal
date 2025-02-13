@@ -187,6 +187,7 @@ ptabs.forEach((tab) => {
 // });
 
 document.addEventListener("DOMContentLoaded", function () {
+    const progressIndicator = document.getElementById("p-indicator");
     const progressCircle = document.getElementById("progressCircle");
     const progressText = document.getElementById("progressText");
     const progressWrapper = document.getElementById("progressWrapper");
@@ -214,6 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Toggle visibility
         if (progress === 100) {
+            progressIndicator.classList.add("hidden");
             progressWrapper.classList.add("hidden");
             progressText.classList.add("hidden");
             tickImage.classList.remove("hidden");
