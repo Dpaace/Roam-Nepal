@@ -152,3 +152,85 @@ ptabs.forEach((tab) => {
     });
 });
 
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const progressCircle = document.getElementById("progressCircle");
+//     const progressText = document.getElementById("progressText");
+//     const formInputs = document.querySelectorAll(".form-input"); // Add class "form-input" to all inputs
+//     const totalInputs = formInputs.length;
+
+//     function updateProgress() {
+//         let filledInputs = 0;
+
+//         // Count filled inputs
+//         formInputs.forEach(input => {
+//             if (input.value.trim() !== "") {
+//                 filledInputs++;
+//             }
+//         });
+
+//         // Calculate percentage
+//         let progress = Math.round((filledInputs / totalInputs) * 100);
+//         let dashOffset = 100 - progress;
+
+//         // Update circle progress
+//         progressCircle.style.strokeDasharray = `${progress}, 100`;
+//         progressText.textContent = `${progress}%`;
+//     }
+
+//     // Attach event listeners to all inputs
+//     formInputs.forEach(input => {
+//         input.addEventListener("input", updateProgress);
+//     });
+
+//     updateProgress(); // Initial update on page load
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const progressCircle = document.getElementById("progressCircle");
+    const progressText = document.getElementById("progressText");
+    const progressWrapper = document.getElementById("progressWrapper");
+    const tickImage = document.getElementById("tickImage");
+    const formInputs = document.querySelectorAll(".form-input"); // Make sure your form inputs have this class
+    const totalInputs = formInputs.length;
+
+    function updateProgress() {
+        let filledInputs = 0;
+
+        // Count filled inputs
+        formInputs.forEach(input => {
+            if (input.value.trim() !== "") {
+                filledInputs++;
+            }
+        });
+
+        // Calculate percentage
+        let progress = Math.round((filledInputs / totalInputs) * 100);
+        let dashOffset = 100 - progress;
+
+        // Update circle progress
+        progressCircle.style.strokeDasharray = `${progress}, 100`;
+        // progressText.textContent = `${progress}%`;
+
+        // Toggle visibility
+        if (progress === 100) {
+            progressWrapper.classList.add("hidden");
+            progressText.classList.add("hidden");
+            tickImage.classList.remove("hidden");
+        } else {
+            progressWrapper.classList.remove("hidden");
+            progressText.classList.remove("hidden");
+            tickImage.classList.add("hidden");
+        }
+    }
+
+    // Attach event listeners to all inputs
+    formInputs.forEach(input => {
+        input.addEventListener("input", updateProgress);
+    });
+
+    updateProgress(); // Initial update on page load
+});
+
+
+
