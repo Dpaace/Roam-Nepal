@@ -14,35 +14,35 @@ function togglePassword(inputId, button) {
     }
 }
 
-// Get elements
-const feedbackPopup = document.getElementById("feedback-popup");
-const openFeedbackBtn = document.getElementById("open-feedback-popup");
-const closeFeedbackBtn = document.getElementById("close-feedback-popup");
-const cancelFeedbackBtn = document.getElementById("cancel-feedback");
-const feedbackDetails = document.getElementById("feedback-details");
-const charCount = document.getElementById("char-count");
+// // Get elements
+// const feedbackPopup = document.getElementById("feedback-popup");
+// const openFeedbackBtn = document.getElementById("open-feedback-popup");
+// const closeFeedbackBtn = document.getElementById("close-feedback-popup");
+// const cancelFeedbackBtn = document.getElementById("cancel-feedback");
+// const feedbackDetails = document.getElementById("feedback-details");
+// const charCount = document.getElementById("char-count");
 
-// Open popup
-openFeedbackBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    feedbackPopup.classList.remove("hidden");
-    document.body.classList.add("disable-scroll"); // Disable background scroll
-});
+// // Open popup
+// openFeedbackBtn.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     feedbackPopup.classList.remove("hidden");
+//     document.body.classList.add("disable-scroll"); // Disable background scroll
+// });
 
-// Close popup
-closeFeedbackBtn.addEventListener("click", () => {
-    feedbackPopup.classList.add("hidden");
-    document.body.classList.remove("disable-scroll"); // Enable background scroll
-});
-cancelFeedbackBtn.addEventListener("click", () => {
-    feedbackPopup.classList.add("hidden");
-    document.body.classList.remove("disable-scroll"); // Enable background scroll
-});
+// // Close popup
+// closeFeedbackBtn.addEventListener("click", () => {
+//     feedbackPopup.classList.add("hidden");
+//     document.body.classList.remove("disable-scroll"); // Enable background scroll
+// });
+// cancelFeedbackBtn.addEventListener("click", () => {
+//     feedbackPopup.classList.add("hidden");
+//     document.body.classList.remove("disable-scroll"); // Enable background scroll
+// });
 
-// Character count
-feedbackDetails.addEventListener("input", () => {
-    charCount.textContent = feedbackDetails.value.length;
-});
+// // Character count
+// feedbackDetails.addEventListener("input", () => {
+//     charCount.textContent = feedbackDetails.value.length;
+// });
 
 
 
