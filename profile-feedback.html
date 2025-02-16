@@ -294,6 +294,7 @@
 
 
 
+
                     </div>
                     <div class="space-y-4">
                         <li>
@@ -326,244 +327,128 @@
         </aside>
 
         <!-- Main Section -->
-        <main class="flex-1 p-0">
+        <main class="flex-1">
+            <h1 class="font-normal text-xl">Feedback</h1>
+            <div class="bg-white py-10 h-[469px] flex items-center px-6 mt-2">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
 
-            <div class="bg-white border-b border[#0000000F] p-4">
-                <h2 class="font-normal text-xl mb-2">Invite and Earn Rewards!</h2>
-                <p class="font-normal text-[14px] leading-[22px] text-[#000000D9] mb-4">
-                    Share the joy of Roam Nepal with your friends.<br>
-                    Reach referral milestones to increase the points you get on every referral.
-                </p>
+                    <!-- FAQ Section -->
+                    <div class="flex flex-col items-center">
+                        <p class="font-normal text-xl text-[#000000D9] text-nowrap">Doubts or questions?</p>
 
-                <div class="flex flex-col items-center mt-6">
-                    <!-- Progress Bar Container -->
-                    <div class="relative w-full">
-                        <!-- Progress Bar Background -->
-                        <div class="w-full h-[22px] bg-[#F5F5F5] rounded-full relative">
-                            <!-- Progress Bar Fill -->
-                            <div class="absolute top-0 left-0 h-[22px] bg-[#0B3C49] rounded-full w-[25%]"></div>
-                        </div>
+                        <a href="profile-faq.html" class="flex flex-col items-center">
+                            <img src="images/svg/profile-faq.svg" alt="Review" class="w-[73px] h-[76px] mt-4">
+                            <span class="text-[#03677E] mt-2 font-normal text-[13px] leading-[17px]">
+                                Visit our FAQ page
+                            </span>
+                        </a>
+                    </div>
 
-                        <!-- Milestone Icons -->
-                        <div class="flex justify-between w-full absolute top-[-4px]">
-                            <div class="relative flex flex-col items-center group">
-                                <img src="images/milestone.png" alt="Milestone 1"
-                                    class="w-[27px] h-[28px] cursor-pointer z-30">
+                    <!-- Leave Review Section -->
+                    <div class="flex flex-col items-center">
+                        <p class="font-normal text-xl text-[#000000D9] text-nowrap">Want to leave a review?</p>
+                        <a href="profile-bookings.html" class="flex flex-col items-center">
+                            <img src="images/svg/profile-review.svg" alt="Review" class="w-[73px] h-[76px] mt-4">
+                            <span class="text-[#03677E] mt-2 font-normal text-[13px] leading-[17px]">
+                                Go to your bookings
+                            </span>
+                        </a>
+                    </div>
 
-                                <!-- Tooltip -->
-                                <div class="absolute bottom-full mb-2 hidden group-hover:flex flex-col items-center">
-                                    <div
-                                        class="bg-yellow-400 text-black text-xs font-medium py-1 px-3 rounded-md shadow-lg relative whitespace-nowrap">
-                                        150 points for each referral
-                                        <div
-                                            class="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-3 h-3 bg-yellow-400 rotate-45">
-                                        </div>
+                    <!-- Site Feedback Section -->
+                    <div class="flex flex-col items-center">
+                        <p class="font-normal text-xl text-[#000000D9] text-nowrap">
+                            Give us suggestions to improve our site.
+                        </p>
+                        <img id="open-feedback-popup" src="images/svg/profile-feedbac.svg" alt="Feedback"
+                            class="w-[73px] h-[76px] mt-4 cursor-pointer">
+                        <a href="#" class="text-[#03677E] mt-2 font-normal text-[13px] leading-[17px]">
+                            Site Feedback
+                        </a>
+                    </div>
+
+                    <!-- Feedback Popup -->
+                    <div id="feedback-popup"
+                        class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+                        <div class="bg-white w-[90%] max-w-md rounded-[4px] shadow-lg p-6 relative">
+                            <button id="close-feedback-popup"
+                                class="absolute top-2 right-4 text-gray-600 hover:text-gray-900">
+                                x
+                            </button>
+
+                            <h2 class="text-[16px] leading-6 font-normal flex items-start mb-4">Feedback</h2>
+
+                            <form>
+                                <div class="flex flex-col items-start mb-4">
+                                    <label for="feedback-type"
+                                        class="block font-normal text-[12px] leading-[22px] text-[#000000D9]">Feedback
+                                        Type:</label>
+                                    <select id="feedback-type" name="feedback-type"
+                                        class="mt-1 block w-full p-2 border border-[#D9D9D9] rounded-sm focus:outline-none font-normal text-[12px] leading-[22px] text-[#00000040]">
+                                        <option value="" disabled selected>Type</option>
+                                        <option value="bug">Bug Report</option>
+                                        <option value="suggestion">Suggestion</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="flex flex-col items-start ">
+                                    <label for="feedback-details"
+                                        class="block font-normal text-[12px] leading-[22px] text-[#000000D9]">Details:</label>
+                                    <textarea id="feedback-details" name="feedback-details" rows="3" maxlength="100"
+                                        class="mt-1 block w-full p-2 border border-[#D9D9D9] rounded-sm min-h-20 max-h-44 resize-y focus:outline-none font-normal text-[12px] leading-[22px]"
+                                        placeholder=" Write details here"></textarea>
+                                    <div class="text-right text-sm text-[#00000040] w-full flex justify-end">
+                                        <span id="char-count">0</span> / 100
                                     </div>
                                 </div>
-                            </div>
-                            <div class="relative flex flex-col items-center group">
-                                <img src="images/milestone.png" alt="Milestone 2"
-                                    class="w-[27px] h-[28px] cursor-pointer z-30">
-                                <div class="absolute bottom-full mb-2 hidden group-hover:flex flex-col items-center">
-                                    <div
-                                        class="bg-yellow-400 text-black text-xs font-medium py-1 px-3 rounded-md shadow-lg relative whitespace-nowrap">
-                                        150 points for each referral
-                                        <div
-                                            class="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-3 h-3 bg-yellow-400 rotate-45">
-                                        </div>
+
+                                <div class="flex flex-col items-start mb-4">
+                                    <label for="feedback-type"
+                                        class="block font-normal text-[12px] leading-[22px] text-[#000000D9]">
+                                        Add URL (if applicable)
+                                    </label>
+                                    <input
+                                        class="mt-1 block w-full p-2 border border-[#D9D9D9] rounded-sm focus:outline-none font-normal text-[12px] leading-[22px]"
+                                        placeholder="Type here">
+                                </div>
+
+                                <div class="flex flex-col items-start mb-4">
+                                    <label for="screenshot"
+                                        class="block font-normal text-[12px] leading-[22px] text-[#000000D9]">
+                                        Add a screenshot
+                                    </label>
+                                    <div class="w-full flex flex-col items-start">
+                                        <label
+                                            class="flex items-center w-2/6 justify-center gap-2 border border-[#D9D9D9] rounded-sm py-2 px-3 cursor-pointer">
+                                            <img src="images/svg/upload.svg" alt="Upload Icon"
+                                                class="w-5 h-5 text-gray-500" />
+                                            <span class="font-normal text-[12px] leading-[22px]">Upload</span>
+                                            <input type="file" id="screenshot" name="screenshot" class="hidden"
+                                                onchange="updateFileName('screenshot', 'no-screenshot')" />
+                                        </label>
+                                        <span id="no-screenshot" class="text-xs mt-2 text-gray-500">No file
+                                            chosen</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="relative flex flex-col items-center group">
-                                <img src="images/milestone.png" alt="Milestone 3"
-                                    class="w-[27px] h-[28px] cursor-pointer z-30">
-                                <div class="absolute bottom-full mb-2 hidden group-hover:flex flex-col items-center">
-                                    <div
-                                        class="bg-yellow-400 text-black text-xs font-medium py-1 px-3 rounded-md shadow-lg relative whitespace-nowrap">
-                                        150 points for each referral
-                                        <div
-                                            class="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-3 h-3 bg-yellow-400 rotate-45">
-                                        </div>
-                                    </div>
+
+                                <div class="flex justify-end space-x-4">
+                                    <button type="submit"
+                                        class="bg-[#03677E] text-white px-4 py-2 rounded-sm hover:bg-[#065162] font-normal text-sm">Submit</button>
+                                    <button type="button" id="cancel-feedback"
+                                        class="border border-[#D9D9D9] px-4 py-2 rounded-sm font-normal text-sm">
+                                        Cancel
+                                    </button>
                                 </div>
-                            </div>
-                            <div class="relative flex flex-col items-center group">
-                                <img src="images/milestone.png" alt="Milestone 4"
-                                    class="w-[27px] h-[28px] cursor-pointer z-30">
-                                <div class="absolute bottom-full mb-2 hidden group-hover:flex flex-col items-center">
-                                    <div
-                                        class="bg-yellow-400 text-black text-xs font-medium py-1 px-3 rounded-md shadow-lg relative whitespace-nowrap">
-                                        150 points for each referral
-                                        <div
-                                            class="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-3 h-3 bg-yellow-400 rotate-45">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Milestone Labels -->
-                        <div
-                            class="flex justify-between w-full mt-2 text-[14px] leading-[22px] font-normal text-[#000000D9] absolute top-[-8px] ">
-                            <span class="relative left-[35px]">15/50</span>
-                            <span class="relative right-[35px]">25/50</span>
-                            <span class="relative right-[35px]">25/75</span>
-                            <span class="relative right-[35px]">25/100</span>
+                            </form>
                         </div>
                     </div>
+
                 </div>
             </div>
-
-            <div class="bg-white mt-6 p-4 rounded-sm">
-                <h2 class="font-normal text-[#000000D9] text-[20px] leading-[28px] mb-2">My Referral Code</h2>
-                <p class="font-normal text-[14px] leading-[22px] text-[#000000D9] mb-4">
-                    Share your unique referral link with your friends, and when they sign up and complete their first
-                    booking, both of you win!
-                    They get started with ease, and you earn extra promos and perks!
-                </p>
-
-                <div class="flex items-center gap-2">
-                    <div class="flex ">
-                        <!-- Referral Code Input -->
-                        <input type="text" id="referral-code" value="HARRIS3455"
-                            class="w-[363px] h-[32px] p-2 border border-[#D9D9D9] rounded-l-sm text-[#00000040] bg-gray-100 focus:outline-none"
-                            readonly>
-
-                        <!-- Copy Button -->
-                        <button onclick="copyReferralCode()"
-                            class="bg-[#637B7D] w-[111px] h-[32px] text-white px-4 rounded-r-sm font-normal text-[14px] leading-[22px] text-center">
-                            Copy
-                        </button>
-                    </div>
-
-                    <!-- Invite Button -->
-                    <button
-                        class="bg-[#0B3C49] w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[14px] leading-[22px] text-center">
-                        Invite
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white mt-6 p-4 rounded-sm">
-                <h2 class="font-normal text-[#000000D9] text-[20px] leading-[28px] mb-2">Enter Referral Code</h2>
-                <p class="font-normal text-[14px] leading-[22px] text-[#000000D9] mb-4">
-                    Were you referred to Roam Nepal? Enter their referral code here to earn reward points!
-                </p>
-
-                <div class="flex items-center gap-2">
-                    <div class="flex ">
-                        <!-- Referral Code Input -->
-                        <input type="text" id="user-referral-code" placeholder="Referral Code Here"
-                            class="w-[474px] h-[32px] p-2 border border-[#D9D9D9] rounded-l-sm text-black bg-gray-100 focus:outline-none">
-                    </div>
-
-                    <!-- Enter Button -->
-                    <button
-                        class="bg-[#0B3C49] w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[14px] leading-[22px] text-center">
-                        Enter
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white mt-6 p-4 rounded-sm">
-                <h2 class="text-xl font-normal mb-4">Referral History</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                    <!-- Referral Item -->
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-
-
-
-
 
 
         </main>
-
     </div>
 
 
@@ -675,175 +560,9 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/profileScript.js"></script>
     <script>
-        function copyReferralCode() {
-            const referralCodeInput = document.getElementById("referral-code");
-            referralCodeInput.select();
-            referralCodeInput.setSelectionRange(0, 99999); // For mobile devices
-            document.execCommand("copy");
-
-            // Alert or feedback (optional)
-            alert("Referral code copied: " + referralCodeInput.value);
-        }
-
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const refundPopup = document.getElementById("refund-status-popup");
-            const openRefundBtn = document.getElementById("open-refund-popup");
-            const closeRefundBtn = document.getElementById("close-refund-popup");
-            const confirmCloseBtn = document.getElementById("confirm-refund-close");
-
-            // Open the popup when clicking the info icon
-            openRefundBtn.addEventListener("click", () => {
-                refundPopup.classList.remove("hidden");
-                document.body.classList.add("disable-scroll");
-            });
-
-            // Close the popup when clicking the (X) close button
-            closeRefundBtn.addEventListener("click", () => {
-                refundPopup.classList.add("hidden");
-                document.body.classList.remove("disable-scroll");
-            });
-
-            // Close the popup when clicking "Close" button
-            confirmCloseBtn.addEventListener("click", () => {
-                refundPopup.classList.add("hidden");
-                document.body.classList.remove("disable-scroll");
-            });
-        });
-    </script>
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const accordions = document.querySelectorAll(".accordion-header");
-
-            accordions.forEach(header => {
-                header.addEventListener("click", function () {
-                    const content = this.nextElementSibling;
-                    const icon = this.querySelector(".accordion-icon");
-
-                    // Toggle the accordion
-                    content.classList.toggle("hidden");
-                    icon.style.transform = content.classList.contains("hidden") ? "rotate(0deg)" : "rotate(90deg)";
-                });
-            });
-        });
-    </script>
-
-    <script>
-
-        flatpickr(".date-picker", {
-            enableTime: true,
-            noCalendar: false,
-            time_24hr: false,
-            dateFormat: "Y-m-d H:i K",
-            minuteIncrement: 30,
-            minDate: "today",
-            position: "auto center",
-            disableMobile: true, // Ensures Flatpickr UI is used instead of native pickers
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const reschedulePopup = document.getElementById("reschedule-ticket-popup");
-            const openRescheduleBtn = document.getElementById("open-reschedule-popup");
-            const closeRescheduleBtn = document.getElementById("close-reschedule-popup");
-
-            // Open the popup
-            openRescheduleBtn.addEventListener("click", () => {
-                reschedulePopup.classList.remove("hidden");
-                document.body.classList.add("disable-scroll");
-            });
-
-            // Close the popup when clicking 'X' button
-            closeRescheduleBtn.addEventListener("click", () => {
-                reschedulePopup.classList.add("hidden");
-                document.body.classList.remove("disable-scroll");
-            });
-        });
-    </script>
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const cancelPopup = document.getElementById("cancel-ticket-popup");
-            const openCancelBtn = document.getElementById("open-cancel-popup");
-            const closeCancelBtn = document.getElementById("close-cancel-popup");
-            const goBackBtn = document.getElementById("go-back-btn");
-
-            // Open the popup
-            openCancelBtn.addEventListener("click", () => {
-                cancelPopup.classList.remove("hidden");
-                document.body.classList.add("disable-scroll");
-            });
-
-            // Close the popup when clicking 'X' or 'Go Back'
-            closeCancelBtn.addEventListener("click", () => {
-                cancelPopup.classList.add("hidden");
-                document.body.classList.remove("disable-scroll");
-            });
-
-            goBackBtn.addEventListener("click", () => {
-                cancelPopup.classList.add("hidden");
-                document.body.classList.remove("disable-scroll");
-            });
-
-        });
-    </script>
-
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabs = document.querySelectorAll(".tab-booking-btn");
-            const contents = document.querySelectorAll(".tab-booking-content");
-
-            tabs.forEach(tab => {
-                tab.addEventListener("click", function () {
-                    // Remove active state from all tabs
-                    tabs.forEach(btn => {
-                        btn.classList.remove("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
-                        btn.classList.add("text-[#000000D9]");
-                    });
-
-                    // Add active state to clicked tab
-                    this.classList.add("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
-                    this.classList.remove("text-[#000000D9]");
-
-                    // Hide all tab contents
-                    contents.forEach(content => content.classList.add("hidden"));
-
-                    // Show the selected tab content
-                    document.getElementById(this.getAttribute("data-tab")).classList.remove("hidden");
-                });
-            });
-        });
-    </script>
-
-
-    <script>
-        // For navbar menu toggle
-        const menuToggle = document.getElementById("menu-toggle");
-        const menu = document.getElementById("menu");
-        const btmNav = document.getElementById("bottom-nav");
-        const hamburgerIcon = document.getElementById("hamburger-icon");
-        const closeIcon = document.getElementById("close-icon");
-
-        menuToggle.addEventListener("click", () => {
-            // Toggle the visibility of the menu
-            menu.classList.toggle("hidden");
-            btmNav.classList.toggle("hidden");
-
-            // Toggle the icons
-            hamburgerIcon.classList.toggle("hidden");
-            closeIcon.classList.toggle("hidden");
-        });
-
-
         // For top navbar
         document.addEventListener("DOMContentLoaded", () => {
             const bsSpan = document.getElementById("toggle-bs");
@@ -911,6 +630,7 @@
             searchBar.classList.remove("hidden");
         });
     </script>
+
 
 </body>
 
