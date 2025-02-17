@@ -72,15 +72,23 @@ console.log("External Script Connected!!!")
 
 const signInPopup = document.getElementById("sign-in-popup");
 const openSignInBtn = document.getElementById("open-sign-in-popup");
+const openSignInBtnMobile = document.getElementById("open-sign-in-popup-mobile");
 const closeSignInBtn = document.getElementById("close-sign-in-popup");
 
-
-
-// Open Popup
-openSignInBtn.addEventListener("click", () => {
+function showSignInPopup() {
     signInPopup.classList.remove("hidden");
     document.body.classList.add("disable-scroll");
-});
+}
+
+// Open Popup
+// openSignInBtn.addEventListener("click", () => {
+//     signInPopup.classList.remove("hidden");
+//     document.body.classList.add("disable-scroll");
+// });
+
+openSignInBtn.addEventListener("click", showSignInPopup);
+openSignInBtnMobile.addEventListener("click", showSignInPopup);
+
 
 // Close Popup
 closeSignInBtn.addEventListener("click", () => {
@@ -1067,4 +1075,3 @@ wrapper.addEventListener("mouseleave", autoPlay);
 
 
 
- 
