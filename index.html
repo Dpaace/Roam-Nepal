@@ -57,27 +57,431 @@
 <body class="bg-white font-sans">
     <!-- Navigation Bar -->
     <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg">
-        <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
+        <div class="mx-auto flex-col  lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
 
 
-            <div class="flex justify-between w-full lg:w-1/3">
-                <div class="text-2xl font-bold">Roam Nepal</div>
+            <div class="flex flex-row  lg:flex lg:flex-row justify-between w-full lg:w-1/3">
+                <div class="flex flex-row-reverse justify-end items-center gap-2">
+                    <div class="text-2xl font-bold">Roam Nepal</div>
 
-                <button id="menu-toggle" class="block md:block lg:hidden focus:outline-none">
-                    <!-- Hamburger Icon -->
-                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                    <button id="menu-toggle" class="block md:block lg:hidden focus:outline-none">
+                        <!-- Hamburger Icon -->
+                        <!-- <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
+                    </svg> -->
+                        <!-- <img id="hamburger-icon" class="h-6 w-6" fill="none" src="images/svg/menu.svg" alt="menu-icon"> -->
 
-                    <!-- Cross Icon (Initially Hidden) -->
-                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+                        <img id="hamburger-icon" class="h-6 w-6"
+                            src="https://img.icons8.com/ios-glyphs/30/FFFFFF/menu--v3.png" alt="menu--v3" />
+
+                        <!-- Cross Icon (Initially Hidden) -->
+                        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-2 lg:hidden">
+                    <div class="flex items-center space-x-1">
+                        <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
+                    </div>
+
+                    <div class="flex items-center space-x-1">
+                        <button type="button" id="open-sign-in-popup-mobile"
+                            class="bg-[#C41D7F] font-normal text-sm leading-[22px] w-[76px] h-[32px] text-white text-nowrap rounded-sm">
+                            Sign In
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <!-- Notification Button -->
+                        <button id="notification-btn-mobile" class="relative flex items-center justify-center">
+                            <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
+                                alt="notification-icon">
+                        </button>
+                        <!-- Badge -->
+                        <span
+                            class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
+                            12
+                        </span>
+
+                        <!-- Notification Popup -->
+                        <div id="notification-popup-mobile"
+                            class="absolute right-0 top-8 bg-white w-[300px] h-[400px] lg:w-[650px] shadow-lg rounded-lg hidden z-10 overflow-y-scroll overflow-hidden scrollbar-hide">
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold text-black">Notifications</h3>
+                            </div>
+                            <div class="max-h-[380px] px-2">
+                                <!-- Example Notification -->
+                                <div class="flex items-start justify-between p-4 border-b">
+                                    <div class="flex items-center gap-4">
+                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                        <div>
+                                            <p class="text-sm font-bold text-black">Booking Completed</p>
+                                            <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                Jan 5 has been confirmed</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-500">33m</span>
+                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                </div>
+                                <!-- Repeat notifications -->
+                                <div class="flex items-start justify-between p-4 border-b">
+                                    <div class="flex items-center gap-4">
+                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                        <div>
+                                            <p class="text-sm font-bold text-black">Booking Completed</p>
+                                            <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                Jan 5 has been confirmed</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-500">33m</span>
+                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                </div>
+                                <div class="flex items-start justify-between p-4 border-b">
+                                    <div class="flex items-center gap-4">
+                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                        <div>
+                                            <p class="text-sm font-bold text-black">Booking Completed</p>
+                                            <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                Jan 5 has been confirmed</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-500">33m</span>
+                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                </div>
+                                <div class="flex items-start justify-between p-4 border-b">
+                                    <div class="flex items-center gap-4">
+                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                        <div>
+                                            <p class="text-sm font-bold text-black">Booking Completed</p>
+                                            <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                Jan 5 has been confirmed</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-500">33m</span>
+                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div id="search-container-mobile">
+                        <button id="search-toggle-btn-mobile" class="flex items-center">
+                            <img id="search-icon-mobile" class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg"
+                                alt="search-icon">
+                        </button>
+                        <div id="search-bar-mobile"
+                            class=" relative w-[250px] flex bg-white items-center border border-[#D9D9D9] rounded-sm p-1 hidden">
+                            <input type="text" placeholder="Search"
+                                class="w-full outline-none text-black text-sm px-1">
+                            <img id="search-icon-mobile" class="w-[14px] h-[14px] cursor-pointer"
+                                src="images/svg/search-icon.svg" alt="search-icon">
+                        </div>
+                    </div> -->
+
+                    <div id="search-container-mobile" class="relative">
+                        <!-- Search Toggle Button -->
+                        <button id="search-toggle-btn-mobile" class="flex items-center">
+                            <img id="search-icon-mobile" class="w-[14px] h-[14px]"
+                                src="images/svg/search-icon-white.svg" alt="search-icon">
+                        </button>
+
+                        <!-- Search Bar -->
+                        <div id="search-bar-mobile"
+                            class="fixed inset-0 flex items-center justify-center  bg-black bg-opacity-50 hidden">
+                            <div
+                                class="relative bg-white w-[80%] max-w-[400px] h-[30px] flex items-center border border-[#D9D9D9] rounded-sm p-2 ">
+                                <input type="text" placeholder="Search"
+                                    class="w-full h-full outline-none text-black text-sm px-2 py-2 rounded-md">
+                                <img id="search-icon-inside" class="w-[14px] h-[14px] cursor-pointer ml-2"
+                                    src="images/svg/search-icon.svg" alt="search-icon">
+                            </div>
+
+                            <!-- Close Button in Top-Right -->
+                            <button id="close-search-mobile" class="absolute top-16 right-8 w-[14px] h-[14px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            const searchToggleBtn = document.getElementById("search-toggle-btn-mobile");
+                            const searchBarMobile = document.getElementById("search-bar-mobile");
+                            const closeSearchMobile = document.getElementById("close-search-mobile");
+
+                            // Show Search Bar
+                            searchToggleBtn.addEventListener("click", function () {
+                                searchBarMobile.classList.remove("hidden");
+                            });
+
+                            // Close Search Bar when clicking the close button
+                            closeSearchMobile.addEventListener("click", function () {
+                                searchBarMobile.classList.add("hidden");
+                            });
+
+                            // Close when clicking outside of the search box
+                            searchBarMobile.addEventListener("click", function (event) {
+                                if (event.target === searchBarMobile) {
+                                    searchBarMobile.classList.add("hidden");
+                                }
+                            });
+                        });
+
+
+                    </script>
+
+                </div>
+            </div>
+
+            <!-- Sign Up Popup -->
+            <div id="sign-in-popup"
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden text-black">
+                <div class="bg-white w-[550px] rounded-2xl relative p-6">
+                    <!-- Close Button -->
+                    <button id="close-sign-in-popup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <div class="flex justify-start">
+                        <img src="images/bussewa_logo 1.png" alt="Profile Icon" class="w-[72px] h-[68px] rounded-full">
+                    </div>
+
+                    <!-- Title -->
+                    <h2 class="text-[28px] font-normal leading-[36px] mb-4">Create an account.</h2>
+
+                    <!-- Form -->
+                    <form class="space-y-4 text-black">
+                        <div class="p-4 space-y-4">
+
+                            <!-- Full Name -->
+                            <div>
+                                <label for="full-name" class="block text-sm font-normal text-[#000000D9]">Full
+                                    name</label>
+                                <input type="text" id="full-name" name="full-name" placeholder="Enter Full Name"
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-sm font-normal text-[#000000D9]">Email</label>
+                                <input type="email" id="email" name="email" placeholder="example@gmail.com"
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div>
+                                <label for="phone-number" class="block text-sm font-normal text-[#000000D9]">Phone
+                                    Number</label>
+                                <input type="text" id="phone-number" name="phone-number"
+                                    placeholder="Enter Phone Number"
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
+                            </div>
+
+                            <!-- Password -->
+                            <div class="relative">
+                                <label for="password"
+                                    class="block text-sm font-normal text-[#000000D9]">Password</label>
+                                <input type="password" id="sign-in-password" name="password" placeholder="********"
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
+                                <button type="button" class="absolute top-7 right-3"
+                                    onclick="togglePasswordVisibility()">
+                                    <img class="w-5 h-5" src="images/svg/password_visible.svg" alt="Toggle Visibility">
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Sign In Button -->
+                        <button type="button" id="sign-up-btn-otp"
+                            class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[14px] leading-6">Sign
+                            Up
+                        </button>
+                    </form>
+
+                    <!-- Divider -->
+                    <div class="flex items-center mt-6 mb-4">
+                        <hr class="w-full border-[#878991]">
+                        <span class="px-2 text-gray-500 text-[14px] leading-4 text-nowrap">or continue
+                            using</span>
+                        <hr class="w-full border-[#878991]">
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex justify-center space-x-4">
+                        <button
+                            class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
+                            <img src="images/svg/google.svg" alt="Google" class="w-[30px] h-[30px]">
+                        </button>
+                        <button
+                            class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
+                            <img src="images/svg/facebook.svg" alt="Facebook" class="w-[30px] h-[30px]">
+                        </button>
+                        <button
+                            class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
+                            <img src="images/svg/apple.svg" alt="Apple" class="w-[28px] h-[30px]">
+                        </button>
+                    </div>
+
+                    <!-- Footer -->
+                    <p class="text-center mt-6 text-[16px] leading-4 text-[#44474F]">
+                        Already have an account?
+                        <a href="#" id="open-login-popup" class="text-[#03677E] font-bold">Sign In</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- OTP Popup -->
+            <div id="otp-popup"
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden text-black">
+                <div class="bg-white w-[550px] rounded-2xl shadow-lg relative p-6">
+                    <!-- Close Button -->
+                    <button id="close-otp-popup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <!-- Profile Image -->
+                    <div class="flex justify-start mb-4">
+                        <img src="images/bussewa_logo 1.png" alt="Profile Icon" class="w-[72px] h-[72px] rounded-full">
+                    </div>
+
+                    <!-- Title -->
+                    <h2 class="text-[24px] font-normal leading-[30px] mb-2">Enter OTP</h2>
+                    <p class="text-[14px] leading-5  mb-4">
+                        A 4-digit OTP was sent to <strong>+977 9867897654</strong>
+                    </p>
+
+                    <!-- OTP Fields -->
+                    <form class="space-y-4">
+                        <div class="flex justify-center space-x-2">
+                            <input type="text" maxlength="1"
+                                class="w-[52px] h-[60px] text-center border border-[#D9D9D9] rounded-sm text-[32px] leading-6 focus:outline-none" />
+                            <input type="text" maxlength="1"
+                                class="w-[52px] h-[60px] text-center border border-[#D9D9D9] rounded-sm text-[32px] leading-6 focus:outline-none" />
+                            <input type="text" maxlength="1"
+                                class="w-[52px] h-[60px] text-center border border-[#D9D9D9] rounded-sm text-[32px] leading-6 focus:outline-none" />
+                            <input type="text" maxlength="1"
+                                class="w-[52px] h-[60px] text-center border border-[#D9D9D9] rounded-sm text-[32px] leading-6 focus:outline-none" />
+                        </div>
+
+                        <div class="flex items-center justify-center">
+                            <p class="text-[#BA1A1A] font-normal text-[16px] leading-6">Verification Failed.
+                                Please try again</p>
+                        </div>
+
+                        <!-- Log In Button -->
+                        <button type="button"
+                            class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[14px] leading-6">
+                            Log In
+                        </button>
+                    </form>
+
+                    <!-- Footer -->
+                    <p class="text-center mt-6 text-[16px] leading-4 text-[#44474F]">
+                        Didn't receive OTP? <a href="#" class="text-[#03677E] font-bold">Resend OTP</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Login Popup -->
+            <div id="login-popup"
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden text-black">
+                <div class="bg-white w-[550px] rounded-2xl relative p-6">
+                    <!-- Close Button -->
+                    <button id="close-login-popup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <!-- Profile Image -->
+                    <div class="flex justify-start">
+                        <img src="images/bussewa_logo 1.png" alt="Profile Icon" class="w-[72px] h-[68px] rounded-full">
+                    </div>
+
+                    <!-- Title -->
+                    <h2 class="text-[28px] font-normal leading-[36px] mb-4">Welcome back.</h2>
+
+                    <!-- Login Form -->
+                    <form class="space-y-4">
+                        <div class="p-4 space-y-4">
+                            <!-- Email -->
+                            <div>
+                                <label for="login-email"
+                                    class="block text-sm font-normal text-[#000000D9]">Email</label>
+                                <input type="email" id="login-email" name="login-email" placeholder="example@gmail.com"
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
+                            </div>
+
+                            <!-- Password -->
+                            <div class="relative">
+                                <label for="login-password"
+                                    class="block text-sm font-normal text-[#000000D9]">Password</label>
+                                <input type="password" id="login-password" name="login-password" placeholder="********"
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
+                                <button type="button" class="absolute top-7 right-3"
+                                    onclick="toggleLoginPasswordVisibility()">
+                                    <img class="w-5 h-5" src="images/svg/password_visible.svg" alt="Toggle Visibility">
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Sign In Button -->
+                        <button type="submit"
+                            class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[14px] leading-6">Sign
+                            In</button>
+                    </form>
+
+                    <!-- Divider -->
+                    <div class="flex items-center mt-6 mb-4">
+                        <hr class="w-full border-[#878991]">
+                        <span class="px-2 text-gray-500 text-[14px] leading-4 text-nowrap">or continue
+                            using</span>
+                        <hr class="w-full border-[#878991]">
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex justify-center space-x-4">
+                        <button
+                            class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
+                            <img src="images/svg/google.svg" alt="Google" class="w-[30px] h-[30px]">
+                        </button>
+                        <button
+                            class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
+                            <img src="images/svg/facebook.svg" alt="Facebook" class="w-[30px] h-[30px]">
+                        </button>
+                        <button
+                            class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
+                            <img src="images/svg/apple.svg" alt="Apple" class="w-[28px] h-[30px]">
+                        </button>
+                    </div>
+
+                    <!-- Footer -->
+                    <p class="text-center mt-6 text-[16px] leading-4 text-[#44474F]">
+                        Don't have an account?
+                        <a href="#" id="back-to-signup" class="text-[#03677E] font-bold">Sign up</a>
+                    </p>
+                </div>
             </div>
 
             <div id="menu"
@@ -109,10 +513,6 @@
                                 Account</a></span>
                     </div>
 
-                    <!-- <div class="flex items-center space-x-1">
-                        <button type="button" class="bg-[#C41D7F] font-normal text-sm leading-[22px] w-[76px] h-[32px]  text-nowrap rounded-sm border-none">Sign In</button>
-                    </div> -->
-
                     <!-- Sign In Button -->
                     <div class="flex items-center space-x-1">
                         <button type="button" id="open-sign-in-popup"
@@ -121,266 +521,8 @@
                         </button>
                     </div>
 
-                    <!-- Sign Up Popup -->
-                    <div id="sign-in-popup"
-                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden text-black">
-                        <div class="bg-white w-[550px] rounded-2xl relative p-6">
-                            <!-- Close Button -->
-                            <button id="close-sign-in-popup"
-                                class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-
-                            <div class="flex justify-start">
-                                <img src="images/bussewa_logo 1.png" alt="Profile Icon"
-                                    class="w-[72px] h-[68px] rounded-full">
-                            </div>
-
-                            <!-- Title -->
-                            <h2 class="text-[28px] font-normal leading-[36px] mb-4">Create an account.</h2>
-
-                            <!-- Form -->
-                            <form class="space-y-4 text-black">
-                                <div class="p-4 space-y-4">
-
-                                    <!-- Full Name -->
-                                    <div>
-                                        <label for="full-name" class="block text-sm font-normal text-[#000000D9]">Full
-                                            name</label>
-                                        <input type="text" id="full-name" name="full-name" placeholder="Enter Full Name"
-                                            class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
-                                    </div>
-
-                                    <!-- Email -->
-                                    <div>
-                                        <label for="email"
-                                            class="block text-sm font-normal text-[#000000D9]">Email</label>
-                                        <input type="email" id="email" name="email" placeholder="example@gmail.com"
-                                            class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
-                                    </div>
-
-                                    <!-- Phone Number -->
-                                    <div>
-                                        <label for="phone-number"
-                                            class="block text-sm font-normal text-[#000000D9]">Phone
-                                            Number</label>
-                                        <input type="text" id="phone-number" name="phone-number"
-                                            placeholder="Enter Phone Number"
-                                            class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
-                                    </div>
-
-                                    <!-- Password -->
-                                    <div class="relative">
-                                        <label for="password"
-                                            class="block text-sm font-normal text-[#000000D9]">Password</label>
-                                        <input type="password" id="sign-in-password" name="password"
-                                            placeholder="********"
-                                            class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
-                                        <button type="button" class="absolute top-7 right-3"
-                                            onclick="togglePasswordVisibility()">
-                                            <img class="w-5 h-5" src="images/svg/password_visible.svg"
-                                                alt="Toggle Visibility">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Sign In Button -->
-                                <button type="button" id="sign-up-btn-otp"
-                                    class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[14px] leading-6">Sign
-                                    Up
-                                </button>
-                            </form>
-
-                            <!-- Divider -->
-                            <div class="flex items-center mt-6 mb-4">
-                                <hr class="w-full border-[#878991]">
-                                <span class="px-2 text-gray-500 text-[14px] leading-4 text-nowrap">or continue
-                                    using</span>
-                                <hr class="w-full border-[#878991]">
-                            </div>
-
-                            <!-- Social Buttons -->
-                            <div class="flex justify-center space-x-4">
-                                <button
-                                    class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
-                                    <img src="images/svg/google.svg" alt="Google" class="w-[30px] h-[30px]">
-                                </button>
-                                <button
-                                    class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
-                                    <img src="images/svg/facebook.svg" alt="Facebook" class="w-[30px] h-[30px]">
-                                </button>
-                                <button
-                                    class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
-                                    <img src="images/svg/apple.svg" alt="Apple" class="w-[28px] h-[30px]">
-                                </button>
-                            </div>
-
-                            <!-- Footer -->
-                            <p class="text-center mt-6 text-[16px] leading-4 text-[#44474F]">
-                                Already have an account?
-                                <a href="#" id="open-login-popup" class="text-[#03677E] font-bold">Sign In</a>
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <!-- OTP Popup -->
-                    <div id="otp-popup"
-                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden text-black">
-                        <div class="bg-white w-[550px] rounded-2xl shadow-lg relative p-6">
-                            <!-- Close Button -->
-                            <button id="close-otp-popup"
-                                class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-
-                            <!-- Profile Image -->
-                            <div class="flex justify-start mb-4">
-                                <img src="images/bussewa_logo 1.png" alt="Profile Icon"
-                                    class="w-[72px] h-[72px] rounded-full">
-                            </div>
-
-                            <!-- Title -->
-                            <h2 class="text-[24px] font-normal leading-[30px] mb-2">Enter OTP</h2>
-                            <p class="text-[14px] leading-5  mb-4">
-                                A 4-digit OTP was sent to <strong>+977 9867897654</strong>
-                            </p>
-
-                            <!-- OTP Fields -->
-                            <form class="space-y-4">
-                                <div class="flex justify-center space-x-2">
-                                    <input type="text" maxlength="1"
-                                        class="w-[52px] h-[60px] text-center border border-[#D9D9D9] rounded-sm text-[32px] leading-6 focus:outline-none" />
-                                    <input type="text" maxlength="1"
-                                        class="w-[52px] h-[60px] text-center border border-[#D9D9D9] rounded-sm text-[32px] leading-6 focus:outline-none" />
-                                    <input type="text" maxlength="1"
-                                        class="w-[52px] h-[60px] text-center border border-[#D9D9D9] rounded-sm text-[32px] leading-6 focus:outline-none" />
-                                    <input type="text" maxlength="1"
-                                        class="w-[52px] h-[60px] text-center border border-[#D9D9D9] rounded-sm text-[32px] leading-6 focus:outline-none" />
-                                </div>
-
-                                <div class="flex items-center justify-center">
-                                    <p class="text-[#BA1A1A] font-normal text-[16px] leading-6">Verification Failed.
-                                        Please try again</p>
-                                </div>
-
-                                <!-- Log In Button -->
-                                <button type="button"
-                                    class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[14px] leading-6">
-                                    Log In
-                                </button>
-                            </form>
-
-                            <!-- Footer -->
-                            <p class="text-center mt-6 text-[16px] leading-4 text-[#44474F]">
-                                Didn't receive OTP? <a href="#" class="text-[#03677E] font-bold">Resend OTP</a>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-                    <!-- Login Popup -->
-                    <div id="login-popup"
-                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden text-black">
-                        <div class="bg-white w-[550px] rounded-2xl relative p-6">
-                            <!-- Close Button -->
-                            <button id="close-login-popup"
-                                class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-
-                            <!-- Profile Image -->
-                            <div class="flex justify-start">
-                                <img src="images/bussewa_logo 1.png" alt="Profile Icon"
-                                    class="w-[72px] h-[68px] rounded-full">
-                            </div>
-
-                            <!-- Title -->
-                            <h2 class="text-[28px] font-normal leading-[36px] mb-4">Welcome back.</h2>
-
-                            <!-- Login Form -->
-                            <form class="space-y-4">
-                                <div class="p-4 space-y-4">
-                                    <!-- Email -->
-                                    <div>
-                                        <label for="login-email"
-                                            class="block text-sm font-normal text-[#000000D9]">Email</label>
-                                        <input type="email" id="login-email" name="login-email"
-                                            placeholder="example@gmail.com"
-                                            class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
-                                    </div>
-
-                                    <!-- Password -->
-                                    <div class="relative">
-                                        <label for="login-password"
-                                            class="block text-sm font-normal text-[#000000D9]">Password</label>
-                                        <input type="password" id="login-password" name="login-password"
-                                            placeholder="********"
-                                            class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none">
-                                        <button type="button" class="absolute top-7 right-3"
-                                            onclick="toggleLoginPasswordVisibility()">
-                                            <img class="w-5 h-5" src="images/svg/password_visible.svg"
-                                                alt="Toggle Visibility">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Sign In Button -->
-                                <button type="submit"
-                                    class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[14px] leading-6">Sign
-                                    In</button>
-                            </form>
-
-                            <!-- Divider -->
-                            <div class="flex items-center mt-6 mb-4">
-                                <hr class="w-full border-[#878991]">
-                                <span class="px-2 text-gray-500 text-[14px] leading-4 text-nowrap">or continue
-                                    using</span>
-                                <hr class="w-full border-[#878991]">
-                            </div>
-
-                            <!-- Social Buttons -->
-                            <div class="flex justify-center space-x-4">
-                                <button
-                                    class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
-                                    <img src="images/svg/google.svg" alt="Google" class="w-[30px] h-[30px]">
-                                </button>
-                                <button
-                                    class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
-                                    <img src="images/svg/facebook.svg" alt="Facebook" class="w-[30px] h-[30px]">
-                                </button>
-                                <button
-                                    class="border border-[#CECECE] rounded-[4px] w-[98px] h-[50px] flex items-center justify-center">
-                                    <img src="images/svg/apple.svg" alt="Apple" class="w-[28px] h-[30px]">
-                                </button>
-                            </div>
-
-                            <!-- Footer -->
-                            <p class="text-center mt-6 text-[16px] leading-4 text-[#44474F]">
-                                Don't have an account?
-                                <a href="#" id="back-to-signup" class="text-[#03677E] font-bold">Sign up</a>
-                            </p>
-                        </div>
-                    </div>
-
-
 
                     <div class="flex items-center space-x-4">
-
                         <div class="relative">
                             <!-- Notification Button -->
                             <button id="notification-btn" class="relative flex items-center justify-center">
@@ -1728,7 +1870,7 @@
         </div>
     </div>
 
-    
+
 
 
     <!-- Reach Section -->
@@ -2277,6 +2419,22 @@
         document.addEventListener("click", (event) => {
             if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
                 notificationPopup.classList.add("hidden");
+            }
+        });
+
+
+        const notificationBtnMobile = document.getElementById("notification-btn-mobile");
+        const notificationPopupMobile = document.getElementById("notification-popup-mobile");
+
+        // Toggle notification popup on button click
+        notificationBtnMobile.addEventListener("click", () => {
+            notificationPopupMobile.classList.toggle("hidden");
+        });
+
+        // Close the popup when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!notificationPopupMobile.contains(event.target) && !notificationBtnMobile.contains(event.target)) {
+                notificationPopupMobile.classList.add("hidden");
             }
         });
 
