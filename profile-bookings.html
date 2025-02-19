@@ -243,65 +243,94 @@
         </div>
     </nav>
 
-    <div class="h-fit flex static mt-[92px] p-4 gap-4">
+    <div class="h-fit flex static mt-[60px] lg:mt-[92px] p-4 gap-4">
         <!-- Aside Section -->
-        <aside class="w-[210px] h-[680px] flex flex-col bg-white ">
-            <div class="flex flex-col h-fit items-start pt-8 px-4">
+        <aside id="profile-aside" class="hidden lg:flex w-full h-fit lg:w-[210px] lg:h-[680px] flex flex-col bg-white ">
+            <div class="flex flex-col h-fit items-center lg:items-start pt-4 lg:pt-8 px-4">
                 <img src="images/sample_1.jpg" alt="Profile Image" class="w-[96px] h-[89px] rounded-full mb-[10px]">
                 <h2 class="text-xl font-normal text-[#000000D9]">Kamala Harris</h2>
             </div>
-            <!-- h-[calc(100%-160px)] -->
             <nav class="mt-4 h-full pb-4">
-                <ul class="flex flex-col h-full justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
+                <ul class="flex flex-col h-full gap-20 justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
                     <div class="space-y-4">
                         <li>
                             <a href="profile-home.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/person.svg" alt="Profile Details" class="w-[14px] h-[14px]">
-                                <span>Profile Details</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Profile Details</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="profile-level.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/my-level.svg" alt="My Level" class="w-[14px] h-[14px]">
-                                <span>My Level</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>My Level</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+
                             </a>
                         </li>
                         <li>
                             <a href="profile-bookings.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/num-hours.svg" alt="My Bookings" class="w-[14px] h-[14px]">
-                                <span>My Bookings</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>My Bookings</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="profile-referrals.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/referrals.svg" alt="Referrals" class="w-[14px] h-[14px]">
-                                <span>Referrals</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Referrals</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
-                        <!-- <li>
-                            <a href="#" class="flex items-center space-x-3 ">
-                                <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
-                                <span>Feedback</span>
-                            </a>
-                        </li> -->
-                        <!-- Feedback List Item -->
                         <li>
                             <a href="profile-feedback.html" class="flex items-center space-x-3">
                                 <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
-                                <span>Feedback</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Feedback</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
 
-
-
                     </div>
+
                     <div class="space-y-4">
                         <li>
-                            <a href="#" class="flex items-center space-x-3 ">
+                            <a href="#" id="logout-btn" class="flex items-center space-x-3 ">
                                 <img src="images/svg/logout.svg" alt="Logout" class="w-[14px] h-[14px]">
                                 <span>Logout</span>
                             </a>
                         </li>
+
+
                         <li>
                             <a href="#" class="flex items-center space-x-3 ">
                                 <img src="images/svg/settings.svg" alt="Settings" class="w-[14px] h-[14px]">
@@ -321,32 +350,66 @@
                             </a>
                         </li>
                     </div>
+
+                    <div id="logout-popup"
+                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                        <div class="bg-white p-6 rounded-sm shadow-lg w-[400px]">
+
+                            <!-- Content -->
+                            <div class="flex items-start space-x-3">
+                                <img src="images/svg/danger.svg" alt="Warning" class="w-[22px] h-[22px]">
+                                <div class="flex flex-col">
+                                    <h2 class="font-normal text-[16px] leading-6">Are you sure you want to Logout?</h2>
+                                    <p class="font-normal text-[14px] leading-[22px] mt-2">You need to login to book
+                                        your tickets.</p>
+                                </div>
+                            </div>
+
+
+                            <!-- Buttons -->
+                            <div class="flex justify-end space-x-3 mt-4">
+                                <button id="cancel-logout"
+                                    class="px-4 py-2 border rounded-sm text-[#000000D9]">Cancel</button>
+                                <button id="confirm-logout"
+                                    class="px-4 py-2 bg-[#FF4D4F] text-white rounded-sm">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </ul>
             </nav>
         </aside>
 
         <!-- Main Section -->
-        <main class="flex-1 p-2">
-
-
+        <main id="profile-main" class="w-full lg:block flex-1 p-0">
             <!-- Tab Navigation -->
-            <div class=" bg-white border-b border[#0000000F] p-4">
-                <h2 class="text-xl font-normal mb-4">My Bookings</h2>
-                <div class="flex items-center gap-10">
+            <div class=" bg-white border-b border[#0000000F] p-2 lg:p-4">
+                <div class="flex items-center w-full gap-2 mb-1 lg:mb-4">
+                    <span class="block lg:hidden">
+                        <img id="back-btn" class="h-5 w-5"
+                            src="https://img.icons8.com/material-sharp/24/1A1A1A/back--v1.png" alt="back--v1" />
+                    </span>
+                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">My Bookings</span>
+                </div>
+
+                <div class="flex items-center gap-2 lg:gap-10">
                     <button
-                        class="tab-booking-btn py-2 text-[#0B3C49] font-normal text-[16px] leading-6 border-b-2 border-[#0B3C49]"
+                        class="tab-booking-btn flex-grow lg:flex-grow-0 py-2 text-[#0B3C49] font-normal text-[14px] lg:text-[16px] leading-6 border-b-2 border-[#0B3C49]"
                         data-tab="today">
                         Today
                     </button>
-                    <button class="tab-booking-btn py-2 text-[#000000D9] font-normal text-[16px] leading-6"
+                    <button
+                        class="tab-booking-btn flex-grow lg:flex-grow-0 py-2 text-[#000000D9] font-normal text-[14px] lg:text-[16px] leading-6"
                         data-tab="upcoming">
                         Upcoming
                     </button>
-                    <button class="tab-booking-btn py-2 text-[#000000D9] font-normal text-[16px] leading-6"
+                    <button
+                        class="tab-booking-btn flex-grow lg:flex-grow-0 py-2 text-[#000000D9] font-normal text-[14px] lg:text-[16px] leading-6"
                         data-tab="completed">
                         Completed
                     </button>
-                    <button class="tab-booking-btn py-2 text-[#000000D9] font-normal text-[16px] leading-6"
+                    <button
+                        class="tab-booking-btn flex-grow lg:flex-grow-0 py-2 text-[#000000D9] font-normal text-[14px] lg:text-[16px] leading-6"
                         data-tab="cancelled">
                         Cancelled
                     </button>
@@ -355,8 +418,7 @@
             </div>
 
             <!-- Tab Contents -->
-            <div class="bg-white mt-6 p-4">
-
+            <div class="bg-white mt-4 lg:mt-6 p-2 lg:p-4">
 
                 <div id="today" class="tab-booking-content">
                     <!-- Accordion Container -->
@@ -366,80 +428,99 @@
                             <button
                                 class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
                                 <span class="accordion-icon transition-transform">▶</span>
-                                <span>Bus Tickets</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Bus Tickets</span>
                             </button>
-                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+
+                            <div class="accordion-content hidden p-2 lg:p-4 bg-white space-y-8">
                                 <!-- Bus Ticket Card -->
-                                <div class="border rounded-[4px] px-8 py-4 bg-white">
-                                    <div class="flex justify-between">
+                                <div class="border rounded-[4px] px-2 lg:px-8 py-4 bg-white">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
                                         <div>
-                                            <h2 class="font-bold text-[20px] leading-4 text-black">Tourist Bus with
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tourist Bus with
                                                 Sleeper</h2>
-                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Tourist Bus</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Tourist Bus</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
                                                 6th Jan 2024</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3,
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">3
+                                                Seats (A1, A3,
                                                 A4)</p>
                                         </div>
-                                        <div class="flex space-x-2 items-center">
+                                        <div class="flex gap-2 items-center justify-end ">
                                             <button
-                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">View
-                                                Ticket</button>
+                                                class="lg:bg-[#03677E] text-[#03677E] underline text-nowrap lg:text-white font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                View Details
+                                            </button>
                                             <button
-                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">Track
-                                                Vehicle</button>
+                                                class="lg:border lg:border-[#03677E] text-[#03677E] underline text-nowrap  font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                Track Vehicle
+                                            </button>
                                         </div>
                                     </div>
 
                                     <hr class="my-2">
 
-                                    <div class="flex items-center justify-between w-full">
-                                        <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
                                             <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
                                             <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
                                                 06:00 AM</p>
                                             <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
                                         </div>
-                                        <div class="w-3/5 flex items-center justify-between py-4">
+                                        <div class="w-full lg:w-3/5 flex items-center justify-between py-4">
                                             <!-- Start Time -->
                                             <div class="text-center">
-                                                <p class="font-normal text-[20px] leading-4 text-black">17:00 PM</p>
-                                                <p class="font-normal text-[10px] leading-4 text-black"">Kathmandu</p>
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black">Kathmandu</p>
                                             </div>
 
                                             <!-- Travel Duration -->
                                             <div class=" flex-1 flex flex-col items-center relative mx-4">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    8 hours</p>
                                                 <hr class="w-full ">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    Ba 1 Pa 3453
                                                 </p>
                                             </div>
 
                                             <!-- End Time -->
                                             <div class="text-center">
-                                                <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
-                                                <p class=" font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    23:00 PM</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black">Pokhara</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <hr class="my-2">
 
-                                    <div class="flex justify-between items-center mt-4">
+                                    <div class="flex flex-col lg:flex-row justify-between items-center mt-4">
                                         <div>
-                                            <span class="font-bold text-[24px] leading-4 text-[#0B3C49]">Rs. <span
-                                                    class="text-[36px]">3000</span></span>
+                                            <span class="font-bold text-[20px] lg:text-[24px] leading-4 text-[#0B3C49]">
+                                                Rs.
+                                                <span class="text-[24px] lg:text-[36px]">
+                                                    3000
+                                                </span>
+                                            </span>
                                         </div>
                                         <div class="flex space-x-2">
                                             <!-- Cancel Ticket Button -->
                                             <button id="open-cancel-popup"
-                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                class="bg-red-100 flex-grow lg:w-[216px] lg:h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
                                                 Cancel Ticket
                                             </button>
 
                                             <!-- Reschedule Ticket Button -->
                                             <button id="open-reschedule-popup"
-                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                class="flex-grow lg:w-[216px] lg:h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
                                                 Reschedule Ticket
                                             </button>
                                         </div>
@@ -529,154 +610,161 @@
                                     </div>
                                 </div>
 
-                                <div class="border rounded-[4px] px-8 py-4 bg-white">
-                                    <div class="flex justify-between">
+                                <div class="border rounded-[4px] px-2 lg:px-8 py-4 bg-white">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
                                         <div>
-                                            <h2 class="font-bold text-[20px] leading-4 text-black">Tourist Bus with
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tourist Bus with
                                                 Sleeper</h2>
-                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Tourist Bus</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Tourist Bus</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
                                                 6th Jan 2024</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3,
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">3
+                                                Seats (A1, A3,
                                                 A4)</p>
                                         </div>
                                     </div>
 
                                     <hr class="my-2">
 
-                                    <div class="flex items-center justify-between w-full">
-                                        <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
                                             <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
                                             <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
                                                 06:00 AM</p>
                                             <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
                                         </div>
-                                        <div class="w-3/5 flex items-center justify-between py-4">
+                                        <div class="w-full lg:w-3/5 flex items-center justify-between py-4">
                                             <!-- Start Time -->
                                             <div class="text-center">
-                                                <p class="font-normal text-[20px] leading-4 text-black">17:00 PM</p>
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    17:00 PM</p>
                                                 <p class="font-normal text-[10px] leading-4 text-black">Kathmandu</p>
                                             </div>
 
                                             <!-- Travel Duration -->
                                             <div class=" flex-1 flex flex-col items-center relative mx-4">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    8 hours</p>
                                                 <hr class="w-full ">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    Ba 1 Pa 3453
                                                 </p>
                                             </div>
 
                                             <!-- End Time -->
                                             <div class="text-center">
-                                                <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
-                                                <p class=" font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    23:00 PM</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black">Pokhara</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <hr class="my-2">
 
-                                    <div class="flex justify-between items-center mt-4">
+                                    <div class="flex flex-col lg:flex-row justify-between items-center mt-4">
                                         <div>
-                                            <span class="font-bold text-[24px] leading-4 text-[#0B3C49]">Rs. <span
-                                                    class="text-[36px]">3000</span></span>
+                                            <span class="font-bold text-[20px] lg:text-[24px] leading-4 text-[#0B3C49]">
+                                                Rs.
+                                                <span class="text-[24px] lg:text-[36px]">
+                                                    3000
+                                                </span>
+                                            </span>
                                         </div>
                                         <div class="flex space-x-2">
-                                            <!-- <button
-                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
-                                                Cancel Ticket
-                                            </button> -->
                                             <button
-                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                class="bg-red-100 flex-grow lg:w-[216px] lg:h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6"">
                                                 Report Issue
                                             </button>
                                             <button
-                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                                class=" flex-grow lg:w-[216px] lg:h-[38px] border border-[#D9D9D9]
+                                                text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[12px] leading-4
+                                                lg:text-[16px] lg:leading-6">
                                                 Reschedule Ticket
                                             </button>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="border rounded-[4px] px-8 py-4 bg-white">
-                                    <div class="flex justify-between">
+                                <div class="border rounded-[4px] px-2 lg:px-8 py-4 bg-white">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
                                         <div>
-                                            <h2 class="font-bold text-[20px] leading-4 text-black">Tourist Bus with
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tourist Bus with
                                                 Sleeper</h2>
-                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Tourist Bus</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Tourist Bus</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
                                                 6th Jan 2024</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3,
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">3
+                                                Seats (A1, A3,
                                                 A4)</p>
                                         </div>
-                                        <!-- <div class="flex space-x-2 items-center">
-                                            <button
-                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">View
-                                                Ticket</button>
-                                            <button
-                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">Track
-                                                Vehicle</button>
-                                        </div> -->
                                     </div>
 
                                     <hr class="my-2">
 
-                                    <div class="flex items-center justify-between w-full">
-                                        <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
                                             <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
                                             <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
                                                 06:00 AM</p>
                                             <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
                                         </div>
-                                        <div class="w-3/5 flex items-center justify-between py-4">
+                                        <div class="w-full lg:w-3/5 flex items-center justify-between py-4">
                                             <!-- Start Time -->
                                             <div class="text-center">
-                                                <p class="font-normal text-[20px] leading-4 text-black">17:00 PM</p>
-                                                <p class="font-normal text-[10px] leading-4 text-black"">Kathmandu</p>
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black">Kathmandu</p>
                                             </div>
 
                                             <!-- Travel Duration -->
                                             <div class=" flex-1 flex flex-col items-center relative mx-4">
-                                                    <!-- <div
-                                                    class="w-full border-t border-gray-300 absolute top-1/2 transform -translate-y-1/2">
-                                                </div> -->
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    8 hours</p>
                                                 <hr class="w-full ">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    Ba 1 Pa 3453
                                                 </p>
                                             </div>
 
                                             <!-- End Time -->
                                             <div class="text-center">
-                                                <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
-                                                <p class=" font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    23:00 PM</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black">Pokhara</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <hr class="my-2">
 
-                                    <div class="flex justify-between items-center mt-4">
+                                    <div class="flex flex-col lg:flex-row justify-between items-center mt-4">
                                         <div>
-                                            <span class="font-bold text-[24px] leading-4 text-[#0B3C49]">Rs. <span
-                                                    class="text-[36px]">3000</span></span>
+                                            <span class="font-bold text-[20px] lg:text-[24px] leading-4 text-[#0B3C49]">
+                                                Rs.
+                                                <span class="text-[24px] lg:text-[36px]">
+                                                    3000
+                                                </span>
+                                            </span>
                                         </div>
                                         <div class="flex space-x-2">
-                                            <!-- <button
-                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
-                                                Cancel Ticket
-                                            </button> -->
-                                            <!-- <button
-                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
-                                                Report Issue
-                                            </button>
-                                            <button
-                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
-                                                Reschedule Ticket
-                                            </button> -->
 
-                                            <button
-                                                class="w-[332px] h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                            <button class="w-[200px] lg:w-[332px] lg:h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[12px] leading-4
+                                                lg:text-[16px] lg:leading-6">
                                                 Review
                                             </button>
                                         </div>
@@ -690,7 +778,7 @@
                             <button
                                 class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
                                 <span class="accordion-icon transition-transform">▶</span>
-                                <span>Hotels</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Hotels</span>
                             </button>
                             <div class="accordion-content hidden p-4 bg-white space-y-8">
                                 <p class="text-gray-600">Hotel Booking Details go here.</p>
@@ -702,94 +790,98 @@
                             <button
                                 class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
                                 <span class="accordion-icon transition-transform">▶</span>
-                                <span>Reservation</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Reservation</span>
                             </button>
-                            <div class="accordion-content hidden p-4 bg-white space-y-8">
-                                <div class="border rounded-[4px] px-8 py-4">
-                                    <div class="flex justify-between">
+
+                            <div class="accordion-content hidden p-2 lg:p-4 bg-white space-y-8">
+
+                                <div class="border rounded-[4px] p-2 lg:px-8">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
                                         <div>
-                                            <h2 class="font-bold text-[20px] leading-4 text-black">
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
                                                 Tata Nexon
                                             </h2>
-                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Big SUV</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Big SUV</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
                                                 6th Jan 2024</p>
-                                            <!-- <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3, A4)</p> -->
                                         </div>
-                                        <div class="flex space-x-2 items-center">
+                                        <div class="flex gap-2 items-center justify-end">
                                             <button
-                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">
+                                                class="lg:bg-[#03677E] text-[#03677E] underline text-nowrap lg:text-white font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
                                                 View Details
                                             </button>
                                             <button
-                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">
-                                                Track
-                                                Vehicle
+                                                class="lg:border lg:border-[#03677E] text-[#03677E] underline text-nowrap  font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                Track Vehicle
                                             </button>
                                         </div>
                                     </div>
 
                                     <hr class="my-2">
 
-                                    <div class="flex items-center justify-between w-full">
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
                                         <div
-                                            class="w-2/5 flex items-start justify-center flex-col font-normal text-[14px] leading-5 text-[#171C1F]">
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
                                             <p><span class="font-bold">Pickup Point:</span> Buspark, Kathmandu</p>
                                             <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
                                         </div>
-                                        <div class="flex items-center w-3/5 justify-end py-4 space-x-2">
+
+                                        <div class="flex items-center w-full lg:w-3/5 justify-end pt-1 space-x-2">
 
                                             <button
-                                                class="bg-red-100 w-[216px] h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
-                                                Cancel Booking</button>
+                                                class="bg-red-100  lg:w-[216px] lg:h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
+                                                Cancel Booking
+                                            </button>
                                             <button
-                                                class="w-[216px] h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
-                                                Reschedule Booking</button>
-                                            <!-- <button
-                                                class="w-[332px] h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
-                                                Review
-                                            </button> -->
+                                                class="lg:w-[216px] lg:h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
+                                                Reschedule Booking
+                                            </button>
                                         </div>
                                     </div>
 
 
                                 </div>
 
-                                <div class="border rounded-[4px] px-8 py-4">
-                                    <div class="flex justify-between">
+                                <div class="border rounded-[4px] p-2 lg:px-8">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
                                         <div>
-                                            <h2 class="font-bold text-[20px] leading-4 text-black">
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
                                                 Tata Nexon
                                             </h2>
-                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Big SUV</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Big SUV</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
                                                 6th Jan 2024</p>
-                                            <!-- <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3, A4)</p> -->
                                         </div>
-                                        <div class="flex space-x-2 items-center">
+                                        <div class="flex gap-2 items-center justify-end">
                                             <button
-                                                class="bg-[#03677E] text-white text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">
+                                                class="lg:bg-[#03677E] text-[#03677E] underline text-nowrap lg:text-white font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
                                                 View Details
                                             </button>
                                             <button
-                                                class="border border-[#03677E] text-[#03677E] text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[160px]">
-                                                Track
-                                                Vehicle
+                                                class="lg:border lg:border-[#03677E] text-[#03677E] underline text-nowrap  font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                Track Vehicle
                                             </button>
                                         </div>
                                     </div>
 
                                     <hr class="my-2">
 
-                                    <div class="flex items-center justify-between w-full">
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
                                         <div
-                                            class="w-2/5 flex items-start justify-center flex-col font-normal text-[14px] leading-5 text-[#171C1F]">
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
                                             <p><span class="font-bold">Pickup Point:</span> Buspark, Kathmandu</p>
                                             <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
                                         </div>
-                                        <div class="flex items-center w-3/5 justify-end py-4">
-                                            <button id="openReviewPopup"
-                                                class="w-[332px] h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[16px] leading-6">
+                                        <div
+                                            class="flex items-center w-full lg:w-3/5 justify-center lg:justify-end py-4">
+                                            <button id="openReviewPopup" class="w-[200px] lg:w-[332px] lg:h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[12px] leading-4
+                                            lg:text-[16px] lg:leading-6">
                                                 Review
                                             </button>
                                         </div>
@@ -911,16 +1003,11 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
 
                 <div id="upcoming" class="tab-booking-content hidden">
                     <h3 class="text-lg font-semibold">Upcoming Bookings</h3>
@@ -940,24 +1027,28 @@
                             <button
                                 class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
                                 <span class="accordion-icon transition-transform">▶</span>
-                                <span>Bus Tickets</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Bus Tickets</span>
                             </button>
-                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+                            <div class="accordion-content hidden p-2 lg:p-4 bg-white space-y-8">
                                 <!-- Bus Ticket Card -->
-                                <div class="border rounded-[4px] px-8 py-4 bg-white">
-                                    <div class="flex justify-between">
+                                <div class="border rounded-[4px] px-2 lg:px-8 py-4 bg-white">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
                                         <div>
-                                            <h2 class="font-bold text-[20px] leading-4 text-black">Tourist Bus with
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tourist Bus with
                                                 Sleeper</h2>
-                                            <p class="font-normal text-[14px] leading-5 text-[#135200]">Tourist Bus</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">5th Jan 2024 -
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Tourist Bus</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
                                                 6th Jan 2024</p>
-                                            <p class="font-normal text-[14px] leading-5 text-[#171C1F]">3 Seats (A1, A3,
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">3
+                                                Seats (A1, A3,
                                                 A4)</p>
                                         </div>
-                                        <div class="flex space-x-2 items-center">
+                                        <div class="flex space-x-2 items-center justify-end">
                                             <button
-                                                class="bg-black text-white font-normal text-[16px] leading-6 px-4 py-2 rounded-[40px] h-[45px] w-[120px] flex items-center justify-center gap-2">
+                                                class="bg-black text-white font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2  lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[120px] flex items-center justify-center gap-2">
                                                 <img class="w-[14px] h-[14px]" src="images/svg/moon.svg" alt="halfmoon">
                                                 Night
                                             </button>
@@ -966,32 +1057,40 @@
 
                                     <hr class="my-2">
 
-                                    <div class="flex items-center justify-between w-full">
-                                        <div class="w-2/5 font-normal text-[14px] leading-5 text-[#171C1F] ">
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
                                             <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
                                             <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
                                                 06:00 AM</p>
                                             <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
                                         </div>
-                                        <div class="w-3/5 flex items-center justify-between py-4">
+                                        <div class="w-full lg:w-3/5 flex items-center justify-between py-4">
                                             <!-- Start Time -->
                                             <div class="text-center">
-                                                <p class="font-normal text-[20px] leading-4 text-black">17:00 PM</p>
-                                                <p class="font-normal text-[10px] leading-4 text-black"">Kathmandu</p>
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black">Kathmandu</p>
                                             </div>
 
                                             <!-- Travel Duration -->
                                             <div class=" flex-1 flex flex-col items-center relative mx-4">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">8 hours</p>
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    8 hours</p>
                                                 <hr class="w-full ">
-                                                <p class="font-normal text-[14px] leading-5 text-[#7D7E83]">Ba 1 Pa 3453
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    Ba 1 Pa 3453
                                                 </p>
                                             </div>
 
                                             <!-- End Time -->
                                             <div class="text-center">
-                                                <p class="font-normal text-[20px] leading-4 text-black"">23:00 PM</p>
-                                                <p class=" font-normal text-[10px] leading-4 text-black"">Pokhara</p>
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    23:00 PM</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black">Pokhara</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1001,12 +1100,12 @@
                                     <div class="flex justify-center items-center mt-4">
                                         <div class="flex">
                                             <span
-                                                class="flex space-x-4 whitespace-nowrap text-nowrap font-normal text-[16px] leading-6">
+                                                class="flex items-center space-x-4 whitespace-nowrap text-nowrap font-normal text-[12px] lg:text-[16px] leading-6">
                                                 Status:&nbsp;
                                                 <span class="font-bold text-[#2D7E95]">
                                                     Refunded
                                                 </span>
-                                                <img id="open-refund-popup" class="w-6 h-6 hover:cursor-pointer"
+                                                <img id="open-refund-popup" class="w-5 h-5 lg:w-6 lg:h-6 hover:cursor-pointer"
                                                     src="images/svg/InfoCircle.svg" alt="info">
                                             </span>
                                         </div>
@@ -1072,7 +1171,7 @@
                             <button
                                 class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
                                 <span class="accordion-icon transition-transform">▶</span>
-                                <span>Hotels</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Hotels</span>
                             </button>
                             <div class="accordion-content hidden p-4 bg-white space-y-8">
                                 <p class="text-gray-600">Hotel Cancellation Details go here.</p>
@@ -1084,7 +1183,7 @@
                             <button
                                 class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
                                 <span class="accordion-icon transition-transform">▶</span>
-                                <span>Reservation</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Reservation</span>
                             </button>
                             <div class="accordion-content hidden p-4 bg-white space-y-8">
                                 <p class="text-gray-600">Reservation Cancellation Details go here.</p>
@@ -1213,6 +1312,18 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        const backButton = document.getElementById("back-btn"); // Selects the back button image
+        const mainSection = document.getElementById("profile-main");
+        const asideSection = document.getElementById("profile-aside");
+
+        // When the back button is clicked
+        backButton.addEventListener("click", function () {
+            mainSection.classList.add("hidden"); // Hide main section
+            asideSection.classList.remove("hidden"); // Show aside section
+        });
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {

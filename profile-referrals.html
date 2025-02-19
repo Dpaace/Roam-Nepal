@@ -243,65 +243,94 @@
         </div>
     </nav>
 
-    <div class="h-fit flex static mt-[92px] p-4 gap-4">
+    <div class="h-fit flex static mt-[60px] lg:mt-[92px] p-4 gap-4">
         <!-- Aside Section -->
-        <aside class="w-[210px] h-[680px] flex flex-col bg-white ">
-            <div class="flex flex-col h-fit items-start pt-8 px-4">
+        <aside id="profile-aside" class="hidden lg:flex w-full h-fit lg:w-[210px] lg:h-[680px] flex flex-col bg-white ">
+            <div class="flex flex-col h-fit items-center lg:items-start pt-4 lg:pt-8 px-4">
                 <img src="images/sample_1.jpg" alt="Profile Image" class="w-[96px] h-[89px] rounded-full mb-[10px]">
                 <h2 class="text-xl font-normal text-[#000000D9]">Kamala Harris</h2>
             </div>
-            <!-- h-[calc(100%-160px)] -->
             <nav class="mt-4 h-full pb-4">
-                <ul class="flex flex-col h-full justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
+                <ul class="flex flex-col h-full gap-20 justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
                     <div class="space-y-4">
                         <li>
                             <a href="profile-home.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/person.svg" alt="Profile Details" class="w-[14px] h-[14px]">
-                                <span>Profile Details</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Profile Details</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="profile-level.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/my-level.svg" alt="My Level" class="w-[14px] h-[14px]">
-                                <span>My Level</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>My Level</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+
                             </a>
                         </li>
                         <li>
                             <a href="profile-bookings.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/num-hours.svg" alt="My Bookings" class="w-[14px] h-[14px]">
-                                <span>My Bookings</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>My Bookings</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="profile-referrals.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/referrals.svg" alt="Referrals" class="w-[14px] h-[14px]">
-                                <span>Referrals</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Referrals</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
-                        <!-- <li>
-                            <a href="#" class="flex items-center space-x-3 ">
-                                <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
-                                <span>Feedback</span>
-                            </a>
-                        </li> -->
-                        <!-- Feedback List Item -->
                         <li>
                             <a href="profile-feedback.html" class="flex items-center space-x-3">
                                 <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
-                                <span>Feedback</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Feedback</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
 
-
-
                     </div>
+
                     <div class="space-y-4">
                         <li>
-                            <a href="#" class="flex items-center space-x-3 ">
+                            <a href="#" id="logout-btn" class="flex items-center space-x-3 ">
                                 <img src="images/svg/logout.svg" alt="Logout" class="w-[14px] h-[14px]">
                                 <span>Logout</span>
                             </a>
                         </li>
+
+
                         <li>
                             <a href="#" class="flex items-center space-x-3 ">
                                 <img src="images/svg/settings.svg" alt="Settings" class="w-[14px] h-[14px]">
@@ -321,16 +350,48 @@
                             </a>
                         </li>
                     </div>
+
+                    <div id="logout-popup"
+                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                        <div class="bg-white p-6 rounded-sm shadow-lg w-[400px]">
+
+                            <!-- Content -->
+                            <div class="flex items-start space-x-3">
+                                <img src="images/svg/danger.svg" alt="Warning" class="w-[22px] h-[22px]">
+                                <div class="flex flex-col">
+                                    <h2 class="font-normal text-[16px] leading-6">Are you sure you want to Logout?</h2>
+                                    <p class="font-normal text-[14px] leading-[22px] mt-2">You need to login to book
+                                        your tickets.</p>
+                                </div>
+                            </div>
+
+
+                            <!-- Buttons -->
+                            <div class="flex justify-end space-x-3 mt-4">
+                                <button id="cancel-logout"
+                                    class="px-4 py-2 border rounded-sm text-[#000000D9]">Cancel</button>
+                                <button id="confirm-logout"
+                                    class="px-4 py-2 bg-[#FF4D4F] text-white rounded-sm">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </ul>
             </nav>
         </aside>
 
         <!-- Main Section -->
-        <main class="flex-1 p-0">
+        <main id="profile-main" class="w-full lg:block flex-1 p-0">
+            <div class="bg-white border-b border[#0000000F] p-2 lg:p-4">
+                <div class="flex items-center w-full gap-2 mb-4">
+                    <span class="block lg:hidden">
+                        <img id="back-btn" class="h-5 w-5"
+                            src="https://img.icons8.com/material-sharp/24/1A1A1A/back--v1.png" alt="back--v1" />
+                    </span>
+                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">Invite and Earn Rewards!</span>
+                </div>
 
-            <div class="bg-white border-b border[#0000000F] p-4">
-                <h2 class="font-normal text-xl mb-2">Invite and Earn Rewards!</h2>
-                <p class="font-normal text-[14px] leading-[22px] text-[#000000D9] mb-4">
+                <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9] mb-4">
                     Share the joy of Roam Nepal with your friends.<br>
                     Reach referral milestones to increase the points you get on every referral.
                 </p>
@@ -404,49 +465,49 @@
 
                         <!-- Milestone Labels -->
                         <div
-                            class="flex justify-between w-full mt-2 text-[14px] leading-[22px] font-normal text-[#000000D9] absolute top-[-8px] ">
-                            <span class="relative left-[35px]">15/50</span>
-                            <span class="relative right-[35px]">25/50</span>
-                            <span class="relative right-[35px]">25/75</span>
-                            <span class="relative right-[35px]">25/100</span>
+                            class="flex justify-between w-full mt-2 text-[10px] lg:text-[14px] leading-[22px] font-normal text-[#000000D9] absolute top-[-8px] ">
+                            <span class="relative left-[25px] lg:left-[35px]">15/50</span>
+                            <span class="relative right-[25px] lg:right-[35px]">25/50</span>
+                            <span class="relative right-[25px] lg:right-[35px]">25/75</span>
+                            <span class="relative right-[25px] lg:right-[35px]">25/100</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white mt-6 p-4 rounded-sm">
-                <h2 class="font-normal text-[#000000D9] text-[20px] leading-[28px] mb-2">My Referral Code</h2>
-                <p class="font-normal text-[14px] leading-[22px] text-[#000000D9] mb-4">
+            <div class="bg-white mt-6 p-2 lg:p-4 rounded-sm">
+                <h2 class="font-normal text-[#000000D9] text-[16px] lg:text-[20px] leading-[28px] mb-2">My Referral Code
+                </h2>
+                <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9] mb-4">
                     Share your unique referral link with your friends, and when they sign up and complete their first
-                    booking, both of you win!
-                    They get started with ease, and you earn extra promos and perks!
+                    booking, both of you win! They get started with ease, and you earn extra promos and perks!
                 </p>
 
                 <div class="flex items-center gap-2">
                     <div class="flex ">
                         <!-- Referral Code Input -->
                         <input type="text" id="referral-code" value="HARRIS3455"
-                            class="w-[363px] h-[32px] p-2 border border-[#D9D9D9] rounded-l-sm text-[#00000040] bg-gray-100 focus:outline-none"
+                            class="w-[122px] lg:w-[363px] h-[32px] p-2 border border-[#D9D9D9] font-normal text-[12px] lg:text-[14px] leading-[22px] rounded-l-sm text-[#00000040] bg-gray-100 focus:outline-none"
                             readonly>
 
                         <!-- Copy Button -->
                         <button onclick="copyReferralCode()"
-                            class="bg-[#637B7D] w-[111px] h-[32px] text-white px-4 rounded-r-sm font-normal text-[14px] leading-[22px] text-center">
+                            class="bg-[#637B7D] w-[111px] h-[32px] text-white px-4 rounded-r-sm font-normal text-[12px] lg:text-[14px] leading-[22px] text-center">
                             Copy
                         </button>
                     </div>
 
                     <!-- Invite Button -->
                     <button
-                        class="bg-[#0B3C49] w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[14px] leading-[22px] text-center">
+                        class="bg-[#0B3C49] w-[86px] lg:w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[12px] lg:text-[14px] leading-[22px] text-center">
                         Invite
                     </button>
                 </div>
             </div>
 
             <div class="bg-white mt-6 p-4 rounded-sm">
-                <h2 class="font-normal text-[#000000D9] text-[20px] leading-[28px] mb-2">Enter Referral Code</h2>
-                <p class="font-normal text-[14px] leading-[22px] text-[#000000D9] mb-4">
+                <h2 class="font-normal text-[#000000D9] text-[16px] lg:text-[20px] leading-[28px] mb-2">Enter Referral Code</h2>
+                <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9] mb-4">
                     Were you referred to Roam Nepal? Enter their referral code here to earn reward points!
                 </p>
 
@@ -454,114 +515,72 @@
                     <div class="flex ">
                         <!-- Referral Code Input -->
                         <input type="text" id="user-referral-code" placeholder="Referral Code Here"
-                            class="w-[474px] h-[32px] p-2 border border-[#D9D9D9] rounded-l-sm text-black bg-gray-100 focus:outline-none">
+                            class="w-[230px] lg:w-[474px] h-[32px] p-2 border border-[#D9D9D9] font-normal text-[12px] lg:text-[14px] leading-[22px] rounded-l-sm text-black bg-gray-100 focus:outline-none">
                     </div>
 
                     <!-- Enter Button -->
                     <button
-                        class="bg-[#0B3C49] w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[14px] leading-[22px] text-center">
+                        class="bg-[#0B3C49] w-[86px] lg:w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[12px] lg:text-[14px] leading-[22px] text-center">
                         Enter
                     </button>
                 </div>
             </div>
 
-            <div class="bg-white mt-6 p-4 rounded-sm">
-                <h2 class="text-xl font-normal mb-4">Referral History</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            <div class="bg-white mt-6 p-2 lg:p-4 rounded-sm">
+                <h2 class="font-normal text-[#000000D9] text-[16px] lg:text-[20px] leading-[28px] mb-2">Referral History</h2>
+                <div class="grid grid-cols-2 lg:grid-cols-5 gap-6">
                     <!-- Referral Item -->
                     <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
                         <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
                         <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
                         <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
                         <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
                         <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
                         <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
                         <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
-                        <img class="w-10 h-10 rounded-full" src="images/sample_1.jpg" alt="Shishir Sharma">
-                        <div>
-                            <p class="font-bold text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
-                            <p class="font-normal text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan 2024</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
-
-
-
-
-
-
         </main>
 
     </div>
@@ -676,6 +695,18 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        const backButton = document.getElementById("back-btn"); // Selects the back button image
+        const mainSection = document.getElementById("profile-main");
+        const asideSection = document.getElementById("profile-aside");
+
+        // When the back button is clicked
+        backButton.addEventListener("click", function () {
+            mainSection.classList.add("hidden"); // Hide main section
+            asideSection.classList.remove("hidden"); // Show aside section
+        });
+    </script>
 
     <script>
         function copyReferralCode() {
