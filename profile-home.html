@@ -248,12 +248,11 @@
 
     <div class="h-fit flex static mt-[60px] lg:mt-[92px] p-4 gap-4">
         <!-- Aside Section -->
-        <aside id="profile-home" class="hidden lg:flex w-full h-fit lg:w-[210px] lg:h-[680px] flex flex-col bg-white ">
+        <aside id="profile-aside" class="hidden lg:flex w-full h-fit lg:w-[210px] lg:h-[680px] flex flex-col bg-white ">
             <div class="flex flex-col h-fit items-center lg:items-start pt-4 lg:pt-8 px-4">
                 <img src="images/sample_1.jpg" alt="Profile Image" class="w-[96px] h-[89px] rounded-full mb-[10px]">
                 <h2 class="text-xl font-normal text-[#000000D9]">Kamala Harris</h2>
             </div>
-            <!-- h-[calc(100%-160px)] -->
             <nav class="mt-4 h-full pb-4">
                 <ul class="flex flex-col h-full gap-20 justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
                     <div class="space-y-4">
@@ -273,7 +272,6 @@
                         <li>
                             <a href="profile-level.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/my-level.svg" alt="My Level" class="w-[14px] h-[14px]">
-                                <!-- <span>My Level</span> -->
                                 <div class="flex items-center justify-between w-full">
                                     <span>My Level</span>
                                     <span class="block lg:hidden">
@@ -288,7 +286,6 @@
                         <li>
                             <a href="profile-bookings.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/num-hours.svg" alt="My Bookings" class="w-[14px] h-[14px]">
-                                <!-- <span>My Bookings</span> -->
                                 <div class="flex items-center justify-between w-full">
                                     <span>My Bookings</span>
                                     <span class="block lg:hidden">
@@ -302,7 +299,6 @@
                         <li>
                             <a href="profile-referrals.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/referrals.svg" alt="Referrals" class="w-[14px] h-[14px]">
-                                <!-- <span>Referrals</span> -->
                                 <div class="flex items-center justify-between w-full">
                                     <span>Referrals</span>
                                     <span class="block lg:hidden">
@@ -316,7 +312,6 @@
                         <li>
                             <a href="profile-feedback.html" class="flex items-center space-x-3">
                                 <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
-                                <!-- <span>Feedback</span> -->
                                 <div class="flex items-center justify-between w-full">
                                     <span>Feedback</span>
                                     <span class="block lg:hidden">
@@ -389,7 +384,7 @@
         </aside>
 
         <!-- Main Section -->
-        <main id="profile-home-main" class=" w-full lg:block flex-1 p-0">
+        <main id="profile-main" class=" w-full lg:block flex-1 p-0">
             <!-- <h1 class="font-normal text-xl">Profile Details</h1> -->
             <div class="flex items-center w-full gap-2">
                 <span class="block lg:hidden">
@@ -720,8 +715,8 @@
                             class="w-full lg:w-2/3 border border-[#D9D9D9] font-normal text-xs lg:text-sm rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
                         <button type="button" class="absolute right-3 lg:right-5"
                             onclick="togglePassword('current-password', this)">
-                            <img class="w-4 h-4 lg:w-5 lg:h-5 invisible-eye" src="https://img.icons8.com/ios/50/closed-eye.png"
-                                alt="closed-eye" />
+                            <img class="w-4 h-4 lg:w-5 lg:h-5 invisible-eye"
+                                src="https://img.icons8.com/ios/50/closed-eye.png" alt="closed-eye" />
                             <img class="w-4 h-4 lg:w-5 lg:h-5 visible-eye hidden" src="images/svg/password_visible.svg"
                                 alt="visible-eye" />
                         </button>
@@ -736,8 +731,8 @@
                             class="w-full lg:w-2/3 border border-[#D9D9D9] font-normal text-xs lg:text-sm rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
                         <button type="button" class="absolute right-3 lg:right-5"
                             onclick="togglePassword('new-password', this)">
-                            <img class="w-4 h-4 lg:w-5 lg:h-5 invisible-eye" src="https://img.icons8.com/ios/50/closed-eye.png"
-                                alt="closed-eye" />
+                            <img class="w-4 h-4 lg:w-5 lg:h-5 invisible-eye"
+                                src="https://img.icons8.com/ios/50/closed-eye.png" alt="closed-eye" />
                             <img class="w-4 h-4 lg:w-5 lg:h-5 visible-eye hidden" src="images/svg/password_visible.svg"
                                 alt="visible-eye" />
                         </button>
@@ -752,8 +747,8 @@
                             class="w-full lg:w-2/3 border border-[#D9D9D9] font-normal text-xs lg:text-sm rounded-sm py-2 px-3 text-gray-700 focus:outline-none" />
                         <button type="button" class="absolute right-3 lg:right-5"
                             onclick="togglePassword('confirm-password', this)">
-                            <img class="w-4 h-4 lg:w-5 lg:h-5 invisible-eye" src="https://img.icons8.com/ios/50/closed-eye.png"
-                                alt="closed-eye" />
+                            <img class="w-4 h-4 lg:w-5 lg:h-5 invisible-eye"
+                                src="https://img.icons8.com/ios/50/closed-eye.png" alt="closed-eye" />
                             <img class="w-4 h-4 lg:w-5 lg:h-5 visible-eye hidden" src="images/svg/password_visible.svg"
                                 alt="visible-eye" />
                         </button>
@@ -771,11 +766,6 @@
                                 Update Password
                             </button>
                         </div>
-
-                        <!-- <button type="button" id="update-password-btn"
-                            class="bg-[#0B3C49] text-white px-6 py-2 rounded-sm font-normal text-sm leading-[22px]">
-                            Update Password
-                        </button> -->
                     </div>
                 </form>
             </div>
@@ -916,16 +906,14 @@
     <script type="text/javascript" src="scripts/profileScript.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const backButton = document.getElementById("back-btn"); // Selects the back button image
-            const mainSection = document.getElementById("profile-home-main");
-            const asideSection = document.getElementById("profile-home");
+        const backButton = document.getElementById("back-btn"); // Selects the back button image
+        const mainSection = document.getElementById("profile-main");
+        const asideSection = document.getElementById("profile-aside");
 
-            // When the back button is clicked
-            backButton.addEventListener("click", function () {
-                mainSection.classList.add("hidden"); // Hide main section
-                asideSection.classList.remove("hidden"); // Show aside section
-            });
+        // When the back button is clicked
+        backButton.addEventListener("click", function () {
+            mainSection.classList.add("hidden"); // Hide main section
+            asideSection.classList.remove("hidden"); // Show aside section
         });
     </script>
 

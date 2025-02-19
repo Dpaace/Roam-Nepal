@@ -243,65 +243,94 @@
         </div>
     </nav>
 
-    <div class="h-fit flex static mt-[92px] p-4 gap-4">
+    <div class="h-fit flex static mt-[60px] lg:mt-[92px] p-4 gap-4">
         <!-- Aside Section -->
-        <aside class="w-[210px] h-[680px] flex flex-col bg-white ">
-            <div class="flex flex-col h-fit items-start pt-8 px-4">
+        <aside id="profile-aside" class="hidden lg:flex w-full h-fit lg:w-[210px] lg:h-[680px] flex flex-col bg-white ">
+            <div class="flex flex-col h-fit items-center lg:items-start pt-4 lg:pt-8 px-4">
                 <img src="images/sample_1.jpg" alt="Profile Image" class="w-[96px] h-[89px] rounded-full mb-[10px]">
                 <h2 class="text-xl font-normal text-[#000000D9]">Kamala Harris</h2>
             </div>
-            <!-- h-[calc(100%-160px)] -->
             <nav class="mt-4 h-full pb-4">
-                <ul class="flex flex-col h-full justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
+                <ul class="flex flex-col h-full gap-20 justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
                     <div class="space-y-4">
                         <li>
                             <a href="profile-home.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/person.svg" alt="Profile Details" class="w-[14px] h-[14px]">
-                                <span>Profile Details</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Profile Details</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="profile-level.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/my-level.svg" alt="My Level" class="w-[14px] h-[14px]">
-                                <span>My Level</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>My Level</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+
                             </a>
                         </li>
                         <li>
                             <a href="profile-bookings.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/num-hours.svg" alt="My Bookings" class="w-[14px] h-[14px]">
-                                <span>My Bookings</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>My Bookings</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="profile-referrals.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/referrals.svg" alt="Referrals" class="w-[14px] h-[14px]">
-                                <span>Referrals</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Referrals</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
-                        <!-- <li>
-                            <a href="#" class="flex items-center space-x-3 ">
-                                <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
-                                <span>Feedback</span>
-                            </a>
-                        </li> -->
-                        <!-- Feedback List Item -->
                         <li>
                             <a href="profile-feedback.html" class="flex items-center space-x-3">
                                 <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
-                                <span>Feedback</span>
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Feedback</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
                             </a>
                         </li>
 
-
-
                     </div>
+
                     <div class="space-y-4">
                         <li>
-                            <a href="#" class="flex items-center space-x-3 ">
+                            <a href="#" id="logout-btn" class="flex items-center space-x-3 ">
                                 <img src="images/svg/logout.svg" alt="Logout" class="w-[14px] h-[14px]">
                                 <span>Logout</span>
                             </a>
                         </li>
+
+
                         <li>
                             <a href="#" class="flex items-center space-x-3 ">
                                 <img src="images/svg/settings.svg" alt="Settings" class="w-[14px] h-[14px]">
@@ -321,57 +350,95 @@
                             </a>
                         </li>
                     </div>
+
+                    <div id="logout-popup"
+                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                        <div class="bg-white p-6 rounded-sm shadow-lg w-[400px]">
+
+                            <!-- Content -->
+                            <div class="flex items-start space-x-3">
+                                <img src="images/svg/danger.svg" alt="Warning" class="w-[22px] h-[22px]">
+                                <div class="flex flex-col">
+                                    <h2 class="font-normal text-[16px] leading-6">Are you sure you want to Logout?</h2>
+                                    <p class="font-normal text-[14px] leading-[22px] mt-2">You need to login to book
+                                        your tickets.</p>
+                                </div>
+                            </div>
+
+
+                            <!-- Buttons -->
+                            <div class="flex justify-end space-x-3 mt-4">
+                                <button id="cancel-logout"
+                                    class="px-4 py-2 border rounded-sm text-[#000000D9]">Cancel</button>
+                                <button id="confirm-logout"
+                                    class="px-4 py-2 bg-[#FF4D4F] text-white rounded-sm">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </ul>
             </nav>
         </aside>
 
         <!-- Main Section -->
-        <main class="flex-1 p-2">
+        <main id="profile-main" class="w-full lg:block flex-1 p-0">
             <!-- Tabs Heading -->
-            <div class="bg-white pt-6 px-8">
-                <h2 class="font-normal text-xl mb-4">My Level</h2>
-                <div class="flex justify-between items-center">
+            <div class="bg-white pt-4 px-2 lg:px-8 w-full">
+                <div class="flex items-center w-full gap-2 mb-4">
+                    <span class="block lg:hidden">
+                        <img id="back-btn" class="h-5 w-5"
+                            src="https://img.icons8.com/material-sharp/24/1A1A1A/back--v1.png" alt="back--v1" />
+                    </span>
+                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">My Level</span>
+                </div>
+
+                
+                <div class="flex  justify-between items-center">
                     <!-- Tabs -->
                     <button
-                        class="tab-btn flex flex-col items-center px-4 pb-2 text-[#374151] font-bold focus:outline-none active-tab"
+                        class="tab-btn flex flex-col items-center px-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none active-tab "
                         data-tab="bronze">
-                        <img src="images/bronze-voyager.png" alt="Bronze Voyager" class="w-[94px] h-[74px] mb-2" />
+                        <img src="images/bronze-voyager.png" alt="Bronze Voyager"
+                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
                         <span>Bronze Voyager</span>
                     </button>
                     <button
-                        class="tab-btn flex flex-col items-center px-4 pb-2 text-[#374151] font-bold focus:outline-none"
+                        class="tab-btn flex flex-col items-centerpx-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none"
                         data-tab="silver">
-                        <img src="images/silver-explorer.png" alt="Silver Explorer" class="w-[94px] h-[74px] mb-2" />
+                        <img src="images/silver-explorer.png" alt="Silver Explorer"
+                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
                         <span>Silver Explorer</span>
                     </button>
                     <button
-                        class="tab-btn flex flex-col items-center px-4 pb-2 text-[#374151] font-bold focus:outline-none"
+                        class="tab-btn flex flex-col items-center px-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none"
                         data-tab="gold">
-                        <img src="images/gold-adventurer.png" alt="Gold Adventurer" class="w-[94px] h-[74px] mb-2" />
+                        <img src="images/gold-adventurer.png" alt="Gold Adventurer"
+                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
                         <span>Gold Adventurer</span>
                     </button>
                     <button
-                        class="tab-btn flex flex-col items-center px-4 pb-2 text-[#374151] font-bold focus:outline-none"
+                        class="tab-btn flex flex-col items-center px-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none"
                         data-tab="redeem">
-                        <img src="images/Shopping cart.png" alt="Redeem Points" class="w-[94px] h-[74px] mb-2" />
+                        <img src="images/Shopping cart.png" alt="Redeem Points"
+                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
                         <span>Redeem Points</span>
                     </button>
                 </div>
             </div>
 
             <!-- Tabs Content -->
-            <div class="bg-white py-6 px-8 mt-6">
+            <div class="bg-white p-4 lg:py-6 lg:px-8 mt-6">
                 <!-- Bronze Voyager Content -->
                 <div class="level-tab-content active-content h-fit" id="bronze">
                     <!-- Tab Content Header -->
                     <div class="flex items-center mb-4">
                         <button
-                            class="tab-switch-btn py-2 px-4 font-medium text-[#0B3C49] border  border-[#0B3C49] rounded-tl rounded-bl focus:outline-none"
+                            class="tab-switch-btn py-2 px-4 lg:font-medium text-[#0B3C49] font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 border  border-[#0B3C49] rounded-tl rounded-bl focus:outline-none"
                             data-content="tasks">
                             View Tasks
                         </button>
                         <button
-                            class="tab-switch-btn py-2 px-4 font-medium border border-[#D9D9D9] rounded-tr rounded-br text-[#000000D9] focus:outline-none"
+                            class="tab-switch-btn py-2 px-4 lg:font-medium font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 border border-[#D9D9D9] rounded-tr rounded-br text-[#000000D9] focus:outline-none"
                             data-content="benefits">
                             View Benefits
                         </button>
@@ -380,191 +447,201 @@
                     <!-- Tasks Content -->
                     <div class="tab-content-tasks h-fit">
                         <!-- Task Item -->
-                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
+                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
                             <div class="flex justify-center items-center w-full">
                                 <div class="flex items-center gap-4 w-4/5">
                                     <img src="images/blog-comments-1.png" alt="Blog Comments"
                                         class="w-[42px] h-[40px]" />
                                     <div class="w-full flex flex-col gap-[9px]">
-                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">Blog
+                                        <h3
+                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
+                                            Blog
                                             Comments</h3>
-                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
+                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
+                                            </div>
                                         </div>
-                                        <p class="text-xs font-[600] text-[#00000066]">Comment on 5 more blogs</p>
+                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
+                                            blogs</p>
                                     </div>
                                 </div>
                                 <div class="text-right w-1/5">
-                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
+                                    <button
+                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
                                         Task</button>
-                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
+                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
+                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
                             <div class="flex justify-center items-center w-full">
                                 <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/bus-tickets.png" alt="Blog Comments" class="w-[42px] h-[40px]" />
+                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
+                                        class="w-[42px] h-[40px]" />
                                     <div class="w-full flex flex-col gap-[9px]">
-                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Bus Tickets
-                                        </h3>
-                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
+                                        <h3
+                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
+                                            Blog
+                                            Comments</h3>
+                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
+                                            </div>
                                         </div>
-                                        <p class="text-xs font-[600] text-[#00000066]">Book 2 more bus ticket</p>
+                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
+                                            blogs</p>
                                     </div>
                                 </div>
                                 <div class="text-right w-1/5">
+                                    <button
+                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
+                                        Task</button>
+                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
+                            <div class="flex justify-center items-center w-full">
+                                <div class="flex items-center gap-4 w-4/5">
+                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
+                                        class="w-[42px] h-[40px]" />
+                                    <div class="w-full flex flex-col gap-[9px]">
+                                        <h3
+                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
+                                            Blog
+                                            Comments</h3>
+                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
+                                            </div>
+                                        </div>
+                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
+                                            blogs</p>
+                                    </div>
+                                </div>
+                                <div class="text-right w-1/5">
+                                    <button
+                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
+                                        Task</button>
+                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
+                            <div class="flex justify-center items-center w-full">
+                                <div class="flex items-center gap-4 w-4/5">
+                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
+                                        class="w-[42px] h-[40px]" />
+                                    <div class="w-full flex flex-col gap-[9px]">
+                                        <h3
+                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
+                                            Blog
+                                            Comments</h3>
+                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
+                                            </div>
+                                        </div>
+                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
+                                            blogs</p>
+                                    </div>
+                                </div>
+                                <div class="text-right w-1/5">
+                                    <button
+                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
+                                        Task</button>
+                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
+                            <div class="flex justify-center items-center w-full">
+                                <div class="flex items-center gap-4 w-4/5">
+                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
+                                        class="w-[42px] h-[40px]" />
+                                    <div class="w-full flex flex-col gap-[9px]">
+                                        <h3
+                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
+                                            Blog
+                                            Comments</h3>
+                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
+                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
+                                            </div>
+                                        </div>
+                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
+                                            blogs</p>
+                                    </div>
+                                </div>
+                                <div class="text-right w-1/5">
+                                    <button
+                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
+                                        Task</button>
+                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
-                                        Task</button>
-                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/rent-vehicles.png" alt="Blog Comments" class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Rent Vehicles
-                                        </h3>
-                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
-                                        </div>
-                                        <p class="text-xs font-[600] text-[#00000066]">Rent 2 more vehicles</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
-                                        Task</button>
-                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-2.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">Blog
-                                            Comments</h3>
-                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
-                                        </div>
-                                        <p class="text-xs font-[600] text-[#00000066]">Comment on 5 more blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
-                                        Task</button>
-                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-3.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">Blog
-                                            Comments</h3>
-                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
-                                        </div>
-                                        <p class="text-xs font-[600] text-[#00000066]">Comment on 5 more blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
-                                        Task</button>
-                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex items-center my-2 mb-4 w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-4.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3 class="text-[16px] leading-[27.25px] font-[600] text-[#333333]">Blog
-                                            Comments</h3>
-                                        <div class="w-full h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;"></div>
-                                        </div>
-                                        <p class="text-xs font-[600] text-[#00000066]">Comment on 5 more blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button class="text-[16px] text-[#03677E] leading-[27.25px] font-normal">Change
-                                        Task</button>
-                                    <p class="text-sm font-normal leading-[22px] text-[#000000D9]">5/10</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Benefits Content -->
                     <div class="tab-content-benefits hidden">
-                        <div class="space-y-2">
+                        <div class="space-y-0 lg:space-y-2">
                             <!-- Benefit Item -->
-                            <div class="flex gap-4 items-center h-[74px]">
+                            <div class="flex gap-4 items-center h-[64px]">
                                 <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
                                 <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
+                                        20% Cash back on
                                         hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
+                                        every hotel
                                         booking</p>
                                 </div>
                             </div>
                             <!-- Repeat Benefit Items as needed -->
-                            <div class="flex gap-4 items-center h-[74px]">
+                            <div class="flex gap-4 items-center h-[64px]">
                                 <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
                                 <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
+                                        20% Cash back on
                                         hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
+                                        every hotel
                                         booking</p>
                                 </div>
                             </div>
-                            <div class="flex gap-4 items-center h-[74px]">
+                            <div class="flex gap-4 items-center h-[64px]">
                                 <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
                                 <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
+                                        20% Cash back on
                                         hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
+                                        every hotel
                                         booking</p>
                                 </div>
                             </div>
-                            <div class="flex gap-4 items-center h-[74px]">
+                            <div class="flex gap-4 items-center h-[64px]">
                                 <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
                                 <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
+                                        20% Cash back on
                                         hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
+                                        every hotel
                                         booking</p>
                                 </div>
                             </div>
-                            <div class="flex gap-4 items-center h-[74px]">
+                            <div class="flex gap-4 items-center h-[64px]">
                                 <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
                                 <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
+                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
+                                        20% Cash back on
                                         hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-center h-[74px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
+                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
+                                        every hotel
                                         booking</p>
                                 </div>
                             </div>
@@ -575,183 +652,57 @@
 
                 <!-- Silver Explorer Content -->
                 <div class="level-tab-content hidden" id="silver">
-                    <h1 class="text-2xl font-bold">Silver Explorer Content</h1>
+                    <h1 class="text-xl font-bold">Silver Explorer Content</h1>
                 </div>
 
                 <!-- Gold Adventurer Content -->
                 <div class="level-tab-content hidden" id="gold">
-                    <h1 class="text-2xl font-bold">Gold Adventurer Content</h1>
+                    <h1 class="text-xl font-bold">Gold Adventurer Content</h1>
                 </div>
 
                 <!-- Redeem Points Content -->
                 <div class="level-tab-content hidden" id="redeem">
-                    <h1 class="text-[16px] flex items-center justify-center leading-[22px] font-semibold">
+                    <h1
+                        class="text-[12px] lg:text-[16px] flex items-center justify-center leading-[22px] font-semibold">
                         20% off on Hotel Bookings
-                        <span class="text-[#03677E] font-bold text-[32px] leading-[44px] ml-4">
+                        <span class="text-[#03677E] font-bold text-[16px] lg:text-[24px] leading-[44px] ml-2 lg:ml-4">
                             5000
-                            <span class="text-[16px]">
+                            <span class="text-[12px] lg:text-[16px]">
                                 Points
                             </span>
                         </span>
                     </h1>
 
                     <!-- Redeem Cards -->
-
-                    <div class="space-y-2 ">
-                        <div class="flex justify-between">
+                    <div class="space-y-0 lg:space-y-2 ">
+                        <div class="flex flex-col lg:flex-row justify-between">
                             <div class="flex gap-4 items-center h-[74px] w-full">
                                 <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
-                                        booking</p>
+                                <div class="flex flex-col gap-0 lg:gap-1">
+                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
+                                        20% Cash back on hotels
+                                    </h3>
+                                    <p class="text-[12px] lg:text-sm font-normal text-[#171C1F]">
+                                        Get 20% upto Rs.200 on every hotel booking
+                                    </p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-4">
-                                <div class="flex flex-col items-end leading-4">
-                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
-                                        5000&nbsp;
-                                        <span class="text-[16px]">
+                            <div class="flex items-center gap-4 px-14">
+                                <div class="flex flex-col items-end leading-6">
+                                    <span class="text-[#03677E] text-nowrap font-bold text-[16px] lg:text-[24px]">
+                                        500000
+                                        <span class="text-[12px] lg:text-[16px]">
                                             Points
                                         </span>
                                     </span>
-                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
-                                        points
+                                    <p class="font-semibold text-[10px] lg:text-[12px] leading-[10px] text-[#00000066] text-nowrap">
+                                        You need 50 more points
                                     </p>
 
                                 </div>
                                 <div>
                                     <button type="button" id="confirm-changes"
-                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
-                                        Redeem Points
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class=" flex justify-between">
-                            <div class="flex gap-4 items-center h-[74px] w-full">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="flex flex-col items-end leading-4">
-                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
-                                        5000&nbsp;
-                                        <span class="text-[16px]">
-                                            Points
-                                        </span>
-                                    </span>
-                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
-                                        points
-                                    </p>
-
-                                </div>
-                                <div>
-                                    <button type="button" id="confirm-changes"
-                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
-                                        Redeem Points
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class=" flex justify-between">
-                            <div class="flex gap-4 items-center h-[74px] w-full">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="flex flex-col items-end leading-4">
-                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
-                                        5000&nbsp;
-                                        <span class="text-[16px]">
-                                            Points
-                                        </span>
-                                    </span>
-                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
-                                        points
-                                    </p>
-
-                                </div>
-                                <div>
-                                    <button type="button" id="confirm-changes"
-                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
-                                        Redeem Points
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class=" flex justify-between">
-                            <div class="flex gap-4 items-center h-[74px] w-full">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="flex flex-col items-end leading-4">
-                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
-                                        5000&nbsp;
-                                        <span class="text-[16px]">
-                                            Points
-                                        </span>
-                                    </span>
-                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
-                                        points
-                                    </p>
-
-                                </div>
-                                <div>
-                                    <button type="button" id="confirm-changes"
-                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
-                                        Redeem Points
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class=" flex justify-between">
-                            <div class="flex gap-4 items-center h-[74px] w-full">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[16px] leading-[22px] font-semibold text-[#333333]">20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="flex flex-col items-end leading-4">
-                                    <span class="text-[#03677E] flex items-center font-bold text-[24px] ">
-                                        5000&nbsp;
-                                        <span class="text-[16px]">
-                                            Points
-                                        </span>
-                                    </span>
-                                    <p class="font-semibold text-xs text-[#00000066] text-nowrap">You need 50 more
-                                        points
-                                    </p>
-
-                                </div>
-                                <div>
-                                    <button type="button" id="confirm-changes"
-                                        class="bg-[#0B3C49] text-white px-6 py-1 h-10 rounded-sm font-normal text-[16px] leading-[24px] text-nowrap">
+                                        class="bg-[#0B3C49] text-white px-4 lg:px-6 py-2 h-fit lg:h-10 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-[24px] text-nowrap">
                                         Redeem Points
                                     </button>
                                 </div>
@@ -879,6 +830,19 @@
 
     <script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="scripts/profileScript.js"></script>
+
+    <script>
+        const backButton = document.getElementById("back-btn"); // Selects the back button image
+        const mainSection = document.getElementById("profile-main");
+        const asideSection = document.getElementById("profile-aside");
+
+        // When the back button is clicked
+        backButton.addEventListener("click", function () {
+            mainSection.classList.add("hidden"); // Hide main section
+            asideSection.classList.remove("hidden"); // Show aside section
+        });
+    </script>
+
     <script>
         const leveltabs = document.querySelectorAll('.tab-btn');
         const contents = document.querySelectorAll('.level-tab-content');
