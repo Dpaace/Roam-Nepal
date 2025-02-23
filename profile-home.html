@@ -50,9 +50,6 @@
     <!-- Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-    <style>
-
-    </style>
 
 
 </head>
@@ -249,10 +246,69 @@
     <div class="h-fit flex static mt-[60px] lg:mt-[92px] p-4 gap-4">
         <!-- Aside Section -->
         <aside id="profile-aside" class="hidden lg:flex w-full h-fit lg:w-[210px] lg:h-[680px] flex flex-col bg-white ">
+            <!-- Profile Section with Edit Button -->
             <div class="flex flex-col h-fit items-center lg:items-start pt-4 lg:pt-8 px-4">
-                <img src="images/sample_1.jpg" alt="Profile Image" class="w-[96px] h-[89px] rounded-full mb-[10px]">
-                <h2 class="text-xl font-normal text-[#000000D9]">Kamala Harris</h2>
+                <div class="relative">
+                    <!-- Profile Image -->
+                    <img id="profile-img" src="images/sample_1.jpg" alt="Profile Image"
+                        class="w-[96px] h-[96px] rounded-full">
+
+                    <!-- Edit Button -->
+                    <button id="edit-profile-btn" class="absolute bottom-0 right-0 bg-gray-200 p-1 rounded-full">
+                        <img src="images/svg/edit.svg" alt="Edit Profile" class="w-4 h-4">
+                    </button>
+                </div>
+                <h2 class="text-xl font-normal text-[#000000D9] mt-2">Kamala Harris</h2>
             </div>
+
+            <!-- Profile Image Update Popup -->
+            <div id="profile-popup"
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                <div class="bg-white w-11/12 lg:w-[600px] h-fit rounded-sm p-6 relative ">
+                    <!-- Close Button -->
+                    <button id="close-popup"
+                        class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+
+                    <!-- Image Preview -->
+                    <div class="flex justify-center mb-4">
+                        <img id="profile-preview" src="images/sample_1.jpg" alt="Profile Preview"
+                            class="w-[150px] h-[150px] lg:w-[250px] lg:h-[250px] rounded-full border border-gray-300">
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="flex flex-col gap-3">
+                        <p class="font-[300] text-[12px] leading-4 lg:text-[14px] lg:leading-5">
+                            <i>Please upload square image, size less than 100KB</i>
+                        </p>
+
+                        <div class="flex w-full items-center gap-2 bg-[#F8FCFF]">
+                            <label
+                                class="flex items-center justify-center gap-2 border border-[#03677E] rounded-[5px] py-2 px-3 cursor-pointer">
+                                <span
+                                    class="font-[500] text-[12px] leading-4 lg:text-[16px] lg:leading-[22px] text-[#03677E]">Choose
+                                    File</span>
+                                <input type="file" id="profile-img-update" name="profile-img-update" class="hidden "
+                                    onchange="updateFileName('profile-img-update', 'profile-img-name')" />
+                            </label>
+                            <span id="profile-img-name" class="text-[10px] lg:text-[12px] leading-3 text-gray-500">
+                                No file chosen
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="flex w-full justify-end">
+                        <button id="save-profile"
+                            class="mt-4 bg-[#0B3C49] text-white px-4 py-2 rounded-sm w-[80px] font-[500] text-[12px] leading-4 lg:text-[16px] lg:leading-[22px]">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
             <nav class="mt-4 h-full pb-4">
                 <ul class="flex flex-col h-full gap-20 justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
                     <div class="space-y-4">
@@ -284,6 +340,20 @@
                             </a>
                         </li>
                         <li>
+                            <a href="profile-promo.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/profile-promo.svg" alt="My Level" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Promo Codes</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+                        <li>
                             <a href="profile-bookings.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/num-hours.svg" alt="My Bookings" class="w-[14px] h-[14px]">
                                 <div class="flex items-center justify-between w-full">
@@ -301,6 +371,19 @@
                                 <img src="images/svg/referrals.svg" alt="Referrals" class="w-[14px] h-[14px]">
                                 <div class="flex items-center justify-between w-full">
                                     <span>Referrals</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-favorite.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/my-favorite.svg" alt="Referrals" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Favourites</span>
                                     <span class="block lg:hidden">
                                         <img class="h-3 w-3"
                                             src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
@@ -360,10 +443,13 @@
 
                             <!-- Content -->
                             <div class="flex items-start space-x-3">
-                                <img src="images/svg/danger.svg" alt="Warning" class="w-[16px] h-[16px] lg:w-[22px] lg:h-[22px]">
+                                <img src="images/svg/danger.svg" alt="Warning"
+                                    class="w-[16px] h-[16px] lg:w-[22px] lg:h-[22px]">
                                 <div class="flex flex-col">
-                                    <h2 class="font-normal text-[14px] lg:text-[16px] leading-6">Are you sure you want to Logout?</h2>
-                                    <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] mt-2">You need to login to book
+                                    <h2 class="font-normal text-[14px] lg:text-[16px] leading-6">Are you sure you want
+                                        to Logout?</h2>
+                                    <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] mt-2">You need to
+                                        login to book
                                         your tickets.</p>
                                 </div>
                             </div>
@@ -392,7 +478,6 @@
                 </span>
                 <span class="font-normal text-[16px] leading-[28px] lg:text-xl">Profile Details</span>
             </div>
-
 
             <!-- Profile Completion -->
             <div class="bg-white p-2 lg:p-4 mt-[22px] mb-6 h-fit lg:h-[112px]">
@@ -618,7 +703,8 @@
                     </p>
                     <div class="flex justify-end gap-2">
                         <button type="button" id="confirm-changes"
-                            class="bg-[#03677E] text-white px-6 py-1 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Confirm changes</button>
+                            class="bg-[#03677E] text-white px-6 py-1 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Confirm
+                            changes</button>
                         <button type="button" id="cancel-confirmation"
                             class="border border-[#D9D9D9] text-[#000000D9] px-6 py-1 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Cancel</button>
                     </div>
@@ -662,7 +748,8 @@
             <div id="password-popup"
                 class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                 <div class="bg-white p-6 rounded-md shadow-[4px] w-11/12 lg:w-2/5">
-                    <h2 class="font-normal text-[14px] lg:text-[16px] leading-6 mb-4">Enter your password to confirm changes</h2>
+                    <h2 class="font-normal text-[14px] lg:text-[16px] leading-6 mb-4">Enter your password to confirm
+                        changes</h2>
                     <form>
                         <div class="mb-4 relative">
                             <input type="password" id="phone-password-confirmation" placeholder="Enter Password"
@@ -693,7 +780,8 @@
                     </p>
                     <div class="flex justify-end gap-2">
                         <button type="button" id="confirm-phone-changes"
-                            class="bg-[#03677E] text-white px-6 py-1 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Confirm changes</button>
+                            class="bg-[#03677E] text-white px-6 py-1 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Confirm
+                            changes</button>
                         <button type="button" id="cancel-phone-changes"
                             class="border border-[#D9D9D9] text-[#000000D9] px-6 py-1 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Cancel</button>
                     </div>
@@ -903,6 +991,47 @@
 
     <script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="scripts/profileScript.js"></script>
+
+    <script>
+        const editProfileBtn = document.getElementById("edit-profile-btn");
+        const profilePopup = document.getElementById("profile-popup");
+        const closePopup = document.getElementById("close-popup");
+        const fileInput = document.getElementById("profile-img-update");
+        const profileImg = document.getElementById("profile-img");
+        const profilePreview = document.getElementById("profile-preview");
+        const saveProfile = document.getElementById("save-profile");
+
+        // Open Popup
+        editProfileBtn.addEventListener("click", function () {
+            profilePopup.classList.remove("hidden");
+            document.body.classList.add("disable-scroll");
+        });
+
+        // Close Popup
+        closePopup.addEventListener("click", function () {
+            profilePopup.classList.add("hidden");
+            document.body.classList.remove("disable-scroll");
+        });
+
+        // Handle File Upload
+        fileInput.addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                // Preview the selected image
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    profilePreview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Save Profile Picture
+        saveProfile.addEventListener("click", function () {
+            profileImg.src = profilePreview.src; // Update main profile picture
+            profilePopup.classList.add("hidden"); // Close popup
+        });
+    </script>
 
     <script>
         const backButton = document.getElementById("back-btn"); // Selects the back button image

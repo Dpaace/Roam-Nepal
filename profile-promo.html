@@ -246,10 +246,69 @@
     <div class="h-fit flex static mt-[60px] lg:mt-[92px] p-4 gap-4">
         <!-- Aside Section -->
         <aside id="profile-aside" class="hidden lg:flex w-full h-fit lg:w-[210px] lg:h-[680px] flex flex-col bg-white ">
+            <!-- Profile Section with Edit Button -->
             <div class="flex flex-col h-fit items-center lg:items-start pt-4 lg:pt-8 px-4">
-                <img src="images/sample_1.jpg" alt="Profile Image" class="w-[96px] h-[89px] rounded-full mb-[10px]">
-                <h2 class="text-xl font-normal text-[#000000D9]">Kamala Harris</h2>
+                <div class="relative">
+                    <!-- Profile Image -->
+                    <img id="profile-img" src="images/sample_1.jpg" alt="Profile Image"
+                        class="w-[96px] h-[96px] rounded-full">
+
+                    <!-- Edit Button -->
+                    <button id="edit-profile-btn" class="absolute bottom-0 right-0 bg-gray-200 p-1 rounded-full">
+                        <img src="images/svg/edit.svg" alt="Edit Profile" class="w-4 h-4">
+                    </button>
+                </div>
+                <h2 class="text-xl font-normal text-[#000000D9] mt-2">Kamala Harris</h2>
             </div>
+
+            <!-- Profile Image Update Popup -->
+            <div id="profile-popup"
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                <div class="bg-white w-11/12 lg:w-[600px] h-fit rounded-sm p-6 relative ">
+                    <!-- Close Button -->
+                    <button id="close-popup"
+                        class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+
+                    <!-- Image Preview -->
+                    <div class="flex justify-center mb-4">
+                        <img id="profile-preview" src="images/sample_1.jpg" alt="Profile Preview"
+                            class="w-[150px] h-[150px] lg:w-[250px] lg:h-[250px] rounded-full border border-gray-300">
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="flex flex-col gap-3">
+                        <p class="font-[300] text-[12px] leading-4 lg:text-[14px] lg:leading-5">
+                            <i>Please upload square image, size less than 100KB</i>
+                        </p>
+
+                        <div class="flex w-full items-center gap-2 bg-[#F8FCFF]">
+                            <label
+                                class="flex items-center justify-center gap-2 border border-[#03677E] rounded-[5px] py-2 px-3 cursor-pointer">
+                                <span
+                                    class="font-[500] text-[12px] leading-4 lg:text-[16px] lg:leading-[22px] text-[#03677E]">Choose
+                                    File</span>
+                                <input type="file" id="profile-img-update" name="profile-img-update" class="hidden "
+                                    onchange="updateFileName('profile-img-update', 'profile-img-name')" />
+                            </label>
+                            <span id="profile-img-name" class="text-[10px] lg:text-[12px] leading-3 text-gray-500">
+                                No file chosen
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="flex w-full justify-end">
+                        <button id="save-profile"
+                            class="mt-4 bg-[#0B3C49] text-white px-4 py-2 rounded-sm w-[80px] font-[500] text-[12px] leading-4 lg:text-[16px] lg:leading-[22px]">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
             <nav class="mt-4 h-full pb-4">
                 <ul class="flex flex-col h-full gap-20 justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
                     <div class="space-y-4">
@@ -380,14 +439,17 @@
 
                     <div id="logout-popup"
                         class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
-                        <div class="bg-white p-6 rounded-sm shadow-lg w-[400px]">
+                        <div class="bg-white p-6 rounded-sm shadow-lg lg:w-[400px]">
 
                             <!-- Content -->
                             <div class="flex items-start space-x-3">
-                                <img src="images/svg/danger.svg" alt="Warning" class="w-[22px] h-[22px]">
+                                <img src="images/svg/danger.svg" alt="Warning"
+                                    class="w-[16px] h-[16px] lg:w-[22px] lg:h-[22px]">
                                 <div class="flex flex-col">
-                                    <h2 class="font-normal text-[16px] leading-6">Are you sure you want to Logout?</h2>
-                                    <p class="font-normal text-[14px] leading-[22px] mt-2">You need to login to book
+                                    <h2 class="font-normal text-[14px] lg:text-[16px] leading-6">Are you sure you want
+                                        to Logout?</h2>
+                                    <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] mt-2">You need to
+                                        login to book
                                         your tickets.</p>
                                 </div>
                             </div>
@@ -396,9 +458,9 @@
                             <!-- Buttons -->
                             <div class="flex justify-end space-x-3 mt-4">
                                 <button id="cancel-logout"
-                                    class="px-4 py-2 border rounded-sm text-[#000000D9]">Cancel</button>
+                                    class="px-4 py-2 border rounded-sm text-[#000000D9] font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Cancel</button>
                                 <button id="confirm-logout"
-                                    class="px-4 py-2 bg-[#FF4D4F] text-white rounded-sm">Logout</button>
+                                    class="px-4 py-2 bg-[#FF4D4F] text-white rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Logout</button>
                             </div>
                         </div>
                     </div>
@@ -408,89 +470,252 @@
         </aside>
 
         <!-- Main Section -->
-        <main id="profile-main" class="w-full lg:block flex-1 p-0">
-            <!-- Tab Navigation -->
-            <div class=" bg-white pt-4 px-2 lg:px-8 w-full">
-                <div class="flex items-center w-full gap-2 mb-4">
+        <main id="profile-main" class=" w-full lg:block flex-1 p-0">
+            <div class="flex flex-col justify-start w-full gap-2 p-2 bg-white">
+                <div class="flex items-center">
                     <span class="block lg:hidden">
                         <img id="back-btn" class="h-5 w-5"
                             src="https://img.icons8.com/material-sharp/24/1A1A1A/back--v1.png" alt="back--v1" />
                     </span>
-                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">Terms and Privacy Policy</span>
+                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">Promo Code</span>
                 </div>
 
-                <div class="flex items-center gap-10">
+                <p class="font-normal text-[12px] leading-[16[x]] lg:text-[14px] lg:leading-[22px] my-1 lg:my-4">Get
+                    exclusive discounts. Enter code to save promo codes in your account </p>
+
+                <div class="flex items-center gap-2 lg:gap-5">
+                    <!-- Promo Code Input -->
+                    <input type="text" placeholder="Promo Code"
+                        class="w-4/5 lg:w-[363px] h-[32px] p-2 border border-[#D9D9D9] font-normal text-[12px] lg:text-[14px] leading-[22px] rounded-l-sm text-[#000000] bg-gray-100 focus:outline-none">
+
+                    <!-- Enter Button -->
                     <button
-                        class="tab-booking-btn py-2 text-[#0B3C49] font-normal text-[14px] lg:text-[16px] leading-6 border-b-2 border-[#0B3C49]"
-                        data-tab="terms">
-                        Terms and Conditions
-                    </button>
-                    <button
-                        class="tab-booking-btn py-2 text-[#000000D9] font-normal text-[14px] lg:text-[16px] leading-6"
-                        data-tab="privacy">
-                        Privacy Policy
+                        class="bg-[#0B3C49] w-[86px] lg:w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[12px] lg:text-[14px] leading-[22px] text-center">
+                        Enter
                     </button>
                 </div>
+            </div>
+
+            <div class="flex flex-col justify-start w-full gap-2 p-2 bg-white mt-4 lg:mt-6">
+                <span class="font-normal text-[16px] leading-[28px] lg:text-xl">Promo Code</span>
+
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-2">
+                    <div
+                        class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col justify-center rounded-t-lg min-w-[325px] h-[240px] flex-shrink-0 group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
 
             </div>
 
-            <!-- Tab Contents -->
-            <div class="bg-white mt-6 p-4">
-
-                <div id="terms"
-                    class="tab-booking-content font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">
-                    <div>
-                        <span>1. Acceptance</span>
-                        <p>By accessing or using [Your App Name], you agree to these Terms and Conditions. If you do not
-                            agree, please refrain from using the Service.</p>
-                    </div>
-
-                    <div class="mt-4">
-                        <span>2. Booking & Payment</span>
-                        <p>You agree to pay the ticket amount and any associated fees through accepted payment options.
-                            <br>
-                            All transactions are processed securely, but we are not responsible for any payment failures
-                            outside our control
-                        </p>
-                    </div>
-
-                    <div class="mt-4">
-                        <span>3. Cancellatoin & Refunds</span>
-                        <p>Refunds are subject to the bus operator's cancellation policy. <br>
-                            No refunds will apply for missed buses or cancellations outside of the cancellation window.
-                        </p>
-                    </div>
-
-                    <div class="mt-4">
-                        <span>4. User Conduct</span>
-                        <p>You agree not to misuse the app for unlawful purposes or misrepresent your identity. We
-                            reserve the right to suspend or terminate accounts that violate these rules.</p>
-                    </div>
-
-                    <div class="mt-4">
-                        <span>5. Privacy Policy</span>
-                        <p>We respect your privacy. By using the Service, you agree to our [Privacy Policy](insert
-                            link).</p>
-                    </div>
-
-                    <div class="mt-4">
-                        <span>6. Limitation of Liability</span>
-                        <p>We are not responsible for delays, cancellations, technical failures, or other issues beyond
-                            our control. Our total liability is limited to the amount paid by you for the service.</p>
-                    </div>
-
-                </div>
-
-                <div id="privacy" class="tab-booking-content hidden">
-                </div>
-            </div>
 
 
         </main>
-
     </div>
-
-
 
 
     <footer class="bg-gray-800 text-gray-400 py-10">
@@ -599,6 +824,11 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/profileScript.js"></script>
+
+
+
     <script>
         const backButton = document.getElementById("back-btn"); // Selects the back button image
         const mainSection = document.getElementById("profile-main");
@@ -612,52 +842,32 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabs = document.querySelectorAll(".tab-booking-btn");
-            const contents = document.querySelectorAll(".tab-booking-content");
+        const logoutBtn = document.getElementById("logout-btn");
+        const logoutPopup = document.getElementById("logout-popup");
+        const cancelLogout = document.getElementById("cancel-logout");
+        const confirmLogout = document.getElementById("confirm-logout");
 
-            tabs.forEach(tab => {
-                tab.addEventListener("click", function () {
-                    // Remove active state from all tabs
-                    tabs.forEach(btn => {
-                        btn.classList.remove("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
-                        btn.classList.add("text-[#000000D9]");
-                    });
+        // Show Popup
+        logoutBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            logoutPopup.classList.remove("hidden");
+            document.body.classList.add("disable-scroll");
+        });
 
-                    // Add active state to clicked tab
-                    this.classList.add("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
-                    this.classList.remove("text-[#000000D9]");
+        // Close Popup
+        function closePopup() {
+            logoutPopup.classList.add("hidden");
+            document.body.classList.remove("disable-scroll");
+        }
 
-                    // Hide all tab contents
-                    contents.forEach(content => content.classList.add("hidden"));
+        cancelLogout.addEventListener("click", closePopup);
 
-                    // Show the selected tab content
-                    document.getElementById(this.getAttribute("data-tab")).classList.remove("hidden");
-                });
-            });
+        confirmLogout.addEventListener("click", function () {
+            window.location.href = "index.html";
         });
     </script>
 
-
     <script>
-        // For navbar menu toggle
-        const menuToggle = document.getElementById("menu-toggle");
-        const menu = document.getElementById("menu");
-        const btmNav = document.getElementById("bottom-nav");
-        const hamburgerIcon = document.getElementById("hamburger-icon");
-        const closeIcon = document.getElementById("close-icon");
-
-        menuToggle.addEventListener("click", () => {
-            // Toggle the visibility of the menu
-            menu.classList.toggle("hidden");
-            btmNav.classList.toggle("hidden");
-
-            // Toggle the icons
-            hamburgerIcon.classList.toggle("hidden");
-            closeIcon.classList.toggle("hidden");
-        });
-
-
         // For top navbar
         document.addEventListener("DOMContentLoaded", () => {
             const bsSpan = document.getElementById("toggle-bs");
@@ -725,6 +935,7 @@
             searchBar.classList.remove("hidden");
         });
     </script>
+
 
 </body>
 
