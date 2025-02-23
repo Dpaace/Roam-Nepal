@@ -281,6 +281,20 @@
                             </a>
                         </li>
                         <li>
+                            <a href="profile-promo.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/profile-promo.svg" alt="My Level" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Promo Codes</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+                        <li>
                             <a href="profile-bookings.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/num-hours.svg" alt="My Bookings" class="w-[14px] h-[14px]">
                                 <div class="flex items-center justify-between w-full">
@@ -298,6 +312,19 @@
                                 <img src="images/svg/referrals.svg" alt="Referrals" class="w-[14px] h-[14px]">
                                 <div class="flex items-center justify-between w-full">
                                     <span>Referrals</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-favorite.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/my-favorite.svg" alt="Referrals" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Favourites</span>
                                     <span class="block lg:hidden">
                                         <img class="h-3 w-3"
                                             src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
@@ -466,14 +493,60 @@
                                     </div>
                                 </div>
                                 <div class="text-right w-1/5">
-                                    <button
+                                    <button id="change-task-btn"
                                         class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
                                         Task</button>
                                     <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
                                     </p>
                                 </div>
+
+                                <!-- Change Task Popup -->
+                                <div id="change-task-popup"
+                                    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                                    <div class="bg-white w-11/12 lg:w-[500px] rounded-md shadow-lg p-6 relative">
+                                        <!-- Close Button -->
+                                        <button id="close-popup-btn"
+                                            class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                            &times;
+                                        </button>
+
+                                        <!-- Popup Content -->
+                                        <h2 class="text-sm lg:text-xl font-medium">Change Task</h2>
+                                        <p class="font-normal text-xs lg:text-sm text-[#000000D9] mt-2">
+                                            You can change the task to another category, but please note that you can
+                                            <span class="font-bold">only do this once</span> for each task.
+                                        </p>
+
+                                        <!-- Dropdown Selection -->
+                                        <div class="mt-4">
+                                            <label class="text-xs lg:text-sm font-medium">Change to:</label>
+                                            <select
+                                                class="w-full mt-1 p-2 border border-[#D9D9D9] rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 focus:outline-none">
+                                                <option disabled selected>Type</option>
+                                                <option value="blog-comments">Blog Comments</option>
+                                                <option value="bus-tickets">Bus Tickets</option>
+                                                <option value="hotel-booking">Hotel Booking</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Buttons -->
+                                        <div class="flex justify-end mt-5 space-x-3">
+                                            <button
+                                                class="px-4 py-2 bg-[#03677E] text-white rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                                Confirm changes
+                                            </button>
+                                            <button id="close-popup-btn-2"
+                                                class="px-4 py-2 border border-[#D9D9D9] rounded-sm text-gray-700 font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
+
                         <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
                             <div class="flex justify-center items-center w-full">
                                 <div class="flex items-center gap-4 w-4/5">
@@ -501,6 +574,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
                             <div class="flex justify-center items-center w-full">
                                 <div class="flex items-center gap-4 w-4/5">
@@ -528,6 +602,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
                             <div class="flex justify-center items-center w-full">
                                 <div class="flex items-center gap-4 w-4/5">
@@ -555,6 +630,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
                             <div class="flex justify-center items-center w-full">
                                 <div class="flex items-center gap-4 w-4/5">
@@ -695,7 +771,8 @@
                                             Points
                                         </span>
                                     </span>
-                                    <p class="font-semibold text-[10px] lg:text-[12px] leading-[10px] text-[#00000066] text-nowrap">
+                                    <p
+                                        class="font-semibold text-[10px] lg:text-[12px] leading-[10px] text-[#00000066] text-nowrap">
                                         You need 50 more points
                                     </p>
 
@@ -830,6 +907,26 @@
 
     <script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="scripts/profileScript.js"></script>
+
+    <script>
+        const changeTaskBtn = document.getElementById("change-task-btn");
+        const popup = document.getElementById("change-task-popup");
+        const closeButtons = document.querySelectorAll("#close-popup-btn, #close-popup-btn-2");
+
+        // Open popup when Change Task button is clicked
+        changeTaskBtn.addEventListener("click", function () {
+            popup.classList.remove("hidden");
+            document.body.classList.add("disable-scroll");
+        });
+
+        // Close popup when close buttons are clicked
+        closeButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                popup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+        });
+    </script>
 
     <script>
         const backButton = document.getElementById("back-btn"); // Selects the back button image

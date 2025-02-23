@@ -281,6 +281,20 @@
                             </a>
                         </li>
                         <li>
+                            <a href="profile-promo.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/profile-promo.svg" alt="My Level" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Promo Codes</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+                        <li>
                             <a href="profile-bookings.html" class="flex items-center space-x-3 ">
                                 <img src="images/svg/num-hours.svg" alt="My Bookings" class="w-[14px] h-[14px]">
                                 <div class="flex items-center justify-between w-full">
@@ -298,6 +312,19 @@
                                 <img src="images/svg/referrals.svg" alt="Referrals" class="w-[14px] h-[14px]">
                                 <div class="flex items-center justify-between w-full">
                                     <span>Referrals</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-favorite.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/my-favorite.svg" alt="Referrals" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Favourites</span>
                                     <span class="block lg:hidden">
                                         <img class="h-3 w-3"
                                             src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
@@ -527,7 +554,8 @@
 
                                         <div id="cancel-ticket-popup"
                                             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden text-black">
-                                            <div class="bg-white w-11/12 lg:w-[400px] rounded-lg shadow-lg p-4 lg:p-6 relative">
+                                            <div
+                                                class="bg-white w-11/12 lg:w-[400px] rounded-lg shadow-lg p-4 lg:p-6 relative">
                                                 <!-- Close Button -->
                                                 <button id="close-cancel-popup"
                                                     class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
@@ -535,9 +563,11 @@
                                                 </button>
 
                                                 <!-- Popup Content -->
-                                                <h2 class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 mb-2">
+                                                <h2
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 mb-2">
                                                     Cancel ticket</h2>
-                                                <p class="font-normal text-[#000000D9] text-[12px] lg:text-[14px] leading-[22px] mb-4">
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[12px] lg:text-[14px] leading-[22px] mb-4">
                                                     You will be charged with <strong>Rs.300</strong> according to our
                                                     <a href="#" class="text-[#03677E] underline">cancellation
                                                         policy</a>.
@@ -561,7 +591,8 @@
 
                                         <div id="reschedule-ticket-popup"
                                             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 text-black">
-                                            <div class="bg-white w-11/12 lg:w-[400px] rounded-lg shadow-lg p-4 lg:p-6 relative">
+                                            <div
+                                                class="bg-white w-11/12 lg:w-[400px] rounded-lg shadow-lg p-4 lg:p-6 relative">
                                                 <!-- Close Button -->
                                                 <button id="close-reschedule-popup"
                                                     class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
@@ -569,9 +600,11 @@
                                                 </button>
 
                                                 <!-- Popup Content -->
-                                                <h2 class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 mb-2">
+                                                <h2
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 mb-2">
                                                     Choose a new date</h2>
-                                                <p class="font-normal text-[#000000D9] text-[12px] lg:text-[14px] leading-[22px] mb-4">
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[12px] lg:text-[14px] leading-[22px] mb-4">
                                                     Please note that your selected dates are <span
                                                         class="font-semibold">NOT confirmed</span>.
                                                     Our customer support will contact you with the confirmation of the
@@ -675,15 +708,65 @@
                                             </span>
                                         </div>
                                         <div class="flex space-x-2">
-                                            <button
+                                            <button id="report-issue-btn"
                                                 class="bg-red-100 flex-grow lg:w-[216px] lg:h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
                                                 Report Issue
                                             </button>
-                                            <button
-                                                class=" flex-grow lg:w-[216px] lg:h-[38px] border border-[#D9D9D9]
+                                            <button class=" flex-grow lg:w-[216px] lg:h-[38px] border border-[#D9D9D9]
                                                 text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[12px] leading-4
                                                 lg:text-[16px] lg:leading-6">
                                                 Reschedule Ticket
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Report Issue Popup -->
+                                <div id="report-issue-popup"
+                                    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                                    <div class="bg-white w-11/12 lg:w-[500px] rounded-sm shadow-lg p-6 relative">
+                                        <!-- Close Button -->
+                                        <button id="close-report-popup-btn"
+                                            class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                            &times;
+                                        </button>
+
+                                        <!-- Popup Content -->
+                                        <h2 class="text-sm lg:text-xl font-medium">Report Issue</h2>
+
+                                        <!-- Issue Type Dropdown -->
+                                        <div class="mt-4">
+                                            <label class="text-xs lg:text-sm font-medium">Issue Type:</label>
+                                            <select
+                                                class="w-full mt-1 p-2 border border-gray-300 rounded-sm text-xs lg:text-sm">
+                                                <option disabled selected>Type</option>
+                                                <option value="booking">Booking Issue</option>
+                                                <option value="payment">Payment Issue</option>
+                                                <option value="service">Service Issue</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Details Text Area -->
+                                        <div class="mt-4">
+                                            <label class="text-xs lg:text-sm font-medium">Details about the
+                                                issue</label>
+                                            <textarea id="issue-details"
+                                                class="w-full mt-1 p-2 border border-gray-300 min-h-[150px]  max-h-[250px] rounded-sm text-xs lg:text-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 focus:outline-none"
+                                                placeholder="Write details here" maxlength="100"></textarea>
+                                            <div class="text-right text-gray-500 text-xs mt-1">
+                                                <span id="char-count">0</span> / 100
+                                            </div>
+                                        </div>
+
+                                        <!-- Buttons -->
+                                        <div class="flex justify-end mt-5 space-x-3">
+                                            <button id="close-report-popup-btn-2"
+                                                class="px-4 py-2 border border-gray-300 rounded-sm text-gray-700 font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                                Cancel
+                                            </button>
+                                            <button
+                                                class="px-4 py-2 bg-[#CF1322] text-white rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                                Report Issue
                                             </button>
                                         </div>
                                     </div>
@@ -768,6 +851,8 @@
                                 </div>
                             </div>
                         </div>
+
+
 
                         <!-- Accordion Item 2 - Hotels -->
                         <div class="border border-[#D9D9D9] rounded-sm">
@@ -893,22 +978,24 @@
                                                 </button>
 
                                                 <!-- Popup Content -->
-                                                <h2 class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 mb-4">How
+                                                <h2
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 mb-4">
+                                                    How
                                                     was your experience?</h2>
 
                                                 <!-- Overall Rating -->
                                                 <div class="flex items-center justify-center mb-4 space-x-1">
                                                     <div class="flex space-x-1" id="overallRating">
-                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                            alt="gold-star">
-                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                            alt="gold-star">
-                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                            alt="gold-star">
-                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                            alt="gold-star">
-                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/white-Star.svg"
-                                                            alt="white-star">
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/Star.svg" alt="gold-star">
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/Star.svg" alt="gold-star">
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/Star.svg" alt="gold-star">
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/Star.svg" alt="gold-star">
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/white-Star.svg" alt="white-star">
                                                     </div>
                                                 </div>
 
@@ -917,14 +1004,14 @@
                                                     <div class="flex items-center justify-between">
                                                         <span>Cleanliness</span>
                                                         <div class="flex space-x-1" data-rating="4">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
                                                             <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
                                                                 src="images/svg/white-Star.svg" alt="white-star">
                                                         </div>
@@ -932,14 +1019,14 @@
                                                     <div class="flex items-center justify-between">
                                                         <span>Staff Behaviour</span>
                                                         <div class="flex space-x-1" data-rating="4">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
                                                             <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
                                                                 src="images/svg/white-Star.svg" alt="white-star">
                                                         </div>
@@ -947,14 +1034,14 @@
                                                     <div class="flex items-center justify-between">
                                                         <span>Amenities</span>
                                                         <div class="flex space-x-1" data-rating="4">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
                                                             <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
                                                                 src="images/svg/white-Star.svg" alt="white-star">
                                                         </div>
@@ -962,14 +1049,14 @@
                                                     <div class="flex items-center justify-between">
                                                         <span>Driving</span>
                                                         <div class="flex space-x-1" data-rating="4">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
-                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]" src="images/svg/Star.svg"
-                                                                alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/Star.svg" alt="gold-star">
                                                             <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
                                                                 src="images/svg/white-Star.svg" alt="white-star">
                                                         </div>
@@ -1101,13 +1188,15 @@
                                                 <span class="font-bold text-[#2D7E95]">
                                                     Refunded
                                                 </span>
-                                                <img id="open-refund-popup" class="w-5 h-5 lg:w-6 lg:h-6 hover:cursor-pointer"
+                                                <img id="open-refund-popup"
+                                                    class="w-5 h-5 lg:w-6 lg:h-6 hover:cursor-pointer"
                                                     src="images/svg/InfoCircle.svg" alt="info">
                                             </span>
                                         </div>
                                         <div id="refund-status-popup"
                                             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden text-black z-50 ">
-                                            <div class="bg-white w-11/12 lg:w-[400px] rounded-lg shadow-lg p-4 lg:p-6 relative">
+                                            <div
+                                                class="bg-white w-11/12 lg:w-[400px] rounded-lg shadow-lg p-4 lg:p-6 relative">
                                                 <!-- Close Button -->
                                                 <button id="close-refund-popup"
                                                     class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
@@ -1115,28 +1204,39 @@
                                                 </button>
 
                                                 <!-- Popup Content -->
-                                                <h2 class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 ">Ticket
+                                                <h2
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 ">
+                                                    Ticket
                                                     Status
                                                 </h2>
 
-                                                <p class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 my-2">
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 my-2">
                                                     Status:
                                                     <span class="font-bold text-[#2D7E95]">
                                                         Refunded
                                                     </span>
                                                 </p>
-                                                <p class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-[22px]">
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-[22px]">
                                                     Ticket ID: 123456</p>
-                                                <p class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-[22px]">
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-[22px]">
                                                     Cancellation Date: Dec 15, 2024</p>
-                                                <p class="tfont-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-[22px]">
+                                                <p
+                                                    class="tfont-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-[22px]">
                                                     Refund Amount: NPR 1,200</p>
 
-                                                <p class="font-normal text-[#44474F] text-[12px] lg:text-[14px] leading-5 mt-[10px]">
+                                                <p
+                                                    class="font-normal text-[#44474F] text-[12px] lg:text-[14px] leading-5 mt-[10px]">
                                                     Refund Date: Dec 20, 2024</p>
-                                                <p class="font-normal text-[#44474F] text-[12px] lg:text-[14px] leading-5">Refund
+                                                <p
+                                                    class="font-normal text-[#44474F] text-[12px] lg:text-[14px] leading-5">
+                                                    Refund
                                                     Method: eSewa Wallet</p>
-                                                <p class="font-normal text-[#44474F] text-[12px] lg:text-[14px] leading-5">Transaction
+                                                <p
+                                                    class="font-normal text-[#44474F] text-[12px] lg:text-[14px] leading-5">
+                                                    Transaction
                                                     ID: TXN789654123</p>
 
                                                 <p
@@ -1308,6 +1408,34 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        const reportIssueBtn = document.getElementById("report-issue-btn");
+        const popup = document.getElementById("report-issue-popup");
+        const closeButtons = document.querySelectorAll("#close-report-popup-btn, #close-report-popup-btn-2");
+        const issueDetails = document.getElementById("issue-details");
+        const charCount = document.getElementById("char-count");
+
+        // Open popup when Report Issue button is clicked
+        reportIssueBtn.addEventListener("click", function () {
+            popup.classList.remove("hidden");
+            document.body.classList.add('disable-scroll');
+        });
+
+        // Close popup when close buttons are clicked
+        closeButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                popup.classList.add("hidden");
+                document.body.classList.remove('disable-scroll');
+            });
+        });
+
+        // Character count for textarea
+        issueDetails.addEventListener("input", function () {
+            charCount.textContent = issueDetails.value.length;
+        });
+
+    </script>
 
     <script>
         const backButton = document.getElementById("back-btn"); // Selects the back button image
