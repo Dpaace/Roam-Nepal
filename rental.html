@@ -2073,6 +2073,22 @@
                                     class="absolute top-4 left-6 lg:top-5 lg:left-10 bg-bgTrending text-txtTrending text-sm font-bold px-2 py-1 rounded-xl">
                                     Trending
                                 </span>
+                                <!-- <span
+                                    class="absolute top-2 right-2 flex items-center justify-center w-[35px] h-[33px] bg-white rounded-full shadow-md">
+                                    <img src="images/svg/my-favorite.svg" alt="Heart Icon" class="w-[24px] h-[24px]">
+                                    <img src="images/svg/heart.svg" alt="Heart Icon" class="w-[24px] h-[24px]">
+                                </span> -->
+                                <span id="favorite-toggle"
+                                    class="absolute top-2 right-2 flex items-center justify-center w-[35px] h-[33px] bg-white rounded-full shadow-md cursor-pointer">
+                                    <img id="empty-heart" src="images/svg/my-favorite.svg" alt="Empty Heart"
+                                        class="w-[24px] h-[24px] block">
+                                    <img id="filled-heart" src="images/svg/heart.svg" alt="Filled Heart"
+                                        class="w-[24px] h-[24px] hidden">
+                                </span>
+
+
+
+
                             </div>
                             <div
                                 class="absolute bottom-2 flex items-center justify-center w-full lg:flex lg:w-11/12 lg:h-[60px] lg:gap-1 lg:justify-center lg:items-center">
@@ -2602,9 +2618,6 @@
 
 
             </div>
-
-
-
         </main>
 
     </div>
@@ -2718,7 +2731,18 @@
 
     <script type="text/javascript" src="scripts/rentalScript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <!-- <script type="text/javascript" src="scripts/Script.js"></script> -->
+
+    <script>
+        const favoriteToggle = document.getElementById("favorite-toggle");
+        const emptyHeart = document.getElementById("empty-heart");
+        const filledHeart = document.getElementById("filled-heart");
+
+        favoriteToggle.addEventListener("click", function () {
+            emptyHeart.classList.toggle("hidden");
+            filledHeart.classList.toggle("hidden");
+        });
+    </script>
+
     <script>
         // For top navbar
         document.addEventListener("DOMContentLoaded", () => {
