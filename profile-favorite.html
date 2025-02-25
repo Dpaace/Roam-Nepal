@@ -477,10 +477,15 @@
                                         <img id="main-image-card1" src="images/rental_vehicle_1.jpeg" alt="Main Photo"
                                             class="w-full h-[156px] lg:w-full lg:h-full object-cover rounded-t-md lg:rounded-t-none lg:rounded-tl-md">
                                         <!-- Favourite Badge -->
-                                        <span
+                                        <span id="favorite-toggle"
                                             class="absolute top-2 right-14 flex items-center justify-center w-[22px] h-[22px] bg-white rounded-full shadow-md">
-                                            <img src="images/svg/heart.svg" alt="Heart Icon" class="w-[14px] h-[14px]">
+                                            <img id="empty-heart" src="images/svg/my-favorite.svg" alt="Heart Icon"
+                                                class="w-[14px] h-[14px] hidden">
+                                            <img id="filled-heart" src="images/svg/heart.svg" alt="Heart Icon"
+                                                class="w-[14px] h-[14px] block">
                                         </span>
+
+
 
                                     </div>
                                     <div
@@ -1025,7 +1030,7 @@
 
                         </div>
 
-                       
+
 
                     </div>
                 </div>
@@ -1160,6 +1165,18 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        const favoriteToggle = document.getElementById("favorite-toggle");
+        const emptyHeart = document.getElementById("empty-heart");
+        const filledHeart = document.getElementById("filled-heart");
+
+        favoriteToggle.addEventListener("click", function () {
+            emptyHeart.classList.toggle("hidden");
+            filledHeart.classList.toggle("hidden");
+        });
+
+    </script>
 
     <script>
         function updateMainImage(thumbnail, cardId) {
