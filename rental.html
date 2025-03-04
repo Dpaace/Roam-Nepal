@@ -1216,9 +1216,6 @@
                 </div>
             </div>
 
-
-
-
             <!-- Web View -->
             <div class="hidden lg:flex lg:w-[60%] text-textDateWeb px-2 py-2 gap-2">
                 <button
@@ -1247,10 +1244,12 @@
                     <span class="text-xs text-[#00000073]">From Rs 3000</span>
                 </button>
                 <button
-                    class="flex-grow flex flex-col items-center justify-center border px-4 py-2 rounded-sm border-[#BFC8CC] hover:bg-gray-200 focus:bg-gray-200 focus:border-primary">
+                    class="flex-grow date-picker-only flex flex-col items-center justify-center border px-4 py-2 rounded-sm border-[#BFC8CC] hover:bg-gray-200 focus:bg-gray-200 focus:border-primary">
                     <span class="text-sm font-normal "><img src="images/svg/select-date.svg" alt="select-date"></span>
                     <span class="text-xs text-[#000000D9]">Choose a date</span>
                 </button>
+
+                
             </div>
 
             <!-- Mobile View -->
@@ -2731,6 +2730,19 @@
 
     <script type="text/javascript" src="scripts/rentalScript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        flatpickr(".date-picker-only", {
+            enableTime: false,
+            noCalendar: false,
+            time_24hr: false,
+            dateFormat: "Y-m-d H:i K",
+            minuteIncrement: 30,
+            minDate: "today",
+            position: "auto center",
+            disableMobile: true, // Ensures Flatpickr UI is used instead of native pickers
+        });
+    </script>
 
     <script>
         const favoriteToggle = document.getElementById("favorite-toggle");
