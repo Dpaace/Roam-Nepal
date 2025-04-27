@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roam Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link href="./output.css" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#03677E',
+                        txtPrimary: '#03677E',
+                        txtPlaceholder: '#49454F',
+                        formText: '#0B3C49',
+                        formBorder: '#79747E',
+                        brcolor: '#03677E',
+                        btnbg: '#03677E',
+                        btnOutline: '#03677E',
+                        bannerTxt: '#001A42',
+                        bannerBorder: '#40A9FF',
+                        txtStatistics: '#036773',
+                        bgButton: '#0B3C49',
+                        txtAsideGrey: '#70787C',
+                        bgTrending: '#FFEECB',
+                        txtTrending: '#C87D0C'
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
+
+
+            <div class="flex justify-between w-full lg:w-1/3">
+                <div class="text-2xl font-bold">Roam Nepal</div>
+
+                <button id="menu-toggle" class="block md:block lg:hidden focus:outline-none">
+                    <!-- Hamburger Icon -->
+                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+
+                    <!-- Cross Icon (Initially Hidden) -->
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="menu"
+                class="hidden  flex flex-row justify-end items-end lg:flex lg:flex-col lg:items-end lg:w-2/3">
+
+                <div class="hidden  md:hidden lg:flex items-center justify-center gap-9 text-sm">
+                    <span class="flex items-center space-x-1">
+                        <img class="w-[14px] h-[12px]" src="images/svg/dot.svg" alt="dot">
+                        <span class="text-[12px] leading-4 font-normal">NPR</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <img class="w-[12px] h-[12px]" src="images/svg/calendar_today.svg" alt="calendar">
+                        <span id="toggle-bs" class="text-[12px] leading-4 font-normal cursor-pointer">B.S</span>
+                        <span id="toggle-ad" class="hidden text-[12px] leading-4 font-normal cursor-pointer">A.D</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <img id="language-flag" class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English">
+                        <span id="language-text" class="text-[12px] leading-4 font-normal cursor-pointer">English</span>
+                    </span>
+
+                    <button class="flex items-center space-x-1 ">
+                        <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets">
+                        <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
+                    </button>
+                    <div class="flex items-center space-x-1">
+                        <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
+                        <span class="text-[14px] leading-[22px] font-normal"><a href="profile-home.html">Harris's
+                                Account</a></span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+
+                        <div class="relative">
+                            <!-- Notification Button -->
+                            <button id="notification-btn" class="relative flex items-center justify-center">
+                                <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
+                                    alt="notification-icon">
+                            </button>
+                            <!-- Badge -->
+                            <span
+                                class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
+                                11
+                            </span>
+
+                            <!-- Notification Popup -->
+                            <div id="notification-popup"
+                                class="absolute right-0 top-10 bg-white w-[300px] h-[400px] lg:w-[650px] shadow-lg rounded-lg hidden z-10 overflow-y-scroll overflow-hidden scrollbar-hide">
+                                <div class="p-4">
+                                    <h3 class="text-lg font-bold text-black">Notifications</h3>
+                                </div>
+                                <div class="max-h-[380px] px-2  ">
+                                    <!-- Example Notification -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <!-- Repeat notifications -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button>
+                            <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
+                        </button>
+
+                        <div id="search-container">
+                            <!-- Search Button -->
+                            <button id="search-toggle-btn" class="flex items-center">
+                                <img id="search-icon" class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg"
+                                    alt="search-icon">
+                            </button>
+                            <div id="search-bar"
+                                class="relative w-[250px] flex bg-white items-center border border-[#D9D9D9] rounded-sm p-1 hidden">
+                                <input type="text" placeholder="Search"
+                                    class="w-full outline-none text-black text-sm px-1">
+                                <img id="search-icon" class="w-[14px] h-[14px] cursor-pointer"
+                                    src="images/svg/search-icon.svg" alt="search-icon">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div id="bottom-nav"
+                    class="hidden flex flex-col justify-center items-start mt-6 p-5 lg:p-0 gap-5 w-2/3 lg:w-full lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 text-base leading-4 lg:mt-5 font-semibold">
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/bus.svg" alt="bus"></span>
+                        <span>Bus Ticket</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2 cus-active w-fit">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/rental.svg" alt="rental"></span>
+                        <span>Rental</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/hotels.svg" alt="hotels"></span>
+                        <span>Hotels</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/activities.svg" alt="activities"></span>
+                        <span>Activities</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/packages.svg" alt="packages"></span>
+                        <span>Packages</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/airport-plane.svg" alt="flights"></span>
+                        <span>Flights</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-fit flex flex-col static mt-[60px] lg:mt-[92px] p-4 gap-4">
+        <div class="container mx-auto p-4 max-w-3xl">
+            <!-- Blog Title -->
+            <h1 class="text-xl lg:text-3xl font-semibold">BusSewa x Viber New Year Campaign</h1>
+
+            <!-- Blog Meta Info -->
+            <div class="flex items-center space-x-4 text-gray-500 text-sm mt-2">
+                <div class="flex items-center space-x-1">
+                    <img src="images/svg/blog-star.svg" class="w-4 h-4" alt="Rating">
+                    <span>156</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                    <img src="images/svg/blog-like.svg" class="w-4 h-4" alt="Likes">
+                    <span>156</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                    <img src="images/svg/blog-comment.svg" class="w-4 h-4" alt="Comments">
+                    <span>2</span>
+                </div>
+                <span>24 Jan 2024</span>
+            </div>
+
+            <!-- Tags -->
+            <div class="flex gap-2 mt-3">
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-md">Bus Tickets</span>
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-md">Offers</span>
+            </div>
+
+            <!-- Blog Image -->
+            <div class="mt-4">
+                <img src="images/blog-banner.png" alt="Blog Banner" class="w-full rounded-sm">
+            </div>
+
+            <!-- Blog Content -->
+            <div class="mt-6 text-gray-800 text-[14px] lg:text-[16px] leading-5 lg:leading-6 space-y-4">
+                <p>
+                    Attention all travelers! We're excited to announce our New Year Campaign in collaboration with
+                    Rakuten Viber
+                    starting March 20 - April 31, 2024. This New Year, each week three lucky winners will receive 2-way
+                    premium
+                    bus tickets to Pokhara for 2 each week for 6 weeks.
+                    All you have to do is join Explore Nepal Channel on Viber:
+                    <a href="https://vb.me/ExploreNepalxBusSewa" class="text-blue-500 underline">Join Now</a>
+                </p>
+
+                <h2 class="text-xl font-semibold mt-4">Terms and Conditions:</h2>
+
+                <ul class="list-none list-inside space-y-2">
+                    <li>To enter the contest, participants must join Explore Nepal Channel on Viber.</li>
+                    <li>The offer is available to all individuals who have participated in the weekly quiz.</li>
+                    <li>The offer period begins on 20th of March and ends on 31st April.</li>
+                    <li>Winners will be selected randomly from all eligible entries.</li>
+                    <li>Winners will be notified via direct message on Viber or direct call.</li>
+                    <li>The prize is non-transferable and cannot be exchanged for cash or any other alternative.</li>
+                    <li>By participating in the contest, participants agree to abide by these terms and conditions.</li>
+                </ul>
+            </div>
+
+            <div class="max-w-3xl mx-auto p-4">
+                <!-- Comment Input Section -->
+                <div class="flex items-start space-x-4">
+                    <img src="images/sample_1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+                    <div class="flex-1">
+                        <textarea id="commentBox" rows="1"
+                            class="w-full border border-gray-300 min-h-[100px] max-h-[250px] rounded-sm p-2 text-gray-700 focus:outline-none"
+                            placeholder="Autosize height based on content lines" maxlength="100">
+                        </textarea>
+                        <div class="flex justify-end mt-2 text-gray-500 text-sm">
+                            <span id="charCount">0 / 100</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="mt-3 bg-[#0B3C49] text-white px-4 py-2 rounded-sm">Add Comment</button>
+
+                <!-- Comments List -->
+                <div class="mt-6 border-t pt-4 flex flex-col gap-4">
+                    <!-- Single Comment -->
+                    <div class="flex items-start space-x-4">
+                        <img src="images/sample_1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="text-gray-600 font-semibold">Han Solo <span class="text-gray-400 text-sm">1 day
+                                    ago</span></p>
+                            <p class="text-gray-700 mt-1">
+                                We supply a series of design principles, practical patterns and high quality design
+                                resources (Sketch and Axure),
+                                to help people create their product prototypes beautifully and efficiently.
+                            </p>
+                            <div class="flex items-center space-x-4 text-gray-500 text-sm mt-2">
+                                <span class="flex items-center space-x-1">
+                                    <img src="images/svg/blog-like.svg" class="w-4 h-4" alt="Like">
+                                    <span>0</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <img src="images/svg/blog-dislike.svg" class="w-4 h-4" alt="dislike">
+                                    <span>0</span>
+                                </span>
+                                <button class="text-blue-500">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <img src="images/sample_1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="text-gray-600 font-semibold">Han Solo <span class="text-gray-400 text-sm">1 day
+                                    ago</span></p>
+                            <p class="text-gray-700 mt-1">
+                                We supply a series of design principles, practical patterns and high quality design
+                                resources (Sketch and Axure),
+                                to help people create their product prototypes beautifully and efficiently.
+                            </p>
+                            <div class="flex items-center space-x-4 text-gray-500 text-sm mt-2">
+                                <span class="flex items-center space-x-1">
+                                    <img src="images/svg/blog-like.svg" class="w-4 h-4" alt="Like">
+                                    <span>0</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <img src="images/svg/blog-dislike.svg" class="w-4 h-4" alt="dislike">
+                                    <span>0</span>
+                                </span>
+                                <button class="text-blue-500">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+
+
+        <div class="px-1 lg:px-16">
+            <h2 class="font-normal text-[20px] lg:text-[32px] leading-[40px] mb-4">More Reads</h2>
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-1 lg:px-16">
+            <!-- Blog Card -->
+            <div class="bg-white rounded-sm overflow-hidden">
+                <img src="images/blog.png" alt="Blog Image" class="w-full h-[200px] object-cover">
+                <div class="p-4">
+                    <h3 class="font-normal text-[16px] leading-6">Kathmandu to Pokhara trip travel guide</h3>
+                    <p class="text-[#00000073] font-normal text-[13px] leading-4">24 Jan 2024</p>
+                    <p class="text-[#333333] font-normal text-[14px] leading-[22px] mt-2">
+                        Travelling from Kathmandu to Pokhara is a journey filled with a glimpse of natural beauty...
+                    </p>
+                    <div class="flex items-center justify-between mt-3 text-gray-600 text-sm">
+                        <div class="flex items-center space-x-2 font-normal text-[14px] leading-[22px]">
+                            <img src="images/like.png" class="w-4 h-4" alt="Like">
+                            <span>156</span>
+                            <img src="images/comment.png" class="w-4 h-4" alt="Comment">
+                            <span>2</span>
+                        </div>
+                        <span class="text-[#834C74] font-bold text-[13px] leading-[17px]">Tours</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-sm overflow-hidden">
+                <img src="images/blog.png" alt="Blog Image" class="w-full h-[200px] object-cover">
+                <div class="p-4">
+                    <h3 class="font-normal text-[16px] leading-6">Kathmandu to Pokhara trip travel guide</h3>
+                    <p class="text-[#00000073] font-normal text-[13px] leading-4">24 Jan 2024</p>
+                    <p class="text-[#333333] font-normal text-[14px] leading-[22px] mt-2">
+                        Travelling from Kathmandu to Pokhara is a journey filled with a glimpse of natural beauty...
+                    </p>
+                    <div class="flex items-center justify-between mt-3 text-gray-600 text-sm">
+                        <div class="flex items-center space-x-2 font-normal text-[14px] leading-[22px]">
+                            <img src="images/like.png" class="w-4 h-4" alt="Like">
+                            <span>156</span>
+                            <img src="images/comment.png" class="w-4 h-4" alt="Comment">
+                            <span>2</span>
+                        </div>
+                        <span class="text-[#834C74] font-bold text-[13px] leading-[17px]">Tours</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-sm overflow-hidden">
+                <img src="images/blog.png" alt="Blog Image" class="w-full h-[200px] object-cover">
+                <div class="p-4">
+                    <h3 class="font-normal text-[16px] leading-6">Kathmandu to Pokhara trip travel guide</h3>
+                    <p class="text-[#00000073] font-normal text-[13px] leading-4">24 Jan 2024</p>
+                    <p class="text-[#333333] font-normal text-[14px] leading-[22px] mt-2">
+                        Travelling from Kathmandu to Pokhara is a journey filled with a glimpse of natural beauty...
+                    </p>
+                    <div class="flex items-center justify-between mt-3 text-gray-600 text-sm">
+                        <div class="flex items-center space-x-2 font-normal text-[14px] leading-[22px]">
+                            <img src="images/like.png" class="w-4 h-4" alt="Like">
+                            <span>156</span>
+                            <img src="images/comment.png" class="w-4 h-4" alt="Comment">
+                            <span>2</span>
+                        </div>
+                        <span class="text-[#834C74] font-bold text-[13px] leading-[17px]">Tours</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-sm overflow-hidden">
+                <img src="images/blog.png" alt="Blog Image" class="w-full h-[200px] object-cover">
+                <div class="p-4">
+                    <h3 class="font-normal text-[16px] leading-6">Kathmandu to Pokhara trip travel guide</h3>
+                    <p class="text-[#00000073] font-normal text-[13px] leading-4">24 Jan 2024</p>
+                    <p class="text-[#333333] font-normal text-[14px] leading-[22px] mt-2">
+                        Travelling from Kathmandu to Pokhara is a journey filled with a glimpse of natural beauty...
+                    </p>
+                    <div class="flex items-center justify-between mt-3 text-gray-600 text-sm">
+                        <div class="flex items-center space-x-2 font-normal text-[14px] leading-[22px]">
+                            <img src="images/like.png" class="w-4 h-4" alt="Like">
+                            <span>156</span>
+                            <img src="images/comment.png" class="w-4 h-4" alt="Comment">
+                            <span>2</span>
+                        </div>
+                        <span class="text-[#834C74] font-bold text-[13px] leading-[17px]">Tours</span>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    
+
+
+
+    <footer class="bg-gray-800 text-gray-400 py-10">
+        <div
+            class="container mx-auto px-6 grid grid-cols-2 justify-start items-start md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Services</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Bus Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Tours</a></li>
+                    <li><a href="#" class="hover:text-white">Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Activities</a></li>
+                    <li><a href="#" class="hover:text-white">Flights</a></li>
+                    <li><a href="#" class="hover:text-white">Hotels</a></li>
+                </ul>
+            </div>
+
+            <!-- Products -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Products</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Tourist BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">Mobile App</a></li>
+                    <li><a href="#" class="hover:text-white">Website</a></li>
+                </ul>
+            </div>
+
+            <!-- Help -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Help</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa Agent</a></li>
+                    <li><a href="#" class="hover:text-white">Help Centre</a></li>
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social Media  class="h-5 w-5" -->
+            <div>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li class="flex items-center space-x-2 ">
+                        <span>
+                            <img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" />
+
+                        </span>
+                        <a href="tel:+9779876567989" class="hover:text-white">+977 9876567989</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" /></span>
+                        <a href="tel:+9779887567890" class="hover:text-white">+977 9887567890</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-email.svg" alt="email" /></span>
+                        <a href="mailto:info@bussewa.com" class="hover:text-white">info@bussewa.com</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-4 mt-4">
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Facebook.svg" alt="facebook" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Instagram.svg" alt="instagram" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Twitter.svg" alt="twitter" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-LinkedIn.svg" alt="linkedin" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-TikTok.svg" alt="tiktok" /></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Download & Footer Bottom -->
+        <div class="mt-10 border-t border-gray-700 pt-6">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm mt-4 md:mt-0">
+                    <p>Copyright © BusSewa All Rights Reserved</p>
+                </div>
+
+                <!-- App Download -->
+                <div class="flex items-center space-x-4">
+                    <a href="#">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-10" />
+                    </a>
+                    <a href="#">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-10" />
+                    </a>
+                </div>
+
+
+
+                <!-- Legal Links -->
+                <div class="flex text-sm mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Cookie <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Privacy <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Terms <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- JavaScript for Auto Resizing Textarea & Character Count -->
+    <script>
+        const commentBox = document.getElementById("commentBox");
+        const charCount = document.getElementById("charCount");
+
+        commentBox.addEventListener("input", function () {
+            this.style.height = "auto";
+            this.style.height = this.scrollHeight + "px";
+            charCount.textContent = `${this.value.length} / 100`;
+        });
+    </script>
+
+
+    <script>
+        // For navbar menu toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+        const btmNav = document.getElementById("bottom-nav");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const closeIcon = document.getElementById("close-icon");
+
+        menuToggle.addEventListener("click", () => {
+            // Toggle the visibility of the menu
+            menu.classList.toggle("hidden");
+            btmNav.classList.toggle("hidden");
+
+            // Toggle the icons
+            hamburgerIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("hidden");
+        });
+
+
+        // For top navbar
+        document.addEventListener("DOMContentLoaded", () => {
+            const bsSpan = document.getElementById("toggle-bs");
+            const adSpan = document.getElementById("toggle-ad");
+
+            // Add event listeners for toggling
+            bsSpan.addEventListener("click", () => {
+                bsSpan.classList.add("hidden");
+                adSpan.classList.remove("hidden");
+            });
+
+            adSpan.addEventListener("click", () => {
+                adSpan.classList.add("hidden");
+                bsSpan.classList.remove("hidden");
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const languageFlag = document.getElementById("language-flag");
+            const languageText = document.getElementById("language-text");
+
+            // Add event listener for toggling
+            languageText.addEventListener("click", () => {
+                if (languageText.textContent === "English") {
+                    // Switch to Nepali
+                    languageFlag.src = "images/nepal-flag.png";
+                    languageFlag.alt = "Nepali";
+                    languageText.textContent = "Nepali";
+                } else {
+                    // Switch to English
+                    languageFlag.src = "images/svg/us.svg";
+                    languageFlag.alt = "English";
+                    languageText.textContent = "English";
+                }
+            });
+        });
+
+
+        const notificationBtn = document.getElementById("notification-btn");
+        const notificationPopup = document.getElementById("notification-popup");
+
+        // Toggle notification popup on button click
+        notificationBtn.addEventListener("click", () => {
+            notificationPopup.classList.toggle("hidden");
+        });
+
+        // Close the popup when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
+                notificationPopup.classList.add("hidden");
+            }
+        });
+
+
+
+
+        const searchToggleBtn = document.getElementById("search-toggle-btn");
+        const searchBar = document.getElementById("search-bar");
+        const searchIcon = document.getElementById("search-icon");
+
+        // Toggle search bar visibility
+        searchToggleBtn.addEventListener("click", () => {
+            // Hide the search icon and show the search bar
+            searchIcon.classList.add("hidden");
+            searchBar.classList.remove("hidden");
+        });
+    </script>
+
+</body>
+
+</html>

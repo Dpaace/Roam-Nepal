@@ -409,387 +409,219 @@
 
         <!-- Main Section -->
         <main id="profile-main" class="w-full lg:block flex-1 p-0">
-            <!-- Tabs Heading -->
-            <div class="bg-white pt-4 px-2 lg:px-8 w-full">
+            <div class="bg-white border-b border[#0000000F] p-2 lg:p-4">
                 <div class="flex items-center w-full gap-2 mb-4">
                     <span class="block lg:hidden">
                         <img id="back-btn" class="h-5 w-5"
                             src="https://img.icons8.com/material-sharp/24/1A1A1A/back--v1.png" alt="back--v1" />
                     </span>
-                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">My Level</span>
+                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">Invite and Earn Rewards!</span>
                 </div>
 
+                <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9] mb-4">
+                    Share the joy of Roam Nepal with your friends.<br>
+                    Reach referral milestones to increase the points you get on every referral.
+                </p>
 
-                <div class="flex  justify-between items-center">
-                    <!-- Tabs -->
+                <div class="flex flex-col items-center mt-6">
+                    <!-- Progress Bar Container -->
+                    <div class="relative w-full">
+                        <!-- Progress Bar Background -->
+                        <div class="w-full h-[22px] bg-[#F5F5F5] rounded-full relative">
+                            <!-- Progress Bar Fill -->
+                            <div class="absolute top-0 left-0 h-[22px] bg-[#0B3C49] rounded-full w-[25%]"></div>
+                        </div>
+
+                        <!-- Milestone Icons -->
+                        <div class="flex justify-between w-full absolute top-[-4px]">
+                            <div class="relative flex flex-col items-center group">
+                                <img src="images/milestone.png" alt="Milestone 1"
+                                    class="w-[27px] h-[28px] cursor-pointer z-30">
+
+                                <!-- Tooltip -->
+                                <div class="absolute bottom-full mb-2 hidden group-hover:flex flex-col items-center">
+                                    <div
+                                        class="bg-yellow-400 text-black text-xs font-medium py-1 px-3 rounded-md shadow-lg relative whitespace-nowrap">
+                                        150 points for each referral
+                                        <div
+                                            class="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-3 h-3 bg-yellow-400 rotate-45">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col items-center group">
+                                <img src="images/milestone.png" alt="Milestone 2"
+                                    class="w-[27px] h-[28px] cursor-pointer z-30">
+                                <div class="absolute bottom-full mb-2 hidden group-hover:flex flex-col items-center">
+                                    <div
+                                        class="bg-yellow-400 text-black text-xs font-medium py-1 px-3 rounded-md shadow-lg relative whitespace-nowrap">
+                                        150 points for each referral
+                                        <div
+                                            class="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-3 h-3 bg-yellow-400 rotate-45">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col items-center group">
+                                <img src="images/milestone.png" alt="Milestone 3"
+                                    class="w-[27px] h-[28px] cursor-pointer z-30">
+                                <div class="absolute bottom-full mb-2 hidden group-hover:flex flex-col items-center">
+                                    <div
+                                        class="bg-yellow-400 text-black text-xs font-medium py-1 px-3 rounded-md shadow-lg relative whitespace-nowrap">
+                                        150 points for each referral
+                                        <div
+                                            class="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-3 h-3 bg-yellow-400 rotate-45">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col items-center group">
+                                <img src="images/milestone.png" alt="Milestone 4"
+                                    class="w-[27px] h-[28px] cursor-pointer z-30">
+                                <div class="absolute bottom-full mb-2 hidden group-hover:flex flex-col items-center">
+                                    <div
+                                        class="bg-yellow-400 text-black text-xs font-medium py-1 px-3 rounded-md shadow-lg relative whitespace-nowrap">
+                                        150 points for each referral
+                                        <div
+                                            class="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-3 h-3 bg-yellow-400 rotate-45">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Milestone Labels -->
+                        <div
+                            class="flex justify-between w-full mt-2 text-[10px] lg:text-[14px] leading-[22px] font-normal text-[#000000D9] absolute top-[-8px] ">
+                            <span class="relative left-[25px] lg:left-[35px]">15/50</span>
+                            <span class="relative right-[25px] lg:right-[35px]">25/50</span>
+                            <span class="relative right-[25px] lg:right-[35px]">25/75</span>
+                            <span class="relative right-[25px] lg:right-[35px]">25/100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white mt-6 p-2 lg:p-4 rounded-sm">
+                <h2 class="font-normal text-[#000000D9] text-[16px] lg:text-[20px] leading-[28px] mb-2">My Referral Code
+                </h2>
+                <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9] mb-4">
+                    Share your unique referral link with your friends, and when they sign up and complete their first
+                    booking, both of you win! They get started with ease, and you earn extra promos and perks!
+                </p>
+
+                <div class="flex items-center gap-2">
+                    <div class="flex ">
+                        <!-- Referral Code Input -->
+                        <input type="text" id="referral-code" value="HARRIS3455"
+                            class="w-[122px] lg:w-[363px] h-[32px] p-2 border border-[#D9D9D9] font-normal text-[12px] lg:text-[14px] leading-[22px] rounded-l-sm text-[#00000040] bg-gray-100 focus:outline-none"
+                            readonly>
+
+                        <!-- Copy Button -->
+                        <button onclick="copyReferralCode()"
+                            class="bg-[#637B7D] w-[111px] h-[32px] text-white px-4 rounded-r-sm font-normal text-[12px] lg:text-[14px] leading-[22px] text-center">
+                            Copy
+                        </button>
+                    </div>
+
+                    <!-- Invite Button -->
                     <button
-                        class="tab-btn flex flex-col items-center px-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none active-tab "
-                        data-tab="bronze">
-                        <img src="images/bronze-voyager.png" alt="Bronze Voyager"
-                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
-                        <span>Bronze Voyager</span>
-                    </button>
-                    <button
-                        class="tab-btn flex flex-col items-centerpx-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none"
-                        data-tab="silver">
-                        <img src="images/silver-explorer.png" alt="Silver Explorer"
-                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
-                        <span>Silver Explorer</span>
-                    </button>
-                    <button
-                        class="tab-btn flex flex-col items-center px-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none"
-                        data-tab="gold">
-                        <img src="images/gold-adventurer.png" alt="Gold Adventurer"
-                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
-                        <span>Gold Adventurer</span>
-                    </button>
-                    <button
-                        class="tab-btn flex flex-col items-center px-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none"
-                        data-tab="redeem">
-                        <img src="images/Shopping cart.png" alt="Redeem Points"
-                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
-                        <span>Redeem Points</span>
+                        class="bg-[#0B3C49] w-[86px] lg:w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[12px] lg:text-[14px] leading-[22px] text-center">
+                        Invite
                     </button>
                 </div>
             </div>
 
-            <!-- Tabs Content -->
-            <div class="bg-white p-4 lg:py-6 lg:px-8 mt-6">
-                <!-- Bronze Voyager Content -->
-                <div class="level-tab-content active-content h-fit" id="bronze">
-                    <!-- Tab Content Header -->
-                    <div class="flex items-center mb-4">
-                        <button
-                            class="tab-switch-btn py-2 px-4 lg:font-medium text-[#0B3C49] font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 border  border-[#0B3C49] rounded-tl rounded-bl focus:outline-none"
-                            data-content="tasks">
-                            View Tasks
-                        </button>
-                        <button
-                            class="tab-switch-btn py-2 px-4 lg:font-medium font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 border border-[#D9D9D9] rounded-tr rounded-br text-[#000000D9] focus:outline-none"
-                            data-content="benefits">
-                            View Benefits
-                        </button>
+            <div class="bg-white mt-6 p-4 rounded-sm">
+                <h2 class="font-normal text-[#000000D9] text-[16px] lg:text-[20px] leading-[28px] mb-2">Enter Referral
+                    Code</h2>
+                <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9] mb-4">
+                    Were you referred to Roam Nepal? Enter their referral code here to earn reward points!
+                </p>
+
+                <div class="flex items-center gap-2">
+                    <div class="flex ">
+                        <!-- Referral Code Input -->
+                        <input type="text" id="user-referral-code" placeholder="Referral Code Here"
+                            class="w-[230px] lg:w-[474px] h-[32px] p-2 border border-[#D9D9D9] font-normal text-[12px] lg:text-[14px] leading-[22px] rounded-l-sm text-black bg-gray-100 focus:outline-none">
                     </div>
 
-                    <!-- Tasks Content -->
-                    <div class="tab-content-tasks h-fit">
-                        <!-- Task Item -->
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button id="change-task-btn"
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-
-                                <!-- Change Task Popup -->
-                                <div id="change-task-popup"
-                                    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-                                    <div class="bg-white w-11/12 lg:w-[500px] rounded-md shadow-lg p-6 relative">
-                                        <!-- Close Button -->
-                                        <button id="close-popup-btn"
-                                            class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
-                                            &times;
-                                        </button>
-
-                                        <!-- Popup Content -->
-                                        <h2 class="text-sm lg:text-xl font-medium">Change Task</h2>
-                                        <p class="font-normal text-xs lg:text-sm text-[#000000D9] mt-2">
-                                            You can change the task to another category, but please note that you can
-                                            <span class="font-bold">only do this once</span> for each task.
-                                        </p>
-
-                                        <!-- Dropdown Selection -->
-                                        <div class="mt-4">
-                                            <label class="text-xs lg:text-sm font-medium">Change to:</label>
-                                            <select
-                                                class="w-full mt-1 p-2 border border-[#D9D9D9] rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 focus:outline-none">
-                                                <option disabled selected>Type</option>
-                                                <option value="blog-comments">Blog Comments</option>
-                                                <option value="bus-tickets">Bus Tickets</option>
-                                                <option value="hotel-booking">Hotel Booking</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- Buttons -->
-                                        <div class="flex justify-end mt-5 space-x-3">
-                                            <button
-                                                class="px-4 py-2 bg-[#03677E] text-white rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
-                                                Confirm changes
-                                            </button>
-                                            <button id="close-popup-btn-2"
-                                                class="px-4 py-2 border border-[#D9D9D9] rounded-sm text-gray-700 font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Benefits Content -->
-                    <div class="tab-content-benefits hidden">
-                        <div class="space-y-0 lg:space-y-2">
-                            <!-- Benefit Item -->
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <!-- Repeat Benefit Items as needed -->
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    <!-- Enter Button -->
+                    <button
+                        class="bg-[#0B3C49] w-[86px] lg:w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[12px] lg:text-[14px] leading-[22px] text-center">
+                        Enter
+                    </button>
                 </div>
+            </div>
 
-                <!-- Silver Explorer Content -->
-                <div class="level-tab-content hidden" id="silver">
-                    <h1 class="text-xl font-bold">Silver Explorer Content</h1>
-                </div>
-
-                <!-- Gold Adventurer Content -->
-                <div class="level-tab-content hidden" id="gold">
-                    <h1 class="text-xl font-bold">Gold Adventurer Content</h1>
-                </div>
-
-                <!-- Redeem Points Content -->
-                <div class="level-tab-content hidden" id="redeem">
-                    <h1
-                        class="text-[12px] lg:text-[16px] flex items-center justify-center leading-[22px] font-semibold">
-                        20% off on Hotel Bookings
-                        <span class="text-[#03677E] font-bold text-[16px] lg:text-[24px] leading-[44px] ml-2 lg:ml-4">
-                            5000
-                            <span class="text-[12px] lg:text-[16px]">
-                                Points
-                            </span>
-                        </span>
-                    </h1>
-
-                    <!-- Redeem Cards -->
-                    <div class="space-y-0 lg:space-y-2 ">
-                        <div class="flex flex-col lg:flex-row justify-between">
-                            <div class="flex gap-4 items-center h-[74px] w-full">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-0 lg:gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on hotels
-                                    </h3>
-                                    <p class="text-[12px] lg:text-sm font-normal text-[#171C1F]">
-                                        Get 20% upto Rs.200 on every hotel booking
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 px-14">
-                                <div class="flex flex-col items-end leading-6">
-                                    <span class="text-[#03677E] text-nowrap font-bold text-[16px] lg:text-[24px]">
-                                        500000
-                                        <span class="text-[12px] lg:text-[16px]">
-                                            Points
-                                        </span>
-                                    </span>
-                                    <p
-                                        class="font-semibold text-[10px] lg:text-[12px] leading-[10px] text-[#00000066] text-nowrap">
-                                        You need 50 more points
-                                    </p>
-
-                                </div>
-                                <div>
-                                    <button type="button" id="confirm-changes"
-                                        class="bg-[#0B3C49] text-white px-4 lg:px-6 py-2 h-fit lg:h-10 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-[24px] text-nowrap">
-                                        Redeem Points
-                                    </button>
-                                </div>
-                            </div>
+            <div class="bg-white mt-6 p-2 lg:p-4 rounded-sm">
+                <h2 class="font-normal text-[#000000D9] text-[16px] lg:text-[20px] leading-[28px] mb-2">Referral History
+                </h2>
+                <div class="grid grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- Referral Item -->
+                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg"
+                            alt="Shishir Sharma">
+                        <div>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan
+                                2024</p>
                         </div>
-
                     </div>
-
-
-
+                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg"
+                            alt="Shishir Sharma">
+                        <div>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan
+                                2024</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg"
+                            alt="Shishir Sharma">
+                        <div>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan
+                                2024</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg"
+                            alt="Shishir Sharma">
+                        <div>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan
+                                2024</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg"
+                            alt="Shishir Sharma">
+                        <div>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan
+                                2024</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg"
+                            alt="Shishir Sharma">
+                        <div>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan
+                                2024</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border-b border-[#D9D9D9] pb-2">
+                        <img class="w-[32px] h-[32px] lg:w-10 lg:h-10 rounded-full" src="images/sample_1.jpg"
+                            alt="Shishir Sharma">
+                        <div>
+                            <p class="font-bold text-[14px] lg:text-[16px] leading-5 text-[#001F28]">Shishir Sharma</p>
+                            <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] text-[#000000D9]">4th Jan
+                                2024</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -905,28 +737,7 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="scripts/script.js"></script>
-    <script type="text/javascript" src="scripts/profileScript.js"></script>
-
-    <script>
-        const changeTaskBtn = document.getElementById("change-task-btn");
-        const popup = document.getElementById("change-task-popup");
-        const closeButtons = document.querySelectorAll("#close-popup-btn, #close-popup-btn-2");
-
-        // Open popup when Change Task button is clicked
-        changeTaskBtn.addEventListener("click", function () {
-            popup.classList.remove("hidden");
-            document.body.classList.add("disable-scroll");
-        });
-
-        // Close popup when close buttons are clicked
-        closeButtons.forEach(button => {
-            button.addEventListener("click", function () {
-                popup.classList.add("hidden");
-                document.body.classList.remove("disable-scroll");
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <script>
         const backButton = document.getElementById("back-btn"); // Selects the back button image
@@ -941,60 +752,172 @@
     </script>
 
     <script>
-        const leveltabs = document.querySelectorAll('.tab-btn');
-        const contents = document.querySelectorAll('.level-tab-content');
+        function copyReferralCode() {
+            const referralCodeInput = document.getElementById("referral-code");
+            referralCodeInput.select();
+            referralCodeInput.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand("copy");
 
-        leveltabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all leveltabs
-                leveltabs.forEach(t => t.classList.remove('active-tab'));
-                // Hide all tab contents
-                contents.forEach(c => c.classList.add('hidden'));
-                contents.forEach(c => c.classList.remove('active-content'));
-
-                // Add active class to clicked tab
-                tab.classList.add('active-tab');
-                // Show the corresponding tab content
-                const contentId = tab.getAttribute('data-tab');
-                document.getElementById(contentId).classList.remove('hidden');
-                document.getElementById(contentId).classList.add('active-content');
-            });
-        });
-
-
-        // Get all tab buttons and tab contents
-        const tabSwitchBtns = document.querySelectorAll('.tab-switch-btn');
-        const tabContent = document.getElementById('tab-content');
-        const tasksContent = document.querySelector('.tab-content-tasks');
-        const benefitsContent = document.querySelector('.tab-content-benefits');
-
-        // Add event listener for tab buttons
-        tabSwitchBtns.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                // Reset all buttons to default style
-                tabSwitchBtns.forEach((b) => {
-                    b.classList.remove('text-[#0B3C49]', 'border-[#0B3C49]', 'active-tab');
-                    b.classList.add('text-[#000000D9]', 'border-[#D9D9D9]');
-                });
-
-                // Apply active style to clicked button
-                btn.classList.remove('text-[#000000D9]', 'border-[#D9D9D9]');
-                btn.classList.add('text-[#0B3C49]', 'border-[#0B3C49]', 'active-tab');
-
-                // Show/hide tab content based on data-content attribute
-                if (btn.getAttribute('data-content') === 'tasks') {
-                    tasksContent.classList.remove('hidden');
-                    benefitsContent.classList.add('hidden');
-                } else {
-                    benefitsContent.classList.remove('hidden');
-                    tasksContent.classList.add('hidden');
-                }
-            });
-        });
+            // Alert or feedback (optional)
+            alert("Referral code copied: " + referralCodeInput.value);
+        }
 
     </script>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const refundPopup = document.getElementById("refund-status-popup");
+            const openRefundBtn = document.getElementById("open-refund-popup");
+            const closeRefundBtn = document.getElementById("close-refund-popup");
+            const confirmCloseBtn = document.getElementById("confirm-refund-close");
+
+            // Open the popup when clicking the info icon
+            openRefundBtn.addEventListener("click", () => {
+                refundPopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close the popup when clicking the (X) close button
+            closeRefundBtn.addEventListener("click", () => {
+                refundPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+            // Close the popup when clicking "Close" button
+            confirmCloseBtn.addEventListener("click", () => {
+                refundPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const accordions = document.querySelectorAll(".accordion-header");
+
+            accordions.forEach(header => {
+                header.addEventListener("click", function () {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector(".accordion-icon");
+
+                    // Toggle the accordion
+                    content.classList.toggle("hidden");
+                    icon.style.transform = content.classList.contains("hidden") ? "rotate(0deg)" : "rotate(90deg)";
+                });
+            });
+        });
+    </script>
+
+    <script>
+
+        flatpickr(".date-picker", {
+            enableTime: true,
+            noCalendar: false,
+            time_24hr: false,
+            dateFormat: "Y-m-d H:i K",
+            minuteIncrement: 30,
+            minDate: "today",
+            position: "auto center",
+            disableMobile: true, // Ensures Flatpickr UI is used instead of native pickers
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const reschedulePopup = document.getElementById("reschedule-ticket-popup");
+            const openRescheduleBtn = document.getElementById("open-reschedule-popup");
+            const closeRescheduleBtn = document.getElementById("close-reschedule-popup");
+
+            // Open the popup
+            openRescheduleBtn.addEventListener("click", () => {
+                reschedulePopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close the popup when clicking 'X' button
+            closeRescheduleBtn.addEventListener("click", () => {
+                reschedulePopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cancelPopup = document.getElementById("cancel-ticket-popup");
+            const openCancelBtn = document.getElementById("open-cancel-popup");
+            const closeCancelBtn = document.getElementById("close-cancel-popup");
+            const goBackBtn = document.getElementById("go-back-btn");
+
+            // Open the popup
+            openCancelBtn.addEventListener("click", () => {
+                cancelPopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close the popup when clicking 'X' or 'Go Back'
+            closeCancelBtn.addEventListener("click", () => {
+                cancelPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+            goBackBtn.addEventListener("click", () => {
+                cancelPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tab-booking-btn");
+            const contents = document.querySelectorAll(".tab-booking-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function () {
+                    // Remove active state from all tabs
+                    tabs.forEach(btn => {
+                        btn.classList.remove("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
+                        btn.classList.add("text-[#000000D9]");
+                    });
+
+                    // Add active state to clicked tab
+                    this.classList.add("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
+                    this.classList.remove("text-[#000000D9]");
+
+                    // Hide all tab contents
+                    contents.forEach(content => content.classList.add("hidden"));
+
+                    // Show the selected tab content
+                    document.getElementById(this.getAttribute("data-tab")).classList.remove("hidden");
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        // For navbar menu toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+        const btmNav = document.getElementById("bottom-nav");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const closeIcon = document.getElementById("close-icon");
+
+        menuToggle.addEventListener("click", () => {
+            // Toggle the visibility of the menu
+            menu.classList.toggle("hidden");
+            btmNav.classList.toggle("hidden");
+
+            // Toggle the icons
+            hamburgerIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("hidden");
+        });
+
+
         // For top navbar
         document.addEventListener("DOMContentLoaded", () => {
             const bsSpan = document.getElementById("toggle-bs");

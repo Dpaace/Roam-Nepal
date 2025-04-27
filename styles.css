@@ -294,6 +294,15 @@ body.sticky-active {
     border-bottom: 3px solid #03677E;
 }
 
+
+.tab-booking-btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.tab-booking-btn:hover {
+    color: #0B3C49;
+}
+
 /* 
 #continue-scroll {
     display: flex;

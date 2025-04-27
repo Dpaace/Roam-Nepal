@@ -246,10 +246,69 @@
     <div class="h-fit flex static mt-[60px] lg:mt-[92px] p-4 gap-4">
         <!-- Aside Section -->
         <aside id="profile-aside" class="hidden lg:flex w-full h-fit lg:w-[210px] lg:h-[680px] flex flex-col bg-white ">
+            <!-- Profile Section with Edit Button -->
             <div class="flex flex-col h-fit items-center lg:items-start pt-4 lg:pt-8 px-4">
-                <img src="images/sample_1.jpg" alt="Profile Image" class="w-[96px] h-[89px] rounded-full mb-[10px]">
-                <h2 class="text-xl font-normal text-[#000000D9]">Kamala Harris</h2>
+                <div class="relative">
+                    <!-- Profile Image -->
+                    <img id="profile-img" src="images/sample_1.jpg" alt="Profile Image"
+                        class="w-[96px] h-[96px] rounded-full">
+
+                    <!-- Edit Button -->
+                    <button id="edit-profile-btn" class="absolute bottom-0 right-0 bg-gray-200 p-1 rounded-full">
+                        <img src="images/svg/edit.svg" alt="Edit Profile" class="w-4 h-4">
+                    </button>
+                </div>
+                <h2 class="text-xl font-normal text-[#000000D9] mt-2">Kamala Harris</h2>
             </div>
+
+            <!-- Profile Image Update Popup -->
+            <div id="profile-popup"
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                <div class="bg-white w-11/12 lg:w-[600px] h-fit rounded-sm p-6 relative ">
+                    <!-- Close Button -->
+                    <button id="close-popup"
+                        class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+
+                    <!-- Image Preview -->
+                    <div class="flex justify-center mb-4">
+                        <img id="profile-preview" src="images/sample_1.jpg" alt="Profile Preview"
+                            class="w-[150px] h-[150px] lg:w-[250px] lg:h-[250px] rounded-full border border-gray-300">
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="flex flex-col gap-3">
+                        <p class="font-[300] text-[12px] leading-4 lg:text-[14px] lg:leading-5">
+                            <i>Please upload square image, size less than 100KB</i>
+                        </p>
+
+                        <div class="flex w-full items-center gap-2 bg-[#F8FCFF]">
+                            <label
+                                class="flex items-center justify-center gap-2 border border-[#03677E] rounded-[5px] py-2 px-3 cursor-pointer">
+                                <span
+                                    class="font-[500] text-[12px] leading-4 lg:text-[16px] lg:leading-[22px] text-[#03677E]">Choose
+                                    File</span>
+                                <input type="file" id="profile-img-update" name="profile-img-update" class="hidden "
+                                    onchange="updateFileName('profile-img-update', 'profile-img-name')" />
+                            </label>
+                            <span id="profile-img-name" class="text-[10px] lg:text-[12px] leading-3 text-gray-500">
+                                No file chosen
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="flex w-full justify-end">
+                        <button id="save-profile"
+                            class="mt-4 bg-[#0B3C49] text-white px-4 py-2 rounded-sm w-[80px] font-[500] text-[12px] leading-4 lg:text-[16px] lg:leading-[22px]">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
             <nav class="mt-4 h-full pb-4">
                 <ul class="flex flex-col h-full gap-20 justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
                     <div class="space-y-4">
@@ -380,14 +439,17 @@
 
                     <div id="logout-popup"
                         class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
-                        <div class="bg-white p-6 rounded-sm shadow-lg w-[400px]">
+                        <div class="bg-white p-6 rounded-sm shadow-lg lg:w-[400px]">
 
                             <!-- Content -->
                             <div class="flex items-start space-x-3">
-                                <img src="images/svg/danger.svg" alt="Warning" class="w-[22px] h-[22px]">
+                                <img src="images/svg/danger.svg" alt="Warning"
+                                    class="w-[16px] h-[16px] lg:w-[22px] lg:h-[22px]">
                                 <div class="flex flex-col">
-                                    <h2 class="font-normal text-[16px] leading-6">Are you sure you want to Logout?</h2>
-                                    <p class="font-normal text-[14px] leading-[22px] mt-2">You need to login to book
+                                    <h2 class="font-normal text-[14px] lg:text-[16px] leading-6">Are you sure you want
+                                        to Logout?</h2>
+                                    <p class="font-normal text-[12px] lg:text-[14px] leading-[22px] mt-2">You need to
+                                        login to book
                                         your tickets.</p>
                                 </div>
                             </div>
@@ -396,9 +458,9 @@
                             <!-- Buttons -->
                             <div class="flex justify-end space-x-3 mt-4">
                                 <button id="cancel-logout"
-                                    class="px-4 py-2 border rounded-sm text-[#000000D9]">Cancel</button>
+                                    class="px-4 py-2 border rounded-sm text-[#000000D9] font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Cancel</button>
                                 <button id="confirm-logout"
-                                    class="px-4 py-2 bg-[#FF4D4F] text-white rounded-sm">Logout</button>
+                                    class="px-4 py-2 bg-[#FF4D4F] text-white rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Logout</button>
                             </div>
                         </div>
                     </div>
@@ -408,395 +470,185 @@
         </aside>
 
         <!-- Main Section -->
-        <main id="profile-main" class="w-full lg:block flex-1 p-0">
-            <!-- Tabs Heading -->
-            <div class="bg-white pt-4 px-2 lg:px-8 w-full">
-                <div class="flex items-center w-full gap-2 mb-4">
+        <main id="profile-main" class=" w-full lg:block flex-1 p-0">
+            <div class="flex flex-col justify-start w-full gap-2 p-2 bg-white">
+                <div class="flex items-center">
                     <span class="block lg:hidden">
                         <img id="back-btn" class="h-5 w-5"
                             src="https://img.icons8.com/material-sharp/24/1A1A1A/back--v1.png" alt="back--v1" />
                     </span>
-                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">My Level</span>
+                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">Promo Code</span>
                 </div>
 
+                <p class="font-normal text-[12px] leading-[16[x]] lg:text-[14px] lg:leading-[22px] my-1 lg:my-4">Get
+                    exclusive discounts. Enter code to save promo codes in your account </p>
 
-                <div class="flex  justify-between items-center">
-                    <!-- Tabs -->
+                <div class="flex items-center gap-2 lg:gap-5">
+                    <!-- Promo Code Input -->
+                    <input type="text" placeholder="Promo Code"
+                        class="w-4/5 lg:w-[363px] h-[32px] p-2 border border-[#D9D9D9] font-normal text-[12px] lg:text-[14px] leading-[22px] rounded-l-sm text-[#000000] bg-gray-100 focus:outline-none">
+
+                    <!-- Enter Button -->
                     <button
-                        class="tab-btn flex flex-col items-center px-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none active-tab "
-                        data-tab="bronze">
-                        <img src="images/bronze-voyager.png" alt="Bronze Voyager"
-                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
-                        <span>Bronze Voyager</span>
-                    </button>
-                    <button
-                        class="tab-btn flex flex-col items-centerpx-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none"
-                        data-tab="silver">
-                        <img src="images/silver-explorer.png" alt="Silver Explorer"
-                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
-                        <span>Silver Explorer</span>
-                    </button>
-                    <button
-                        class="tab-btn flex flex-col items-center px-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none"
-                        data-tab="gold">
-                        <img src="images/gold-adventurer.png" alt="Gold Adventurer"
-                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
-                        <span>Gold Adventurer</span>
-                    </button>
-                    <button
-                        class="tab-btn flex flex-col items-center px-2 lg:px-4 pb-2 text-[#374151] text-[10px] lg:text-[16px] leading-4 text-nowrap font-[500] lg:font-bold focus:outline-none"
-                        data-tab="redeem">
-                        <img src="images/Shopping cart.png" alt="Redeem Points"
-                            class="w-[58px] h-[47px] lg:w-[94px] lg:h-[74px] mb-2" />
-                        <span>Redeem Points</span>
+                        class="bg-[#0B3C49] w-[86px] lg:w-[180px] h-[32px] text-white px-6  rounded-sm font-normal text-[12px] lg:text-[14px] leading-[22px] text-center">
+                        Enter
                     </button>
                 </div>
             </div>
 
-            <!-- Tabs Content -->
-            <div class="bg-white p-4 lg:py-6 lg:px-8 mt-6">
-                <!-- Bronze Voyager Content -->
-                <div class="level-tab-content active-content h-fit" id="bronze">
-                    <!-- Tab Content Header -->
-                    <div class="flex items-center mb-4">
-                        <button
-                            class="tab-switch-btn py-2 px-4 lg:font-medium text-[#0B3C49] font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 border  border-[#0B3C49] rounded-tl rounded-bl focus:outline-none"
-                            data-content="tasks">
-                            View Tasks
-                        </button>
-                        <button
-                            class="tab-switch-btn py-2 px-4 lg:font-medium font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 border border-[#D9D9D9] rounded-tr rounded-br text-[#000000D9] focus:outline-none"
-                            data-content="benefits">
-                            View Benefits
-                        </button>
-                    </div>
+            <div class="flex flex-col justify-start w-full gap-2 p-2 bg-white mt-4 lg:mt-6">
+                <span class="font-normal text-[16px] leading-[28px] lg:text-xl">Promo Code</span>
 
-                    <!-- Tasks Content -->
-                    <div class="tab-content-tasks h-fit">
-                        <!-- Task Item -->
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button id="change-task-btn"
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-
-                                <!-- Change Task Popup -->
-                                <div id="change-task-popup"
-                                    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-                                    <div class="bg-white w-11/12 lg:w-[500px] rounded-md shadow-lg p-6 relative">
-                                        <!-- Close Button -->
-                                        <button id="close-popup-btn"
-                                            class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
-                                            &times;
-                                        </button>
-
-                                        <!-- Popup Content -->
-                                        <h2 class="text-sm lg:text-xl font-medium">Change Task</h2>
-                                        <p class="font-normal text-xs lg:text-sm text-[#000000D9] mt-2">
-                                            You can change the task to another category, but please note that you can
-                                            <span class="font-bold">only do this once</span> for each task.
-                                        </p>
-
-                                        <!-- Dropdown Selection -->
-                                        <div class="mt-4">
-                                            <label class="text-xs lg:text-sm font-medium">Change to:</label>
-                                            <select
-                                                class="w-full mt-1 p-2 border border-[#D9D9D9] rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 focus:outline-none">
-                                                <option disabled selected>Type</option>
-                                                <option value="blog-comments">Blog Comments</option>
-                                                <option value="bus-tickets">Bus Tickets</option>
-                                                <option value="hotel-booking">Hotel Booking</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- Buttons -->
-                                        <div class="flex justify-end mt-5 space-x-3">
-                                            <button
-                                                class="px-4 py-2 bg-[#03677E] text-white rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
-                                                Confirm changes
-                                            </button>
-                                            <button id="close-popup-btn-2"
-                                                class="px-4 py-2 border border-[#D9D9D9] rounded-sm text-gray-700 font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center my-0 lg:my-2 mb-0 lg:mb-4 w-full lg:w-3/5 h-[90px]">
-                            <div class="flex justify-center items-center w-full">
-                                <div class="flex items-center gap-4 w-4/5">
-                                    <img src="images/blog-comments-1.png" alt="Blog Comments"
-                                        class="w-[42px] h-[40px]" />
-                                    <div class="w-full flex flex-col gap-[9px]">
-                                        <h3
-                                            class="text-[14px] lg:text-[16px] leading-[27.25px] font-[600] text-[#333333]">
-                                            Blog
-                                            Comments</h3>
-                                        <div class="w-full h-4 lg:h-[22px] bg-gray-200 rounded-full">
-                                            <div class="h-4 lg:h-[22px] bg-[#0B3C49] rounded-full" style="width: 50%;">
-                                            </div>
-                                        </div>
-                                        <p class="text-[10px] lg:text-xs font-[600] text-[#00000066]">Comment on 5 more
-                                            blogs</p>
-                                    </div>
-                                </div>
-                                <div class="text-right w-1/5">
-                                    <button
-                                        class="text-[12px] leading-4 lg:text-[16px] text-[#03677E] lg:leading-[27.25px] font-normal text-nowrap">Change
-                                        Task</button>
-                                    <p class="text-[12px] lg:text-sm font-normal leading-[22px] text-[#000000D9]">5/10
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Benefits Content -->
-                    <div class="tab-content-benefits hidden">
-                        <div class="space-y-0 lg:space-y-2">
-                            <!-- Benefit Item -->
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <!-- Repeat Benefit Items as needed -->
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 items-center h-[64px]">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on
-                                        hotels</h3>
-                                    <p class="text-xs lg:text-sm font-normal text-[#171C1F]">Get 20% upto Rs.200 on
-                                        every hotel
-                                        booking</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Silver Explorer Content -->
-                <div class="level-tab-content hidden" id="silver">
-                    <h1 class="text-xl font-bold">Silver Explorer Content</h1>
-                </div>
-
-                <!-- Gold Adventurer Content -->
-                <div class="level-tab-content hidden" id="gold">
-                    <h1 class="text-xl font-bold">Gold Adventurer Content</h1>
-                </div>
-
-                <!-- Redeem Points Content -->
-                <div class="level-tab-content hidden" id="redeem">
-                    <h1
-                        class="text-[12px] lg:text-[16px] flex items-center justify-center leading-[22px] font-semibold">
-                        20% off on Hotel Bookings
-                        <span class="text-[#03677E] font-bold text-[16px] lg:text-[24px] leading-[44px] ml-2 lg:ml-4">
-                            5000
-                            <span class="text-[12px] lg:text-[16px]">
-                                Points
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-2">
+                    <!-- min-w-[325px] flex-shrink-0 -->
+                    <div class="flex flex-col justify-center rounded-t-lg  h-[240px] group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
                             </span>
-                        </span>
-                    </h1>
-
-                    <!-- Redeem Cards -->
-                    <div class="space-y-0 lg:space-y-2 ">
-                        <div class="flex flex-col lg:flex-row justify-between">
-                            <div class="flex gap-4 items-center h-[74px] w-full">
-                                <img src="images/blog-comments-1.png" alt="Cashback" class="w-[42px] h-[40px]" />
-                                <div class="flex flex-col gap-0 lg:gap-1">
-                                    <h3 class="text-[14px] lg:text-[16px] leading-[22px] font-semibold text-[#333333]">
-                                        20% Cash back on hotels
-                                    </h3>
-                                    <p class="text-[12px] lg:text-sm font-normal text-[#171C1F]">
-                                        Get 20% upto Rs.200 on every hotel booking
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 px-14">
-                                <div class="flex flex-col items-end leading-6">
-                                    <span class="text-[#03677E] text-nowrap font-bold text-[16px] lg:text-[24px]">
-                                        500000
-                                        <span class="text-[12px] lg:text-[16px]">
-                                            Points
-                                        </span>
-                                    </span>
-                                    <p
-                                        class="font-semibold text-[10px] lg:text-[12px] leading-[10px] text-[#00000066] text-nowrap">
-                                        You need 50 more points
-                                    </p>
-
-                                </div>
-                                <div>
-                                    <button type="button" id="confirm-changes"
-                                        class="bg-[#0B3C49] text-white px-4 lg:px-6 py-2 h-fit lg:h-10 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-[24px] text-nowrap">
-                                        Redeem Points
-                                    </button>
-                                </div>
-                            </div>
                         </div>
-
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
                     </div>
 
+                    <div class="flex flex-col justify-center rounded-t-lg  h-[240px] group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
 
+                    <div class="flex flex-col justify-center rounded-t-lg  h-[240px] group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
 
+                    <div class="flex flex-col justify-center rounded-t-lg  h-[240px] group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center rounded-t-lg  h-[240px] group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center rounded-t-lg  h-[240px] group overflow-hidden">
+                        <div class="relative rounded-t-lg overflow-hidden">
+                            <img src="images/svg/black-friday-1.svg" alt="Black Friday Deals"
+                                class="w-full h-32 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span
+                                class="absolute top-2 left-2 bg-orange-100 text-orange-600 text-xs font-medium px-2 py-1 rounded-full">
+                                Tours
+                            </span>
+                        </div>
+                        <div class="bg-[#EDEDF4] rounded-b-lg py-1 px-4">
+                            <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">Valentines Special
+                                Deal
+                            </p>
+                            <p class="font-normal text-xs lg:text-sm text-[#7D7E83]">Valid Till: 5 Dec 2024</p>
+                            <span class="flex gap-2 items-center">
+                                <p class="font-normal text-black text-[12px] leading-9 lg:text-[16px]">
+                                    CBOHD80
+                                </p>
+                                <img class="h-[14px] w-[14px]" src="images/svg/copy.svg" alt="copy">
+                            </span>
+                        </div>
+                    </div>
+
+                    
                 </div>
+                
+
             </div>
+
+
+
         </main>
-
     </div>
-
-
 
 
     <footer class="bg-gray-800 text-gray-400 py-10">
@@ -908,25 +760,7 @@
     <script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="scripts/profileScript.js"></script>
 
-    <script>
-        const changeTaskBtn = document.getElementById("change-task-btn");
-        const popup = document.getElementById("change-task-popup");
-        const closeButtons = document.querySelectorAll("#close-popup-btn, #close-popup-btn-2");
 
-        // Open popup when Change Task button is clicked
-        changeTaskBtn.addEventListener("click", function () {
-            popup.classList.remove("hidden");
-            document.body.classList.add("disable-scroll");
-        });
-
-        // Close popup when close buttons are clicked
-        closeButtons.forEach(button => {
-            button.addEventListener("click", function () {
-                popup.classList.add("hidden");
-                document.body.classList.remove("disable-scroll");
-            });
-        });
-    </script>
 
     <script>
         const backButton = document.getElementById("back-btn"); // Selects the back button image
@@ -941,57 +775,29 @@
     </script>
 
     <script>
-        const leveltabs = document.querySelectorAll('.tab-btn');
-        const contents = document.querySelectorAll('.level-tab-content');
+        const logoutBtn = document.getElementById("logout-btn");
+        const logoutPopup = document.getElementById("logout-popup");
+        const cancelLogout = document.getElementById("cancel-logout");
+        const confirmLogout = document.getElementById("confirm-logout");
 
-        leveltabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all leveltabs
-                leveltabs.forEach(t => t.classList.remove('active-tab'));
-                // Hide all tab contents
-                contents.forEach(c => c.classList.add('hidden'));
-                contents.forEach(c => c.classList.remove('active-content'));
-
-                // Add active class to clicked tab
-                tab.classList.add('active-tab');
-                // Show the corresponding tab content
-                const contentId = tab.getAttribute('data-tab');
-                document.getElementById(contentId).classList.remove('hidden');
-                document.getElementById(contentId).classList.add('active-content');
-            });
+        // Show Popup
+        logoutBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            logoutPopup.classList.remove("hidden");
+            document.body.classList.add("disable-scroll");
         });
 
+        // Close Popup
+        function closePopup() {
+            logoutPopup.classList.add("hidden");
+            document.body.classList.remove("disable-scroll");
+        }
 
-        // Get all tab buttons and tab contents
-        const tabSwitchBtns = document.querySelectorAll('.tab-switch-btn');
-        const tabContent = document.getElementById('tab-content');
-        const tasksContent = document.querySelector('.tab-content-tasks');
-        const benefitsContent = document.querySelector('.tab-content-benefits');
+        cancelLogout.addEventListener("click", closePopup);
 
-        // Add event listener for tab buttons
-        tabSwitchBtns.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                // Reset all buttons to default style
-                tabSwitchBtns.forEach((b) => {
-                    b.classList.remove('text-[#0B3C49]', 'border-[#0B3C49]', 'active-tab');
-                    b.classList.add('text-[#000000D9]', 'border-[#D9D9D9]');
-                });
-
-                // Apply active style to clicked button
-                btn.classList.remove('text-[#000000D9]', 'border-[#D9D9D9]');
-                btn.classList.add('text-[#0B3C49]', 'border-[#0B3C49]', 'active-tab');
-
-                // Show/hide tab content based on data-content attribute
-                if (btn.getAttribute('data-content') === 'tasks') {
-                    tasksContent.classList.remove('hidden');
-                    benefitsContent.classList.add('hidden');
-                } else {
-                    benefitsContent.classList.remove('hidden');
-                    tasksContent.classList.add('hidden');
-                }
-            });
+        confirmLogout.addEventListener("click", function () {
+            window.location.href = "index.html";
         });
-
     </script>
 
     <script>
@@ -1062,6 +868,7 @@
             searchBar.classList.remove("hidden");
         });
     </script>
+
 
 </body>
 

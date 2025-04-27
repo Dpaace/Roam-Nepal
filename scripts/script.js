@@ -70,17 +70,49 @@ console.log("External Script Connected!!!")
 // });
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchToggleBtn = document.getElementById("search-toggle-btn-mobile");
+    const searchBarMobile = document.getElementById("search-bar-mobile");
+    const closeSearchMobile = document.getElementById("close-search-mobile");
+
+    // Show Search Bar
+    searchToggleBtn.addEventListener("click", function () {
+        searchBarMobile.classList.remove("hidden");
+    });
+
+    // Close Search Bar when clicking the close button
+    closeSearchMobile.addEventListener("click", function () {
+        searchBarMobile.classList.add("hidden");
+    });
+
+    // Close when clicking outside of the search box
+    searchBarMobile.addEventListener("click", function (event) {
+        if (event.target === searchBarMobile) {
+            searchBarMobile.classList.add("hidden");
+        }
+    });
+});
+
 const signInPopup = document.getElementById("sign-in-popup");
 const openSignInBtn = document.getElementById("open-sign-in-popup");
+const openSignInBtnMobile = document.getElementById("open-sign-in-popup-mobile");
 const closeSignInBtn = document.getElementById("close-sign-in-popup");
 
-
-
-// Open Popup
-openSignInBtn.addEventListener("click", () => {
+function showSignInPopup() {
     signInPopup.classList.remove("hidden");
     document.body.classList.add("disable-scroll");
-});
+}
+
+// Open Popup
+// openSignInBtn.addEventListener("click", () => {
+//     signInPopup.classList.remove("hidden");
+//     document.body.classList.add("disable-scroll");
+// });
+
+openSignInBtn.addEventListener("click", showSignInPopup);
+openSignInBtnMobile.addEventListener("click", showSignInPopup);
+
 
 // Close Popup
 closeSignInBtn.addEventListener("click", () => {
@@ -1067,4 +1099,3 @@ wrapper.addEventListener("mouseleave", autoPlay);
 
 
 
- 

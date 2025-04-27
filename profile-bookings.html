@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roam Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link href="./output.css" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#03677E',
+                        txtPrimary: '#03677E',
+                        txtPlaceholder: '#49454F',
+                        formText: '#0B3C49',
+                        formBorder: '#79747E',
+                        brcolor: '#03677E',
+                        btnbg: '#03677E',
+                        btnOutline: '#03677E',
+                        bannerTxt: '#001A42',
+                        bannerBorder: '#40A9FF',
+                        txtStatistics: '#036773',
+                        bgButton: '#0B3C49',
+                        txtAsideGrey: '#70787C',
+                        bgTrending: '#FFEECB',
+                        txtTrending: '#C87D0C'
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+
+    <!-- Flatpickr CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
+
+
+            <div class="flex justify-between w-full lg:w-1/3">
+                <div class="text-2xl font-bold">Roam Nepal</div>
+
+                <button id="menu-toggle" class="block md:block lg:hidden focus:outline-none">
+                    <!-- Hamburger Icon -->
+                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+
+                    <!-- Cross Icon (Initially Hidden) -->
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="menu"
+                class="hidden  flex flex-row justify-end items-end lg:flex lg:flex-col lg:items-end lg:w-2/3">
+
+                <div class="hidden  md:hidden lg:flex items-center justify-center gap-9 text-sm">
+                    <span class="flex items-center space-x-1">
+                        <img class="w-[14px] h-[12px]" src="images/svg/dot.svg" alt="dot">
+                        <span class="text-[12px] leading-4 font-normal">NPR</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <img class="w-[12px] h-[12px]" src="images/svg/calendar_today.svg" alt="calendar">
+                        <span id="toggle-bs" class="text-[12px] leading-4 font-normal cursor-pointer">B.S</span>
+                        <span id="toggle-ad" class="hidden text-[12px] leading-4 font-normal cursor-pointer">A.D</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <img id="language-flag" class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English">
+                        <span id="language-text" class="text-[12px] leading-4 font-normal cursor-pointer">English</span>
+                    </span>
+
+                    <button class="flex items-center space-x-1 ">
+                        <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets">
+                        <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
+                    </button>
+                    <div class="flex items-center space-x-1">
+                        <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
+                        <span class="text-[14px] leading-[22px] font-normal"><a href="profile-home.html">Harris's
+                                Account</a></span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+
+                        <div class="relative">
+                            <!-- Notification Button -->
+                            <button id="notification-btn" class="relative flex items-center justify-center">
+                                <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
+                                    alt="notification-icon">
+                            </button>
+                            <!-- Badge -->
+                            <span
+                                class="absolute -top-[6px] -right-[2px] translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[8px] leading-3 font-semibold rounded-full px-2 py-1">
+                                11
+                            </span>
+
+                            <!-- Notification Popup -->
+                            <div id="notification-popup"
+                                class="absolute right-0 top-10 bg-white w-[300px] h-[400px] lg:w-[650px] shadow-lg rounded-lg hidden z-10 overflow-y-scroll overflow-hidden scrollbar-hide">
+                                <div class="p-4">
+                                    <h3 class="text-lg font-bold text-black">Notifications</h3>
+                                </div>
+                                <div class="max-h-[380px] px-2  ">
+                                    <!-- Example Notification -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <!-- Repeat notifications -->
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+                                    <div class="flex items-start justify-between p-4 border-b">
+                                        <div class="flex items-center gap-4">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <p class="text-sm font-bold text-black">Booking Completed</p>
+                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
+                                                    Jan 5 has been confirmed</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">33m</span>
+                                        <button
+                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button>
+                            <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
+                        </button>
+
+                        <div id="search-container">
+                            <!-- Search Button -->
+                            <button id="search-toggle-btn" class="flex items-center">
+                                <img id="search-icon" class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg"
+                                    alt="search-icon">
+                            </button>
+                            <div id="search-bar"
+                                class="relative w-[250px] flex bg-white items-center border border-[#D9D9D9] rounded-sm p-1 hidden">
+                                <input type="text" placeholder="Search"
+                                    class="w-full outline-none text-black text-sm px-1">
+                                <img id="search-icon" class="w-[14px] h-[14px] cursor-pointer"
+                                    src="images/svg/search-icon.svg" alt="search-icon">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div id="bottom-nav"
+                    class="hidden flex flex-col justify-center items-start mt-6 p-5 lg:p-0 gap-5 w-2/3 lg:w-full lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 text-base leading-4 lg:mt-5 font-semibold">
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/bus.svg" alt="bus"></span>
+                        <span>Bus Ticket</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2 cus-active w-fit">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/rental.svg" alt="rental"></span>
+                        <span>Rental</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/hotels.svg" alt="hotels"></span>
+                        <span>Hotels</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/activities.svg" alt="activities"></span>
+                        <span>Activities</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/packages.svg" alt="packages"></span>
+                        <span>Packages</span>
+                    </a>
+                    <a href="#" class=" flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/airport-plane.svg" alt="flights"></span>
+                        <span>Flights</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-fit flex static mt-[60px] lg:mt-[92px] p-4 gap-4">
+        <!-- Aside Section -->
+        <aside id="profile-aside" class="hidden lg:flex w-full h-fit lg:w-[210px] lg:h-[680px] flex flex-col bg-white ">
+            <div class="flex flex-col h-fit items-center lg:items-start pt-4 lg:pt-8 px-4">
+                <img src="images/sample_1.jpg" alt="Profile Image" class="w-[96px] h-[89px] rounded-full mb-[10px]">
+                <h2 class="text-xl font-normal text-[#000000D9]">Kamala Harris</h2>
+            </div>
+            <nav class="mt-4 h-full pb-4">
+                <ul class="flex flex-col h-full gap-20 justify-between px-4 text-sm leading-[22px] text-[#000000D9]">
+                    <div class="space-y-4">
+                        <li>
+                            <a href="profile-home.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/person.svg" alt="Profile Details" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Profile Details</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-level.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/my-level.svg" alt="My Level" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>My Level</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-promo.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/profile-promo.svg" alt="My Level" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Promo Codes</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-bookings.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/num-hours.svg" alt="My Bookings" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>My Bookings</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-referrals.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/referrals.svg" alt="Referrals" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Referrals</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-favorite.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/my-favorite.svg" alt="Referrals" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Favourites</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-feedback.html" class="flex items-center space-x-3">
+                                <img src="images/svg/feedback.svg" alt="Feedback" class="w-[14px] h-[14px]">
+                                <div class="flex items-center justify-between w-full">
+                                    <span>Feedback</span>
+                                    <span class="block lg:hidden">
+                                        <img class="h-3 w-3"
+                                            src="https://img.icons8.com/ios-glyphs/30/chevron-right.png"
+                                            alt="chevron-right" />
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+
+                    </div>
+
+                    <div class="space-y-4">
+                        <li>
+                            <a href="#" id="logout-btn" class="flex items-center space-x-3 ">
+                                <img src="images/svg/logout.svg" alt="Logout" class="w-[14px] h-[14px]">
+                                <span>Logout</span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#" class="flex items-center space-x-3 ">
+                                <img src="images/svg/settings.svg" alt="Settings" class="w-[14px] h-[14px]">
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-terms.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/terms.svg" alt="Terms" class="w-[14px] h-[14px]">
+                                <span>Terms & Privacy Policy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile-faq.html" class="flex items-center space-x-3 ">
+                                <img src="images/svg/profile-help.svg" alt="FAQ" class="w-[14px] h-[14px]">
+                                <span>FAQ</span>
+                            </a>
+                        </li>
+                    </div>
+
+                    <div id="logout-popup"
+                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                        <div class="bg-white p-6 rounded-sm shadow-lg w-[400px]">
+
+                            <!-- Content -->
+                            <div class="flex items-start space-x-3">
+                                <img src="images/svg/danger.svg" alt="Warning" class="w-[22px] h-[22px]">
+                                <div class="flex flex-col">
+                                    <h2 class="font-normal text-[16px] leading-6">Are you sure you want to Logout?</h2>
+                                    <p class="font-normal text-[14px] leading-[22px] mt-2">You need to login to book
+                                        your tickets.</p>
+                                </div>
+                            </div>
+
+
+                            <!-- Buttons -->
+                            <div class="flex justify-end space-x-3 mt-4">
+                                <button id="cancel-logout"
+                                    class="px-4 py-2 border rounded-sm text-[#000000D9]">Cancel</button>
+                                <button id="confirm-logout"
+                                    class="px-4 py-2 bg-[#FF4D4F] text-white rounded-sm">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Section -->
+        <main id="profile-main" class="w-full lg:block flex-1 p-0">
+            <!-- Tab Navigation -->
+            <div class=" bg-white border-b border[#0000000F] p-2 lg:p-4">
+                <div class="flex items-center w-full gap-2 mb-1 lg:mb-4">
+                    <span class="block lg:hidden">
+                        <img id="back-btn" class="h-5 w-5"
+                            src="https://img.icons8.com/material-sharp/24/1A1A1A/back--v1.png" alt="back--v1" />
+                    </span>
+                    <span class="font-normal text-[16px] leading-[28px] lg:text-xl">My Bookings</span>
+                </div>
+
+                <div class="flex items-center gap-2 lg:gap-10">
+                    <button
+                        class="tab-booking-btn flex-grow lg:flex-grow-0 py-2 text-[#0B3C49] font-normal text-[14px] lg:text-[16px] leading-6 border-b-2 border-[#0B3C49]"
+                        data-tab="today">
+                        Today
+                    </button>
+                    <button
+                        class="tab-booking-btn flex-grow lg:flex-grow-0 py-2 text-[#000000D9] font-normal text-[14px] lg:text-[16px] leading-6"
+                        data-tab="upcoming">
+                        Upcoming
+                    </button>
+                    <button
+                        class="tab-booking-btn flex-grow lg:flex-grow-0 py-2 text-[#000000D9] font-normal text-[14px] lg:text-[16px] leading-6"
+                        data-tab="completed">
+                        Completed
+                    </button>
+                    <button
+                        class="tab-booking-btn flex-grow lg:flex-grow-0 py-2 text-[#000000D9] font-normal text-[14px] lg:text-[16px] leading-6"
+                        data-tab="cancelled">
+                        Cancelled
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="bg-white mt-4 lg:mt-6 p-2 lg:p-4">
+
+                <div id="today" class="tab-booking-content">
+                    <!-- Accordion Container -->
+                    <div class="space-y-2">
+                        <!-- Accordion Item 1 - Bus Tickets -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Bus Tickets</span>
+                            </button>
+
+                            <div class="accordion-content hidden p-2 lg:p-4 bg-white space-y-8">
+                                <!-- Bus Ticket Card -->
+                                <div class="border rounded-[4px] px-2 lg:px-8 py-4 bg-white">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tourist Bus with
+                                                Sleeper</h2>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Tourist Bus</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">3
+                                                Seats (A1, A3,
+                                                A4)</p>
+                                        </div>
+                                        <div class="flex gap-2 items-center justify-end ">
+                                            <button
+                                                class="lg:bg-[#03677E] text-[#03677E] underline text-nowrap lg:text-white font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                View Details
+                                            </button>
+                                            <button
+                                                class="lg:border lg:border-[#03677E] text-[#03677E] underline text-nowrap  font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                Track Vehicle
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
+                                                06:00 AM</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="w-full lg:w-3/5 flex items-center justify-between py-4">
+                                            <!-- Start Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black">Kathmandu</p>
+                                            </div>
+
+                                            <!-- Travel Duration -->
+                                            <div class=" flex-1 flex flex-col items-center relative mx-4">
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    8 hours</p>
+                                                <hr class="w-full ">
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    Ba 1 Pa 3453
+                                                </p>
+                                            </div>
+
+                                            <!-- End Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    23:00 PM</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black">Pokhara</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex flex-col lg:flex-row justify-between items-center mt-4">
+                                        <div>
+                                            <span class="font-bold text-[20px] lg:text-[24px] leading-4 text-[#0B3C49]">
+                                                Rs.
+                                                <span class="text-[24px] lg:text-[36px]">
+                                                    3000
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <!-- Cancel Ticket Button -->
+                                            <button id="open-cancel-popup"
+                                                class="bg-red-100 flex-grow lg:w-[216px] lg:h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
+                                                Cancel Ticket
+                                            </button>
+
+                                            <!-- Reschedule Ticket Button -->
+                                            <button id="open-reschedule-popup"
+                                                class="flex-grow lg:w-[216px] lg:h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
+                                                Reschedule Ticket
+                                            </button>
+                                        </div>
+
+                                        <div id="cancel-ticket-popup"
+                                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden text-black">
+                                            <div
+                                                class="bg-white w-11/12 lg:w-[400px] rounded-lg shadow-lg p-4 lg:p-6 relative">
+                                                <!-- Close Button -->
+                                                <button id="close-cancel-popup"
+                                                    class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                                    &times;
+                                                </button>
+
+                                                <!-- Popup Content -->
+                                                <h2
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 mb-2">
+                                                    Cancel ticket</h2>
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[12px] lg:text-[14px] leading-[22px] mb-4">
+                                                    You will be charged with <strong>Rs.300</strong> according to our
+                                                    <a href="#" class="text-[#03677E] underline">cancellation
+                                                        policy</a>.
+                                                    This action cannot be undone. Are you sure you want to cancel your
+                                                    ticket?
+                                                </p>
+
+                                                <!-- Popup Buttons -->
+                                                <div class="flex justify-end space-x-2">
+                                                    <button id="go-back-btn"
+                                                        class="border text-black font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 px-4 py-2 rounded-sm text-nowrap">
+                                                        Go Back
+                                                    </button>
+                                                    <button id="confirm-cancel-btn"
+                                                        class="bg-[#BA1A1A] text-white font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 px-4 py-2 rounded-sm text-nowrap">
+                                                        Cancel Ticket
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="reschedule-ticket-popup"
+                                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 text-black">
+                                            <div
+                                                class="bg-white w-11/12 lg:w-[400px] rounded-lg shadow-lg p-4 lg:p-6 relative">
+                                                <!-- Close Button -->
+                                                <button id="close-reschedule-popup"
+                                                    class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                                    &times;
+                                                </button>
+
+                                                <!-- Popup Content -->
+                                                <h2
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 mb-2">
+                                                    Choose a new date</h2>
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[12px] lg:text-[14px] leading-[22px] mb-4">
+                                                    Please note that your selected dates are <span
+                                                        class="font-semibold">NOT confirmed</span>.
+                                                    Our customer support will contact you with the confirmation of the
+                                                    new date.
+                                                </p>
+
+                                                <!-- Date Picker -->
+                                                <label for="reschedule-date"
+                                                    class="block font-normal text-[#000000D9] text-[12px] lg:text-[14px] leading-[22px] mb-1">New
+                                                    date</label>
+                                                <div class="relative">
+                                                    <input type="text" id="reschedule-date" name="reschedule-date"
+                                                        placeholder="Select a date"
+                                                        class="date-picker w-full border border-gray-300 p-2 rounded-md focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                                    <span class="absolute right-3 top-2 lg:top-3 text-gray-500">
+                                                        <img src="images/svg/reschedule-date.svg" alt="Calendar Icon"
+                                                            class="w-4 h-4 lg:w-5 lg:h-5">
+                                                    </span>
+                                                </div>
+
+                                                <!-- Popup Buttons -->
+                                                <div class="flex justify-end space-x-2 mt-4">
+                                                    <button id="confirm-reschedule-btn"
+                                                        class="bg-[#0B3C49] text-white px-4 py-2 rounded-md hover:bg-[#092c3a] font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                                        Change Dates
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="border rounded-[4px] px-2 lg:px-8 py-4 bg-white">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tourist Bus with
+                                                Sleeper</h2>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Tourist Bus</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">3
+                                                Seats (A1, A3,
+                                                A4)</p>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
+                                                06:00 AM</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="w-full lg:w-3/5 flex items-center justify-between py-4">
+                                            <!-- Start Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black">Kathmandu</p>
+                                            </div>
+
+                                            <!-- Travel Duration -->
+                                            <div class=" flex-1 flex flex-col items-center relative mx-4">
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    8 hours</p>
+                                                <hr class="w-full ">
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    Ba 1 Pa 3453
+                                                </p>
+                                            </div>
+
+                                            <!-- End Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    23:00 PM</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black">Pokhara</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex flex-col lg:flex-row justify-between items-center mt-4">
+                                        <div>
+                                            <span class="font-bold text-[20px] lg:text-[24px] leading-4 text-[#0B3C49]">
+                                                Rs.
+                                                <span class="text-[24px] lg:text-[36px]">
+                                                    3000
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button id="report-issue-btn"
+                                                class="bg-red-100 flex-grow lg:w-[216px] lg:h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
+                                                Report Issue
+                                            </button>
+                                            <button class=" flex-grow lg:w-[216px] lg:h-[38px] border border-[#D9D9D9]
+                                                text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[12px] leading-4
+                                                lg:text-[16px] lg:leading-6">
+                                                Reschedule Ticket
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Report Issue Popup -->
+                                <div id="report-issue-popup"
+                                    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                                    <div class="bg-white w-11/12 lg:w-[500px] rounded-sm shadow-lg p-6 relative">
+                                        <!-- Close Button -->
+                                        <button id="close-report-popup-btn"
+                                            class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                            &times;
+                                        </button>
+
+                                        <!-- Popup Content -->
+                                        <h2 class="text-sm lg:text-xl font-medium">Report Issue</h2>
+
+                                        <!-- Issue Type Dropdown -->
+                                        <div class="mt-4">
+                                            <label class="text-xs lg:text-sm font-medium">Issue Type:</label>
+                                            <select
+                                                class="w-full mt-1 p-2 border border-gray-300 rounded-sm text-xs lg:text-sm">
+                                                <option disabled selected>Type</option>
+                                                <option value="booking">Booking Issue</option>
+                                                <option value="payment">Payment Issue</option>
+                                                <option value="service">Service Issue</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Details Text Area -->
+                                        <div class="mt-4">
+                                            <label class="text-xs lg:text-sm font-medium">Details about the
+                                                issue</label>
+                                            <textarea id="issue-details"
+                                                class="w-full mt-1 p-2 border border-gray-300 min-h-[150px]  max-h-[250px] rounded-sm text-xs lg:text-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6 focus:outline-none"
+                                                placeholder="Write details here" maxlength="100"></textarea>
+                                            <div class="text-right text-gray-500 text-xs mt-1">
+                                                <span id="char-count">0</span> / 100
+                                            </div>
+                                        </div>
+
+                                        <!-- Buttons -->
+                                        <div class="flex justify-end mt-5 space-x-3">
+                                            <button id="close-report-popup-btn-2"
+                                                class="px-4 py-2 border border-gray-300 rounded-sm text-gray-700 font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                                Cancel
+                                            </button>
+                                            <button
+                                                class="px-4 py-2 bg-[#CF1322] text-white rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                                Report Issue
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="border rounded-[4px] px-2 lg:px-8 py-4 bg-white">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tourist Bus with
+                                                Sleeper</h2>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Tourist Bus</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">3
+                                                Seats (A1, A3,
+                                                A4)</p>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
+                                                06:00 AM</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="w-full lg:w-3/5 flex items-center justify-between py-4">
+                                            <!-- Start Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black">Kathmandu</p>
+                                            </div>
+
+                                            <!-- Travel Duration -->
+                                            <div class=" flex-1 flex flex-col items-center relative mx-4">
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    8 hours</p>
+                                                <hr class="w-full ">
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    Ba 1 Pa 3453
+                                                </p>
+                                            </div>
+
+                                            <!-- End Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    23:00 PM</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black">Pokhara</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex flex-col lg:flex-row justify-between items-center mt-4">
+                                        <div>
+                                            <span class="font-bold text-[20px] lg:text-[24px] leading-4 text-[#0B3C49]">
+                                                Rs.
+                                                <span class="text-[24px] lg:text-[36px]">
+                                                    3000
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="flex space-x-2">
+
+                                            <button class="w-[200px] lg:w-[332px] lg:h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[12px] leading-4
+                                                lg:text-[16px] lg:leading-6">
+                                                Review
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Accordion Item 2 - Hotels -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Hotels</span>
+                            </button>
+                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+                                <p class="text-gray-600">Hotel Booking Details go here.</p>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 3 - Reservation -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Reservation</span>
+                            </button>
+
+                            <div class="accordion-content hidden p-2 lg:p-4 bg-white space-y-8">
+
+                                <div class="border rounded-[4px] p-2 lg:px-8">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tata Nexon
+                                            </h2>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Big SUV</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                        </div>
+                                        <div class="flex gap-2 items-center justify-end">
+                                            <button
+                                                class="lg:bg-[#03677E] text-[#03677E] underline text-nowrap lg:text-white font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                View Details
+                                            </button>
+                                            <button
+                                                class="lg:border lg:border-[#03677E] text-[#03677E] underline text-nowrap  font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                Track Vehicle
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><span class="font-bold">Pickup Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
+                                        </div>
+
+                                        <div class="flex items-center w-full lg:w-3/5 justify-end pt-1 space-x-2">
+
+                                            <button
+                                                class="bg-red-100  lg:w-[216px] lg:h-[38px] text-[#CF1322] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
+                                                Cancel Booking
+                                            </button>
+                                            <button
+                                                class="lg:w-[216px] lg:h-[38px] border border-[#D9D9D9] text-[#000000D9] px-4 py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[16px] lg:leading-6">
+                                                Reschedule Booking
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="border rounded-[4px] p-2 lg:px-8">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tata Nexon
+                                            </h2>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Big SUV</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                        </div>
+                                        <div class="flex gap-2 items-center justify-end">
+                                            <button
+                                                class="lg:bg-[#03677E] text-[#03677E] underline text-nowrap lg:text-white font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                View Details
+                                            </button>
+                                            <button
+                                                class="lg:border lg:border-[#03677E] text-[#03677E] underline text-nowrap  font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2 lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[160px]">
+                                                Track Vehicle
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><span class="font-bold">Pickup Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div
+                                            class="flex items-center w-full lg:w-3/5 justify-center lg:justify-end py-4">
+                                            <button id="openReviewPopup" class="w-[200px] lg:w-[332px] lg:h-[38px] bg-[#0B3C49] text-white px-4 py-2 rounded-sm font-normal text-[12px] leading-4
+                                            lg:text-[16px] lg:leading-6">
+                                                Review
+                                            </button>
+                                        </div>
+
+                                        <!-- Review Popup -->
+                                        <div id="reviewPopup"
+                                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                                            <div class="bg-white w-11/12 lg:w-[400px] rounded-[4px] p-4 relative">
+                                                <!-- Close Button -->
+                                                <button id="closeReviewPopup"
+                                                    class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                                    ✖
+                                                </button>
+
+                                                <!-- Popup Content -->
+                                                <h2
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 mb-4">
+                                                    How
+                                                    was your experience?</h2>
+
+                                                <!-- Overall Rating -->
+                                                <div class="flex items-center justify-center mb-4 space-x-1">
+                                                    <div class="flex space-x-1" data-rating>
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/white-Star.svg" alt="white-star">
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/white-Star.svg" alt="white-star">
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/white-Star.svg" alt="white-star">
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/white-Star.svg" alt="white-star">
+                                                        <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                            src="images/svg/white-Star.svg" alt="white-star">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Individual Ratings -->
+                                                <div class="space-y-3 font-normal text-[#1A1B20] text-[12px] leading-6">
+                                                    <div class="flex items-center justify-between">
+                                                        <span>Cleanliness</span>
+                                                        <div class="flex space-x-1" data-rating>
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center justify-between">
+                                                        <span>Staff Behaviour</span>
+                                                        <div class="flex space-x-1" data-rating>
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center justify-between">
+                                                        <span>Amenities</span>
+                                                        <div class="flex space-x-1" data-rating>
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center justify-between">
+                                                        <span>Driving</span>
+                                                        <div class="flex space-x-1" data-rating>
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                            <img class="w-[20px] h-[20px] lg:w-[28px] lg:h-[28px]"
+                                                                src="images/svg/white-Star.svg" alt="white-star">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Review Input -->
+                                                <div class="mt-4">
+                                                    <label for="reviewText"
+                                                        class="block font-normal text-[#000000D9] text-[12px] leading-[22px]">
+                                                        Leave a review:
+                                                    </label>
+                                                    <textarea id="reviewText"
+                                                        class="w-full border border-[#D9D9D9] rounded-sm p-2 max-h-[250px] min-h-[100px] focus:outline-none font-normal text-[#000000D9] text-[12px] leading-[22px]"
+                                                        rows="3" maxlength="100"
+                                                        placeholder="Write review here"></textarea>
+                                                    <p class="text-right text-[#00000040] text-sm"><span
+                                                            id="charCount">0</span> / 100</p>
+                                                </div>
+
+                                                <!-- Submit Button -->
+                                                <div class="mt-4 flex justify-end">
+                                                    <button
+                                                        class="bg-[#0B3C49] h-[25px] w-[65px] text-white font-normal text-center text-[#000000D9] text-[12px] leading-[22px] px-2 rounded-sm"
+                                                        id="submitReview">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="upcoming" class="tab-booking-content hidden">
+                    <h3 class="text-lg font-semibold">Upcoming Bookings</h3>
+                    <p class="text-gray-600">You have 5 upcoming bookings.</p>
+                </div>
+
+                <div id="completed" class="tab-booking-content hidden">
+                    <h3 class="text-lg font-semibold">Completed Bookings</h3>
+                    <p class="text-gray-600">You have successfully completed 12 bookings.</p>
+                </div>
+
+                <div id="cancelled" class="tab-booking-content hidden">
+                    <!-- Accordion Container -->
+                    <div class="space-y-2">
+                        <!-- Accordion Item 1 - Bus Tickets -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Bus Tickets</span>
+                            </button>
+                            <div class="accordion-content hidden p-2 lg:p-4 bg-white space-y-8">
+                                <!-- Bus Ticket Card -->
+                                <div class="border rounded-[4px] px-2 lg:px-8 py-4 bg-white">
+                                    <div class="flex flex-col-reverse lg:flex-row justify-between">
+                                        <div>
+                                            <h2 class="font-bold text-[16px] lg:text-[20px] leading-4 text-black">
+                                                Tourist Bus with
+                                                Sleeper</h2>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#135200]">
+                                                Tourist Bus</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">
+                                                5th Jan 2024 -
+                                                6th Jan 2024</p>
+                                            <p class="font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F]">3
+                                                Seats (A1, A3,
+                                                A4)</p>
+                                        </div>
+                                        <div class="flex space-x-2 items-center justify-end">
+                                            <button
+                                                class="bg-black text-white font-normal text-[14px] leading-4 lg:text-[16px] lg:leading-6 px-2  lg:px-4 py-2 rounded-[40px] h-fit w-fit lg:h-[45px] lg:w-[120px] flex items-center justify-center gap-2">
+                                                <img class="w-[14px] h-[14px]" src="images/svg/moon.svg" alt="halfmoon">
+                                                Night
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div
+                                        class="flex flex-col lg:flex-row items-start lg:items-center lg:justify-between w-full">
+                                        <div
+                                            class="w-full lg:w-2/5 font-normal text-[12px] lg:text-[14px] leading-5 text-[#171C1F] ">
+                                            <p><span class="font-bold">Boarding Point:</span> Buspark, Kathmandu</p>
+                                            <p><span class="font-bold">Arrive at boarding point:</span> 27 Nov 2024,
+                                                06:00 AM</p>
+                                            <p><span class="font-bold">Dropping Point:</span> Basundhara, Pokhara</p>
+                                        </div>
+                                        <div class="w-full lg:w-3/5 flex items-center justify-between py-4">
+                                            <!-- Start Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    17:00 PM</p>
+                                                <p class="font-normal text-[10px] leading-4 text-black">Kathmandu</p>
+                                            </div>
+
+                                            <!-- Travel Duration -->
+                                            <div class=" flex-1 flex flex-col items-center relative mx-4">
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    8 hours</p>
+                                                <hr class="w-full ">
+                                                <p
+                                                    class="font-normal text-[10px] lg:text-[14px] leading-5 text-[#7D7E83]">
+                                                    Ba 1 Pa 3453
+                                                </p>
+                                            </div>
+
+                                            <!-- End Time -->
+                                            <div class="text-center">
+                                                <p class="font-normal text-[16px] lg:text-[20px] leading-4 text-black">
+                                                    23:00 PM</p>
+                                                <p class=" font-normal text-[10px] leading-4 text-black">Pokhara</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-2">
+
+                                    <div class="flex justify-center items-center mt-4">
+                                        <div class="flex">
+                                            <span
+                                                class="flex items-center space-x-4 whitespace-nowrap text-nowrap font-normal text-[12px] lg:text-[16px] leading-6">
+                                                Status:&nbsp;
+                                                <span class="font-bold text-[#2D7E95]">
+                                                    Refunded
+                                                </span>
+                                                <img id="open-refund-popup"
+                                                    class="w-5 h-5 lg:w-6 lg:h-6 hover:cursor-pointer"
+                                                    src="images/svg/InfoCircle.svg" alt="info">
+                                            </span>
+                                        </div>
+                                        <div id="refund-status-popup"
+                                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden text-black z-50 ">
+                                            <div
+                                                class="bg-white w-11/12 lg:w-[400px] rounded-lg shadow-lg p-4 lg:p-6 relative">
+                                                <!-- Close Button -->
+                                                <button id="close-refund-popup"
+                                                    class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                                                    &times;
+                                                </button>
+
+                                                <!-- Popup Content -->
+                                                <h2
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 ">
+                                                    Ticket
+                                                    Status
+                                                </h2>
+
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-6 my-2">
+                                                    Status:
+                                                    <span class="font-bold text-[#2D7E95]">
+                                                        Refunded
+                                                    </span>
+                                                </p>
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-[22px]">
+                                                    Ticket ID: 123456</p>
+                                                <p
+                                                    class="font-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-[22px]">
+                                                    Cancellation Date: Dec 15, 2024</p>
+                                                <p
+                                                    class="tfont-normal text-[#000000D9] text-[14px] lg:text-[16px] leading-[22px]">
+                                                    Refund Amount: NPR 1,200</p>
+
+                                                <p
+                                                    class="font-normal text-[#44474F] text-[12px] lg:text-[14px] leading-5 mt-[10px]">
+                                                    Refund Date: Dec 20, 2024</p>
+                                                <p
+                                                    class="font-normal text-[#44474F] text-[12px] lg:text-[14px] leading-5">
+                                                    Refund
+                                                    Method: eSewa Wallet</p>
+                                                <p
+                                                    class="font-normal text-[#44474F] text-[12px] lg:text-[14px] leading-5">
+                                                    Transaction
+                                                    ID: TXN789654123</p>
+
+                                                <p
+                                                    class="font-normal text-[#44474F] text-[10px] leading-5 mt-[10px] tracking-[0.25px]">
+                                                    If you don't see the refund in your account, please check your
+                                                    payment method or
+                                                    <a href="#" class="text-[#03677E] underline">contact us</a>.
+                                                </p>
+
+                                                <!-- Close Button -->
+                                                <div class="flex justify-end mt-4">
+                                                    <button id="confirm-refund-close"
+                                                        class="bg-[#0B3C49] text-white px-4 py-2 rounded-md hover:bg-[#092c3a] font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                                        Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 2 - Hotels -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Hotels</span>
+                            </button>
+                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+                                <p class="text-gray-600">Hotel Cancellation Details go here.</p>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 3 - Reservation -->
+                        <div class="border border-[#D9D9D9] rounded-sm">
+                            <button
+                                class="accordion-header flex items-center gap-2 w-full px-4 py-3 bg-[#FAFAFA] border-b border-[#D9D9D9]">
+                                <span class="accordion-icon transition-transform">▶</span>
+                                <span class="font-normal text-[14px] leading-[22px]">Reservation</span>
+                            </button>
+                            <div class="accordion-content hidden p-4 bg-white space-y-8">
+                                <p class="text-gray-600">Reservation Cancellation Details go here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="bg-gray-800 text-gray-400 py-10">
+        <div
+            class="container mx-auto px-6 grid grid-cols-2 justify-start items-start md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Services</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Bus Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Tours</a></li>
+                    <li><a href="#" class="hover:text-white">Reservation</a></li>
+                    <li><a href="#" class="hover:text-white">Activities</a></li>
+                    <li><a href="#" class="hover:text-white">Flights</a></li>
+                    <li><a href="#" class="hover:text-white">Hotels</a></li>
+                </ul>
+            </div>
+
+            <!-- Products -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Products</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Tourist BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa</a></li>
+                    <li><a href="#" class="hover:text-white">Mobile App</a></li>
+                    <li><a href="#" class="hover:text-white">Website</a></li>
+                </ul>
+            </div>
+
+            <!-- Help -->
+            <div>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Help</h4>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white">BusSewa Agent</a></li>
+                    <li><a href="#" class="hover:text-white">Help Centre</a></li>
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social Media  class="h-5 w-5" -->
+            <div>
+                <ul class="space-y-2 text-sm lg:text-[16px]">
+                    <li class="flex items-center space-x-2 ">
+                        <span>
+                            <img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" />
+
+                        </span>
+                        <a href="tel:+9779876567989" class="hover:text-white">+977 9876567989</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" /></span>
+                        <a href="tel:+9779887567890" class="hover:text-white">+977 9887567890</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span><img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-email.svg" alt="email" /></span>
+                        <a href="mailto:info@bussewa.com" class="hover:text-white">info@bussewa.com</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-4 mt-4">
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Facebook.svg" alt="facebook" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Instagram.svg" alt="instagram" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-Twitter.svg" alt="twitter" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-LinkedIn.svg" alt="linkedin" /></a>
+                    <a href="#" class="hover:text-white"><img class="h-5 w-5 lg:w-12 lg:h-12"
+                            src="images/svg/footer-TikTok.svg" alt="tiktok" /></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Download & Footer Bottom -->
+        <div class="mt-10 border-t border-gray-700 pt-6">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm mt-4 md:mt-0">
+                    <p>Copyright © BusSewa All Rights Reserved</p>
+                </div>
+
+                <!-- App Download -->
+                <div class="flex items-center space-x-4">
+                    <a href="#">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-10" />
+                    </a>
+                    <a href="#">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-10" />
+                    </a>
+                </div>
+
+
+
+                <!-- Legal Links -->
+                <div class="flex text-sm mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Cookie <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Privacy <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Terms <span class="mx-1">|</span></a>
+                    <a href="#" class="hover:text-white">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        const ratingGroups = document.querySelectorAll("[data-rating]"); // Select all rating groups
+
+        ratingGroups.forEach(group => {
+            const stars = group.querySelectorAll("img");
+
+            stars.forEach((star, index) => {
+                star.addEventListener("mouseenter", function () {
+                    highlightStars(stars, index);
+                });
+
+                star.addEventListener("click", function () {
+                    group.setAttribute("data-selected", index + 1);
+                });
+
+                group.addEventListener("mouseleave", function () {
+                    const selectedRating = group.getAttribute("data-selected");
+                    highlightStars(stars, selectedRating ? selectedRating - 1 : -1);
+                });
+            });
+        });
+
+        // Function to highlight stars
+        function highlightStars(stars, index) {
+            stars.forEach((star, i) => {
+                if (i <= index) {
+                    star.src = "images/svg/Star.svg"; // Gold star
+                } else {
+                    star.src = "images/svg/white-Star.svg"; // White star
+                }
+            });
+        }
+
+    </script>
+
+    <script>
+        const reportIssueBtn = document.getElementById("report-issue-btn");
+        const popup = document.getElementById("report-issue-popup");
+        const closeButtons = document.querySelectorAll("#close-report-popup-btn, #close-report-popup-btn-2");
+        const issueDetails = document.getElementById("issue-details");
+        const charCount = document.getElementById("char-count");
+
+        // Open popup when Report Issue button is clicked
+        reportIssueBtn.addEventListener("click", function () {
+            popup.classList.remove("hidden");
+            document.body.classList.add('disable-scroll');
+        });
+
+        // Close popup when close buttons are clicked
+        closeButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                popup.classList.add("hidden");
+                document.body.classList.remove('disable-scroll');
+            });
+        });
+
+        // Character count for textarea
+        issueDetails.addEventListener("input", function () {
+            charCount.textContent = issueDetails.value.length;
+        });
+
+    </script>
+
+    <script>
+        const backButton = document.getElementById("back-btn"); // Selects the back button image
+        const mainSection = document.getElementById("profile-main");
+        const asideSection = document.getElementById("profile-aside");
+
+        // When the back button is clicked
+        backButton.addEventListener("click", function () {
+            mainSection.classList.add("hidden"); // Hide main section
+            asideSection.classList.remove("hidden"); // Show aside section
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const openReviewPopup = document.getElementById("openReviewPopup");
+            const closeReviewPopup = document.getElementById("closeReviewPopup");
+            const reviewPopup = document.getElementById("reviewPopup");
+            const reviewText = document.getElementById("reviewText");
+            const charCount = document.getElementById("charCount");
+
+            // Open popup
+            openReviewPopup.addEventListener("click", () => {
+                reviewPopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close popup
+            closeReviewPopup.addEventListener("click", () => {
+                reviewPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+            // Update character count
+            reviewText.addEventListener("input", function () {
+                charCount.textContent = this.value.length;
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const refundPopup = document.getElementById("refund-status-popup");
+            const openRefundBtn = document.getElementById("open-refund-popup");
+            const closeRefundBtn = document.getElementById("close-refund-popup");
+            const confirmCloseBtn = document.getElementById("confirm-refund-close");
+
+            // Open the popup when clicking the info icon
+            openRefundBtn.addEventListener("click", () => {
+                refundPopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close the popup when clicking the (X) close button
+            closeRefundBtn.addEventListener("click", () => {
+                refundPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+            // Close the popup when clicking "Close" button
+            confirmCloseBtn.addEventListener("click", () => {
+                refundPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const accordions = document.querySelectorAll(".accordion-header");
+
+            accordions.forEach(header => {
+                header.addEventListener("click", function () {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector(".accordion-icon");
+
+                    // Toggle the accordion
+                    content.classList.toggle("hidden");
+                    icon.style.transform = content.classList.contains("hidden") ? "rotate(0deg)" : "rotate(90deg)";
+                });
+            });
+        });
+    </script>
+
+    <script>
+
+        flatpickr(".date-picker", {
+            enableTime: true,
+            noCalendar: false,
+            time_24hr: false,
+            dateFormat: "Y-m-d H:i K",
+            minuteIncrement: 30,
+            minDate: "today",
+            position: "auto center",
+            disableMobile: true, // Ensures Flatpickr UI is used instead of native pickers
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const reschedulePopup = document.getElementById("reschedule-ticket-popup");
+            const openRescheduleBtn = document.getElementById("open-reschedule-popup");
+            const closeRescheduleBtn = document.getElementById("close-reschedule-popup");
+
+            // Open the popup
+            openRescheduleBtn.addEventListener("click", () => {
+                reschedulePopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close the popup when clicking 'X' button
+            closeRescheduleBtn.addEventListener("click", () => {
+                reschedulePopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cancelPopup = document.getElementById("cancel-ticket-popup");
+            const openCancelBtn = document.getElementById("open-cancel-popup");
+            const closeCancelBtn = document.getElementById("close-cancel-popup");
+            const goBackBtn = document.getElementById("go-back-btn");
+
+            // Open the popup
+            openCancelBtn.addEventListener("click", () => {
+                cancelPopup.classList.remove("hidden");
+                document.body.classList.add("disable-scroll");
+            });
+
+            // Close the popup when clicking 'X' or 'Go Back'
+            closeCancelBtn.addEventListener("click", () => {
+                cancelPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+            goBackBtn.addEventListener("click", () => {
+                cancelPopup.classList.add("hidden");
+                document.body.classList.remove("disable-scroll");
+            });
+
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tab-booking-btn");
+            const contents = document.querySelectorAll(".tab-booking-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function () {
+                    // Remove active state from all tabs
+                    tabs.forEach(btn => {
+                        btn.classList.remove("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
+                        btn.classList.add("text-[#000000D9]");
+                    });
+
+                    // Add active state to clicked tab
+                    this.classList.add("text-[#0B3C49]", "border-b-2", "border-[#0B3C49]");
+                    this.classList.remove("text-[#000000D9]");
+
+                    // Hide all tab contents
+                    contents.forEach(content => content.classList.add("hidden"));
+
+                    // Show the selected tab content
+                    document.getElementById(this.getAttribute("data-tab")).classList.remove("hidden");
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        // For navbar menu toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+        const btmNav = document.getElementById("bottom-nav");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const closeIcon = document.getElementById("close-icon");
+
+        menuToggle.addEventListener("click", () => {
+            // Toggle the visibility of the menu
+            menu.classList.toggle("hidden");
+            btmNav.classList.toggle("hidden");
+
+            // Toggle the icons
+            hamburgerIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("hidden");
+        });
+
+
+        // For top navbar
+        document.addEventListener("DOMContentLoaded", () => {
+            const bsSpan = document.getElementById("toggle-bs");
+            const adSpan = document.getElementById("toggle-ad");
+
+            // Add event listeners for toggling
+            bsSpan.addEventListener("click", () => {
+                bsSpan.classList.add("hidden");
+                adSpan.classList.remove("hidden");
+            });
+
+            adSpan.addEventListener("click", () => {
+                adSpan.classList.add("hidden");
+                bsSpan.classList.remove("hidden");
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const languageFlag = document.getElementById("language-flag");
+            const languageText = document.getElementById("language-text");
+
+            // Add event listener for toggling
+            languageText.addEventListener("click", () => {
+                if (languageText.textContent === "English") {
+                    // Switch to Nepali
+                    languageFlag.src = "images/nepal-flag.png";
+                    languageFlag.alt = "Nepali";
+                    languageText.textContent = "Nepali";
+                } else {
+                    // Switch to English
+                    languageFlag.src = "images/svg/us.svg";
+                    languageFlag.alt = "English";
+                    languageText.textContent = "English";
+                }
+            });
+        });
+
+
+        const notificationBtn = document.getElementById("notification-btn");
+        const notificationPopup = document.getElementById("notification-popup");
+
+        // Toggle notification popup on button click
+        notificationBtn.addEventListener("click", () => {
+            notificationPopup.classList.toggle("hidden");
+        });
+
+        // Close the popup when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
+                notificationPopup.classList.add("hidden");
+            }
+        });
+
+
+
+
+        const searchToggleBtn = document.getElementById("search-toggle-btn");
+        const searchBar = document.getElementById("search-bar");
+        const searchIcon = document.getElementById("search-icon");
+
+        // Toggle search bar visibility
+        searchToggleBtn.addEventListener("click", () => {
+            // Hide the search icon and show the search bar
+            searchIcon.classList.add("hidden");
+            searchBar.classList.remove("hidden");
+        });
+    </script>
+
+</body>
+
+</html>
