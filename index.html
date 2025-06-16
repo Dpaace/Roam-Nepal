@@ -2,67 +2,63 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roam Nepal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <!-- <link href="./output.css" rel="stylesheet"> -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#03677E',
-                        txtPrimary: '#03677E',
-                        txtPlaceholder: '#49454F',
-                        formText: '#0B3C49',
-                        formBorder: '#79747E',
-                        brcolor: '#03677E',
-                        btnbg: '#03677E',
-                        btnOutline: '#03677E',
-                        bannerTxt: '#001A42',
-                        bannerBorder: '#40A9FF',
-                        txtStatistics: '#036773',
-                        bgButton: '#0B3C49',
-                        txtAsideGrey: '#70787C',
-                        bgTrending: '#FFEECB',
-                        txtTrending: '#C87D0C'
+                        primary: "#03677E",
+                        txtPrimary: "#03677E",
+                        txtPlaceholder: "#49454F",
+                        formText: "#0B3C49",
+                        formBorder: "#79747E",
+                        brcolor: "#03677E",
+                        btnbg: "#03677E",
+                        btnOutline: "#03677E",
+                        bannerTxt: "#001A42",
+                        bannerBorder: "#40A9FF",
+                        txtStatistics: "#036773",
+                        bgButton: "#0B3C49",
+                        txtAsideGrey: "#70787C",
+                        bgTrending: "#FFEECB",
+                        txtTrending: "#C87D0C",
                     },
                     fontFamily: {
-                        sans: ['Open Sans', 'sans-serif'],
+                        sans: ["Open Sans", "sans-serif"],
                     },
-                }
-            }
-        }
+                },
+            },
+        };
     </script>
 
-
     <!-- Flatpickr CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet" />
     <!-- Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-
-
 </head>
 
 <body class="bg-white font-sans">
     <!-- Navigation Bar -->
     <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg">
-        <div class="mx-auto flex-col  lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
-
-
-            <div class="flex flex-row  lg:flex lg:flex-row justify-between w-full lg:w-1/3">
+        <div class="mx-auto flex-col lg:flex lg:flex-row justify-between items-center py-4 lg:px-16 px-5">
+            <div class="flex flex-row lg:flex lg:flex-row justify-between w-full lg:w-1/3">
                 <div class="flex flex-row-reverse justify-end items-center gap-2">
-                    <div class="text-2xl font-bold">Roam Nepal</div>
+                    <div class="text-2xl font-bold">
+                        <a href="index.html">Roam Nepal</a>
+                    </div>
 
                     <button id="menu-toggle" class="block md:block lg:hidden focus:outline-none">
                         <!-- Hamburger Icon -->
@@ -87,7 +83,7 @@
 
                 <div class="flex items-center gap-2 lg:hidden">
                     <div class="flex items-center space-x-1">
-                        <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
+                        <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border" />
                     </div>
 
                     <div class="flex items-center space-x-1">
@@ -101,7 +97,7 @@
                         <!-- Notification Button -->
                         <button id="notification-btn-mobile" class="relative flex items-center justify-center">
                             <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
-                                alt="notification-icon">
+                                alt="notification-icon" />
                         </button>
                         <!-- Badge -->
                         <span
@@ -119,54 +115,77 @@
                                 <!-- Example Notification -->
                                 <div class="flex items-start justify-between p-4 border-b">
                                     <div class="flex items-center gap-4">
-                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full" />
                                         <div>
-                                            <p class="text-sm font-bold text-black">Booking Completed</p>
-                                            <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
-                                                Jan 5 has been confirmed</p>
+                                            <p class="text-sm font-bold text-black">
+                                                Booking Completed
+                                            </p>
+                                            <p class="text-xs text-gray-600">
+                                                Your booking of Tata Nexon for Jan 3 to Jan 5 has been
+                                                confirmed
+                                            </p>
                                         </div>
                                     </div>
                                     <span class="text-xs text-gray-500">33m</span>
-                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">
+                                        &times;
+                                    </button>
                                 </div>
                                 <!-- Repeat notifications -->
                                 <div class="flex items-start justify-between p-4 border-b">
                                     <div class="flex items-center gap-4">
-                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full" />
                                         <div>
-                                            <p class="text-sm font-bold text-black">Booking Completed</p>
-                                            <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
-                                                Jan 5 has been confirmed</p>
+                                            <p class="text-sm font-bold text-black">
+                                                Booking Completed
+                                            </p>
+                                            <p class="text-xs text-gray-600">
+                                                Your booking of Tata Nexon for Jan 3 to Jan 5 has been
+                                                confirmed
+                                            </p>
                                         </div>
                                     </div>
                                     <span class="text-xs text-gray-500">33m</span>
-                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">
+                                        &times;
+                                    </button>
                                 </div>
                                 <div class="flex items-start justify-between p-4 border-b">
                                     <div class="flex items-center gap-4">
-                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full" />
                                         <div>
-                                            <p class="text-sm font-bold text-black">Booking Completed</p>
-                                            <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
-                                                Jan 5 has been confirmed</p>
+                                            <p class="text-sm font-bold text-black">
+                                                Booking Completed
+                                            </p>
+                                            <p class="text-xs text-gray-600">
+                                                Your booking of Tata Nexon for Jan 3 to Jan 5 has been
+                                                confirmed
+                                            </p>
                                         </div>
                                     </div>
                                     <span class="text-xs text-gray-500">33m</span>
-                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">
+                                        &times;
+                                    </button>
                                 </div>
                                 <div class="flex items-start justify-between p-4 border-b">
                                     <div class="flex items-center gap-4">
-                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                        <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full" />
                                         <div>
-                                            <p class="text-sm font-bold text-black">Booking Completed</p>
-                                            <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
-                                                Jan 5 has been confirmed</p>
+                                            <p class="text-sm font-bold text-black">
+                                                Booking Completed
+                                            </p>
+                                            <p class="text-xs text-gray-600">
+                                                Your booking of Tata Nexon for Jan 3 to Jan 5 has been
+                                                confirmed
+                                            </p>
                                         </div>
                                     </div>
                                     <span class="text-xs text-gray-500">33m</span>
-                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                    <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">
+                                        &times;
+                                    </button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -175,31 +194,30 @@
                         <!-- Search Toggle Button -->
                         <button id="search-toggle-btn-mobile" class="flex items-center">
                             <img id="search-icon-mobile" class="w-[14px] h-[14px]"
-                                src="images/svg/search-icon-white.svg" alt="search-icon">
+                                src="images/svg/search-icon-white.svg" alt="search-icon" />
                         </button>
 
                         <!-- Search Bar -->
                         <div id="search-bar-mobile"
-                            class="fixed inset-0 flex items-center justify-center  bg-black bg-opacity-50 hidden">
+                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
                             <div
-                                class="relative bg-white w-[80%] max-w-[400px] h-[30px] flex items-center border border-[#D9D9D9] rounded-sm p-2 ">
+                                class="relative bg-white w-[80%] max-w-[400px] h-[30px] flex items-center border border-[#D9D9D9] rounded-sm p-2">
                                 <input type="text" placeholder="Search"
-                                    class="w-full h-full outline-none text-black text-sm px-2 py-2 rounded-md">
+                                    class="w-full h-full outline-none text-black text-sm px-2 py-2 rounded-md" />
                                 <img id="search-icon-inside" class="w-[14px] h-[14px] cursor-pointer ml-2"
-                                    src="images/svg/search-icon.svg" alt="search-icon">
+                                    src="images/svg/search-icon.svg" alt="search-icon" />
                             </div>
 
                             <!-- Close Button in Top-Right -->
                             <button id="close-search-mobile" class="absolute top-16 right-8 w-[14px] h-[14px]">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -217,38 +235,41 @@
                     </button>
 
                     <div class="flex justify-start">
-                        <img src="images/bussewa_logo 1.png" alt="Profile Icon" class="w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] rounded-full">
+                        <img src="images/bussewa_logo 1.png" alt="Profile Icon"
+                            class="w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] rounded-full" />
                     </div>
 
                     <!-- Title -->
-                    <h2 class="text-[20px] lg:text-[28px] font-normal leading-[20px] lg:leading-[36px] mb-2 lg:mb-0">Create an account.</h2>
+                    <h2 class="text-[20px] lg:text-[28px] font-normal leading-[20px] lg:leading-[36px] mb-2 lg:mb-0">
+                        Create an account.
+                    </h2>
 
                     <!-- Form -->
                     <form class="space-y-4 text-black">
                         <div class="p-2 lg:p-4 space-y-4">
-
                             <!-- Full Name -->
                             <div>
-                                <label for="full-name" class="block text-xs lg:text-sm font-normal text-[#000000D9]">Full
-                                    name</label>
+                                <label for="full-name"
+                                    class="block text-xs lg:text-sm font-normal text-[#000000D9]">Full name</label>
                                 <input type="text" id="full-name" name="full-name" placeholder="Enter Full Name"
-                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6" />
                             </div>
 
                             <!-- Email -->
                             <div>
-                                <label for="email" class="block text-xs lg:text-sm font-normal text-[#000000D9]">Email</label>
+                                <label for="email"
+                                    class="block text-xs lg:text-sm font-normal text-[#000000D9]">Email</label>
                                 <input type="email" id="email" name="email" placeholder="example@gmail.com"
-                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6" />
                             </div>
 
                             <!-- Phone Number -->
                             <div>
-                                <label for="phone-number" class="block text-xs lg:text-sm font-normal text-[#000000D9]">Phone
-                                    Number</label>
+                                <label for="phone-number"
+                                    class="block text-xs lg:text-sm font-normal text-[#000000D9]">Phone Number</label>
                                 <input type="text" id="phone-number" name="phone-number"
                                     placeholder="Enter Phone Number"
-                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6" />
                             </div>
 
                             <!-- Password -->
@@ -256,42 +277,46 @@
                                 <label for="password"
                                     class="block text-xs lg:text-sm font-normal text-[#000000D9]">Password</label>
                                 <input type="password" id="sign-in-password" name="password" placeholder="********"
-                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6" />
                                 <button type="button" class="absolute top-6 lg:top-7 right-3"
                                     onclick="togglePasswordVisibility()">
-                                    <img class="w-4 h-4 lg:w-5 lg:h-5" src="images/svg/password_visible.svg" alt="Toggle Visibility">
+                                    <img class="w-4 h-4 lg:w-5 lg:h-5" src="images/svg/password_visible.svg"
+                                        alt="Toggle Visibility" />
                                 </button>
                             </div>
                         </div>
 
                         <!-- Sign In Button -->
                         <button type="button" id="sign-up-btn-otp"
-                            class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Sign
-                            Up
+                            class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                            Sign Up
                         </button>
                     </form>
 
                     <!-- Divider -->
                     <div class="flex items-center mt-6 mb-4">
-                        <hr class="w-full border-[#878991]">
+                        <hr class="w-full border-[#878991]" />
                         <span class="px-2 text-gray-500 text-[12px] lg:text-[14px] leading-4 text-nowrap">or continue
                             using</span>
-                        <hr class="w-full border-[#878991]">
+                        <hr class="w-full border-[#878991]" />
                     </div>
 
                     <!-- Social Buttons -->
                     <div class="flex justify-center space-x-4">
                         <button
                             class="border border-[#CECECE] rounded-[4px] w-[98px] h-[40px] lg:w-[98px] lg:h-[50px] flex items-center justify-center">
-                            <img src="images/svg/google.svg" alt="Google" class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]">
+                            <img src="images/svg/google.svg" alt="Google"
+                                class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]" />
                         </button>
                         <button
                             class="border border-[#CECECE] rounded-[4px] w-[98px] h-[40px] lg:w-[98px] lg:h-[50px] flex items-center justify-center">
-                            <img src="images/svg/facebook.svg" alt="Facebook" class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]">
+                            <img src="images/svg/facebook.svg" alt="Facebook"
+                                class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]" />
                         </button>
                         <button
                             class="border border-[#CECECE] rounded-[4px] w-[98px] h-[40px] lg:w-[98px] lg:h-[50px] flex items-center justify-center">
-                            <img src="images/svg/apple.svg" alt="Apple" class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]">
+                            <img src="images/svg/apple.svg" alt="Apple"
+                                class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]" />
                         </button>
                     </div>
 
@@ -318,12 +343,15 @@
 
                     <!-- Profile Image -->
                     <div class="flex justify-start mb-2 lg:mb-4">
-                        <img src="images/bussewa_logo 1.png" alt="Profile Icon" class="w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] rounded-full">
+                        <img src="images/bussewa_logo 1.png" alt="Profile Icon"
+                            class="w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] rounded-full" />
                     </div>
 
                     <!-- Title -->
-                    <h2 class="text-[18px] lg:text-[24px] font-normal leading-[30px] mb-2">Enter OTP</h2>
-                    <p class="text-[12px] lg:text-[14px] leading-5  mb-4">
+                    <h2 class="text-[18px] lg:text-[24px] font-normal leading-[30px] mb-2">
+                        Enter OTP
+                    </h2>
+                    <p class="text-[12px] lg:text-[14px] leading-5 mb-4">
                         A 4-digit OTP was sent to <strong>+977 9867897654</strong>
                     </p>
 
@@ -341,8 +369,9 @@
                         </div>
 
                         <div class="flex items-center justify-center">
-                            <p class="text-[#BA1A1A] font-normal text-[14px] lg:text-[16px] leading-6">Verification Failed.
-                                Please try again</p>
+                            <p class="text-[#BA1A1A] font-normal text-[14px] lg:text-[16px] leading-6">
+                                Verification Failed. Please try again
+                            </p>
                         </div>
 
                         <!-- Log In Button -->
@@ -354,7 +383,8 @@
 
                     <!-- Footer -->
                     <p class="text-center mt-6 text-[14px] lg:text-[16px] leading-4 text-[#44474F]">
-                        Didn't receive OTP? <a href="#" class="text-[#03677E] font-bold">Resend OTP</a>
+                        Didn't receive OTP?
+                        <a href="#" class="text-[#03677E] font-bold">Resend OTP</a>
                     </p>
                 </div>
             </div>
@@ -374,11 +404,14 @@
 
                     <!-- Profile Image -->
                     <div class="flex justify-start">
-                        <img src="images/bussewa_logo 1.png" alt="Profile Icon" class="w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] rounded-full">
+                        <img src="images/bussewa_logo 1.png" alt="Profile Icon"
+                            class="w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] rounded-full" />
                     </div>
 
                     <!-- Title -->
-                    <h2 class="text-[20px] lg:text-[28px] font-normal leading-[20px] lg:leading-[36px] mb-2 lg:mb-0">Welcome back.</h2>
+                    <h2 class="text-[20px] lg:text-[28px] font-normal leading-[20px] lg:leading-[36px] mb-2 lg:mb-0">
+                        Welcome back.
+                    </h2>
 
                     <!-- Login Form -->
                     <form class="space-y-4">
@@ -388,7 +421,7 @@
                                 <label for="login-email"
                                     class="block text-xs lg:text-sm font-normal text-[#000000D9]">Email</label>
                                 <input type="email" id="login-email" name="login-email" placeholder="example@gmail.com"
-                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6" />
                             </div>
 
                             <!-- Password -->
@@ -396,41 +429,46 @@
                                 <label for="login-password"
                                     class="block text-xs lg:text-sm font-normal text-[#000000D9]">Password</label>
                                 <input type="password" id="login-password" name="login-password" placeholder="********"
-                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                                    class="w-full border border-[#D9D9D9] p-2 rounded-sm focus:outline-none font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6" />
                                 <button type="button" class="absolute top-6 lg:top-7 right-3"
                                     onclick="toggleLoginPasswordVisibility()">
-                                    <img class="w-4 h-4 lg:w-5 lg:h-5" src="images/svg/password_visible.svg" alt="Toggle Visibility">
+                                    <img class="w-4 h-4 lg:w-5 lg:h-5" src="images/svg/password_visible.svg"
+                                        alt="Toggle Visibility" />
                                 </button>
                             </div>
                         </div>
 
                         <!-- Sign In Button -->
                         <button type="submit"
-                            class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">Sign
-                            In</button>
+                            class="w-full bg-[#0B3C49] text-white text-center py-2 rounded-sm font-normal text-[12px] leading-4 lg:text-[14px] lg:leading-6">
+                            Sign In
+                        </button>
                     </form>
 
                     <!-- Divider -->
                     <div class="flex items-center mt-6 mb-4">
-                        <hr class="w-full border-[#878991]">
+                        <hr class="w-full border-[#878991]" />
                         <span class="px-2 text-gray-500 text-[12px] lg:text-[14px] leading-4 text-nowrap">or continue
                             using</span>
-                        <hr class="w-full border-[#878991]">
+                        <hr class="w-full border-[#878991]" />
                     </div>
 
                     <!-- Social Buttons -->
                     <div class="flex justify-center space-x-4">
                         <button
                             class="border border-[#CECECE] rounded-[4px] w-[98px] h-[40px] lg:w-[98px] lg:h-[50px] flex items-center justify-center">
-                            <img src="images/svg/google.svg" alt="Google" class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]">
+                            <img src="images/svg/google.svg" alt="Google"
+                                class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]" />
                         </button>
                         <button
                             class="border border-[#CECECE] rounded-[4px] w-[98px] h-[40px] lg:w-[98px] lg:h-[50px] flex items-center justify-center">
-                            <img src="images/svg/facebook.svg" alt="Facebook" class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]">
+                            <img src="images/svg/facebook.svg" alt="Facebook"
+                                class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]" />
                         </button>
                         <button
                             class="border border-[#CECECE] rounded-[4px] w-[98px] h-[40px] lg:w-[98px] lg:h-[50px] flex items-center justify-center">
-                            <img src="images/svg/apple.svg" alt="Apple" class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]">
+                            <img src="images/svg/apple.svg" alt="Apple"
+                                class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]" />
                         </button>
                     </div>
 
@@ -442,31 +480,29 @@
                 </div>
             </div>
 
-            <div id="menu"
-                class="hidden  flex flex-row justify-end items-end lg:flex lg:flex-col lg:items-end lg:w-2/3">
-
-                <div class="hidden  md:hidden lg:flex items-center justify-center gap-9 text-sm">
+            <div id="menu" class="hidden flex flex-row justify-end items-end lg:flex lg:flex-col lg:items-end lg:w-2/3">
+                <div class="hidden md:hidden lg:flex items-center justify-center gap-9 text-sm">
                     <span class="flex items-center space-x-1">
-                        <img class="w-[14px] h-[12px]" src="images/svg/dot.svg" alt="dot">
+                        <img class="w-[14px] h-[12px]" src="images/svg/dot.svg" alt="dot" />
                         <span class="text-[12px] leading-4 font-normal">NPR</span>
                     </span>
                     <span class="flex items-center space-x-1">
-                        <img class="w-[12px] h-[12px]" src="images/svg/calendar_today.svg" alt="calendar">
+                        <img class="w-[12px] h-[12px]" src="images/svg/calendar_today.svg" alt="calendar" />
                         <span id="toggle-bs" class="text-[12px] leading-4 font-normal cursor-pointer">B.S</span>
                         <span id="toggle-ad" class="hidden text-[12px] leading-4 font-normal cursor-pointer">A.D</span>
                     </span>
                     <span class="flex items-center space-x-1">
-                        <img id="language-flag" class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English">
+                        <img id="language-flag" class="w-[14px] h-[14px]" src="images/svg/us.svg" alt="English" />
                         <span id="language-text" class="text-[12px] leading-4 font-normal cursor-pointer">English</span>
                     </span>
 
-                    <button class="flex items-center space-x-1 ">
-                        <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets">
+                    <button class="flex items-center space-x-1">
+                        <img class="w-4 h-4" src="images/svg/ticket.svg" alt="tickets" />
                         <span class="text-[12px] leading-4 font-normal">Manage Tickets</span>
                     </button>
 
                     <div class="flex items-center space-x-1">
-                        <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border">
+                        <img src="images/sample_1.jpg" alt="Profile" class="w-[24px] h-[24px] rounded-full border" />
                         <span class="text-[14px] leading-[22px] font-normal"><a href="profile-home.html">Harris's
                                 Account</a></span>
                     </div>
@@ -479,13 +515,12 @@
                         </button>
                     </div>
 
-
                     <div class="flex items-center space-x-4">
                         <div class="relative">
                             <!-- Notification Button -->
                             <button id="notification-btn" class="relative flex items-center justify-center">
                                 <img class="w-[14px] h-[14px]" src="images/svg/notification-icon.svg"
-                                    alt="notification-icon">
+                                    alt="notification-icon" />
                             </button>
                             <!-- Badge -->
                             <span
@@ -499,115 +534,130 @@
                                 <div class="p-4">
                                     <h3 class="text-lg font-bold text-black">Notifications</h3>
                                 </div>
-                                <div class="max-h-[380px] px-2  ">
+                                <div class="max-h-[380px] px-2">
                                     <!-- Example Notification -->
                                     <div class="flex items-start justify-between p-4 border-b">
                                         <div class="flex items-center gap-4">
-                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full" />
                                             <div>
-                                                <p class="text-sm font-bold text-black">Booking Completed</p>
-                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
-                                                    Jan 5 has been confirmed</p>
+                                                <p class="text-sm font-bold text-black">
+                                                    Booking Completed
+                                                </p>
+                                                <p class="text-xs text-gray-600">
+                                                    Your booking of Tata Nexon for Jan 3 to Jan 5 has
+                                                    been confirmed
+                                                </p>
                                             </div>
                                         </div>
                                         <span class="text-xs text-gray-500">33m</span>
-                                        <button
-                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                        <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">
+                                            &times;
+                                        </button>
                                     </div>
                                     <!-- Repeat notifications -->
                                     <div class="flex items-start justify-between p-4 border-b">
                                         <div class="flex items-center gap-4">
-                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full" />
                                             <div>
-                                                <p class="text-sm font-bold text-black">Booking Completed</p>
-                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
-                                                    Jan 5 has been confirmed</p>
+                                                <p class="text-sm font-bold text-black">
+                                                    Booking Completed
+                                                </p>
+                                                <p class="text-xs text-gray-600">
+                                                    Your booking of Tata Nexon for Jan 3 to Jan 5 has
+                                                    been confirmed
+                                                </p>
                                             </div>
                                         </div>
                                         <span class="text-xs text-gray-500">33m</span>
-                                        <button
-                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                        <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">
+                                            &times;
+                                        </button>
                                     </div>
                                     <div class="flex items-start justify-between p-4 border-b">
                                         <div class="flex items-center gap-4">
-                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full" />
                                             <div>
-                                                <p class="text-sm font-bold text-black">Booking Completed</p>
-                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
-                                                    Jan 5 has been confirmed</p>
+                                                <p class="text-sm font-bold text-black">
+                                                    Booking Completed
+                                                </p>
+                                                <p class="text-xs text-gray-600">
+                                                    Your booking of Tata Nexon for Jan 3 to Jan 5 has
+                                                    been confirmed
+                                                </p>
                                             </div>
                                         </div>
                                         <span class="text-xs text-gray-500">33m</span>
-                                        <button
-                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                        <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">
+                                            &times;
+                                        </button>
                                     </div>
                                     <div class="flex items-start justify-between p-4 border-b">
                                         <div class="flex items-center gap-4">
-                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full">
+                                            <img src="images/sample_1.jpg" alt="User" class="w-10 h-10 rounded-full" />
                                             <div>
-                                                <p class="text-sm font-bold text-black">Booking Completed</p>
-                                                <p class="text-xs text-gray-600">Your booking of Tata Nexon for Jan 3 to
-                                                    Jan 5 has been confirmed</p>
+                                                <p class="text-sm font-bold text-black">
+                                                    Booking Completed
+                                                </p>
+                                                <p class="text-xs text-gray-600">
+                                                    Your booking of Tata Nexon for Jan 3 to Jan 5 has
+                                                    been confirmed
+                                                </p>
                                             </div>
                                         </div>
                                         <span class="text-xs text-gray-500">33m</span>
-                                        <button
-                                            class="text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
+                                        <button class="text-gray-500 hover:text-gray-700 text-lg font-bold">
+                                            &times;
+                                        </button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
 
-
                         <button>
-                            <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help">
+                            <img class="w-[14px] h-[14px]" src="images/svg/help.svg" alt="help" />
                         </button>
 
                         <div id="search-container">
                             <!-- Search Button -->
                             <button id="search-toggle-btn" class="flex items-center">
                                 <img id="search-icon" class="w-[14px] h-[14px]" src="images/svg/search-icon-white.svg"
-                                    alt="search-icon">
+                                    alt="search-icon" />
                             </button>
                             <div id="search-bar"
                                 class="relative w-[250px] flex bg-white items-center border border-[#D9D9D9] rounded-sm p-1 hidden">
                                 <input type="text" placeholder="Search"
-                                    class="w-full outline-none text-black text-sm px-1">
+                                    class="w-full outline-none text-black text-sm px-1" />
                                 <img id="search-icon" class="w-[14px] h-[14px] cursor-pointer"
-                                    src="images/svg/search-icon.svg" alt="search-icon">
+                                    src="images/svg/search-icon.svg" alt="search-icon" />
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
 
                 <div id="bottom-nav"
                     class="hidden flex flex-col justify-center items-start mt-6 p-5 lg:p-0 gap-5 w-2/3 lg:w-full lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 text-base leading-4 lg:mt-5 font-semibold">
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/bus.svg" alt="bus"></span>
+                    <a href="#" class="flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/bus.svg" alt="bus" /></span>
                         <span>Bus Ticket</span>
                     </a>
-                    <a href="#" class=" flex items-center space-x-2 cus-active w-fit">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/rental.svg" alt="rental"></span>
+                    <a href="#" class="flex items-center space-x-2 cus-active w-fit">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/rental.svg" alt="rental" /></span>
                         <span>Rental</span>
                     </a>
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/hotels.svg" alt="hotels"></span>
+                    <a href="#" class="flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/hotels.svg" alt="hotels" /></span>
                         <span>Hotels</span>
                     </a>
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/activities.svg" alt="activities"></span>
+                    <a href="#" class="flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/activities.svg" alt="activities" /></span>
                         <span>Activities</span>
                     </a>
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/packages.svg" alt="packages"></span>
+                    <a href="#" class="flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/packages.svg" alt="packages" /></span>
                         <span>Packages</span>
                     </a>
-                    <a href="#" class=" flex items-center space-x-2">
-                        <span><img class="w-[14px] h-[14px]" src="images/svg/airport-plane.svg" alt="flights"></span>
+                    <a href="#" class="flex items-center space-x-2">
+                        <span><img class="w-[14px] h-[14px]" src="images/svg/airport-plane.svg" alt="flights" /></span>
                         <span>Flights</span>
                     </a>
                 </div>
@@ -615,16 +665,14 @@
         </div>
     </nav>
 
-
-
     <div class="flex items-center lg:items-end bg-cover bg-center h-[calc(100vh+100px)] lg:h-[calc(100vh+220px)] static"
-        style="background-image: url('images/home1.jpg');">
+        style="background-image: url('images/home1.jpg')">
         <div class="absolute lg:inset-0 lg:bg-black lg:opacity-30"></div>
         <!-- <div class="absolute inset-0 bg-black opacity-30"></div> -->
         <div
-            class="lg:min-h-[75%] min-h-[70%] lg:absolute lg:top-40 container flex flex-col lg:max-w-full  lg:items-start lg:px-28 px-5 ">
+            class="lg:min-h-[75%] min-h-[70%] lg:absolute lg:top-40 container flex flex-col lg:max-w-full lg:items-start lg:px-28 px-5">
             <h1
-                class="block  lg:mt-0 lg:flex px-1 lg:px-0 text-white text-xl leading-6 font-bold lg:text-[40px] lg:leading-[70px] ">
+                class="block lg:mt-0 lg:flex px-1 lg:px-0 text-white text-xl leading-6 font-bold lg:text-[40px] lg:leading-[70px]">
                 Explore Nepal Like Never Before.
             </h1>
             <h1
@@ -634,7 +682,7 @@
             <div class="bg-white container px-1 lg:px-0 mt-5 lg:w-fit z-40 border-b">
                 <div class="bg-white flex justify-between text-[12px] lg:text-[16px] font-normal leading-6">
                     <button id="round-trip-tab"
-                        class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100  font-semibold border-b-4 border-[#0B3C49] whitespace-nowrap">
+                        class="py-2 px-2 lg:px-5 lg:py-4 text-left hover:bg-gray-100 font-semibold border-b-4 border-[#0B3C49] whitespace-nowrap">
                         Round Trip
                     </button>
                     <button id="one-way-tab"
@@ -653,20 +701,20 @@
             </div>
             <div class="bg-white container flex shadow-lg px-0 lg:px-0 lg:min-h-fit lg:min-w-full">
                 <div id="form-container-round-trip" class="w-full lg:w-1/2 p-4">
-                    <form class="space-y-4 ">
+                    <form class="space-y-4">
                         <div
                             class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center">
                             <!-- Pick-Up Field -->
-                            <div id="round-pickup" class="col-span-10 ">
+                            <div id="round-pickup" class="col-span-10">
                                 <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
 
                                         <input type="text" id="pickup" placeholder="Pick-Up"
                                             class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
-                                            oninput="filterOptions('pickup')" onclick="toggleDropdown('pickup')">
+                                            oninput="filterOptions('pickup')" onclick="toggleDropdown('pickup')" />
                                     </div>
 
                                     <!-- Dropdown -->
@@ -693,7 +741,6 @@
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
-
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('pickup', 'Thamel')">
@@ -710,28 +757,28 @@
                             <!-- Switch Button -->
                             <div id="round-switch" class="absolute top-[25%] left-[70%] z-30 rotate-90">
                                 <button type="button" onclick="swapValues('pickup', 'dropoff')"
-                                    class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
-                                    <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap">
+                                    class="bg-[#001A40] w-10 h-10 rounded-full flex items-center justify-center">
+                                    <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap" />
                                 </button>
                             </div>
 
                             <!-- Stop Field -->
                             <div id="stop-container-1"
-                                class="hidden col-span-10  lg:relative rounded border border-formBorder lg:p-0">
+                                class="hidden col-span-10 lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <div class="flex items-center border rounded px-2 py-2">
-                                        <img class="w-5 h-5  mr-2" src="images/svg/search-icon.svg" alt="search-icon">
+                                        <img class="w-5 h-5 mr-2" src="images/svg/search-icon.svg" alt="search-icon" />
 
                                         <input type="text" id="stop" placeholder="Add Stop 1"
                                             class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
-                                            oninput="filterOptions('stop')" onclick="toggleDropdown('stop')">
+                                            oninput="filterOptions('stop')" onclick="toggleDropdown('stop')" />
 
                                         <button type="button" id="cross-container-0" class="block">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
 
                                         <button type="button" id="cross-container-1" class="hidden">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
                                     </div>
 
@@ -758,7 +805,6 @@
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
-
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('stop', 'Thamel')">
@@ -772,26 +818,27 @@
                                 </div>
                             </div>
 
-
                             <div id="round-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="add-stop-btn"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">
+                                        + <br />Add Stop
+                                    </p>
                                 </button>
                             </div>
 
                             <div id="stop-container-2"
-                                class="hidden col-span-12  lg:relative rounded border border-formBorder lg:p-0">
+                                class="hidden col-span-12 lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
 
                                         <input type="text" id="stop-2" placeholder="Add Stop 2"
                                             class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
-                                            oninput="filterOptions('stop-2')" onclick="toggleDropdown('stop-2')">
+                                            oninput="filterOptions('stop-2')" onclick="toggleDropdown('stop-2')" />
                                         <button type="button" id="cross-container-2" class="hidden">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
                                     </div>
                                     <ul id="stop-2-options"
@@ -817,7 +864,6 @@
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
-
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('stop-2', 'Thamel')">
@@ -834,21 +880,23 @@
                             <div id="round-stop-2" class="hidden col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="add-stop-btn2"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">
+                                        + <br />Add Stop
+                                    </p>
                                 </button>
                             </div>
 
                             <!-- Drop-Off Field -->
-                            <div id="round-dropff" class="col-span-12  rounded border border-formBorder lg:p-0">
+                            <div id="round-dropff" class="col-span-12 rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
 
                                         <input type="text" id="dropoff" placeholder="Drop-Off"
                                             class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
-                                            oninput="filterOptions('dropoff')" onclick="toggleDropdown('dropoff')">
+                                            oninput="filterOptions('dropoff')" onclick="toggleDropdown('dropoff')" />
                                     </div>
 
                                     <!-- Dropdown -->
@@ -875,7 +923,6 @@
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
-
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('dropoff', 'Thamel')">
@@ -890,8 +937,7 @@
                             </div>
                         </div>
 
-
-                        <div class="grid grid-cols-1 gap-4 ">
+                        <div class="grid grid-cols-1 gap-4">
                             <div class="relative">
                                 <div class="flex items-center border border-formBorder rounded px-2 py-2">
                                     <img class="w-5 h-5 mr-2" src="images/svg/date-pick.svg" alt="pickupdate" />
@@ -912,10 +958,10 @@
                         </div>
 
                         <div class="relative">
-                            <div class="flex items-center  px-2 py-2 border border-formBorder rounded">
+                            <div class="flex items-center px-2 py-2 border border-formBorder rounded">
                                 <img class="w-5 h-5 mr-2" src="images/svg/vehicle.svg" alt="vehicle" />
                                 <select id="vehicle-type"
-                                    class="w-full bg-transparent outline-none text-sm text-txtPlaceholder ">
+                                    class="w-full bg-transparent outline-none text-sm text-txtPlaceholder">
                                     <option value="">Vehicle Type</option>
                                     <option value="sedan">Sedan</option>
                                     <option value="suv">SUV</option>
@@ -929,18 +975,19 @@
                                 <img class="w-5 h-5 mr-2" src="images/svg/person.svg" alt="passengers" />
                                 <input type="number" min="0" id="pax"
                                     class="w-full bg-transparent outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
-                                    placeholder="Enter number of passengers">
+                                    placeholder="Enter number of passengers" />
                             </div>
                         </div>
 
-
                         <div class="flex items-center">
-                            <input type="checkbox" id="include-driver" class="mr-2 accent-[#0B3C49] ">
+                            <input type="checkbox" id="include-driver" class="mr-2 accent-[#0B3C49]" />
                             <label for="include-driver" class="text-sm">Include a driver</label>
                         </div>
 
                         <button type="submit" class="w-full bg-bgButton text-white py-2 rounded hover:bg-[#0a1e24]">
-                            Search Vehicles
+                            <a href="rental.html">
+                                Search Vehicles
+                            </a>
                         </button>
                     </form>
                 </div>
@@ -948,19 +995,19 @@
                 <div id="form-container-one-way" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
                         <div
-                            class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center ">
+                            class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center">
                             <!-- Pick-Up Field -->
                             <div id="oneway-main-pickup" class="col-span-10">
                                 <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
 
                                         <input type="text" id="oneway-pickup" placeholder="Pick-Up"
                                             class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('oneway-pickup')"
-                                            onclick="toggleDropdown('oneway-pickup')">
+                                            onclick="toggleDropdown('oneway-pickup')" />
                                     </div>
 
                                     <!-- Dropdown -->
@@ -987,7 +1034,6 @@
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
-
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('oneway-pickup', 'Thamel')">
@@ -1004,28 +1050,27 @@
                             <!-- Switch Button -->
                             <div id="oneway-switch" class="absolute top-[25%] left-[70%] z-30 rotate-90">
                                 <button type="button" onclick="swapValues('oneway-pickup', 'oneway-dropoff')"
-                                    class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
-                                    <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap">
+                                    class="bg-[#001A40] w-10 h-10 rounded-full flex items-center justify-center">
+                                    <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap" />
                                 </button>
                             </div>
 
-
                             <!-- Stop Container 1 -->
                             <div id="oneway-stop-container-1"
-                                class="hidden col-span-10  lg:relative rounded border border-formBorder lg:p-0">
+                                class="hidden col-span-10 lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <div class="flex items-center border rounded px-2 py-2">
-                                        <img class="w-5 h-5  mr-2" src="images/svg/search-icon.svg" alt="search-icon">
+                                        <img class="w-5 h-5 mr-2" src="images/svg/search-icon.svg" alt="search-icon" />
 
                                         <input type="text" id="stop" placeholder="Add Stop 1"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder ">
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder" />
 
                                         <button type="button" id="oneway-cross-container-0" class="block">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
 
                                         <button type="button" id="oneway-cross-container-1" class="hidden">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
                                     </div>
                                 </div>
@@ -1035,21 +1080,23 @@
                             <div id="oneway-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="oneway-add-stop-btn"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">
+                                        + <br />Add Stop
+                                    </p>
                                 </button>
                             </div>
 
                             <div id="oneway-stop-container-2"
-                                class="hidden col-span-12  lg:relative rounded border border-formBorder lg:p-0">
+                                class="hidden col-span-12 lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
 
                                         <input type="text" id="stop" placeholder="Add Stop 2"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder" />
                                         <button type="button" id="oneway-cross-container-2" class="hidden">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
                                     </div>
                                 </div>
@@ -1058,10 +1105,11 @@
                             <div id="oneway-stop-2" class="hidden col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="oneway-add-stop-btn2"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">
+                                        + <br />Add Stop
+                                    </p>
                                 </button>
                             </div>
-
 
                             <!-- Drop-Off Field -->
                             <div id="oneway-dropff" class="col-span-12 rounded border border-formBorder lg:p-0">
@@ -1069,11 +1117,11 @@
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
                                         <input type="text" id="oneway-dropoff" placeholder="Drop-Off"
                                             class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('oneway-dropoff')"
-                                            onclick="toggleDropdown('oneway-dropoff')">
+                                            onclick="toggleDropdown('oneway-dropoff')" />
                                     </div>
 
                                     <!-- Dropdown -->
@@ -1100,7 +1148,6 @@
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
-
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('oneway-dropoff', 'Thamel')">
@@ -1113,8 +1160,6 @@
                                     </ul>
                                 </div>
                             </div>
-
-
                         </div>
 
                         <!-- Pick-Up Date -->
@@ -1152,19 +1197,19 @@
                 <div id="form-container-hourly" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
                         <div
-                            class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center ">
+                            class="relative grid grid-rows-2 grid-cols-12 gap-y-4 gap-x-2 lg:grid-cols-12 lg:items-center">
                             <!-- Pick-Up Field -->
                             <div id="hourly-main-pickup" class="col-span-10">
                                 <div class="relative rounded border border-formBorder p-0">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
 
                                         <input type="text" id="hourly-pickup" placeholder="Pick-Up"
                                             class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('hourly-pickup')"
-                                            onclick="toggleDropdown('hourly-pickup')">
+                                            onclick="toggleDropdown('hourly-pickup')" />
                                     </div>
 
                                     <!-- Dropdown -->
@@ -1191,7 +1236,6 @@
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
-
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('hourly-pickup', 'Thamel')">
@@ -1208,27 +1252,27 @@
                             <!-- Switch Button -->
                             <div id="hourly-switch" class="absolute top-[25%] left-[70%] z-30 rotate-90">
                                 <button type="button" onclick="swapValues('hourly-pickup', 'hourly-dropoff')"
-                                    class="bg-[#001A40]  w-10 h-10 rounded-full flex items-center justify-center">
-                                    <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap">
+                                    class="bg-[#001A40] w-10 h-10 rounded-full flex items-center justify-center">
+                                    <img class="w-5 h-5" src="images/svg/swap.svg" alt="swap" />
                                 </button>
                             </div>
 
                             <!-- Stop Container 1 -->
                             <div id="hourly-stop-container-1"
-                                class="hidden col-span-10  lg:relative rounded border border-formBorder lg:p-0">
+                                class="hidden col-span-10 lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <div class="flex items-center border rounded px-2 py-2">
-                                        <img class="w-5 h-5  mr-2" src="images/svg/search-icon.svg" alt="search-icon">
+                                        <img class="w-5 h-5 mr-2" src="images/svg/search-icon.svg" alt="search-icon" />
 
                                         <input type="text" id="stop" placeholder="Add Stop 1"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder" />
 
                                         <button type="button" id="hourly-cross-container-0" class="block">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
 
                                         <button type="button" id="hourly-cross-container-1" class="hidden">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
                                     </div>
                                 </div>
@@ -1238,21 +1282,23 @@
                             <div id="hourly-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="hourly-add-stop-btn"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">
+                                        + <br />Add Stop
+                                    </p>
                                 </button>
                             </div>
 
                             <div id="hourly-stop-container-2"
-                                class="hidden col-span-12  lg:relative rounded border border-formBorder lg:p-0">
+                                class="hidden col-span-12 lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
 
                                         <input type="text" id="stop" placeholder="Add Stop 2"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder" />
                                         <button type="button" id="hourly-cross-container-2" class="hidden">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
                                     </div>
                                 </div>
@@ -1261,21 +1307,23 @@
                             <div id="hourly-stop-2" class="hidden col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="hourly-add-stop-btn2"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">
+                                        + <br />Add Stop
+                                    </p>
                                 </button>
                             </div>
 
                             <!-- Drop-Off Field -->
-                            <div id="hourly-dropff" class="col-span-12   rounded border border-formBorder lg:p-0">
+                            <div id="hourly-dropff" class="col-span-12 rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
                                         <input type="text" id="hourly-dropoff" placeholder="Drop-Off"
                                             class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                             oninput="filterOptions('hourly-dropoff')"
-                                            onclick="toggleDropdown('hourly-dropoff')">
+                                            onclick="toggleDropdown('hourly-dropoff')" />
                                     </div>
 
                                     <!-- Dropdown -->
@@ -1302,7 +1350,6 @@
                                                 <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
-
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('hourly-dropoff', 'Thamel')">
@@ -1315,10 +1362,7 @@
                                     </ul>
                                 </div>
                             </div>
-
-
                         </div>
-
 
                         <!-- Number of Hours -->
                         <div class="relative">
@@ -1326,7 +1370,7 @@
                                 <img class="w-5 h-5 text-black mr-2" src="images/svg/num-hours.svg" alt="time" />
                                 <input type="number" id="hourly-num-hours" min="0" max="10"
                                     class="w-full bg-transparent outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
-                                    placeholder="Enter number of hours">
+                                    placeholder="Enter number of hours" />
                             </div>
                             <h1 class="font-normal text-xs lg:text-sm text-[#49454F] mt-1">
                                 Maximum is 10. Goto
@@ -1334,9 +1378,7 @@
                                     Trip</a>
                                 for more options.
                             </h1>
-
                         </div>
-
 
                         <!-- Pick-Up Date -->
                         <div class="grid grid-cols-1 gap-4">
@@ -1365,7 +1407,7 @@
                         </div>
 
                         <div class="flex items-center">
-                            <input type="checkbox" id="hourly-include-driver" class="mr-2 accent-[#0B3C49] ">
+                            <input type="checkbox" id="hourly-include-driver" class="mr-2 accent-[#0B3C49]" />
                             <label for="hourly-include-driver" class="text-sm">Include a driver</label>
                         </div>
 
@@ -1375,21 +1417,20 @@
                     </form>
                 </div>
 
-                <div id="form-container-airport" class="hidden w-full lg:w-1/2  p-4">
+                <div id="form-container-airport" class="hidden w-full lg:w-1/2 p-4">
                     <form class="space-y-4">
-
                         <div class="relative flex items-center space-x-6">
                             <!-- Radio Button 1 -->
                             <label class="flex items-center space-x-2 cursor-pointer">
                                 <input type="radio" name="airport-type" value="pickup" checked
-                                    class="form-radio h-5 w-5 accent-[#0B3C49]">
+                                    class="form-radio h-5 w-5 accent-[#0B3C49]" />
                                 <span class="text-gray-700 text-sm font-medium">Go to Airport</span>
                             </label>
 
                             <!-- Radio Button 2 -->
                             <label class="flex items-center space-x-2 cursor-pointer">
                                 <input type="radio" name="airport-type" value="dropoff"
-                                    class="form-radio h-5 w-5 accent-[#0B3C49]">
+                                    class="form-radio h-5 w-5 accent-[#0B3C49]" />
                                 <span class="text-gray-700 text-sm font-medium">Come from Airport</span>
                             </label>
                         </div>
@@ -1401,12 +1442,12 @@
                                         <!-- Input Field -->
                                         <div class="flex items-center border rounded px-2 py-2">
                                             <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                                alt="search-icon">
+                                                alt="search-icon" />
 
                                             <input type="text" id="airport-pickup" placeholder="Pick-Up"
                                                 class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder"
                                                 oninput="filterOptions('airport-pickup')"
-                                                onclick="toggleDropdown('airport-pickup')">
+                                                onclick="toggleDropdown('airport-pickup')" />
                                         </div>
 
                                         <ul id="airport-pickup-options"
@@ -1432,7 +1473,6 @@
                                                     <img class="w-5 h-5" src="images/svg/airport.svg" alt="airport" />
                                                     TIA Airport
                                                 </span>
-
                                             </li>
                                             <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                                 onclick="selectOption('airport-pickup', 'Thamel')">
@@ -1449,20 +1489,20 @@
 
                             <!-- Stop Container 1 -->
                             <div id="airport-stop-container-1"
-                                class="hidden col-span-10  lg:relative rounded border border-formBorder lg:p-0">
+                                class="hidden col-span-10 lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <div class="flex items-center border rounded px-2 py-2">
-                                        <img class="w-5 h-5  mr-2" src="images/svg/search-icon.svg" alt="search-icon">
+                                        <img class="w-5 h-5 mr-2" src="images/svg/search-icon.svg" alt="search-icon" />
 
                                         <input type="text" id="stop" placeholder="Add Stop 1"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder" />
 
                                         <button type="button" id="airport-cross-container-0" class="block">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
 
                                         <button type="button" id="airport-cross-container-1" class="hidden">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
                                     </div>
                                 </div>
@@ -1472,21 +1512,23 @@
                             <div id="airport-stop-1" class="col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="airport-add-stop-btn"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">
+                                        + <br />Add Stop
+                                    </p>
                                 </button>
                             </div>
 
                             <div id="airport-stop-container-2"
-                                class="hidden col-span-12  lg:relative rounded border border-formBorder lg:p-0">
+                                class="hidden col-span-12 lg:relative rounded border border-formBorder lg:p-0">
                                 <div class="relative">
                                     <div class="flex items-center border rounded px-2 py-2">
                                         <img class="w-5 h-5 text-black mr-2" src="images/svg/search-icon.svg"
-                                            alt="search-icon">
+                                            alt="search-icon" />
 
                                         <input type="text" id="stop" placeholder="Add Stop 2"
-                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder">
+                                            class="w-full outline-none placeholder:text-sm placeholder:text-txtPlaceholder" />
                                         <button type="button" id="airport-cross-container-2" class="hidden">
-                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon">
+                                            <img class="w-5 h-5" src="images/svg/cross.svg" alt="search-icon" />
                                         </button>
                                     </div>
                                 </div>
@@ -1495,7 +1537,9 @@
                             <div id="airport-stop-2" class="hidden col-span-2 rounded border border-formBorder lg:p-0">
                                 <button type="button" id="airport-add-stop-btn2"
                                     class="w-full h-full text-txtPlaceholder gap-0 p-0">
-                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">+ <br>Add Stop</p>
+                                    <p class="text-[10px] lg:text-sm whitespace-nowrap">
+                                        + <br />Add Stop
+                                    </p>
                                 </button>
                             </div>
                         </div>
@@ -1593,26 +1637,27 @@
         </div>
     </div> -->
 
-
-    <div class=" w-full lg:py-10 py-4 mt-10 my-4 lg:my-[88px] container lg:max-w-full lg:items-center lg:px-28 px-5">
-        <h2 class="text-[14px] lg:text-[32px] text-black font-[400] leading-10 mb-2 lg:mb-4">Continue where you left
-            off
+    <div class="w-full lg:py-10 py-4 mt-10 my-4 lg:my-[88px] container lg:max-w-full lg:items-center lg:px-28 px-5">
+        <h2 class="text-[14px] lg:text-[32px] text-black font-[400] leading-10 mb-2 lg:mb-4">
+            Continue where you left off
         </h2>
         <div class="wrapper container lg:max-w-full lg:items-center">
             <img id="left" src="images/svg/left-arrow.svg" alt="left"
-                class="arrow w-6 h-6 -left-[10px] lg:-left-[10px]">
+                class="arrow w-6 h-6 -left-[10px] lg:-left-[10px]" />
             <ul class="carousel">
                 <li class="card">
                     <div
                         class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
                         <div class="flex items-center">
-                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
+                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car" />
                         </div>
                         <div>
-                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to
-                                Pokhara
+                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">
+                                Car from Kathmandu to Pokhara
                             </p>
-                            <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
+                            <p class="text-sm font-[400] leading-5 text-[#565E71]">
+                                Mon, Jan 6 - Tue Jan 7
+                            </p>
                         </div>
                     </div>
                 </li>
@@ -1620,13 +1665,15 @@
                     <div
                         class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
                         <div class="flex items-center">
-                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
+                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car" />
                         </div>
                         <div>
-                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to
-                                Pokhara
+                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">
+                                Car from Kathmandu to Pokhara
                             </p>
-                            <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
+                            <p class="text-sm font-[400] leading-5 text-[#565E71]">
+                                Mon, Jan 6 - Tue Jan 7
+                            </p>
                         </div>
                     </div>
                 </li>
@@ -1634,13 +1681,15 @@
                     <div
                         class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
                         <div class="flex items-center">
-                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
+                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car" />
                         </div>
                         <div>
-                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to
-                                Pokhara
+                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">
+                                Car from Kathmandu to Pokhara
                             </p>
-                            <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
+                            <p class="text-sm font-[400] leading-5 text-[#565E71]">
+                                Mon, Jan 6 - Tue Jan 7
+                            </p>
                         </div>
                     </div>
                 </li>
@@ -1648,55 +1697,55 @@
                     <div
                         class="bg-[#E1E2EC] border border-[#C4C6D0] rounded-lg shadow-md p-4 flex gap-5 items-center h-[100px] min-w-full lg:min-w-[480px]">
                         <div class="flex items-center">
-                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car">
+                            <img class="w-[30px] h-[28px] lg:w-[42px] lg:h-10" src="images/svg/car.svg" alt="car" />
                         </div>
                         <div>
-                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">Car from Kathmandu to
-                                Pokhara
+                            <p class="font-[400] text-[16px] lg:text-xl leading-9 text-black">
+                                Car from Kathmandu to Pokhara
                             </p>
-                            <p class="text-sm font-[400] leading-5 text-[#565E71]">Mon, Jan 6 - Tue Jan 7</p>
+                            <p class="text-sm font-[400] leading-5 text-[#565E71]">
+                                Mon, Jan 6 - Tue Jan 7
+                            </p>
                         </div>
                     </div>
                 </li>
             </ul>
             <img id="right" src="images/svg/right-arrow.svg" alt="right"
-                class="arrow w-6 h-6 -right-[10px] lg:-right-[10px]">
+                class="arrow w-6 h-6 -right-[10px] lg:-right-[10px]" />
         </div>
     </div>
 
-
-
     <!-- Travel Experience Section -->
-    <div class="bg-white py-5  lg:py-0 container h-[300px] lg:max-w-full lg:px-28 lg:min-h-[450px] lg:max-h-[600px]">
+    <div class="bg-white py-5 lg:py-0 container h-[300px] lg:max-w-full lg:px-28 lg:min-h-[450px] lg:max-h-[600px]">
         <div class="relative snap-mandatory snap-x w-full h-full overflow-hidden scrollbar-hide" id="scrollable-banner">
             <!-- Banner 1 -->
             <div class="relative snap-center bg-cover bg-center h-full w-full flex-shrink-0"
-                style="background-image: url('images/home2.jpg');">
+                style="background-image: url('images/home2.jpg')">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-start text-center pl-5 pb-5">
                     <h2 class="text-sm lg:text-[40px] lg:leading-10 md:text-4xl font-[700] text-white">
                         The ultimate travel experience with Roam Nepal
                     </h2>
-                    <p class="text-sm lg:text-2xl leading-6 font-[400] text-white mb-6">Travel across Nepal made simple
-                        and
-                        hassle-free.</p>
+                    <p class="text-sm lg:text-2xl leading-6 font-[400] text-white mb-6">
+                        Travel across Nepal made simple and hassle-free.
+                    </p>
                     <button
-                        class="bg-white text-[12px] lg:text-[16px]  text-bannerTxt px-6 py-2 rounded border hover:bg-gray-300">
+                        class="bg-white text-[12px] lg:text-[16px] text-bannerTxt px-6 py-2 rounded border hover:bg-gray-300">
                         Read More
                     </button>
                 </div>
             </div>
             <!-- Banner 2 -->
             <div class="relative snap-center bg-cover bg-center h-full w-full flex-shrink-0"
-                style="background-image: url('images/home1.jpg');">
+                style="background-image: url('images/home1.jpg')">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-start text-center pl-5 pb-5">
                     <h2 class="text-sm lg:text-[40px] lg:leading-10 md:text-4xl font-[700] text-white">
                         The ultimate travel experience with Roam Nepal
                     </h2>
-                    <p class="text-sm lg:text-2xl leading-6 font-[400] text-white mb-6">Travel across Nepal made simple
-                        and
-                        hassle-free.</p>
+                    <p class="text-sm lg:text-2xl leading-6 font-[400] text-white mb-6">
+                        Travel across Nepal made simple and hassle-free.
+                    </p>
                     <button
                         class="bg-white text-[12px] lg:text-[16px] text-bannerTxt px-6 py-2 rounded hover:bg-gray-300">
                         Read More
@@ -1705,15 +1754,15 @@
             </div>
             <!-- Banner 3 -->
             <div class="relative snap-center bg-cover bg-center h-full w-full flex-shrink-0"
-                style="background-image: url('images/home2.jpg');">
+                style="background-image: url('images/home2.jpg')">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-start text-center pl-5 pb-5">
                     <h2 class="text-sm lg:text-[40px] lg:leading-10 md:text-4xl font-[700] text-white">
                         The ultimate travel experience with Roam Nepal
                     </h2>
-                    <p class="text-sm lg:text-2xl leading-6 font-[400] text-white mb-6">Travel across Nepal made simple
-                        and
-                        hassle-free.</p>
+                    <p class="text-sm lg:text-2xl leading-6 font-[400] text-white mb-6">
+                        Travel across Nepal made simple and hassle-free.
+                    </p>
                     <button
                         class="bg-white text-[12px] lg:text-[16px] text-bannerTxt px-6 py-2 rounded hover:bg-gray-300">
                         Read More
@@ -1724,10 +1773,12 @@
     </div>
 
     <!-- Offers and Deals Section -->
-    <div class="bg-white py-5 my-4 lg:my-[88px]  container px-5 lg:max-w-full lg:px-28">
+    <div class="bg-white py-5 my-4 lg:my-[88px] container px-5 lg:max-w-full lg:px-28">
         <div class="container w-full lg:min-w-full mx-auto">
-            <div class="flex justify-between items-center mb-0 ">
-                <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">Offers and deals</h2>
+            <div class="flex justify-between items-center mb-0">
+                <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">
+                    Offers and deals
+                </h2>
                 <a href="#" class="text-primary text-[14px] lg:text-[16px] font-[400] leading-10">Explore more
                     &gt;&gt;</a>
             </div>
@@ -1745,8 +1796,12 @@
                         </span>
                     </div>
                     <div class="bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">
+                            Black Friday Deals!
+                        </p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">
+                            Valid Till: 5 Dec 2024
+                        </p>
                     </div>
                 </div>
                 <div
@@ -1760,8 +1815,12 @@
                         </span>
                     </div>
                     <div class="bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">
+                            Black Friday Deals!
+                        </p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">
+                            Valid Till: 5 Dec 2024
+                        </p>
                     </div>
                 </div>
                 <div
@@ -1775,8 +1834,12 @@
                         </span>
                     </div>
                     <div class="bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">
+                            Black Friday Deals!
+                        </p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">
+                            Valid Till: 5 Dec 2024
+                        </p>
                     </div>
                 </div>
                 <div
@@ -1790,8 +1853,12 @@
                         </span>
                     </div>
                     <div class="bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">
+                            Black Friday Deals!
+                        </p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">
+                            Valid Till: 5 Dec 2024
+                        </p>
                     </div>
                 </div>
                 <div
@@ -1805,8 +1872,12 @@
                         </span>
                     </div>
                     <div class="bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">
+                            Black Friday Deals!
+                        </p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">
+                            Valid Till: 5 Dec 2024
+                        </p>
                     </div>
                 </div>
                 <div
@@ -1820,8 +1891,12 @@
                         </span>
                     </div>
                     <div class="bg-gray-200 rounded-b-lg p-4">
-                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">Black Friday Deals!</p>
-                        <p class="text-[12px] lg:text-sm text-gray-500">Valid Till: 5 Dec 2024</p>
+                        <p class="font-[400] leading-9 text-black text-[16px] lg:text-[28px]">
+                            Black Friday Deals!
+                        </p>
+                        <p class="text-[12px] lg:text-sm text-gray-500">
+                            Valid Till: 5 Dec 2024
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1830,25 +1905,26 @@
 
     <!-- Reach Section -->
     <div class="bg-white lg:flex px-5 py-5 lg:py-10 lg:max-w-full lg:min-h-[500px] lg:px-28" id="our-reach">
-        <div class="w-full max-h-full  grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 items-center ">
+        <div class="w-full max-h-full grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 items-center">
             <!-- Image Section -->
-            <div class=" lg:min-w-1/2 flex">
+            <div class="lg:min-w-1/2 flex">
                 <img src="images/reach.jpeg" alt="Bus Image"
                     class="object-cover h-[180px] w-full md:h-full md:w-full lg:h-[90%] lg:w-[90%] shadow-md" />
             </div>
 
             <!-- Text and Statistics Section -->
             <div class="flex flex-col justify-center h-4/5 gap-6 lg:gap-12">
-                <div class="w-full ">
-                    <h4 class="text-black font-[400] mt-0 lg:mt-2 text-[16px] lg:text-2xl leading-8">OUR REACH</h4>
+                <div class="w-full">
+                    <h4 class="text-black font-[400] mt-0 lg:mt-2 text-[16px] lg:text-2xl leading-8">
+                        OUR REACH
+                    </h4>
                     <h2 class="text-black font-[700] mt-0 lg:mt-2 text-[20px] leading-5 lg:text-[32px] lg:leading-8">
                         The ultimate travel experience - Roam Nepal
                     </h2>
                     <p class="text-black font-[400] lg:pr-10 lg:mt-2 text-sm lg:text-[16px] leading-6 mt-0">
-                        Bussewa makes traveling across Nepal simple and hassle-free.
-                        With easy bookings and reliable service, we're here to
-                        ensure every journey is safe, comfortable, and
-                        unforgettable.
+                        Bussewa makes traveling across Nepal simple and hassle-free. With
+                        easy bookings and reliable service, we're here to ensure every
+                        journey is safe, comfortable, and unforgettable.
                     </p>
                 </div>
 
@@ -1860,7 +1936,7 @@
                             <img src="images/svg/reach-bus.svg" alt="Buses" class="w-9 h-9 lg:w-[60px] lg:h-[60px]" />
                         </div>
                         <div class="flex justify-center mt-4 mb-3">
-                            <p class="text-txtStatistics font-[700] text-xl leading-5 lg:text-[40px] lg:leading-10 "
+                            <p class="text-txtStatistics font-[700] text-xl leading-5 lg:text-[40px] lg:leading-10"
                                 data-target="1300" id="buses">
                                 0
                             </p>
@@ -1868,7 +1944,9 @@
                                 +
                             </span>
                         </div>
-                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">Buses</p>
+                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">
+                            Buses
+                        </p>
                     </div>
 
                     <!-- Statistic 2 -->
@@ -1878,7 +1956,7 @@
                                 class="w-9 h-9 lg:w-[60px] lg:h-[60px]" />
                         </div>
                         <div class="flex justify-center mt-4 mb-3">
-                            <p class="text-txtStatistics font-[700]  text-xl leading-5 lg:text-[40px] lg:leading-10"
+                            <p class="text-txtStatistics font-[700] text-xl leading-5 lg:text-[40px] lg:leading-10"
                                 data-target="450" id="routes">
                                 0
                             </p>
@@ -1886,7 +1964,9 @@
                                 +
                             </span>
                         </div>
-                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">Routes</p>
+                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">
+                            Routes
+                        </p>
                     </div>
 
                     <!-- Statistic 3 -->
@@ -1904,7 +1984,9 @@
                                 +
                             </span>
                         </div>
-                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">Operators</p>
+                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">
+                            Operators
+                        </p>
                     </div>
 
                     <!-- Statistic 4 -->
@@ -1918,7 +2000,9 @@
                             0
                         </p>
 
-                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">Districts</p>
+                        <p class="text-black font-[400] text-sm leading-5 lg:text-2xl lg:leading-8">
+                            Districts
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1934,8 +2018,9 @@
                 <div class="flex justify-center items-center space-x-4">
                     <span class="text-pink-500 text-4xl font-bold">❝</span>
                     <p class="text-[12px] leading-[15px] lg:text-2xl lg:leading-7 font-[700]" id="testimonial-text">
-                        Absolutely love this app! Booking bus tickets across Nepal has never been easier. Smooth
-                        transactions and timely updates make my travel planning a breeze. Highly recommended!
+                        Absolutely love this app! Booking bus tickets across Nepal has
+                        never been easier. Smooth transactions and timely updates make my
+                        travel planning a breeze. Highly recommended!
                     </p>
                     <span class="text-pink-500 text-4xl font-bold">❞</span>
                 </div>
@@ -1947,22 +2032,24 @@
             <!-- Navigation Buttons -->
             <div class="absolute top-1/2 -left-0 transform -translate-y-1/2 hidden lg:block">
                 <button id="prev-btn" class="rounded-full p-2">
-                    <img class="w-6 h-6" src="images/svg/left-arrow.svg" alt="left-arrow">
+                    <img class="w-6 h-6" src="images/svg/left-arrow.svg" alt="left-arrow" />
                 </button>
             </div>
             <div class="absolute top-1/2 -right-0 transform -translate-y-1/2 hidden lg:block">
                 <button id="next-btn" class="rounded-full p-2">
-                    <img class="w-6 h-6" src="images/svg/right-arrow.svg" alt="right-arrow">
+                    <img class="w-6 h-6" src="images/svg/right-arrow.svg" alt="right-arrow" />
                 </button>
             </div>
         </div>
     </div>
 
     <!-- Stories Section -->
-    <div class="container my-2 lg:my-[88px]  lg:max-w-full lg:px-28 px-4">
+    <div class="container my-2 lg:my-[88px] lg:max-w-full lg:px-28 px-4">
         <!-- Title Section -->
         <div class="flex justify-between items-center mb-2 lg:mb-4 relative">
-            <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">Your Stories</h2>
+            <h2 class="font-[400] text-[16px] lg:text-[32px] text-black leading-10">
+                Your Stories
+            </h2>
             <a href="#" class="text-txtPrimary text-[14px] lg:text-[16px] font-[400] leading-10">Explore more
                 &gt;&gt;</a>
         </div>
@@ -1971,80 +2058,98 @@
         <div id="reel-scroll" class="relative overflow-x-auto overflow-hidden scrollbar-hide"
             onwheel="scrollHorizontally(event)">
             <!-- Reels Container -->
-            <div id="reels-container" class="flex transition-transform duration-500" style="transform: translateX(0);">
+            <div id="reels-container" class="flex transition-transform duration-500" style="transform: translateX(0)">
                 <!-- Reel Card -->
                 <div
-                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px] rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
-                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
-                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
-                            first solo travel...</p>
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">
+                            Anisha_gurung
+                        </p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">
+                            My first solo travel...
+                        </p>
                     </div>
                 </div>
                 <!-- Repeat the above Reel Card for other reels -->
                 <!-- Add more cards for testing -->
                 <div
-                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px] rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
-                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
-                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
-                            first solo travel...</p>
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">
+                            Anisha_gurung
+                        </p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">
+                            My first solo travel...
+                        </p>
                     </div>
                 </div>
                 <div
-                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px] rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
-                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
-                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
-                            first solo travel...</p>
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">
+                            Anisha_gurung
+                        </p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">
+                            My first solo travel...
+                        </p>
                     </div>
                 </div>
                 <div
-                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px] rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
-                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
-                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
-                            first solo travel...</p>
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">
+                            Anisha_gurung
+                        </p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">
+                            My first solo travel...
+                        </p>
                     </div>
                 </div>
                 <div
-                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                    class="relative h-[190px] min-w-[150px] lg:min-w-[280px] lg:h-[360px] rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
-                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
-                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
-                            first solo travel...</p>
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">
+                            Anisha_gurung
+                        </p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">
+                            My first solo travel...
+                        </p>
                     </div>
                 </div>
                 <div
-                    class="relative h-[190px] min-w-[150px]] lg:min-w-[280px] lg:h-[360px]  rounded-lg overflow-hidden shadow-md mx-2">
+                    class="relative h-[190px] min-w-[150px]] lg:min-w-[280px] lg:h-[360px] rounded-lg overflow-hidden shadow-md mx-2">
                     <img src="images/sample_1.jpg" alt="Reel Thumbnail" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center">
                         <button class="text-white text-4xl">▶</button>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-2 text-white">
-                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">Anisha_gurung</p>
-                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">My
-                            first solo travel...</p>
+                        <p class="text-sm leading-4 lg:text-[16px] lg:leading-6">
+                            Anisha_gurung
+                        </p>
+                        <p class="text-[10px] lg:text-2xl lg:leading-8 font-semibold truncate leading-3 lg:mt-2">
+                            My first solo travel...
+                        </p>
                     </div>
                 </div>
             </div>
@@ -2052,40 +2157,44 @@
     </div>
 
     <!-- Blog Section -->
-    <div class="container my-2 lg:my-[88px] lg:max-w-full lg:px-28 px-6 py-10 ">
+    <div class="container my-2 lg:my-[88px] lg:max-w-full lg:px-28 px-6 py-10">
         <!-- Title and Explore More -->
         <div class="flex justify-between items-center mb-2 lg:mb-4">
-            <h2 class="hidden md:flex lg:flex font-[400] lg:text-[32px] text-black leading-10">Travel tips, stories and
-                information</h2>
-            <h2 class="md:hidden lg:hidden font-[400] text-[16px] text-black leading-10">Blogs</h2>
-            <a href="#" class="text-txtPrimary text-[12px] lg:text-[16px] font-[400] leading-10">Explore more
+            <h2 class="hidden md:flex lg:flex font-[400] lg:text-[32px] text-black leading-10">
+                Travel tips, stories and information
+            </h2>
+            <h2 class="md:hidden lg:hidden font-[400] text-[16px] text-black leading-10">
+                Blogs
+            </h2>
+            <a href="blogs-home.html" class="text-txtPrimary text-[12px] lg:text-[16px] font-[400] leading-10">
+                Explore more
                 &gt;&gt;</a>
         </div>
 
         <!-- Filter Buttons -->
         <div class="flex flex-wrap gap-1 lg:gap-2 mb-[10px] overflow-x-scroll overflow-hidden scrollbar-hide">
             <button
-                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm  lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
+                class="p-[6px] w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 All
             </button>
             <button
-                class=" p-[6px] w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor  rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-[6px] w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 Bus tickets
             </button>
             <button
-                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-[6px] w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 Hotels
             </button>
             <button
-                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-[6px] w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 Tours
             </button>
             <button
-                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white ">
+                class="p-[6px] w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 Reservations
             </button>
             <button
-                class="p-[6px]  w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
+                class="p-[6px] w-fit lg:p-4 flex items-center font-normal text-[10px] lg:text-sm leading-6 h-4 lg:h-[30px] bg-white border border-brcolor rounded-sm lg:rounded hover:bg-gray-200 focus:bg-bgButton focus:text-white">
                 Flights
             </button>
         </div>
@@ -2106,46 +2215,50 @@
                 </div> -->
                 <div class="col-span-2 max-h-[330px] relative rounded-sm overflow-hidden group">
                     <img src="images/blog-1.jpeg" alt="Blog Thumbnail"
-                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80" />
                     <div
                         class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
-                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white ">Top 10 Things to Do in
-                            Pokhara: A Complete
-                            Guide for Travelers</h3>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">
+                            Travel Blog
+                        </p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">
+                            Top 10 Things to Do in Pokhara: A Complete Guide for Travelers
+                        </h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
 
-
-
-
                 <!-- Card 2 (30% width) -->
                 <div class="col-span-1 relative rounded-sm overflow-hidden group">
                     <img src="images/blog-2.jpeg" alt="Blog Thumbnail"
-                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80" />
                     <div
                         class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
-                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">Travel Blog</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">Kathmandu to Pokhara trip
-                            travel guide</h3>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-5">
+                            Travel Blog
+                        </p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">
+                            Kathmandu to Pokhara trip travel guide
+                        </h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
             </div>
 
             <!-- Second Row -->
-            <div class="grid  lg:h-[330px] grid-cols-2 lg:grid-cols-3 gap-3">
+            <div class="grid lg:h-[330px] grid-cols-2 lg:grid-cols-3 gap-3">
                 <!-- Card 3 -->
                 <div class="relative rounded-sm overflow-hidden group">
                     <img src="images/blog-3.jpeg" alt="Blog Thumbnail"
-                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80" />
                     <div
                         class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
-                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white ">Top 10 Things to Do in
-                            Pokhara: A Complete Guide for
-                            Travelers</h3>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">
+                            Offers
+                        </p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">
+                            Top 10 Things to Do in Pokhara: A Complete Guide for Travelers
+                        </h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
@@ -2153,12 +2266,15 @@
                 <!-- Card 4 -->
                 <div class="relative rounded-sm overflow-hidden group">
                     <img src="images/blog-4.jpeg" alt="Blog Thumbnail"
-                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80" />
                     <div
                         class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
-                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white ">तिहार आयो, बससेवाले
-                            DISCOUNT ल्यायो !</h3>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">
+                            Offers
+                        </p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">
+                            तिहार आयो, बससेवाले DISCOUNT ल्यायो !
+                        </h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
@@ -2166,12 +2282,15 @@
                 <!-- Card 5 -->
                 <div class="hidden lg:flex relative max-h-[130px] lg:max-h-full rounded-sm overflow-hidden group">
                     <img src="images/blog-5.jpeg" alt="Blog Thumbnail"
-                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80">
+                        class="w-full h-full object-cover transition-all duration-300 group-hover:opacity-80" />
                     <div
                         class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-opacity-70">
-                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">Offers</p>
-                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white ">बससेवालले ल्यायो दशैँको
-                            विशेष छुट</h3>
+                        <p class="text-[10px] lg:text-[16px] leading-4 text-white mb-0 lg:mb-3">
+                            Offers
+                        </p>
+                        <h3 class="text-[12px] lg:text-[20px] leading-5 font-bold text-white">
+                            बससेवालले ल्यायो दशैँको विशेष छुट
+                        </h3>
                         <a href="#" class="text-white text-sm lg:text-xl font-bold flex items-center mt-0 lg:mt-2">→</a>
                     </div>
                 </div>
@@ -2214,13 +2333,14 @@
         </div>
     </div> -->
 
-
     <footer class="bg-gray-800 text-gray-400 py-10">
         <div
-            class="container mx-auto px-6 grid grid-cols-2 justify-start items-start md:grid lg:grid  md:grid-cols-4 lg:grid-cols-4 gap-8">
+            class="container mx-auto px-6 grid grid-cols-2 justify-start items-start md:grid lg:grid md:grid-cols-4 lg:grid-cols-4 gap-8">
             <!-- Services -->
             <div>
-                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Services</h4>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">
+                    Services
+                </h4>
                 <ul class="space-y-2 text-sm lg:text-[16px]">
                     <li><a href="#" class="hover:text-white">Bus Reservation</a></li>
                     <li><a href="#" class="hover:text-white">Tours</a></li>
@@ -2233,7 +2353,9 @@
 
             <!-- Products -->
             <div>
-                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Products</h4>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">
+                    Products
+                </h4>
                 <ul class="space-y-2 text-sm lg:text-[16px]">
                     <li><a href="#" class="hover:text-white">Tourist BusSewa</a></li>
                     <li><a href="#" class="hover:text-white">BusSewa</a></li>
@@ -2244,7 +2366,9 @@
 
             <!-- Help -->
             <div>
-                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">Help</h4>
+                <h4 class="text-white font-semibold text-[16px] lg:text-lg mb-4">
+                    Help
+                </h4>
                 <ul class="space-y-2 text-sm lg:text-[16px]">
                     <li><a href="#" class="hover:text-white">Contact Us</a></li>
                     <li><a href="#" class="hover:text-white">BusSewa Agent</a></li>
@@ -2256,10 +2380,9 @@
             <!-- Contact & Social Media  class="h-5 w-5" -->
             <div>
                 <ul class="space-y-2 text-sm lg:text-[16px]">
-                    <li class="flex items-center space-x-2 ">
+                    <li class="flex items-center space-x-2">
                         <span>
                             <img class="h-4 w-4 lg:h-5 lg:w-5" src="images/svg/footer-phone.svg" alt="phone" />
-
                         </span>
                         <a href="tel:+9779876567989" class="hover:text-white">+977 9876567989</a>
                     </li>
@@ -2290,7 +2413,6 @@
         <!-- App Download & Footer Bottom -->
         <div class="mt-10 border-t border-gray-700 pt-6">
             <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-
                 <!-- Copyright -->
                 <div class="text-gray-500 text-sm mt-4 md:mt-0">
                     <p>Copyright © BusSewa All Rights Reserved</p>
@@ -2307,8 +2429,6 @@
                             alt="App Store" class="h-10" />
                     </a>
                 </div>
-
-
 
                 <!-- Legal Links -->
                 <div class="flex text-sm mt-4 md:mt-0">
@@ -2361,7 +2481,6 @@
             });
         });
 
-
         const notificationBtn = document.getElementById("notification-btn");
         const notificationPopup = document.getElementById("notification-popup");
 
@@ -2372,14 +2491,20 @@
 
         // Close the popup when clicking outside
         document.addEventListener("click", (event) => {
-            if (!notificationPopup.contains(event.target) && !notificationBtn.contains(event.target)) {
+            if (
+                !notificationPopup.contains(event.target) &&
+                !notificationBtn.contains(event.target)
+            ) {
                 notificationPopup.classList.add("hidden");
             }
         });
 
-
-        const notificationBtnMobile = document.getElementById("notification-btn-mobile");
-        const notificationPopupMobile = document.getElementById("notification-popup-mobile");
+        const notificationBtnMobile = document.getElementById(
+            "notification-btn-mobile"
+        );
+        const notificationPopupMobile = document.getElementById(
+            "notification-popup-mobile"
+        );
 
         // Toggle notification popup on button click
         notificationBtnMobile.addEventListener("click", () => {
@@ -2388,13 +2513,13 @@
 
         // Close the popup when clicking outside
         document.addEventListener("click", (event) => {
-            if (!notificationPopupMobile.contains(event.target) && !notificationBtnMobile.contains(event.target)) {
+            if (
+                !notificationPopupMobile.contains(event.target) &&
+                !notificationBtnMobile.contains(event.target)
+            ) {
                 notificationPopupMobile.classList.add("hidden");
             }
         });
-
-
-
 
         const searchToggleBtn = document.getElementById("search-toggle-btn");
         const searchBar = document.getElementById("search-bar");
